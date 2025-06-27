@@ -28,15 +28,15 @@ export const partidosPoliticos: PartidoPolitico[] = [
     nombre: "Alianza Popular",
     sigla: "ALIANZA POPULAR",
     presidente: "Andronico Rodríguez",
-    vicepresidente: "Mariana Prado",
+    vicepresidente: "Por confirmar",
     imagenes: {
-      logo: "/binomios/mas/logo.png", // Agrega cuando tengas el logo
-      presidente: "/binomios/mas/presidente.png",
-      vicepresidente: "/binomios/mas/vicepresidente.png",
+      logo: "/imagenes2/IMAGENES PAGINA WEB/alianza-popular-logo.png", // Agrega cuando tengas el logo
+      presidente: "/imagenes2/IMAGENES PAGINA WEB/andronico.jpg",
+      vicepresidente: "/imagenes2/IMAGENES PAGINA WEB/proximamente-extra.jpg",
     },
     colores: {
-      primary: "#173983",
-      secondary: "#ffffff",
+      primary: "#FF6B35",
+      secondary: "#004E89",
     },
   },
   {
@@ -45,11 +45,11 @@ export const partidosPoliticos: PartidoPolitico[] = [
     nombre: "Autonomías para Bolivia - Súmate",
     sigla: "APB-SUMATE",
     presidente: "Manfred Reyes Villa",
-    vicepresidente: "Juan Carlos Medrano",
+    vicepresidente: "Por confirmar",
     imagenes: {
-      logo: "/binomios/mas/logo.png", // Agrega cuando tengas el logo
-      presidente: "/binomios/mas/presidente.png",
-      vicepresidente: "/binomios/mas/vicepresidente.png",
+      logo: "/imagenes2/IMAGENES PAGINA WEB/apb-sumate-logo.png", // Agrega cuando tengas el logo
+      presidente: "/imagenes2/IMAGENES PAGINA WEB/manfred.jpg",
+      vicepresidente: "/imagenes2/IMAGENES PAGINA WEB/proximamente-extra.jpg",
     },
     colores: {
       primary: "#1E3A8A",
@@ -64,9 +64,9 @@ export const partidosPoliticos: PartidoPolitico[] = [
     presidente: "Jorge Tuto Quiroga",
     vicepresidente: "Por confirmar",
     imagenes: {
-      logo: "/binomios/mas/logo.png", // Agrega cuando tengas el logo
-      presidente: "/binomios/mas/presidente.png",
-      vicepresidente: "/binomios/mas/vicepresidente.png",
+      logo: "/imagenes2/IMAGENES PAGINA WEB/fri-logo.png", // Agrega cuando tengas el logo
+      presidente: "/imagenes2/IMAGENES PAGINA WEB/tutito.jpg",
+      vicepresidente: "/imagenes2/IMAGENES PAGINA WEB/proximamente-extra.jpg",
     },
     colores: {
       primary: "#DC2626",
@@ -81,9 +81,9 @@ export const partidosPoliticos: PartidoPolitico[] = [
     presidente: "Eduardo Del Castillo",
     vicepresidente: "Por confirmar",
     imagenes: {
-      logo: "/binomios/mas/logo.png",
-      presidente: "/binomios/mas/presidente.png",
-      vicepresidente: "/binomios/mas/vicepresidente.png",
+      logo: "/imagenes2/IMAGENES PAGINA WEB/MAS.png",
+      presidente: "/imagenes2/IMAGENES PAGINA WEB/eduardo-del-castillo.jpg",
+      vicepresidente: "/imagenes2/IMAGENES PAGINA WEB/proximamente-extra.jpg",
     },
     colores: {
       primary: "#1E40AF",
@@ -98,9 +98,9 @@ export const partidosPoliticos: PartidoPolitico[] = [
     presidente: "Eva Copa",
     vicepresidente: "Por confirmar",
     imagenes: {
-      logo: "/binomios/mas/logo.png", // Agrega cuando tengas el logo
-      presidente: "/binomios/mas/presidente.png",
-      vicepresidente: "/binomios/mas/vicepresidente.png",
+      logo: "/imagenes2/IMAGENES PAGINA WEB/morena-logo.png", // Agrega cuando tengas el logo
+      presidente: "/imagenes2/IMAGENES PAGINA WEB/eva-copa.jpg",
+      vicepresidente: "/imagenes2/IMAGENES PAGINA WEB/proximamente-extra.jpg",
     },
     colores: {
       primary: "#7C2D12",
@@ -115,9 +115,9 @@ export const partidosPoliticos: PartidoPolitico[] = [
     presidente: "Rodrigo Paz Pereira",
     vicepresidente: "Por confirmar",
     imagenes: {
-      logo: "/binomios/mas/logo.png", // Agrega cuando tengas el logo
-      presidente: "/binomios/mas/presidente.png",
-      vicepresidente: "/binomios/mas/vicepresidente.png",
+      logo: "/imagenes2/IMAGENES PAGINA WEB/pdc-logo.png", // Agrega cuando tengas el logo
+      presidente: "/imagenes2/IMAGENES PAGINA WEB/rodrigo-paz.jpg",
+      vicepresidente: "/imagenes2/IMAGENES PAGINA WEB/proximamente-extra.jpg",
     },
     colores: {
       primary: "#059669",
@@ -132,9 +132,9 @@ export const partidosPoliticos: PartidoPolitico[] = [
     presidente: "Jhonny Fernández",
     vicepresidente: "Por confirmar",
     imagenes: {
-      logo: "/binomios/mas/logo.png", // Agrega cuando tengas el logo
-      presidente: "/binomios/mas/presidente.png",
-      vicepresidente: "/binomios/mas/vicepresidente.png",
+      logo: "/imagenes2/IMAGENES PAGINA WEB/ucs-logo.png", // Agrega cuando tengas el logo
+      presidente: "/imagenes2/IMAGENES PAGINA WEB/jhonny-fernandez.jpg",
+      vicepresidente: "/imagenes2/IMAGENES PAGINA WEB/proximamente-extra.jpg",
     },
     colores: {
       primary: "#7C3AED",
@@ -149,9 +149,9 @@ export const partidosPoliticos: PartidoPolitico[] = [
     presidente: "Samuel Doria Medina",
     vicepresidente: "Por confirmar",
     imagenes: {
-      logo: "/binomios/mas/logo.png", // Agrega cuando tengas el logo
-      presidente: "/binomios/mas/presidente.png",
-      vicepresidente: "/binomios/mas/vicepresidente.png",
+      logo: "/imagenes2/IMAGENES PAGINA WEB/un-logo.png", // Agrega cuando tengas el logo
+      presidente: "/imagenes2/IMAGENES PAGINA WEB/samuel-doria-medina.jpg",
+      vicepresidente: "/imagenes2/IMAGENES PAGINA WEB/proximamente-extra.jpg",
     },
     colores: {
       primary: "#EA580C",
@@ -166,9 +166,9 @@ export const partidosPoliticos: PartidoPolitico[] = [
     presidente: "Jaime Dunn",
     vicepresidente: "Por confirmar",
     imagenes: {
-      logo: "/binomios/mas/logo.png", // Agrega cuando tengas el logo
-      presidente: "/binomios/mas/presidente.png",
-      vicepresidente: "/binomios/mas/vicepresidente.png",
+      logo: "/imagenes2/IMAGENES PAGINA WEB/ngp-logo.png", // Agrega cuando tengas el logo
+      presidente: "/imagenes2/IMAGENES PAGINA WEB/jaime-dunn.jpg",
+      vicepresidente: "/imagenes2/IMAGENES PAGINA WEB/proximamente-extra.jpg",
     },
     colores: {
       primary: "#0891B2",
@@ -183,9 +183,9 @@ export const partidosPoliticos: PartidoPolitico[] = [
     presidente: "A confirmar",
     vicepresidente: "A confirmar",
     imagenes: {
-      logo: "/binomios/adn/logo.png", // Agrega cuando tengas el logo
-      presidente: "/binomios/adn/presidente.png",
-      vicepresidente: "/binomios/adn/vicepresidente.png",
+      logo: "/imagenes2/IMAGENES PAGINA WEB/adn-logo.png", // Agrega cuando tengas el logo
+      presidente: "/imagenes2/IMAGENES PAGINA WEB/proximamente-extra.jpg",
+      vicepresidente: "/imagenes2/IMAGENES PAGINA WEB/proximamente-extra.jpg",
     },
     colores: {
       primary: "#991B1B",
