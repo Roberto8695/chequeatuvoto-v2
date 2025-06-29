@@ -30,11 +30,10 @@ export const Card = React.memo(
         hovered !== null && hovered !== index && "blur-sm scale-[0.98]"
       )}
     >
-      <Image
+      <img
         src={card.src}
         alt={card.title}
-        fill
-        className="object-cover object-center"
+        className="object-cover object-center w-full h-full absolute inset-0"
       />
       <div
         className={cn(
@@ -59,7 +58,13 @@ export const Card = React.memo(
 
 Card.displayName = "Card";
 
-export function FocusCards({ cards }: { cards: CardType[] }) {
+type Card = {
+  title: string;
+  team?: string;
+  src: string;
+};
+
+export function FocusCards({ cards }: { cards: Card[] }) {
   const [hovered, setHovered] = useState<number | null>(null);
 
   return (

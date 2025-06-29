@@ -61,6 +61,36 @@ export default function FeaturesGrid({ features }: FeaturesGridProps) {
       document.body.style.overflow = 'unset'
     }
   }, [])
+  
+  const getFeatureColors = (index: number) => {
+    const colors = [
+      {
+        bg: 'bg-gradient-to-br from-[#de2488]/10 via-[#de2488]/5 to-white',
+        border: 'border-[#de2488]/30',
+        accent: 'text-[#de2488]',
+        button: 'hover:bg-[#de2488]/10 border-[#de2488]/40 text-[#de2488] hover:text-[#de2488]'
+      },
+      {
+        bg: 'bg-gradient-to-br from-[#00cfaf]/10 via-[#00cfaf]/5 to-white',
+        border: 'border-[#00cfaf]/30',
+        accent: 'text-[#00cfaf]',
+        button: 'hover:bg-[#00cfaf]/10 border-[#00cfaf]/40 text-[#00cfaf] hover:text-[#00cfaf]'
+      },
+      {
+        bg: 'bg-gradient-to-br from-[#de2488]/8 via-white to-[#00cfaf]/8',
+        border: 'border-[#de2488]/25',
+        accent: 'text-[#de2488]',
+        button: 'hover:bg-[#de2488]/10 border-[#de2488]/40 text-[#de2488] hover:text-[#de2488]'
+      },
+      {
+        bg: 'bg-gradient-to-br from-[#00cfaf]/8 via-white to-[#de2488]/8',
+        border: 'border-[#00cfaf]/25',
+        accent: 'text-[#00cfaf]',
+        button: 'hover:bg-[#00cfaf]/10 border-[#00cfaf]/40 text-[#00cfaf] hover:text-[#00cfaf]'
+      }
+    ]
+    return colors[index % colors.length]
+  }
   // Función para calcular el offset parallax
   const getParallaxOffset = (index: number) => {
     if (typeof window === 'undefined' || !cardRefs.current[index]) return 0
@@ -135,11 +165,10 @@ export default function FeaturesGrid({ features }: FeaturesGridProps) {
                       transition: 'transform 0.2s ease-out'
                     }}
                   >
-                    <Image
+                    <img
                       src={feature.image}
                       alt={feature.name}
-                      fill
-                      className="object-cover object-center transition-all duration-700 group-hover:scale-105"
+                      className="w-full h-full object-cover object-center transition-all duration-700 group-hover:scale-105"
                     />
                   </div>
                   {/* Gradient overlay más sutil */}

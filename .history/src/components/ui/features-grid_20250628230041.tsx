@@ -1,11 +1,9 @@
 "use client"
 
 import { useState, useEffect, useRef } from 'react'
-import Image from 'next/image'
 import { X,
   AlertTriangle,
-  Info,
-  LucideIcon
+  Info
 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
@@ -16,7 +14,7 @@ interface Feature {
   moreInfo: string
   risks: string[]
   myrisk: string[]
-  icon: LucideIcon
+  icon: any
   image: string
   color: string
 }
@@ -25,8 +23,33 @@ interface FeaturesGridProps {
   features: Feature[]
 }
 
+// Hook para el efecto parallax optimizado
+const useParallax = () => {
+  const [scrollY, setScrollY] = useState(0)
+
+  useEffect(() => {
+    let ticking = false
+
+    const handleScroll = () => {
+      if (!ticking) {
+        requestAnimationFrame(() => {
+          setScrollY(window.scrollY)
+          ticking = false
+        })
+        ticking = true
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  return scrollY
+}
+
 export default function FeaturesGrid({ features }: FeaturesGridProps) {
   const [expandedModal, setExpandedModal] = useState<{ type: 'info' | 'risks' | null, feature: string | null }>({ type: null, feature: null })
+  const scrollY = useParallax()
   const cardRefs = useRef<(HTMLDivElement | null)[]>([])
 
   const openModal = (type: 'info' | 'risks', featureName: string) => {
@@ -61,6 +84,36 @@ export default function FeaturesGrid({ features }: FeaturesGridProps) {
       document.body.style.overflow = 'unset'
     }
   }, [])
+  
+  const getFeatureColors = (index: number) => {
+    const colors = [
+      {
+        bg: 'bg-gradient-to-br from-[#de2488]/10 via-[#de2488]/5 to-white',
+        border: 'border-[#de2488]/30',
+        accent: 'text-[#de2488]',
+        button: 'hover:bg-[#de2488]/10 border-[#de2488]/40 text-[#de2488] hover:text-[#de2488]'
+      },
+      {
+        bg: 'bg-gradient-to-br from-[#00cfaf]/10 via-[#00cfaf]/5 to-white',
+        border: 'border-[#00cfaf]/30',
+        accent: 'text-[#00cfaf]',
+        button: 'hover:bg-[#00cfaf]/10 border-[#00cfaf]/40 text-[#00cfaf] hover:text-[#00cfaf]'
+      },
+      {
+        bg: 'bg-gradient-to-br from-[#de2488]/8 via-white to-[#00cfaf]/8',
+        border: 'border-[#de2488]/25',
+        accent: 'text-[#de2488]',
+        button: 'hover:bg-[#de2488]/10 border-[#de2488]/40 text-[#de2488] hover:text-[#de2488]'
+      },
+      {
+        bg: 'bg-gradient-to-br from-[#00cfaf]/8 via-white to-[#de2488]/8',
+        border: 'border-[#00cfaf]/25',
+        accent: 'text-[#00cfaf]',
+        button: 'hover:bg-[#00cfaf]/10 border-[#00cfaf]/40 text-[#00cfaf] hover:text-[#00cfaf]'
+      }
+    ]
+    return colors[index % colors.length]
+  }
   // Función para calcular el offset parallax
   const getParallaxOffset = (index: number) => {
     if (typeof window === 'undefined' || !cardRefs.current[index]) return 0
@@ -83,7 +136,7 @@ export default function FeaturesGrid({ features }: FeaturesGridProps) {
       
       // Aplicar el efecto parallax (movimiento más sutil)
       return Math.max(-30, Math.min(30, progress * 20))
-    } catch {
+    } catch (error) {
       return 0
     }
   }
@@ -115,6 +168,8 @@ export default function FeaturesGrid({ features }: FeaturesGridProps) {
         </div>        {/* Grid de Features más denso */}
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
           {features.map((feature, index) => {
+            const colors = getFeatureColors(index)
+            const IconComponent = feature.icon
             const parallaxOffset = getParallaxOffset(index)
             const isLastOdd = features.length % 3 === 1 && index === features.length - 1
             
@@ -135,11 +190,10 @@ export default function FeaturesGrid({ features }: FeaturesGridProps) {
                       transition: 'transform 0.2s ease-out'
                     }}
                   >
-                    <Image
+                    <img
                       src={feature.image}
                       alt={feature.name}
-                      fill
-                      className="object-cover object-center transition-all duration-700 group-hover:scale-105"
+                      className="w-full h-full object-cover object-center transition-all duration-700 group-hover:scale-105"
                     />
                   </div>
                   {/* Gradient overlay más sutil */}

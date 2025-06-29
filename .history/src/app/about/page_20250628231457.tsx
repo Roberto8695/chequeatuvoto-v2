@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
-import Image from "next/image"
 import { ArrowLeft, Instagram, Facebook, Youtube, ExternalLink } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -242,11 +241,10 @@ export default function AboutPage() {
 
                           {/* Right side - Image */}
                           <div className="bg-gray-100 h-[200px] min-h-[250px] relative">
-                            <Image
+                            <img
                               src={org.image || "/placeholder.svg"}
                               alt={org.imageAlt}
-                              fill
-                              className="object-cover"
+                              className="w-full h-full object-cover"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 hover:opacity-100 transition-opacity flex items-end">
                               <div className="p-4 text-white">

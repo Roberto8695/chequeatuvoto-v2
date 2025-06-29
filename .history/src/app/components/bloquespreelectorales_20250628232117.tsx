@@ -168,11 +168,10 @@ export default function BloquesPreelectorales() {
                     <div className="md:w-1/3">
                       <div className="aspect-video relative rounded-lg overflow-hidden border">
                         {bloque.image && typeof bloque.image === "string" ? (
-                          <Image
+                          <img
                             src={bloque.image || "/placeholder.svg"}
                             alt={bloque.name}
-                            fill
-                            className="object-cover"
+                            className="object-cover w-full h-full"
                           />
                         ) : (
                           <div className="absolute inset-0 bg-gray-200 flex items-center justify-center">

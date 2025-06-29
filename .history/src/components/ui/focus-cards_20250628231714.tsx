@@ -4,11 +4,11 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 
-interface CardType {
+type Card = {
   title: string;
   team?: string;
   src: string;
-}
+};
 
 export const Card = React.memo(
   ({
@@ -17,7 +17,7 @@ export const Card = React.memo(
     hovered,
     setHovered,
   }: {
-    card: CardType;
+    card: Card;
     index: number;
     hovered: number | null;
     setHovered: React.Dispatch<React.SetStateAction<number | null>>;
@@ -30,11 +30,10 @@ export const Card = React.memo(
         hovered !== null && hovered !== index && "blur-sm scale-[0.98]"
       )}
     >
-      <Image
+      <img
         src={card.src}
         alt={card.title}
-        fill
-        className="object-cover object-center"
+        className="object-cover object-center w-full h-full absolute inset-0"
       />
       <div
         className={cn(
@@ -59,7 +58,13 @@ export const Card = React.memo(
 
 Card.displayName = "Card";
 
-export function FocusCards({ cards }: { cards: CardType[] }) {
+type Card = {
+  title: string;
+  team?: string;
+  src: string;
+};
+
+export function FocusCards({ cards }: { cards: Card[] }) {
   const [hovered, setHovered] = useState<number | null>(null);
 
   return (
