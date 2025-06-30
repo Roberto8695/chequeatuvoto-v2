@@ -38,7 +38,7 @@ export const Card = React.memo(
           src={card.src}
           alt={card.title}
           fill
-          className="object-cover object-center group-hover:transition-transform duration-500"
+          className="object-cover object-center group-hover:scale-110 transition-transform duration-500"
         />
         <div
           className={cn(

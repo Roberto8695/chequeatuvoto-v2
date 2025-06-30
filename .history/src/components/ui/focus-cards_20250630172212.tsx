@@ -31,14 +31,14 @@ export const Card = React.memo(
         onMouseLeave={() => setHovered(null)}
         className={cn(
           "rounded-lg relative bg-gray-100 dark:bg-neutral-900 overflow-hidden h-48 md:h-64 w-full transition-all duration-300 ease-out cursor-pointer group",
-          hovered !== null && hovered !== index && "blur-sm scale-[0.98]"
+          hovered !== null && hovered !== index && "blur-sm "
         )}
       >
         <Image
           src={card.src}
           alt={card.title}
           fill
-          className="object-cover object-center group-hover:transition-transform duration-500"
+          className="object-cover object-center group-hover:scale-110 transition-transform duration-500"
         />
         <div
           className={cn(

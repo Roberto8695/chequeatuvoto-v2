@@ -30,7 +30,7 @@ export const partidosPoliticos: PartidoPolitico[] = [
     presidente: "Andronico Rodríguez",
     vicepresidente: "Mariana Prado",
     imagenes: {
-      logo: "/binomios/alianza-popular/logo.png", // Agrega cuando tengas el logo
+      logo: "/binomios/alianza-popular/ogo.png", // Agrega cuando tengas el logo
       presidente: "/binomios/alianza-popular/presidente.png",
       vicepresidente: "/binomios/alianza-popular/vicepresidente.png",
     },

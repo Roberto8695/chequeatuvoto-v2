@@ -30,9 +30,9 @@ export const partidosPoliticos: PartidoPolitico[] = [
     presidente: "Andronico Rodríguez",
     vicepresidente: "Mariana Prado",
     imagenes: {
-      logo: "/binomios/alianza-popular/logo.png", // Agrega cuando tengas el logo
-      presidente: "/binomios/alianza-popular/presidente.png",
-      vicepresidente: "/binomios/alianza-popular/vicepresidente.png",
+      logo: "/binomios/mas/logo.png", // Agrega cuando tengas el logo
+      presidente: "/binomios/mas/presidente.png",
+      vicepresidente: "/binomios/mas/vicepresidente.png",
     },
     colores: {
       primary: "#56a6d9",
@@ -47,9 +47,9 @@ export const partidosPoliticos: PartidoPolitico[] = [
     presidente: "Manfred Reyes Villa",
     vicepresidente: "Juan Carlos Medrano",
     imagenes: {
-      logo: "/binomios/apb/logo.png", // Agrega cuando tengas el logo
-      presidente: "/binomios/apb/presidente.png",
-      vicepresidente: "/binomios/apb/vicepresidente.png",
+      logo: "/binomios/mas/logo.png", // Agrega cuando tengas el logo
+      presidente: "/binomios/mas/presidente.png",
+      vicepresidente: "/binomios/mas/vicepresidente.png",
     },
     colores: {
       primary: "#ff1616",
@@ -62,11 +62,11 @@ export const partidosPoliticos: PartidoPolitico[] = [
     nombre: "Frente Revolucionario de Izquierda",
     sigla: "FRI",
     presidente: "Jorge Tuto Quiroga",
-    vicepresidente: "Juan Pablo Velasco",
+    vicepresidente: "Por confirmar",
     imagenes: {
-      logo: "/binomios/fri/logo.png", // Agrega cuando tengas el logo
-      presidente: "/binomios/fri/presidente.png",
-      vicepresidente: "/binomios/fri/vicepresidente.png",
+      logo: "/binomios/mas/logo.png", // Agrega cuando tengas el logo
+      presidente: "/binomios/mas/presidente.png",
+      vicepresidente: "/binomios/mas/vicepresidente.png",
     },
     colores: {
       primary: "#ff0000",
@@ -79,7 +79,7 @@ export const partidosPoliticos: PartidoPolitico[] = [
     nombre: "Movimiento al Socialismo - Instrumento Político por la Soberanía de los Pueblos",
     sigla: "MAS-IPSP",
     presidente: "Eduardo Del Castillo",
-    vicepresidente: "Milan Berna",
+    vicepresidente: "Por confirmar",
     imagenes: {
       logo: "/binomios/mas/logo.png",
       presidente: "/binomios/mas/presidente.png",
@@ -96,11 +96,11 @@ export const partidosPoliticos: PartidoPolitico[] = [
     nombre: "Movimiento de Regeneración Nacional",
     sigla: "MORENA",
     presidente: "Eva Copa",
-    vicepresidente: "Jorge Richter",
+    vicepresidente: "Por confirmar",
     imagenes: {
-      logo: "/binomios/morena/logo.png", // Agrega cuando tengas el logo
-      presidente: "/binomios/morena/presidente.png",
-      vicepresidente: "/binomios/morena/vicepresidente.png",
+      logo: "/binomios/mas/logo.png", // Agrega cuando tengas el logo
+      presidente: "/binomios/mas/presidente.png",
+      vicepresidente: "/binomios/mas/vicepresidente.png",
     },
     colores: {
       primary: "#676767",
@@ -113,11 +113,11 @@ export const partidosPoliticos: PartidoPolitico[] = [
     nombre: "Partido Demócrata Cristiano",
     sigla: "PDC",
     presidente: "Rodrigo Paz Pereira",
-    vicepresidente: "Edman Lara",
+    vicepresidente: "Por confirmar",
     imagenes: {
-      logo: "/binomios/pdc/logo.png", // Agrega cuando tengas el logo
-      presidente: "/binomios/pdc/presidente.png",
-      vicepresidente: "/binomios/pdc/vicepresidente.png",
+      logo: "/binomios/mas/logo.png", // Agrega cuando tengas el logo
+      presidente: "/binomios/mas/presidente.png",
+      vicepresidente: "/binomios/mas/vicepresidente.png",
     },
     colores: {
       primary: "#f83728",
@@ -130,7 +130,7 @@ export const partidosPoliticos: PartidoPolitico[] = [
     nombre: "Unidad Cívica Solidaridad",
     sigla: "UCS",
     presidente: "Jhonny Fernández",
-    vicepresidente: "Felipe Quispe",
+    vicepresidente: "Por confirmar",
     imagenes: {
       logo: "/binomios/ucs/logo.png", // Agrega cuando tengas el logo
       presidente: "/binomios/ucs/presidente.png",
@@ -147,7 +147,7 @@ export const partidosPoliticos: PartidoPolitico[] = [
     nombre: "Unidad Nacional",
     sigla: "UN",
     presidente: "Samuel Doria Medina",
-    vicepresidente: "José Luis Lupo",
+    vicepresidente: "Por confirmar",
     imagenes: {
       logo: "/binomios/un/logo.png", // Agrega cuando tengas el logo
       presidente: "/binomios/un/presidente.png",
@@ -164,7 +164,7 @@ export const partidosPoliticos: PartidoPolitico[] = [
     nombre: "Nueva Generación Política",
     sigla: "NGP",
     presidente: "Jaime Dunn",
-    vicepresidente: "Edgar Uriona",
+    vicepresidente: "Por confirmar",
     imagenes: {
       logo: "/binomios/ngp/logo.png", // Agrega cuando tengas el logo
       presidente: "/binomios/ngp/presidente.png",

@@ -30,9 +30,9 @@ export const partidosPoliticos: PartidoPolitico[] = [
     presidente: "Andronico Rodríguez",
     vicepresidente: "Mariana Prado",
     imagenes: {
-      logo: "/binomios/alianza-popular/logo.png", // Agrega cuando tengas el logo
-      presidente: "/binomios/alianza-popular/presidente.png",
-      vicepresidente: "/binomios/alianza-popular/vicepresidente.png",
+      logo: "/imagenes2/IMAGENES PAGINA WEB/logo-alianza-popular.png",
+      presidente: "/imagenes2/IMAGENES PAGINA WEB/andronico rodriguez.jpeg",
+      vicepresidente: "/imagenes2/IMAGENES PAGINA WEB/proximamente-extra.jpg", // Placeholder
     },
     colores: {
       primary: "#56a6d9",
@@ -47,9 +47,9 @@ export const partidosPoliticos: PartidoPolitico[] = [
     presidente: "Manfred Reyes Villa",
     vicepresidente: "Juan Carlos Medrano",
     imagenes: {
-      logo: "/binomios/apb/logo.png", // Agrega cuando tengas el logo
-      presidente: "/binomios/apb/presidente.png",
-      vicepresidente: "/binomios/apb/vicepresidente.png",
+      logo: "/imagenes2/IMAGENES PAGINA WEB/Mesa de trabajo 1-2.png",
+      presidente: "/imagenes2/IMAGENES PAGINA WEB/manfred reyes villa.png",
+      vicepresidente: "/imagenes2/IMAGENES PAGINA WEB/proximamente-extra.jpg", // Placeholder
     },
     colores: {
       primary: "#ff1616",
@@ -62,11 +62,11 @@ export const partidosPoliticos: PartidoPolitico[] = [
     nombre: "Frente Revolucionario de Izquierda",
     sigla: "FRI",
     presidente: "Jorge Tuto Quiroga",
-    vicepresidente: "Juan Pablo Velasco",
+    vicepresidente: "Por confirmar",
     imagenes: {
-      logo: "/binomios/fri/logo.png", // Agrega cuando tengas el logo
-      presidente: "/binomios/fri/presidente.png",
-      vicepresidente: "/binomios/fri/vicepresidente.png",
+      logo: "/imagenes2/IMAGENES PAGINA WEB/Mesa de trabajo 1-3.png",
+      presidente: "/imagenes2/IMAGENES PAGINA WEB/tutito.jpg",
+      vicepresidente: "/imagenes2/IMAGENES PAGINA WEB/proximamente-extra.jpg", // Placeholder
     },
     colores: {
       primary: "#ff0000",
@@ -79,11 +79,11 @@ export const partidosPoliticos: PartidoPolitico[] = [
     nombre: "Movimiento al Socialismo - Instrumento Político por la Soberanía de los Pueblos",
     sigla: "MAS-IPSP",
     presidente: "Eduardo Del Castillo",
-    vicepresidente: "Milan Berna",
+    vicepresidente: "Por confirmar",
     imagenes: {
-      logo: "/binomios/mas/logo.png",
-      presidente: "/binomios/mas/presidente.png",
-      vicepresidente: "/binomios/mas/vicepresidente.png",
+      logo: "/imagenes2/IMAGENES PAGINA WEB/MAS.png",
+      presidente: "/imagenes2/IMAGENES PAGINA WEB/eduardo-del-castillo.jpg",
+      vicepresidente: "/imagenes2/IMAGENES PAGINA WEB/proximamente-extra.jpg", // Placeholder
     },
     colores: {
       primary: "#173983",
@@ -96,11 +96,11 @@ export const partidosPoliticos: PartidoPolitico[] = [
     nombre: "Movimiento de Regeneración Nacional",
     sigla: "MORENA",
     presidente: "Eva Copa",
-    vicepresidente: "Jorge Richter",
+    vicepresidente: "Por confirmar",
     imagenes: {
-      logo: "/binomios/morena/logo.png", // Agrega cuando tengas el logo
-      presidente: "/binomios/morena/presidente.png",
-      vicepresidente: "/binomios/morena/vicepresidente.png",
+      logo: "/imagenes2/IMAGENES PAGINA WEB/Mesa de trabajo 1-4.png",
+      presidente: "/imagenes2/IMAGENES PAGINA WEB/eva-copa.jpg",
+      vicepresidente: "/imagenes2/IMAGENES PAGINA WEB/proximamente-extra.jpg", // Placeholder
     },
     colores: {
       primary: "#676767",
@@ -113,11 +113,11 @@ export const partidosPoliticos: PartidoPolitico[] = [
     nombre: "Partido Demócrata Cristiano",
     sigla: "PDC",
     presidente: "Rodrigo Paz Pereira",
-    vicepresidente: "Edman Lara",
+    vicepresidente: "Por confirmar",
     imagenes: {
-      logo: "/binomios/pdc/logo.png", // Agrega cuando tengas el logo
-      presidente: "/binomios/pdc/presidente.png",
-      vicepresidente: "/binomios/pdc/vicepresidente.png",
+      logo: "/imagenes2/IMAGENES PAGINA WEB/mesa_de_trabajo1.png",
+      presidente: "/imagenes2/IMAGENES PAGINA WEB/rodrigo-paz.jpg",
+      vicepresidente: "/imagenes2/IMAGENES PAGINA WEB/proximamente-extra.jpg", // Placeholder
     },
     colores: {
       primary: "#f83728",
@@ -130,11 +130,11 @@ export const partidosPoliticos: PartidoPolitico[] = [
     nombre: "Unidad Cívica Solidaridad",
     sigla: "UCS",
     presidente: "Jhonny Fernández",
-    vicepresidente: "Felipe Quispe",
+    vicepresidente: "Por confirmar",
     imagenes: {
-      logo: "/binomios/ucs/logo.png", // Agrega cuando tengas el logo
-      presidente: "/binomios/ucs/presidente.png",
-      vicepresidente: "/binomios/ucs/vicepresidente.png",
+      logo: "/imagenes2/IMAGENES PAGINA WEB/mesa_de_trabajo1.png", // Reutilizar logo similar
+      presidente: "/imagenes2/IMAGENES PAGINA WEB/jhonny-fernandez.jpg",
+      vicepresidente: "/imagenes2/IMAGENES PAGINA WEB/proximamente-extra.jpg", // Placeholder
     },
     colores: {
       primary: "#d19d03",
@@ -147,11 +147,11 @@ export const partidosPoliticos: PartidoPolitico[] = [
     nombre: "Unidad Nacional",
     sigla: "UN",
     presidente: "Samuel Doria Medina",
-    vicepresidente: "José Luis Lupo",
+    vicepresidente: "Por confirmar",
     imagenes: {
-      logo: "/binomios/un/logo.png", // Agrega cuando tengas el logo
-      presidente: "/binomios/un/presidente.png",
-      vicepresidente: "/binomios/un/vicepresidente.png",
+      logo: "/imagenes2/IMAGENES PAGINA WEB/mesa_de_trabajo1.png", // Reutilizar logo similar
+      presidente: "/imagenes2/IMAGENES PAGINA WEB/samuel-doria-medina.jpg",
+      vicepresidente: "/imagenes2/IMAGENES PAGINA WEB/proximamente-extra.jpg", // Placeholder
     },
     colores: {
       primary: "#ffdf00",
@@ -164,11 +164,11 @@ export const partidosPoliticos: PartidoPolitico[] = [
     nombre: "Nueva Generación Política",
     sigla: "NGP",
     presidente: "Jaime Dunn",
-    vicepresidente: "Edgar Uriona",
+    vicepresidente: "Por confirmar",
     imagenes: {
-      logo: "/binomios/ngp/logo.png", // Agrega cuando tengas el logo
-      presidente: "/binomios/ngp/presidente.png",
-      vicepresidente: "/binomios/ngp/vicepresidente.png",
+      logo: "/imagenes2/IMAGENES PAGINA WEB/mesa_de_trabajo1.png", // Reutilizar logo similar
+      presidente: "/imagenes2/IMAGENES PAGINA WEB/jaime-dunn.jpg",
+      vicepresidente: "/imagenes2/IMAGENES PAGINA WEB/proximamente-extra.jpg", // Placeholder
     },
     colores: {
       primary: "#fb9c1c",
@@ -183,9 +183,9 @@ export const partidosPoliticos: PartidoPolitico[] = [
     presidente: "A confirmar",
     vicepresidente: "A confirmar",
     imagenes: {
-      logo: "/binomios/adn/logo.png", // Agrega cuando tengas el logo
-      presidente: "/binomios/adn/presidente.png",
-      vicepresidente: "/binomios/adn/vicepresidente.png",
+      logo: "/imagenes2/IMAGENES PAGINA WEB/mesa_de_trabajo1.png", // Reutilizar logo similar
+      presidente: "/imagenes2/IMAGENES PAGINA WEB/proximamente-extra.jpg",
+      vicepresidente: "/imagenes2/IMAGENES PAGINA WEB/proximamente-extra.jpg",
     },
     colores: {
       primary: "#ff030f",

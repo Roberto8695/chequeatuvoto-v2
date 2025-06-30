@@ -30,9 +30,9 @@ export const partidosPoliticos: PartidoPolitico[] = [
     presidente: "Andronico Rodríguez",
     vicepresidente: "Mariana Prado",
     imagenes: {
-      logo: "/binomios/alianza-popular/logo.png", // Agrega cuando tengas el logo
-      presidente: "/binomios/alianza-popular/presidente.png",
-      vicepresidente: "/binomios/alianza-popular/vicepresidente.png",
+      logo: "/imagenes2/IMAGENES PAGINA WEB/logo-alianza-popular.png",
+      presidente: "/imagenes2/IMAGENES PAGINA WEB/andronico.jpg",
+      vicepresidente: "/imagenes2/IMAGENES PAGINA WEB/proximamente-extra.jpg", // Placeholder hasta tener imagen
     },
     colores: {
       primary: "#56a6d9",
@@ -47,9 +47,9 @@ export const partidosPoliticos: PartidoPolitico[] = [
     presidente: "Manfred Reyes Villa",
     vicepresidente: "Juan Carlos Medrano",
     imagenes: {
-      logo: "/binomios/apb/logo.png", // Agrega cuando tengas el logo
-      presidente: "/binomios/apb/presidente.png",
-      vicepresidente: "/binomios/apb/vicepresidente.png",
+      logo: "/imagenes2/IMAGENES PAGINA WEB/proximamente-extra.jpg", // Placeholder hasta tener logo
+      presidente: "/imagenes2/IMAGENES PAGINA WEB/Manfred.jpg",
+      vicepresidente: "/imagenes2/IMAGENES PAGINA WEB/proximamente-extra.jpg", // Placeholder hasta tener imagen
     },
     colores: {
       primary: "#ff1616",
@@ -64,9 +64,9 @@ export const partidosPoliticos: PartidoPolitico[] = [
     presidente: "Jorge Tuto Quiroga",
     vicepresidente: "Juan Pablo Velasco",
     imagenes: {
-      logo: "/binomios/fri/logo.png", // Agrega cuando tengas el logo
-      presidente: "/binomios/fri/presidente.png",
-      vicepresidente: "/binomios/fri/vicepresidente.png",
+      logo: "/imagenes2/IMAGENES PAGINA WEB/proximamente-extra.jpg", // Placeholder hasta tener logo
+      presidente: "/imagenes2/IMAGENES PAGINA WEB/tutito.jpg",
+      vicepresidente: "/imagenes2/IMAGENES PAGINA WEB/proximamente-extra.jpg", // Placeholder hasta tener imagen
     },
     colores: {
       primary: "#ff0000",
