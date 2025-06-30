@@ -87,13 +87,13 @@ export default function SectionCandidatos({ slug }: SectionCandidatosProps) {
         <div className={`max-w-full mx-auto transition-all duration-1000 delay-400 transform ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 lg:gap-8 items-end px-4 sm:px-0">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 lg:gap-12 items-start px-4 sm:px-0">
             
             {/* Presidente */}
             <div className="group text-center order-2 sm:order-1">
               <div className="relative">
                 {/* Foto del presidente sin marco circular */}
-                <div className="relative w-40 h-52 sm:w-44 sm:h-56 md:w-48 md:h-60 lg:w-52 lg:h-66 mx-auto mb-3 overflow-hidden shadow-2xl group-hover:shadow-3xl transition-all duration-500 transform group-hover:scale-105 rounded-2xl">
+                <div className="relative w-48 h-60 sm:w-52 sm:h-66 md:w-56 md:h-72 lg:w-64 lg:h-80 mx-auto mb-4 overflow-hidden shadow-2xl group-hover:shadow-3xl transition-all duration-500 transform group-hover:scale-105 rounded-2xl">
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent z-10"></div>
                   <Image
                     src={partido.imagenes.presidente}
@@ -108,22 +108,22 @@ export default function SectionCandidatos({ slug }: SectionCandidatosProps) {
                 </div>
                 
                 {/* Nombre del presidente */}
-                <h2 className="text-base sm:text-lg md:text-xl font-bold text-white mb-2 drop-shadow-lg">
+                <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-2 drop-shadow-lg">
                   {partido.presidente}
                 </h2>
                 
                 {/* Badge */}
                 <div className="flex justify-center">
-                  <Badge className="bg-white/30 backdrop-blur-sm text-white border-0 text-xs sm:text-sm font-bold px-3 py-1 shadow-lg">
+                  <Badge className="bg-white/30 backdrop-blur-sm text-white border-0 text-xs sm:text-sm font-bold px-3 sm:px-4 py-1 sm:py-2 shadow-lg">
                     PRESIDENTE
                   </Badge>
                 </div>
               </div>
             </div>
 
-            {/* Logo del partido - centro - más grande */}
+            {/* Logo del partido - centro */}
             <div className="group text-center order-1 sm:order-2">
-              <div className="relative w-52 h-68 sm:w-56 sm:h-72 md:w-64 md:h-80 lg:w-72 lg:h-90 mx-auto overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:scale-105 rounded-2xl bg-white/20 backdrop-blur-sm">
+              <div className="relative w-48 h-60 sm:w-52 sm:h-66 md:w-56 md:h-72 lg:w-64 lg:h-80 mx-auto overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:scale-105 rounded-2xl bg-white/20 backdrop-blur-sm">
                 <Image
                   src={partido.imagenes.logo}
                   alt={`Logo ${partido.nombre}`}
@@ -143,7 +143,7 @@ export default function SectionCandidatos({ slug }: SectionCandidatosProps) {
             <div className="group text-center order-3 sm:order-3">
               <div className="relative">
                 {/* Foto del vicepresidente sin marco circular */}
-                <div className="relative w-40 h-52 sm:w-44 sm:h-56 md:w-48 md:h-60 lg:w-52 lg:h-66 mx-auto mb-3 overflow-hidden shadow-2xl group-hover:shadow-3xl transition-all duration-500 transform group-hover:scale-105 rounded-2xl">
+                <div className="relative w-48 h-60 sm:w-52 sm:h-66 md:w-56 md:h-72 lg:w-64 lg:h-80 mx-auto mb-4 overflow-hidden shadow-2xl group-hover:shadow-3xl transition-all duration-500 transform group-hover:scale-105 rounded-2xl">
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent z-10"></div>
                   <Image
                     src={partido.imagenes.vicepresidente}
@@ -158,13 +158,13 @@ export default function SectionCandidatos({ slug }: SectionCandidatosProps) {
                 </div>
                 
                 {/* Nombre del vicepresidente */}
-                <h2 className="text-base sm:text-lg md:text-xl font-bold text-white mb-2 drop-shadow-lg">
+                <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-2 drop-shadow-lg">
                   {partido.vicepresidente}
                 </h2>
                 
                 {/* Badge */}
                 <div className="flex justify-center">
-                  <Badge className="bg-white/30 backdrop-blur-sm text-white border-0 text-xs sm:text-sm font-bold px-3 py-1 shadow-lg">
+                  <Badge className="bg-white/30 backdrop-blur-sm text-white border-0 text-xs sm:text-sm font-bold px-3 sm:px-4 py-1 sm:py-2 shadow-lg">
                     VICEPRESIDENTE
                   </Badge>
                 </div>
@@ -175,11 +175,11 @@ export default function SectionCandidatos({ slug }: SectionCandidatosProps) {
 
         {/* Información adicional - muy compacta */}
         {(partido.descripcion || partido.sitioWeb) && (
-          <div className={`text-center mt-3 transition-all duration-1000 delay-600 transform ${
+          <div className={`text-center mt-6 transition-all duration-1000 delay-600 transform ${
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
           }`}>
             {partido.descripcion && (
-              <p className="text-white/80 text-xs max-w-xl mx-auto mb-2 leading-relaxed">
+              <p className="text-white/80 text-sm max-w-2xl mx-auto mb-3 leading-relaxed">
                 {partido.descripcion}
               </p>
             )}
@@ -188,7 +188,7 @@ export default function SectionCandidatos({ slug }: SectionCandidatosProps) {
                 href={partido.sitioWeb}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center space-x-1 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white font-medium px-3 py-1 rounded-full transition-all duration-300 hover:scale-105 shadow-lg text-xs"
+                className="inline-flex items-center space-x-1 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white font-medium px-4 py-2 rounded-full transition-all duration-300 hover:scale-105 shadow-lg text-xs"
               >
                 <span>Sitio web</span>
                 <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">

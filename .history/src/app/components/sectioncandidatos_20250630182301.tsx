@@ -175,11 +175,11 @@ export default function SectionCandidatos({ slug }: SectionCandidatosProps) {
 
         {/* Información adicional - muy compacta */}
         {(partido.descripcion || partido.sitioWeb) && (
-          <div className={`text-center mt-3 transition-all duration-1000 delay-600 transform ${
+          <div className={`text-center mt-6 transition-all duration-1000 delay-600 transform ${
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
           }`}>
             {partido.descripcion && (
-              <p className="text-white/80 text-xs max-w-xl mx-auto mb-2 leading-relaxed">
+              <p className="text-white/80 text-sm max-w-2xl mx-auto mb-3 leading-relaxed">
                 {partido.descripcion}
               </p>
             )}
@@ -188,7 +188,7 @@ export default function SectionCandidatos({ slug }: SectionCandidatosProps) {
                 href={partido.sitioWeb}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center space-x-1 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white font-medium px-3 py-1 rounded-full transition-all duration-300 hover:scale-105 shadow-lg text-xs"
+                className="inline-flex items-center space-x-1 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white font-medium px-4 py-2 rounded-full transition-all duration-300 hover:scale-105 shadow-lg text-xs"
               >
                 <span>Sitio web</span>
                 <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">

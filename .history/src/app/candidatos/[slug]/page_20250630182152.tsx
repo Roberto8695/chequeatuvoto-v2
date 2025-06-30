@@ -50,14 +50,13 @@ export async function generateStaticParams() {
 }
 
 interface CandidatoPageProps {
-  params: Promise<{
+  params: {
     slug: string;
-  }>;
+  };
 }
 
-export default async function CandidatoPage({ params }: CandidatoPageProps) {
-  const { slug } = await params;
-  const partido = getPartidoBySlug(slug);
+export default function CandidatoPage({ params }: CandidatoPageProps) {
+  const partido = getPartidoBySlug(params.slug);
 
   // Si el partido no existe, mostrar 404
   if (!partido) {
@@ -66,7 +65,7 @@ export default async function CandidatoPage({ params }: CandidatoPageProps) {
 
   return (
     <main className="min-h-screen">
-      <SectionCandidatos slug={slug} />
+      <SectionCandidatos slug={params.slug} />
     </main>
   );
 }
