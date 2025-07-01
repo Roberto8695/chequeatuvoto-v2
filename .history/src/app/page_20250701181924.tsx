@@ -15,6 +15,7 @@ import HeroSection from "@/components/ui/hero-section";
 import FeaturesGrid from "@/components/ui/features-grid";
 import AnimatedTimeline from "@/components/ui/animated-timeline";
 import LoadingScreen from "@/components/ui/loading-screen";
+import Link from "next/link";
 
 const features = [
   {
