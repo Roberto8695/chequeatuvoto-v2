@@ -25,7 +25,7 @@ export default function NotFound() {
           <p className="text-gray-500">
             o explora todos los{' '}
             <Link 
-              href="/" 
+              href="/#candidatos" 
               className="text-blue-600 hover:text-blue-700 underline font-medium"
             >
               candidatos disponibles

@@ -42,7 +42,7 @@ export function Footer() {
         <div className="flex flex-col sm:flex-row justify-between items-center w-full border-t border-gray-300 pt-4">
           {/* Copyright */}
           <div className="text-xs text-gray-500 text-center sm:text-left">
-            © {new Date().getFullYear()} ChequeaBolivia y Presente Bolivia. Derechos Reservados.
+            © {new Date().getFullYear()} Presente Bolivia. Derechos reservados.
           </div>
 
           {/* Social Icons */}

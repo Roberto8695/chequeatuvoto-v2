@@ -3,7 +3,8 @@
 import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import { X,
-  BookOpen,
+  AlertTriangle,
+  Info,
   Flag,
   LucideIcon
 } from 'lucide-react'
@@ -107,9 +108,11 @@ export default function FeaturesGrid({ features }: FeaturesGridProps) {
           </div>
           
           <h2 className="text-3xl lg:text-4xl font-bold  text-black mb-4">
-            Estas son las preguntas clave que debes hacerte para ejercer tu derecho al voto
+            GUÍA PARA UNA VOTACIÓN CONSCIENTE
           </h2>
-         
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto font-medium">
+            Estas son las preguntas clave que debes hacerte antes de ejercer tu derecho al voto
+          </p>
         </div>        {/* Grid de Features más denso */}
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
           {features.map((feature, index) => {
@@ -187,7 +190,7 @@ export default function FeaturesGrid({ features }: FeaturesGridProps) {
                       }}
                       onClick={() => openModal('info', feature.name)}
                     >
-                      <BookOpen className="mr-1 h-3 w-3 transition-transform group-hover/btn:scale-110" />
+                      <Info className="mr-1 h-3 w-3 transition-transform group-hover/btn:scale-110" />
                       <span className="relative z-10">Más Info</span>
                     </Button>
                     
@@ -231,9 +234,9 @@ export default function FeaturesGrid({ features }: FeaturesGridProps) {
               </button>
               <div className="flex items-start sm:items-center mb-1 pr-10">
                 {expandedModal.type === 'info' ? (
-                  <BookOpen className="h-5 w-5 sm:h-6 sm:w-6 mr-2 flex-shrink-0 mt-0.5 sm:mt-0" />
+                  <Info className="h-5 w-5 sm:h-6 sm:w-6 mr-2 flex-shrink-0 mt-0.5 sm:mt-0" />
                 ) : (
-                  <Flag className="h-5 w-5 sm:h-6 sm:w-6 mr-2 flex-shrink-0 mt-0.5 sm:mt-0" />
+                  <AlertTriangle className="h-5 w-5 sm:h-6 sm:w-6 mr-2 flex-shrink-0 mt-0.5 sm:mt-0" />
                 )}
                 <h2 className="text-base sm:text-xl font-bold leading-tight">
                   {expandedModal.type === 'info' ? 'Información Detallada' : 'Red Flags - Señales de Alerta'}
@@ -255,7 +258,7 @@ export default function FeaturesGrid({ features }: FeaturesGridProps) {
                   {/* Mis Red Flags */}
                   <div>
                     <h4 className="text-lg sm:text-xl font-bold text-[#de2488] mb-2 sm:mb-3 flex items-center">
-                      <Flag className="h-4 w-4 sm:h-5 sm:w-5 mr-2 flex-shrink-0" />
+                      <AlertTriangle className="h-4 w-4 sm:h-5 sm:w-5 mr-2 flex-shrink-0" />
                       Mis Red Flags
                     </h4>
                     <div className="bg-gradient-to-r from-[#de2488]/10 to-[#de2488]/5 border-l-4 border-[#de2488] p-3 sm:p-4 rounded-r-lg">
@@ -273,7 +276,7 @@ export default function FeaturesGrid({ features }: FeaturesGridProps) {
                   {/* Red Flags de Candidatos */}
                   <div>
                     <h4 className="text-lg sm:text-xl font-bold text-[#00cfaf] mb-2 sm:mb-3 flex items-center">
-                      <Flag className="h-4 w-4 sm:h-5 sm:w-5 mr-2 flex-shrink-0" />
+                      <AlertTriangle className="h-4 w-4 sm:h-5 sm:w-5 mr-2 flex-shrink-0" />
                       Red Flags de Candidatos
                     </h4>
                     <div className="bg-gradient-to-r from-[#00cfaf]/10 to-[#00cfaf]/5 border-l-4 border-[#00cfaf] p-3 sm:p-4 rounded-r-lg">

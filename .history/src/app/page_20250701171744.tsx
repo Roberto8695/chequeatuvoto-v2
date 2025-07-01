@@ -221,7 +221,10 @@ export default function Home() {
                 <h2 className="text-3xl font-bold mb-6 text-center font-round">
                   CANDIDATOS
                 </h2>
-               
+                <h3 className="text-base mb-6 text-center">
+                  Este espacio se llenará a medida que se oficialicen los candidatos
+                  y candidatas.
+                </h3>
                 <h3 className="text-base mb-6 text-center">
                   Aquí encontrarás información sobre procesos penales, denuncias
                   contra ellos y ellas, y su recorrido político en general.
@@ -251,7 +254,7 @@ export default function Home() {
                     window.open(" https://chequeabolivia.bo/ ", "_blank")
                   }
                 >
-                  Fortalecimiento de la integridad de la información
+                  Lucha contra la desinformación
                 </Button>
                 <p className="mt-6 text-base text-gray-600">
                   Únete a nuestra campaña para combatir las noticias falsas y la

@@ -107,9 +107,11 @@ export default function FeaturesGrid({ features }: FeaturesGridProps) {
           </div>
           
           <h2 className="text-3xl lg:text-4xl font-bold  text-black mb-4">
-            Estas son las preguntas clave que debes hacerte para ejercer tu derecho al voto
+            GUÍA PARA UNA VOTACIÓN CONSCIENTE
           </h2>
-         
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto font-medium">
+            Estas son las preguntas clave que debes hacerte antes de ejercer tu derecho al voto
+          </p>
         </div>        {/* Grid de Features más denso */}
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
           {features.map((feature, index) => {
@@ -231,7 +233,7 @@ export default function FeaturesGrid({ features }: FeaturesGridProps) {
               </button>
               <div className="flex items-start sm:items-center mb-1 pr-10">
                 {expandedModal.type === 'info' ? (
-                  <BookOpen className="h-5 w-5 sm:h-6 sm:w-6 mr-2 flex-shrink-0 mt-0.5 sm:mt-0" />
+                  <Info className="h-5 w-5 sm:h-6 sm:w-6 mr-2 flex-shrink-0 mt-0.5 sm:mt-0" />
                 ) : (
                   <Flag className="h-5 w-5 sm:h-6 sm:w-6 mr-2 flex-shrink-0 mt-0.5 sm:mt-0" />
                 )}

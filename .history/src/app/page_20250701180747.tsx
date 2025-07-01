@@ -251,7 +251,7 @@ export default function Home() {
                     window.open(" https://chequeabolivia.bo/ ", "_blank")
                   }
                 >
-                  Fortalecimiento de la integridad de la información
+                  Lucha contra la desinformación
                 </Button>
                 <p className="mt-6 text-base text-gray-600">
                   Únete a nuestra campaña para combatir las noticias falsas y la

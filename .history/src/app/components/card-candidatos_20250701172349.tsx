@@ -33,12 +33,6 @@ export function CardCandidatos() {
       slug: "fri",
     },
     {
-      title: "Jhonny Fernández",
-      team: "UCS",
-      src: "/imagenes2/IMAGENES PAGINA WEB/jhonny-fernandez.jpg",
-      slug: "ucs",
-    },
-    {
       title: "Eduardo Del Castillo",
       team: "MAS-IPSP",
       src: "/imagenes2/IMAGENES PAGINA WEB/eduardo-del-castillo.jpg",
@@ -50,20 +44,24 @@ export function CardCandidatos() {
       src: "/imagenes2/IMAGENES PAGINA WEB/eva-copa.jpg",
       slug: "morena",
     },
-     {
-      title: "Samuel Doria Medina",
-      team: "UN",
-      src: "/imagenes2/IMAGENES PAGINA WEB/samuel-doria-medina.jpg",
-      slug: "un",
-    },
     {
       title: "Rodrigo Paz Pereira",
       team: "PDC",
       src: "/imagenes2/IMAGENES PAGINA WEB/rodrigo-paz.jpg",
       slug: "pdc",
     },
-    
-   
+    {
+      title: "Jhonny Fernández",
+      team: "UCS",
+      src: "/imagenes2/IMAGENES PAGINA WEB/jhonny-fernandez.jpg",
+      slug: "ucs",
+    },
+    {
+      title: "Samuel Doria Medina",
+      team: "UN",
+      src: "/imagenes2/IMAGENES PAGINA WEB/samuel-doria-medina.jpg",
+      slug: "un",
+    },
     
   ];
 

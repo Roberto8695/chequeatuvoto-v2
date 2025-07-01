@@ -406,7 +406,7 @@ export default function AnimatedTimeline({ events }: AnimatedTimelineProps) {
                                 <span className="text-sm font-bold text-black uppercase tracking-wide">
                                   ¡Tu voto es tu voz! 📢
                                 </span>
-                              
+                                <div className="text-2xl">🎯</div>
                               </div>
                             </div>
                             
@@ -473,7 +473,7 @@ export default function AnimatedTimeline({ events }: AnimatedTimelineProps) {
                               <>
                                 <span className="text-xs font-medium text-gray-600 uppercase mr-2">
                                   {status === 'completed' ? 'Ejecutado' : 
-                                   status === 'upcoming' ? 'Próximo' : 'Por Ejecutar'}
+                                   status === 'upcoming' ? 'Próximo' : 'Futuro'}
                                 </span>
                                 <div className={`w-2 h-2 ${colors.dot} rounded-full`} />
                               </>
@@ -482,7 +482,7 @@ export default function AnimatedTimeline({ events }: AnimatedTimelineProps) {
                                 <div className={`w-2 h-2 ${colors.dot} rounded-full mr-2`} />
                                 <span className="text-xs font-medium text-gray-600 uppercase">
                                   {status === 'completed' ? 'Ejecutado' : 
-                                   status === 'upcoming' ? 'Próximo' : 'Por Ejecutar'}
+                                   status === 'upcoming' ? 'Próximo' : 'Futuro'}
                                 </span>
                               </>
                             )}

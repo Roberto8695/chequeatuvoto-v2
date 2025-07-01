@@ -19,8 +19,7 @@ export function CardCandidatos() {
       team: "APB-SUMATE",
       src: "/imagenes2/IMAGENES PAGINA WEB/Manfred.jpg",
       slug: "apb-sumate",
-    },
-    {
+    },{
       title: "Jaime Dunn",
       team: "NGP",
       src: "/imagenes2/IMAGENES PAGINA WEB/jaime-dunn.jpg",
@@ -31,12 +30,6 @@ export function CardCandidatos() {
       team: "FRI",
       src: "/imagenes2/IMAGENES PAGINA WEB/tutito.jpg",
       slug: "fri",
-    },
-    {
-      title: "Jhonny Fernández",
-      team: "UCS",
-      src: "/imagenes2/IMAGENES PAGINA WEB/jhonny-fernandez.jpg",
-      slug: "ucs",
     },
     {
       title: "Eduardo Del Castillo",
@@ -50,21 +43,30 @@ export function CardCandidatos() {
       src: "/imagenes2/IMAGENES PAGINA WEB/eva-copa.jpg",
       slug: "morena",
     },
-     {
-      title: "Samuel Doria Medina",
-      team: "UN",
-      src: "/imagenes2/IMAGENES PAGINA WEB/samuel-doria-medina.jpg",
-      slug: "un",
-    },
     {
       title: "Rodrigo Paz Pereira",
       team: "PDC",
       src: "/imagenes2/IMAGENES PAGINA WEB/rodrigo-paz.jpg",
       slug: "pdc",
     },
-    
-   
-    
+    {
+      title: "Jhonny Fernández",
+      team: "UCS",
+      src: "/imagenes2/IMAGENES PAGINA WEB/jhonny-fernandez.jpg",
+      slug: "ucs",
+    },
+    {
+      title: "Samuel Doria Medina",
+      team: "UN",
+      src: "/imagenes2/IMAGENES PAGINA WEB/samuel-doria-medina.jpg",
+      slug: "un",
+    },
+    {
+      title: "Jaime Dunn",
+      team: "NGP",
+      src: "/imagenes2/IMAGENES PAGINA WEB/jaime-dunn.jpg",
+      slug: "ngp",
+    },
   ];
 
   return <FocusCards cards={cards} />;

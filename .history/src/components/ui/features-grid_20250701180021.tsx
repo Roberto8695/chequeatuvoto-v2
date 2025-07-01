@@ -107,7 +107,7 @@ export default function FeaturesGrid({ features }: FeaturesGridProps) {
           </div>
           
           <h2 className="text-3xl lg:text-4xl font-bold  text-black mb-4">
-            Estas son las preguntas clave que debes hacerte para ejercer tu derecho al voto
+            Estas preguntas clave debes hacerte para ejercer tu derecho al voto
           </h2>
          
         </div>        {/* Grid de Features más denso */}

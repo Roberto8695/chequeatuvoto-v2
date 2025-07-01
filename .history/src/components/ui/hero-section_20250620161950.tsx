@@ -27,7 +27,7 @@ export default function HeroSection() {
         <div className="text-center mb-16">
           <div className="flex flex-col items-center justify-center">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-round mb-8 text-black leading-tight">
-              TE AYUDAMOS A VOTAR INFORMADO
+              TE AYUDAMOS A INFORMARTE ANTES DE VOTAR
             </h1>
             
             {/* Countdown integrado debajo del texto */}

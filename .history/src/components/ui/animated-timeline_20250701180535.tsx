@@ -406,7 +406,7 @@ export default function AnimatedTimeline({ events }: AnimatedTimelineProps) {
                                 <span className="text-sm font-bold text-black uppercase tracking-wide">
                                   ¡Tu voto es tu voz! 📢
                                 </span>
-                              
+                                <div className="text-2xl">🎯</div>
                               </div>
                             </div>
                             

@@ -10,7 +10,7 @@ const navItems = [
   { name: "Calendario Electoral", href: "/#timeline" },
   { name: "Candidaturas", href: "/#parties" },
   { name: "Quienes somos", href: "/about" },
-  { name: "TSE", href: "/about" },
+  { name: "Quienes somos", href: "/about" },
 ]
 
 export function Navbar() {

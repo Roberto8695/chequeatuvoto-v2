@@ -50,12 +50,6 @@ export function CardCandidatos() {
       src: "/imagenes2/IMAGENES PAGINA WEB/eva-copa.jpg",
       slug: "morena",
     },
-     {
-      title: "Samuel Doria Medina",
-      team: "UN",
-      src: "/imagenes2/IMAGENES PAGINA WEB/samuel-doria-medina.jpg",
-      slug: "un",
-    },
     {
       title: "Rodrigo Paz Pereira",
       team: "PDC",
@@ -63,7 +57,12 @@ export function CardCandidatos() {
       slug: "pdc",
     },
     
-   
+    {
+      title: "Samuel Doria Medina",
+      team: "UN",
+      src: "/imagenes2/IMAGENES PAGINA WEB/samuel-doria-medina.jpg",
+      slug: "un",
+    },
     
   ];
 
