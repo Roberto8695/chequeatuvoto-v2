@@ -480,34 +480,23 @@ export default function AnimatedTimeline({ events }: AnimatedTimelineProps) {
                             {event.description}
                           </p>
                           
-                          <div className={`mt-4 flex items-center ${isLeft ? 'justify-between flex-row-reverse' : 'justify-between'}`}>
-                            <div className={`flex items-center ${isLeft ? 'flex-row-reverse' : ''}`}>
-                              {isLeft ? (
-                                <>
-                                  <div className={`w-2 h-2 ${colors.dot} rounded-full`} />
-                                  <span className="text-xs font-medium text-gray-600 uppercase mr-2">
-                                    {status === 'completed' ? 'Ejecutado' : 
-                                     status === 'upcoming' ? 'Próximo' : 'Por Ejecutar'}
-                                  </span>
-                                </>
-                              ) : (
-                                <>
-                                  <div className={`w-2 h-2 ${colors.dot} rounded-full mr-2`} />
-                                  <span className="text-xs font-medium text-gray-600 uppercase">
-                                    {status === 'completed' ? 'Ejecutado' : 
-                                     status === 'upcoming' ? 'Próximo' : 'Por Ejecutar'}
-                                  </span>
-                                </>
-                              )}
-                            </div>
-                            {event.detailsUrl && (
-                              <button
-                                onClick={() => window.open(event.detailsUrl, '_blank', 'noopener,noreferrer')}
-                                className="flex items-center text-xs font-medium text-blue-600 hover:text-blue-800 transition-colors duration-200 hover:underline"
-                              >
-                                Ver Detalles
-                                <ExternalLink className="h-3 w-3 ml-1" />
-                              </button>
+                          <div className={`mt-4 flex items-center ${isLeft ? 'justify-end' : 'justify-start'}`}>
+                            {isLeft ? (
+                              <>
+                                <span className="text-xs font-medium text-gray-600 uppercase mr-2">
+                                  {status === 'completed' ? 'Ejecutado' : 
+                                   status === 'upcoming' ? 'Próximo' : 'Por Ejecutar'}
+                                </span>
+                                <div className={`w-2 h-2 ${colors.dot} rounded-full`} />
+                              </>
+                            ) : (
+                              <>
+                                <div className={`w-2 h-2 ${colors.dot} rounded-full mr-2`} />
+                                <span className="text-xs font-medium text-gray-600 uppercase">
+                                  {status === 'completed' ? 'Ejecutado' : 
+                                   status === 'upcoming' ? 'Próximo' : 'Por Ejecutar'}
+                                </span>
+                              </>
                             )}
                           </div>
                         </CardContent>

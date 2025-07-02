@@ -102,55 +102,47 @@ const timelineEvents = [
     title: "Convocatoria a Elecciones Generales",
     description:
       "Convocatoria realizada por el Tribunal Supremo Electoral para las elecciones generales de 2025.",
-    detailsUrl: "https://www.oep.org.bo/wp-content/uploads/2025/04/RESOLUCION_202-2025.pdf"
   },
   {
     date: "18 de abril al 7 de mayo",
     title: "Empadronamiento biométrico masivo",
     description:
       "Periodo en el que los ciudadanos pueden registrarse en el padrón electoral biométrico.",
-    detailsUrl: "https://fuentedirecta.oep.org.bo/noticia/empadronamiento-masivo-durante-20-dias-se-realizaron-mas-de-178-mil-nuevos-registros-en-todo-el-pais/"
   },
   {
     date: "18 de abril",
     title: "Último día para registro de alianzas",
     description:
       "Fecha límite para que las alianzas políticas soliciten su registro ante el TSE.",
-    detailsUrl: "https://www.facebook.com/share/p/1AaGnewSZe/"
   },
   {
     date: "9 al 19 de mayo",
     title: "Presentación del programa de gobierno",
     description:
       "Periodo para que partidos y alianzas presenten su programa ante el Tribunal Supremo Electoral.",
-    detailsUrl: "https://www.oep.org.bo/elecciones-generales-2025/nacional-2025/"
   },
   {
     date: "14 al 19 de mayo",
     title: "Inscripción de candidaturas",
     description:
       "Inscripción oficial de candidaturas y entrega de documentos habilitantes ante el TSE.",
-    detailsUrl: "https://www.oep.org.bo/elecciones-generales-2025/nacional-2025/"
   },
   {
     date: "19 de mayo",
     title: "Publicación de lista de entidades habilitadas para estudios de opinión",
     description:
       "Publicación de lista de empresas especializadas de opinión pública, medios de comunicación, instituciones académicas y cualquier otra entidad habilitada por el Tribunal Supremo Electoral o los Tribunales Electorales Departamentales para realizar estudios de opinión en materia electoral..",
-    detailsUrl: "https://www.oep.org.bo/wp-content/uploads/2025/05/08-05-2025-Actividad-16_97.pdf"
   },
   {
     date: "25 de mayo",
     title: "Publicación de programas de gobierno",
     description:
       "Los programas presentados se publican en los portales del TSE y TEDs.",
-    detailsUrl: "https://www.oep.org.bo/elecciones-generales-2025/nacional-2025/"
   },
   {
     date: "6 de junio",
     title: "Publicación de candidaturas habilitadas",
     description: "El TSE publica la lista oficial de candidaturas habilitadas.",
-    detailsUrl: "https://www.oep.org.bo/elecciones-generales-2025/nacional-2025/"
   },
   {
     date: "13 de julio",

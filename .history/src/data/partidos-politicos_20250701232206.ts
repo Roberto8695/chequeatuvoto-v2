@@ -27,7 +27,7 @@ export const partidosPoliticos: PartidoPolitico[] = [
     slug: "alianza-popular",
     nombre: "Alianza Popular",
     sigla: "ALIANZA POPULAR",
-    presidente: "Andrónico Rodríguez Ledezma",
+    presidente: "Andronico Rodríguez",
     vicepresidente: "Mariana Prado Noya",
     imagenes: {
       logo: "/binomios/alianza-popular/logo.png", // Agrega cuando tengas el logo

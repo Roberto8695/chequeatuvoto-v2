@@ -99,7 +99,7 @@ export default function SectionCandidatos({ slug }: SectionCandidatosProps) {
               src={partido.imagenes.presidente}
               alt={partido.presidente}
               fill
-              className="object-cover object-top"
+              className="object-cover object-top  hover:rounded-2xl"
               onError={(e) => {
                 const target = e.target as HTMLImageElement;
                 target.src = '/public/logo.svg'; // Fallback

@@ -67,7 +67,7 @@ export default function SectionCandidatos({ slug }: SectionCandidatosProps) {
       <div className="absolute bottom-20 left-1/4 w-12 h-12 bg-white/25 rounded-full animate-pulse delay-700"></div>
       
       {/* Contenido principal */}
-      <div className={`relative -mt-12 z-10 container mx-auto px-4 py-4 flex-1 flex flex-col justify-center transition-all duration-1000 transform ${
+      <div className={`relative z-10 container mx-auto px-4 py-4 flex-1 flex flex-col justify-center transition-all duration-1000 transform ${
         isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
       }`}>
         
@@ -94,30 +94,30 @@ export default function SectionCandidatos({ slug }: SectionCandidatosProps) {
               <div className="relative">
               {/* Foto del presidente sin marco circular */}
               <div className="relative w-40 h-56 sm:w-44 sm:h-60 md:w-48 md:h-64 lg:w-64 lg:h-96 mx-auto overflow-hidden shadow-2xl group-hover:shadow-3xl transition-all duration-500 transform group-hover:scale-105 rounded-2xl">
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent z-10 rounded-2xl"></div>
-              <Image
-              src={partido.imagenes.presidente}
-              alt={partido.presidente}
-              fill
-              className="object-cover object-top"
-              onError={(e) => {
-                const target = e.target as HTMLImageElement;
-                target.src = '/public/logo.svg'; // Fallback
-              }}
-              />
-              
-              {/* Nombre del presidente y badge dentro de la imagen */}
-              <div className="absolute bottom-0 left-0 right-0 p-3 z-20 rounded-b-2xl">
-              <h2 className="text-base sm:text-lg md:text-xl font-bold text-white mb-2 drop-shadow-lg">
-                {partido.presidente}
-              </h2>
-              
-              <div className="flex justify-center">
-                <Badge className="bg-white/30 backdrop-blur-sm text-white border-0 text-xs sm:text-sm font-bold px-3 py-1 shadow-lg">
-                PRESIDENTE
-                </Badge>
-              </div>
-              </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent z-10"></div>
+                <Image
+                src={partido.imagenes.presidente}
+                alt={partido.presidente}
+                fill
+                className="object-cover object-top group-hover:scale-110 transition-transform duration-700"
+                onError={(e) => {
+                  const target = e.target as HTMLImageElement;
+                  target.src = '/public/logo.svg'; // Fallback
+                }}
+                />
+                
+                {/* Nombre del presidente y badge dentro de la imagen */}
+                <div className="absolute bottom-0 left-0 right-0 p-3 z-20">
+                <h2 className="text-base sm:text-lg md:text-xl font-bold text-white mb-2 drop-shadow-lg">
+                  {partido.presidente}
+                </h2>
+                
+                <div className="flex justify-center">
+                  <Badge className="bg-white/30 backdrop-blur-sm text-white border-0 text-xs sm:text-sm font-bold px-3 py-1 shadow-lg">
+                  PRESIDENTE
+                  </Badge>
+                </div>
+                </div>
               </div>
               </div>
             </div>
@@ -150,7 +150,7 @@ export default function SectionCandidatos({ slug }: SectionCandidatosProps) {
                 src={partido.imagenes.vicepresidente}
                 alt={partido.vicepresidente}
                 fill
-                className="object-cover object-top "
+                className="object-cover object-top group-hover:scale-110 transition-transform duration-700"
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
                   target.src = '/public/logo.svg'; // Fallback

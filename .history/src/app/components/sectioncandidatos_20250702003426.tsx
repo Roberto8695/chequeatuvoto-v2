@@ -99,7 +99,7 @@ export default function SectionCandidatos({ slug }: SectionCandidatosProps) {
               src={partido.imagenes.presidente}
               alt={partido.presidente}
               fill
-              className="object-cover object-top"
+              className="object-cover object-top group-hover:scale-110 transition-transform duration-700 rounded-2xl"
               onError={(e) => {
                 const target = e.target as HTMLImageElement;
                 target.src = '/public/logo.svg'; // Fallback
@@ -150,7 +150,7 @@ export default function SectionCandidatos({ slug }: SectionCandidatosProps) {
                 src={partido.imagenes.vicepresidente}
                 alt={partido.vicepresidente}
                 fill
-                className="object-cover object-top "
+                className="object-cover object-top group-hover:scale-110 transition-transform duration-700"
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
                   target.src = '/public/logo.svg'; // Fallback

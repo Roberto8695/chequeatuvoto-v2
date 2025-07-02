@@ -3,7 +3,7 @@ import { FocusCards } from "@/components/ui/focus-cards";
 export function CardCandidatos() {
   const cards = [
     {
-      title: "Andrónico Rodríguez",
+      title: "Andrónico Rodríguez Ledezma",
       team: "ALIANZA POPULAR",
       src: "/imagenes2/IMAGENES PAGINA WEB/andronico.jpg",
       slug: "alianza-popular",
