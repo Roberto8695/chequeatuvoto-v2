@@ -127,8 +127,8 @@ export const partidosPoliticos: PartidoPolitico[] = [
   {
     id: "7",
     slug: "fp",
-    nombre: "Frente Para la Victoria",
-    sigla: "FP",
+    nombre: "Unidad Cívica Solidaridad",
+    sigla: "UCS",
     presidente: "Jhonny Fernández",
     vicepresidente: "Felipe Quispe",
     imagenes: {

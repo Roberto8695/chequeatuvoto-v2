@@ -36,7 +36,7 @@ export function CardCandidatos() {
       title: "Jhonny Fernández",
       team: "FP",
       src: "/imagenes2/IMAGENES PAGINA WEB/jhonny-fernandez.jpg",
-      slug: "fp",
+      slug: "f",
     },
     {
       title: "Eduardo Del Castillo",
