@@ -303,7 +303,7 @@ export default function AnimatedTimeline({ events }: AnimatedTimelineProps) {
                               <div className={`w-2 h-2 ${colors.dot} rounded-full mr-2`} />
                               <span className="text-xs font-medium text-gray-600 uppercase">
                                 {status === 'completed' ? 'Ejecutado' : 
-                                 status === 'upcoming' ? 'Próximo' : 'Por Ejecutar'}
+                                 status === 'upcoming' ? 'Próximo' : 'Futuro'}
                               </span>
                             </div>
                             {event.detailsUrl && (
