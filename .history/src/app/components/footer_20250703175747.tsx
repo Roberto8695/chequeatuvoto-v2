@@ -39,53 +39,15 @@ export function Footer() {
           </nav>
         </div>
 
-        {/* Second Row: Copyright, Logos & Social Icons */}
-        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center w-full border-t border-gray-300 pt-4 gap-4">
-          {/* Logos de organizaciones - Alineados a la izquierda */}
-          <div className="flex flex-col items-start">
-            {/* Digital Democracy Initiative - Arriba */}
-            <div className="mb-3">
-              <Image
-                src="/imagenes2/IMAGENES PAGINA WEB/digital.png"
-                alt="Digital Democracy Initiative"
-                width={200}
-                height={40}
-                className="h-14 w-auto"
-              />
-            </div>
-            {/* Otros logos en 3 columnas debajo */}
-            <div className="flex gap-3">
-              <Image
-                src="/imagenes2/IMAGENES PAGINA WEB/chequea.png"
-                alt="Chequea Bolivia"
-                width={100}
-                height={60}
-                className="h-12 w-auto"
-              />
-              <Image
-                src="/imagenes2/IMAGENES PAGINA WEB/presente.png"
-                alt="Presente Bolivia"
-                width={100}
-                height={60}
-                className="h-12 w-auto"
-              />
-              <Image
-                src="/imagenes2/IMAGENES PAGINA WEB/civicus.png"
-                alt="Civicus"
-                width={100}
-                height={60}
-                className="h-12 w-auto"
-              />
-            </div>
-          </div>
-
-          {/* Centro: Copyright */}
-          <div className="text-xs text-gray-500 text-center flex-1">
+        {/* Second Row: Copyright & Social Icons */}
+        <div className="flex flex-col sm:flex-row justify-between items-center w-full border-t border-gray-300 pt-4">
+          {/* Copyright */}
+          <div className="text-xs text-gray-500 text-center sm:text-left">
             © {new Date().getFullYear()} ChequeaBolivia y Presente Bolivia. Derechos Reservados.
           </div>
 
-          {/* Social Icons - Derecha */}
-          <div className="flex gap-2">
+          {/* Social Icons */}
+          <div className="flex gap-2 mt-2">
             {socialLinks.map(({ icon: Icon, href }, idx) => (
               <Link key={idx} href={href} target="_blank" rel="noopener noreferrer">
                 <div className="w-7 h-7 flex items-center justify-center rounded-lg bg-gray-200 hover:bg-gray-300 transition">

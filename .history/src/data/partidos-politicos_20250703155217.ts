@@ -43,24 +43,6 @@ export const partidosPoliticos: PartidoPolitico[] = [
   },
   {
     id: "2",
-    slug: "adn",
-    nombre: "Acción Democrática Nacionalista",
-    sigla: "ADN",
-    programas: "https://www.oep.org.bo/wp-content/uploads/2025/05/PROGRAMA-DE-GOBIERNO-LIBERTAD-Y-PROGRESO-ADN.pdf ",
-    presidente: "A confirmar",
-    vicepresidente: "A confirmar",
-    imagenes: {
-      logo: "/binomios/adn/logo.png", // Agrega cuando tengas el logo
-      presidente: "/binomios/adn/presidente.png",
-      vicepresidente: "/binomios/adn/vicepresidente.png",
-    },
-    colores: {
-      primary: "#ff030f",
-      secondary: "#000000",
-    },
-  },
-  {
-    id: "3",
     slug: "apb-sumate",
     nombre: "Autonomías para Bolivia - Súmate",
     sigla: "APB-SUMATE",
@@ -77,31 +59,12 @@ export const partidosPoliticos: PartidoPolitico[] = [
       secondary: "#ffffff",
     },
   },
-  
   {
-    id: "4",
-    slug: "ngp",
-    nombre: "Nueva Generación Política",
-    sigla: "NGP",
-    programas: "https://www.oep.org.bo/wp-content/uploads/2025/06/PROGRAMA-DE-GOBIERNO-NUEVA-GENERACION-PATRIOTICA_v4.pdf",
-    presidente: "Jaime Dunn",
-    vicepresidente: "Edgar Uriona",
-    imagenes: {
-      logo: "/binomios/ngp/logo.png", // Agrega cuando tengas el logo
-      presidente: "/binomios/ngp/presidente.png",
-      vicepresidente: "/binomios/ngp/vicepresidente.png",
-    },
-    colores: {
-      primary: "#fb9c1c",
-      secondary: "#01bef2",
-    },
-  },
-  {
-    id: "5",
+    id: "3",
     slug: "fri",
     nombre: "Frente Revolucionario de Izquierda",
     sigla: "FRI",
-    programas: "https://www.oep.org.bo/wp-content/uploads/2025/05/PROGRAMA-DE-GOBIERNO-ALIANZA-LIBERTAD-Y-DEMOCRACIA.pdf",
+    programas: "Programa de Gobierno del Frente Revolucionario de Izquierda",
     presidente: "Jorge Tuto Quiroga",
     vicepresidente: "Juan Pablo Velasco",
     imagenes: {
@@ -115,7 +78,61 @@ export const partidosPoliticos: PartidoPolitico[] = [
     },
   },
   {
+    id: "4",
+    slug: "mas-ipsp",
+    nombre: "Movimiento al Socialismo - Instrumento Político por la Soberanía de los Pueblos",
+    sigla: "MAS-IPSP",
+    programas: "Programa de Gobierno del MAS-IPSP",
+    presidente: "Eduardo Del Castillo",
+    vicepresidente: "Milan Berna",
+    imagenes: {
+      logo: "/binomios/mas/logo.png",
+      presidente: "/binomios/mas/presidente.png",
+      vicepresidente: "/binomios/mas/vicepresidente.png",
+    },
+    colores: {
+      primary: "#173983",
+      secondary: "#ffffff",
+    },
+  },
+  {
+    id: "5",
+    slug: "morena",
+    nombre: "Movimiento de Regeneración Nacional",
+    sigla: "MORENA",
+    programas: "Programa de Gobierno del Movimiento de Regeneración Nacional",
+    presidente: "Eva Copa",
+    vicepresidente: "Jorge Richter",
+    imagenes: {
+      logo: "/binomios/morena/logo.png", // Agrega cuando tengas el logo
+      presidente: "/binomios/morena/presidente.png",
+      vicepresidente: "/binomios/morena/vicepresidente.png",
+    },
+    colores: {
+      primary: "#676767",
+      secondary: "#ff5900",
+    },
+  },
+  {
     id: "6",
+    slug: "pdc",
+    nombre: "Partido Demócrata Cristiano",
+    sigla: "PDC",
+    programas: "Programa de Gobierno del Partido Demócrata Cristiano",
+    presidente: "Rodrigo Paz Pereira",
+    vicepresidente: "Edman Lara",
+    imagenes: {
+      logo: "/binomios/pdc/logo.png", // Agrega cuando tengas el logo
+      presidente: "/binomios/pdc/presidente.png",
+      vicepresidente: "/binomios/pdc/vicepresidente.png",
+    },
+    colores: {
+      primary: "#f83728",
+      secondary: "#005e4a",
+    },
+  },
+  {
+    id: "7",
     slug: "fp",
     nombre: "Frente Para la Victoria",
     sigla: "FP",
@@ -133,43 +150,7 @@ export const partidosPoliticos: PartidoPolitico[] = [
     },
   },
   {
-    id: "7",
-    slug: "mas-ipsp",
-    nombre: "Movimiento al Socialismo ",
-    sigla: "MAS-IPSP",
-    programas: "https://www.oep.org.bo/wp-content/uploads/2025/05/PROGRAMA-DE-GOBIERNO-MAS-IPSP.pdf",
-    presidente: "Eduardo Del Castillo",
-    vicepresidente: "Milan Berna",
-    imagenes: {
-      logo: "/binomios/mas/logo.png",
-      presidente: "/binomios/mas/presidente.png",
-      vicepresidente: "/binomios/mas/vicepresidente.png",
-    },
-    colores: {
-      primary: "#173983",
-      secondary: "#ffffff",
-    },
-  },
-  {
     id: "8",
-    slug: "morena",
-    nombre: "Movimiento de Regeneración Nacional",
-    sigla: "MORENA",
-    programas: "https://www.oep.org.bo/wp-content/uploads/2025/05/PROGRAMA-DE-GOBIERNO-MORENA.pdf",
-    presidente: "Eva Copa",
-    vicepresidente: "Jorge Richter",
-    imagenes: {
-      logo: "/binomios/morena/logo.png", // Agrega cuando tengas el logo
-      presidente: "/binomios/morena/presidente.png",
-      vicepresidente: "/binomios/morena/vicepresidente.png",
-    },
-    colores: {
-      primary: "#676767",
-      secondary: "#ff5900",
-    },
-  },
-  {
-    id: "9",
     slug: "un",
     nombre: "Unidad Nacional",
     sigla: "UN",
@@ -182,32 +163,46 @@ export const partidosPoliticos: PartidoPolitico[] = [
       vicepresidente: "/binomios/un/vicepresidente.png",
     },
     colores: {
-      primary: "#003b69",
+      primary: "#ffdf00",
       secondary: "#ffdf00",
     },
   },
   {
-    id: "10",
-    slug: "pdc",
-    nombre: "Partido Demócrata Cristiano",
-    sigla: "PDC",
-    programas: "https://www.oep.org.bo/wp-content/uploads/2025/05/PROGRAMA-DE-GOBIERNO-PARTIDO-DEMOCRATA-CRISTIANO.pdf",
-    presidente: "Rodrigo Paz Pereira",
-    vicepresidente: "Edman Lara",
+    id: "9",
+    slug: "ngp",
+    nombre: "Nueva Generación Política",
+    sigla: "NGP",
+    programas: "Programa de Gobierno de Nueva Generación Política",
+    presidente: "Jaime Dunn",
+    vicepresidente: "Edgar Uriona",
     imagenes: {
-      logo: "/binomios/pdc/logo.png", // Agrega cuando tengas el logo
-      presidente: "/binomios/pdc/presidente.png",
-      vicepresidente: "/binomios/pdc/vicepresidente.png",
+      logo: "/binomios/ngp/logo.png", // Agrega cuando tengas el logo
+      presidente: "/binomios/ngp/presidente.png",
+      vicepresidente: "/binomios/ngp/vicepresidente.png",
     },
     colores: {
-      primary: "#f83728",
-      secondary: "#005e4a",
+      primary: "#fb9c1c",
+      secondary: "#01bef2",
     },
   },
-  
-  
-  
-  
+  {
+    id: "10",
+    slug: "adn",
+    nombre: "Acción Democrática Nacionalista",
+    sigla: "ADN",
+    programas: "https://www.oep.org.bo/wp-content/uploads/2025/05/PROGRAMA-DE-GOBIERNO-ALIANZA-LIBERTAD-Y-DEMOCRACIA.pdf ",
+    presidente: "A confirmar",
+    vicepresidente: "A confirmar",
+    imagenes: {
+      logo: "/binomios/adn/logo.png", // Agrega cuando tengas el logo
+      presidente: "/binomios/adn/presidente.png",
+      vicepresidente: "/binomios/adn/vicepresidente.png",
+    },
+    colores: {
+      primary: "#ff030f",
+      secondary: "#000000",
+    },
+  },
 ];
 
 // Funciones auxiliares para trabajar con los datos

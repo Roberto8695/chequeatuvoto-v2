@@ -198,7 +198,6 @@ export default function Home() {
           <div className="max-w-screen-xl mx-auto">
             <FeaturesGrid features={features} />
             <AnimatedTimeline events={timelineEvents} />
-            <CardPartidos />
           </div>
         </div>
       )}

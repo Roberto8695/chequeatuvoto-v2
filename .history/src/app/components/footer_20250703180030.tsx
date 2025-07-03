@@ -46,11 +46,11 @@ export function Footer() {
             {/* Digital Democracy Initiative - Arriba */}
             <div className="mb-3">
               <Image
-                src="/imagenes2/IMAGENES PAGINA WEB/digital.png"
+                src="/imagenes2/IMAGENES PAGINA WEB/"
                 alt="Digital Democracy Initiative"
                 width={200}
                 height={40}
-                className="h-14 w-auto"
+                className="h-8 w-auto"
               />
             </div>
             {/* Otros logos en 3 columnas debajo */}
@@ -58,23 +58,23 @@ export function Footer() {
               <Image
                 src="/imagenes2/IMAGENES PAGINA WEB/chequea.png"
                 alt="Chequea Bolivia"
-                width={100}
-                height={60}
-                className="h-12 w-auto"
+                width={80}
+                height={40}
+                className="h-6 w-auto"
               />
               <Image
                 src="/imagenes2/IMAGENES PAGINA WEB/presente.png"
                 alt="Presente Bolivia"
-                width={100}
-                height={60}
-                className="h-12 w-auto"
+                width={80}
+                height={40}
+                className="h-6 w-auto"
               />
               <Image
-                src="/imagenes2/IMAGENES PAGINA WEB/civicus.png"
+                src="/imagenes2/IMAGENES PAGINA WEB/civicos.png"
                 alt="Civicus"
-                width={100}
-                height={60}
-                className="h-12 w-auto"
+                width={80}
+                height={40}
+                className="h-6 w-auto"
               />
             </div>
           </div>

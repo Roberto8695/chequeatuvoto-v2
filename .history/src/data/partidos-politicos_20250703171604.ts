@@ -182,7 +182,7 @@ export const partidosPoliticos: PartidoPolitico[] = [
       vicepresidente: "/binomios/un/vicepresidente.png",
     },
     colores: {
-      primary: "#003b69",
+      primary: "#ffdf00",
       secondary: "#ffdf00",
     },
   },

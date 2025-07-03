@@ -77,27 +77,8 @@ export const partidosPoliticos: PartidoPolitico[] = [
       secondary: "#ffffff",
     },
   },
-  
   {
-    id: "4",
-    slug: "ngp",
-    nombre: "Nueva Generación Política",
-    sigla: "NGP",
-    programas: "https://www.oep.org.bo/wp-content/uploads/2025/06/PROGRAMA-DE-GOBIERNO-NUEVA-GENERACION-PATRIOTICA_v4.pdf",
-    presidente: "Jaime Dunn",
-    vicepresidente: "Edgar Uriona",
-    imagenes: {
-      logo: "/binomios/ngp/logo.png", // Agrega cuando tengas el logo
-      presidente: "/binomios/ngp/presidente.png",
-      vicepresidente: "/binomios/ngp/vicepresidente.png",
-    },
-    colores: {
-      primary: "#fb9c1c",
-      secondary: "#01bef2",
-    },
-  },
-  {
-    id: "5",
+    id: "3",
     slug: "fri",
     nombre: "Frente Revolucionario de Izquierda",
     sigla: "FRI",
@@ -115,27 +96,9 @@ export const partidosPoliticos: PartidoPolitico[] = [
     },
   },
   {
-    id: "6",
-    slug: "fp",
-    nombre: "Frente Para la Victoria",
-    sigla: "FP",
-    programas: "https://www.oep.org.bo/wp-content/uploads/2025/06/PROGRAMA-DE-GOBIERNO-ALIANZA-LA-FUERZA-DEL-PUEBLO-1.pdf",
-    presidente: "Jhonny Fernández",
-    vicepresidente: "Felipe Quispe",
-    imagenes: {
-      logo: "/binomios/ucs/logo.png", // Agrega cuando tengas el logo
-      presidente: "/binomios/ucs/presidente.png",
-      vicepresidente: "/binomios/ucs/vicepresidente.png",
-    },
-    colores: {
-      primary: "#d19d03",
-      secondary: "#01a8ec",
-    },
-  },
-  {
-    id: "7",
+    id: "4",
     slug: "mas-ipsp",
-    nombre: "Movimiento al Socialismo ",
+    nombre: "Movimiento al Socialismo - Instrumento Político por la Soberanía de los Pueblos",
     sigla: "MAS-IPSP",
     programas: "https://www.oep.org.bo/wp-content/uploads/2025/05/PROGRAMA-DE-GOBIERNO-MAS-IPSP.pdf",
     presidente: "Eduardo Del Castillo",
@@ -151,7 +114,7 @@ export const partidosPoliticos: PartidoPolitico[] = [
     },
   },
   {
-    id: "8",
+    id: "5",
     slug: "morena",
     nombre: "Movimiento de Regeneración Nacional",
     sigla: "MORENA",
@@ -169,25 +132,7 @@ export const partidosPoliticos: PartidoPolitico[] = [
     },
   },
   {
-    id: "9",
-    slug: "un",
-    nombre: "Unidad Nacional",
-    sigla: "UN",
-    programas: "https://www.oep.org.bo/wp-content/uploads/2025/05/PROGRAMA-DE-GOBIERNO-ALIANZA-UNIDAD.pdf",
-    presidente: "Samuel Doria Medina",
-    vicepresidente: "José Luis Lupo",
-    imagenes: {
-      logo: "/binomios/un/logo.png", // Agrega cuando tengas el logo
-      presidente: "/binomios/un/presidente.png",
-      vicepresidente: "/binomios/un/vicepresidente.png",
-    },
-    colores: {
-      primary: "#003b69",
-      secondary: "#ffdf00",
-    },
-  },
-  {
-    id: "10",
+    id: "6",
     slug: "pdc",
     nombre: "Partido Demócrata Cristiano",
     sigla: "PDC",
@@ -204,9 +149,60 @@ export const partidosPoliticos: PartidoPolitico[] = [
       secondary: "#005e4a",
     },
   },
-  
-  
-  
+  {
+    id: "7",
+    slug: "fp",
+    nombre: "Frente Para la Victoria",
+    sigla: "FP",
+    programas: "https://www.oep.org.bo/wp-content/uploads/2025/06/PROGRAMA-DE-GOBIERNO-ALIANZA-LA-FUERZA-DEL-PUEBLO-1.pdf",
+    presidente: "Jhonny Fernández",
+    vicepresidente: "Felipe Quispe",
+    imagenes: {
+      logo: "/binomios/ucs/logo.png", // Agrega cuando tengas el logo
+      presidente: "/binomios/ucs/presidente.png",
+      vicepresidente: "/binomios/ucs/vicepresidente.png",
+    },
+    colores: {
+      primary: "#d19d03",
+      secondary: "#01a8ec",
+    },
+  },
+  {
+    id: "8",
+    slug: "un",
+    nombre: "Unidad Nacional",
+    sigla: "UN",
+    programas: "https://www.oep.org.bo/wp-content/uploads/2025/05/PROGRAMA-DE-GOBIERNO-ALIANZA-UNIDAD.pdf",
+    presidente: "Samuel Doria Medina",
+    vicepresidente: "José Luis Lupo",
+    imagenes: {
+      logo: "/binomios/un/logo.png", // Agrega cuando tengas el logo
+      presidente: "/binomios/un/presidente.png",
+      vicepresidente: "/binomios/un/vicepresidente.png",
+    },
+    colores: {
+      primary: "#ffdf00",
+      secondary: "#ffdf00",
+    },
+  },
+  {
+    id: "9",
+    slug: "ngp",
+    nombre: "Nueva Generación Política",
+    sigla: "NGP",
+    programas: "https://www.oep.org.bo/wp-content/uploads/2025/06/PROGRAMA-DE-GOBIERNO-NUEVA-GENERACION-PATRIOTICA_v4.pdf",
+    presidente: "Jaime Dunn",
+    vicepresidente: "Edgar Uriona",
+    imagenes: {
+      logo: "/binomios/ngp/logo.png", // Agrega cuando tengas el logo
+      presidente: "/binomios/ngp/presidente.png",
+      vicepresidente: "/binomios/ngp/vicepresidente.png",
+    },
+    colores: {
+      primary: "#fb9c1c",
+      secondary: "#01bef2",
+    },
+  },
   
 ];
 

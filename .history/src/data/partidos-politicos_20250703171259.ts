@@ -135,7 +135,7 @@ export const partidosPoliticos: PartidoPolitico[] = [
   {
     id: "7",
     slug: "mas-ipsp",
-    nombre: "Movimiento al Socialismo ",
+    nombre: "Movimiento al Socialismo - Instrumento Político por la Soberanía de los Pueblos",
     sigla: "MAS-IPSP",
     programas: "https://www.oep.org.bo/wp-content/uploads/2025/05/PROGRAMA-DE-GOBIERNO-MAS-IPSP.pdf",
     presidente: "Eduardo Del Castillo",
@@ -169,7 +169,7 @@ export const partidosPoliticos: PartidoPolitico[] = [
     },
   },
   {
-    id: "9",
+    id: "8",
     slug: "un",
     nombre: "Unidad Nacional",
     sigla: "UN",
@@ -182,12 +182,12 @@ export const partidosPoliticos: PartidoPolitico[] = [
       vicepresidente: "/binomios/un/vicepresidente.png",
     },
     colores: {
-      primary: "#003b69",
+      primary: "#ffdf00",
       secondary: "#ffdf00",
     },
   },
   {
-    id: "10",
+    id: "6",
     slug: "pdc",
     nombre: "Partido Demócrata Cristiano",
     sigla: "PDC",

@@ -198,7 +198,6 @@ export default function Home() {
           <div className="max-w-screen-xl mx-auto">
             <FeaturesGrid features={features} />
             <AnimatedTimeline events={timelineEvents} />
-            <CardPartidos />
           </div>
         </div>
       )}
@@ -234,11 +233,6 @@ export default function Home() {
                   contra ellos y ellas, y su recorrido político en general.
                 </h3>
                 <CardCandidatos/>
-              </div>
-              
-              {/* Sección de Partidos Políticos */}
-              <div id="political-parties" className="mt-32 sm:mt-20">
-                <CardPartidos />
               </div>
               
               
