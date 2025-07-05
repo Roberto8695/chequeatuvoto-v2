@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { User } from 'lucide-react';
+import { User, Info } from 'lucide-react';
 import { getPartidoBySlug, PartidoPolitico } from '@/data/partidos-politicos';
 import { perfilesCandidatos, PerfilCandidato } from '@/data/perfiles-candidatos';
 import { Badge } from '@/components/ui/badge';
@@ -277,21 +277,6 @@ export default function SectionCandidatos({ slug }: SectionCandidatosProps) {
           </svg>
         </button>
       </div>
-
-      {/* Modal de biografía */}
-      <Modal
-        isOpen={modalState.isOpen}
-        onClose={closeModal}
-        title={modalState.candidato ? `Biografía de ${modalState.candidato.nombre}` : ''}
-        maxWidth="4xl"
-      >
-        {modalState.candidato && (
-          <BiografiaCandidato
-            candidato={modalState.candidato}
-            partidoColor={partido?.colores?.primary}
-          />
-        )}
-      </Modal>
     </div>
   );
 }

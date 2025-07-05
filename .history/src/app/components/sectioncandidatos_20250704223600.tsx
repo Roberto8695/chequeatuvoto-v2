@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { User } from 'lucide-react';
+import { User, Info } from 'lucide-react';
 import { getPartidoBySlug, PartidoPolitico } from '@/data/partidos-politicos';
 import { perfilesCandidatos, PerfilCandidato } from '@/data/perfiles-candidatos';
 import { Badge } from '@/components/ui/badge';
@@ -216,21 +216,10 @@ export default function SectionCandidatos({ slug }: SectionCandidatosProps) {
                   {partido.vicepresidente}
                 </h2>
                 
-                <div className="flex flex-col items-center space-y-2">
+                <div className="flex justify-center">
                   <Badge className="bg-white/30 backdrop-blur-sm text-white border-0 text-xs sm:text-sm font-bold px-3 py-1 shadow-lg">
                   VICEPRESIDENTE
                   </Badge>
-                  
-                  {/* Botón de biografía */}
-                  {perfiles.vicepresidente && (
-                    <button
-                      onClick={() => openModal(perfiles.vicepresidente!, 'vicepresidente')}
-                      className="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-medium transition-all duration-300 hover:scale-105 shadow-lg flex items-center space-x-1"
-                    >
-                      <User className="w-3 h-3" />
-                      <span>Biografía</span>
-                    </button>
-                  )}
                 </div>
                 </div>
               </div>
@@ -277,21 +266,6 @@ export default function SectionCandidatos({ slug }: SectionCandidatosProps) {
           </svg>
         </button>
       </div>
-
-      {/* Modal de biografía */}
-      <Modal
-        isOpen={modalState.isOpen}
-        onClose={closeModal}
-        title={modalState.candidato ? `Biografía de ${modalState.candidato.nombre}` : ''}
-        maxWidth="4xl"
-      >
-        {modalState.candidato && (
-          <BiografiaCandidato
-            candidato={modalState.candidato}
-            partidoColor={partido?.colores?.primary}
-          />
-        )}
-      </Modal>
     </div>
   );
 }

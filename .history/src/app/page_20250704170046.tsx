@@ -226,7 +226,7 @@ export default function Home() {
               
               <div id="parties" className="mt-16 sm:mt-20">
                 <h2 className="text-3xl font-bold mb-6 text-center font-round">
-                  CANDIDATURAS
+                  CANDIDATu
                 </h2>
                
                 <h3 className="text-base mb-6 text-center">

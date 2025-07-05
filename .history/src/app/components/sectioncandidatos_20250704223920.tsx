@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { User } from 'lucide-react';
+import { User, Info } from 'lucide-react';
 import { getPartidoBySlug, PartidoPolitico } from '@/data/partidos-politicos';
 import { perfilesCandidatos, PerfilCandidato } from '@/data/perfiles-candidatos';
 import { Badge } from '@/components/ui/badge';
