@@ -144,7 +144,7 @@ export default function SectionCandidatos({ slug }: SectionCandidatosProps) {
               className="object-cover object-top"
               onError={(e) => {
                 const target = e.target as HTMLImageElement;
-                target.src = '/public/logo.svg'; // Fallback
+                target.src = '/logo3.svg'; // Fallback mejorado
               }}
               />
               
@@ -185,7 +185,7 @@ export default function SectionCandidatos({ slug }: SectionCandidatosProps) {
                   className="object-contain p-4 sm:p-6 md:p-8"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
-                    target.src = '/public/logo.svg'; // Fallback
+                    target.src = '/logo3.svg'; // Fallback mejorado
                   }}
                 />
                 {/* Efecto de brillo */}
@@ -206,7 +206,7 @@ export default function SectionCandidatos({ slug }: SectionCandidatosProps) {
                 className="object-cover object-top "
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
-                  target.src = '/public/logo.svg'; // Fallback
+                  target.src = '/logo3.svg'; // Fallback mejorado
                 }}
                 />
                 
