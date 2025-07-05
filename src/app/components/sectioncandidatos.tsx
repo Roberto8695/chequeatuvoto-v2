@@ -166,7 +166,7 @@ export default function SectionCandidatos({ slug }: SectionCandidatosProps) {
                     className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-4 py-2 rounded-full text-xs font-semibold transition-all duration-300 hover:scale-110 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 flex items-center space-x-2 border-2 border-white/30"
                   >
                     <User className="w-4 h-4" />
-                    <span>Ver Biografía</span>
+                    <span>Ver Perfil</span>
                   </button>
                 )}
               </div>
@@ -228,7 +228,7 @@ export default function SectionCandidatos({ slug }: SectionCandidatosProps) {
                       className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-4 py-2 rounded-full text-xs font-semibold transition-all duration-300 hover:scale-110 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 flex items-center space-x-2 border-2 border-white/30"
                     >
                       <User className="w-4 h-4" />
-                      <span>Ver Biografía</span>
+                      <span>Ver Perfil</span>
                     </button>
                   )}
                 </div>
