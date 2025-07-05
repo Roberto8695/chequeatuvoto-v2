@@ -155,18 +155,18 @@ export default function SectionCandidatos({ slug }: SectionCandidatosProps) {
               </h2>
               
               <div className="flex flex-col items-center space-y-2">
-                <Badge className="bg-white/30 backdrop-blur-sm text-white border-0 text-xs sm:text-sm font-bold px-3 py-1 shadow-lg">
-                PRESIDENTE
+                <Badge className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black border-0 text-xs sm:text-sm font-bold px-4 py-2 shadow-xl animate-pulse">
+                  PRESIDENTE
                 </Badge>
                 
                 {/* Botón de biografía */}
                 {perfiles.presidente && (
                   <button
                     onClick={() => openModal(perfiles.presidente!, 'presidente')}
-                    className="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-medium transition-all duration-300 hover:scale-105 shadow-lg flex items-center space-x-1"
+                    className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-4 py-2 rounded-full text-xs font-semibold transition-all duration-300 hover:scale-110 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 flex items-center space-x-2 border-2 border-white/30"
                   >
-                    <User className="w-3 h-3" />
-                    <span>Biografía</span>
+                    <User className="w-4 h-4" />
+                    <span>Ver Biografía</span>
                   </button>
                 )}
               </div>
@@ -217,18 +217,18 @@ export default function SectionCandidatos({ slug }: SectionCandidatosProps) {
                 </h2>
                 
                 <div className="flex flex-col items-center space-y-2">
-                  <Badge className="bg-white/30 backdrop-blur-sm text-white border-0 text-xs sm:text-sm font-bold px-3 py-1 shadow-lg">
-                  VICEPRESIDENTE
+                  <Badge className="bg-gradient-to-r from-blue-400 to-cyan-500 text-white border-0 text-xs sm:text-sm font-bold px-4 py-2 shadow-xl animate-pulse">
+                    VICEPRESIDENTE
                   </Badge>
                   
                   {/* Botón de biografía */}
                   {perfiles.vicepresidente && (
                     <button
                       onClick={() => openModal(perfiles.vicepresidente!, 'vicepresidente')}
-                      className="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-medium transition-all duration-300 hover:scale-105 shadow-lg flex items-center space-x-1"
+                      className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-4 py-2 rounded-full text-xs font-semibold transition-all duration-300 hover:scale-110 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 flex items-center space-x-2 border-2 border-white/30"
                     >
-                      <User className="w-3 h-3" />
-                      <span>Biografía</span>
+                      <User className="w-4 h-4" />
+                      <span>Ver Biografía</span>
                     </button>
                   )}
                 </div>
