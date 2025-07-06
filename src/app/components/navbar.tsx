@@ -72,14 +72,17 @@ export function Navbar() {
         </div>
       </div>
 
+      {/* Mobile Menu Overlay */}
+      <div className={`${isMenuOpen ? "block" : "hidden"} md:hidden fixed inset-0 z-40 bg-black/20 backdrop-blur-sm`} onClick={() => setIsMenuOpen(false)} />
+      
       {/* Mobile Menu */}
-      <div className={`${isMenuOpen ? "block" : "hidden"} md:hidden`}>
-        <div className="space-y-1 px-4 pb-3 pt-2 sm:px-6">
+      <div className={`${isMenuOpen ? "block" : "hidden"} md:hidden absolute top-full left-0 right-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/90 border-b border-border/40 shadow-lg`}>
+        <div className="space-y-1 px-4 pb-6 pt-4 sm:px-6">
           {navItems.map((item) => (
             <Link
               key={item.name}
               href={item.href}
-              className="block rounded-md px-3 py-2 text-base font-medium text-muted-foreground hover:bg-muted hover:text-foreground"
+              className="block rounded-md px-3 py-3 text-base font-medium text-muted-foreground hover:bg-muted hover:text-foreground transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               {item.name}

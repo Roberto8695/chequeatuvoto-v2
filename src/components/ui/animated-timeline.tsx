@@ -19,7 +19,8 @@ export default function AnimatedTimeline({ events }: AnimatedTimelineProps) {
   const [visibleItems, setVisibleItems] = useState<boolean[]>(new Array(events.length).fill(false))
   const [lineProgress, setLineProgress] = useState(0)
   const itemRefs = useRef<(HTMLDivElement | null)[]>([])
-  const lineRef = useRef<HTMLDivElement>(null)
+  const desktopLineRef = useRef<HTMLDivElement>(null)
+  const mobileLineRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const observerOptions = {
@@ -49,17 +50,26 @@ export default function AnimatedTimeline({ events }: AnimatedTimelineProps) {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (!lineRef.current) return
+      // Función para calcular el progreso de una línea
+      const calculateProgress = (lineElement: HTMLDivElement | null) => {
+        if (!lineElement) return 0
+        
+        const rect = lineElement.getBoundingClientRect()
+        const windowHeight = window.innerHeight
+        const elementTop = rect.top
+        const elementHeight = rect.height
 
-      const rect = lineRef.current.getBoundingClientRect()
-      const windowHeight = window.innerHeight
-      const elementTop = rect.top
-      const elementHeight = rect.height
+        return Math.max(0, Math.min(1, 
+          (windowHeight - elementTop) / (windowHeight + elementHeight)
+        ))
+      }
 
-      const progress = Math.max(0, Math.min(1, 
-        (windowHeight - elementTop) / (windowHeight + elementHeight)
-      ))
-
+      // Calcular progreso para ambas líneas
+      const desktopProgress = calculateProgress(desktopLineRef.current)
+      const mobileProgress = calculateProgress(mobileLineRef.current)
+      
+      // Usar el progreso apropiado según el dispositivo
+      const progress = window.innerWidth >= 1024 ? desktopProgress : mobileProgress
       setLineProgress(progress)
     }
 
@@ -151,7 +161,7 @@ export default function AnimatedTimeline({ events }: AnimatedTimelineProps) {
       {/* Timeline Container */}
       <div className="relative pt-8">        {/* Línea central para desktop */}
         <div 
-          ref={lineRef}
+          ref={desktopLineRef}
           className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-[#de2488]/20 to-[#00cfaf]/20 rounded-full overflow-hidden hidden lg:block"
           style={{ 
             height: 'calc(100% - 32px)',
@@ -169,6 +179,7 @@ export default function AnimatedTimeline({ events }: AnimatedTimelineProps) {
 
         {/* Línea izquierda para móvil */}
         <div 
+          ref={mobileLineRef}
           className="absolute left-8 w-1 bg-gradient-to-b from-[#de2488]/20 to-[#00cfaf]/20 rounded-full overflow-hidden lg:hidden"
           style={{ 
             height: 'calc(100% - 32px)',
@@ -221,9 +232,13 @@ export default function AnimatedTimeline({ events }: AnimatedTimelineProps) {
                         transitionDelay: `${index * 100}ms`
                       }}
                     >
-                      <div className="w-5 h-5">
-                        {getEventIcon(status)}
-                      </div>
+                      {isElectionDay(index) ? (
+                        <div className="text-xl flex items-center justify-center w-full h-full">🗳️</div>
+                      ) : (
+                        <div className="flex items-center justify-center w-full h-full">
+                          {getEventIcon(status)}
+                        </div>
+                      )}
                     </div>
                   </div>
                   
