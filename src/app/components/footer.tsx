@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import {FaCheck } from "react-icons/fa6"; // Location Icon
-import { FaTwitter,FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa"; // Social Icons
+import {FaCheck, FaFacebook } from "react-icons/fa6"; // Location Icon
+import { FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa"; // Social Icons
 
 const footerLinks = [
   { name: "Quienes somos", href: "/about" },
@@ -11,10 +11,10 @@ const footerLinks = [
 ];
 
 const socialLinks = [
-  { icon: FaTwitter, href: "https://twitter.com" },
-  { icon: FaYoutube, href: "https://discord.com" },
-  { icon: FaInstagram, href: "https://instagram.com" },
-  { icon: FaTiktok, href: "https://tiktok.com" },
+  { icon: FaFacebook, href: "https://www.facebook.com/ChequeaBolivia" },
+  { icon: FaYoutube, href: "https://www.youtube.com/@chequeabolivia547" },
+  { icon: FaInstagram, href: "https://www.instagram.com/chequeabolivia/" },
+  { icon: FaTiktok, href: "https://www.tiktok.com/@chequeabolivia" },
 ];
 
 export function Footer() {

@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowLeft, Instagram, Facebook, Youtube, ExternalLink } from "lucide-react"
+import { ArrowLeft, Instagram, Facebook, Youtube } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { motion } from "framer-motion"
@@ -28,13 +28,25 @@ const TikTok = () => (
 
 const socialLinks = [
   {
+    name: "Chequea Bolivia",
+    image: "/imagenes2/IMAGENES PAGINA WEB/chequea.png",
+    imageAlt: "Chequea Bolivia",
+    objectFit: "contain",
+    links: [
+      { platform: "Instagram", url: "https://www.instagram.com/chequeabolivia/", icon: Instagram },
+      { platform: "TikTok", url: "https://www.tiktok.com/@chequeabolivia", icon: TikTok },
+      { platform: "Facebook", url: "https://www.facebook.com/ChequeaBolivia", icon: Facebook },
+      { platform: "Youtube", url: "https://www.youtube.com/@chequeabolivia547", icon: Youtube },
+    ],
+  },
+  {
     name: "La Aparicio",
     image: "/imagenes2/IMAGENES PAGINA WEB/natalia aparicio.jpg",
     imageAlt: "La Aparicio",
     links: [
       { platform: "Instagram", url: "https://www.instagram.com/la.aparicioooo/", icon: Instagram },
       { platform: "TikTok", url: "https://www.tiktok.com/@la.apariciooo", icon: TikTok },
-      { platform: "Youtube", url: "https://www.youtube.com/@PresenteBolivia", icon: Youtube },
+      { platform: "Youtube", url: "https://www.youtube.com/@la.apariciooo", icon: Youtube },
     ],
   },
   {
@@ -44,27 +56,18 @@ const socialLinks = [
     links: [
       { platform: "Instagram", url: "https://www.instagram.com/presente.bo/", icon: Instagram },
       { platform: "TikTok", url: "https://www.tiktok.com/@presente.bo", icon: TikTok },
-      { platform: "Youtube", url: "https://www.youtube.com/@la.apariciooo", icon: Youtube },
+      { platform: "Youtube", url: "https://www.youtube.com/@PresenteBolivia", icon: Youtube },
     ],
   },
-  {
-    name: "Chequea Bolivia)",
-    image: "/imagenes2/IMAGENES PAGINA WEB/chequea Bolivia.png",
-    imageAlt: "Chequea Bolivia",
-    links: [
-      { platform: "Instagram", url: "https://www.instagram.com/chequeabolivia/", icon: Instagram },
-      { platform: "Facebook", url: "https://www.facebook.com/ChequeaBolivia", icon: Facebook },
-    ],
-  },
+  
 ]
 
 export default function AboutPage() {
   const [activeTab, setActiveTab] = useState("about")
-  const [scrollY, setScrollY] = useState(0)
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrollY(window.scrollY)
+      // Scroll handler can be used for future animations if needed
     }
 
     window.addEventListener("scroll", handleScroll)
@@ -103,7 +106,8 @@ export default function AboutPage() {
               }`}
               onClick={() => setActiveTab("about")}
             >
-              Nuestra Misión
+              ¿Quiénes somos?
+
               {activeTab === "about" && (
                 <motion.div
                   layoutId="activeTab"
@@ -138,60 +142,23 @@ export default function AboutPage() {
                 <CardContent className="p-6">
                   <div className="space-y-4">
                     <p className="text-lg">
-                      Somos una iniciativa apartidista sin fines lucrativos que busca brindar a la población información
-                      verificada de los candidatos, sus propuestas políticas, sus historiales. También herramientas para
-                      no caer en la desinformación, y por supuesto, información básica electoral como el calendario
-                      electoral y el marco normativo para las elecciones.
+                      Chequea Tu Voto es una campaña apartidista y sin fines de lucro que busca ayudarte a tomar decisiones informadas en tiempos electorales. Aquí encontrarás información verificada sobre candidatos, sus propuestas, sus trayectorias, así como herramientas para identificar y evitar la desinformación. También ponemos a tu disposición datos clave del proceso electoral como el calendario, las normas vigentes y otros recursos útiles.
+
                     </p>
                     <p className="text-lg">
-                      Creemos en el derecho de cada ciudadano y ciudadana a tomar decisiones informadas y sin
-                      manipulaciones. Entendemos que en nuestro mundo digital donde la información fluye a gran
-                      velocidad, <span className="font-semibold">Chequea Tu Voto</span> es una herramienta importante
-                      para ejercer este derecho.
+                      Esta campaña nació como una propuesta de Natalia y Gabriel (líder de Presente.bo) durante un bootcamp de sensibilización y capacitación realizado en Cochabamba, donde participaron 28 creadores de contenido comprometidos con frenar la desinformación en contextos electorales. Hoy, en alianza con ellos, impulsamos esta segunda versión de Chequea Tu Voto, ahora con un alcance más amplio, dirigido a toda la ciudadanía, porque creemos que votar es importante, pero votar informados lo es aún más.
+
                     </p>
-                    <p className="text-lg">Esperamos que esta página sea de utilidad, por favor dejen sus comentarios y sugerencias.</p>
+                    <p className="text-lg">En un mundo donde la información circula velozmente —y no siempre de forma confiable—, esta página se convierte en una herramienta para ejercer tu derecho al voto con libertad y conciencia.
+                    </p>
+                     <p className="text-lg">
+                      Esperamos que esta plataforma te sea útil
+                    </p>
                   </div>
                 </CardContent>
               </Card>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <motion.div
-                  style={{
-                    y: typeof window !== "undefined" ? (window.innerWidth > 768 ? scrollY * 0.1 : scrollY * 0.03) : 0,
-                    rotate: typeof window !== "undefined" ? (window.innerWidth > 768 ? scrollY * 0.02 : 0) : 0,
-                  }}
-                >
-                  <Card className="h-full transform transition-transform hover:scale-105 hover:shadow-lg">
-                    <CardContent className="p-6">
-                      <h3 className="text-xl font-semibold mb-3">Nuestra Visión</h3>
-                      <p>
-                        Aspiramos a una Bolivia donde cada ciudadano pueda ejercer su derecho al voto con pleno
-                        conocimiento y libertad, sin manipulaciones ni desinformación.
-                      </p>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-
-                <motion.div
-                  style={{
-                    y: typeof window !== "undefined" ? (window.innerWidth > 768 ? scrollY * -0.1 : scrollY * -0.03) : 0,
-                    rotate: typeof window !== "undefined" ? (window.innerWidth > 768 ? scrollY * -0.02 : 0) : 0,
-                  }}
-                >
-                  <Card className="h-full transform transition-transform hover:scale-105 hover:shadow-lg mt-8 md:mt-0 sm:mt-10">
-                    <CardContent className="p-6">
-                      <h3 className="text-xl font-semibold mb-3">Nuestros Valores</h3>
-                      <ul className="list-disc list-inside space-y-1">
-                        <li>Transparencia</li>
-                        <li>Imparcialidad</li>
-                        <li>Rigor informativo</li>
-                        <li>Compromiso democrático</li>
-                        <li>Servicio a la ciudadanía</li>
-                      </ul>
-                    </CardContent>
-                  </Card>
-                </motion.div>
-              </div>
+              
             </motion.div>
           )}
 
@@ -246,7 +213,7 @@ export default function AboutPage() {
                               src={org.image || "/placeholder.svg"}
                               alt={org.imageAlt}
                               fill
-                              className="object-cover"
+                              className="object-contain"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 hover:opacity-100 transition-opacity flex items-end">
                               <div className="p-4 text-white">
@@ -261,14 +228,7 @@ export default function AboutPage() {
                 ))}
               </div>
 
-              <div className="mt-8 text-center">
-                <Link href="/contact">
-                  <Button className="group">
-                    <span>Ir al Buzón de Sugerencias</span>
-                    <ExternalLink className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                  </Button>
-                </Link>
-              </div>
+              
             </motion.div>
           )}
         </div>
