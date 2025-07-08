@@ -27,12 +27,12 @@ export function Navbar() {
             <Image
               src="/logo3.svg"
               alt="Chequea tu Voto Logo"
-              width={120}
+              width={110}
               height={32}
-              className="h-auto w-[150px] object-contain transition-transform duration-300 group-hover:scale-105"
+              className="h-auto w-[140px] object-contain transition-transform duration-300 group-hover:scale-105"
               priority
             />            {/* Underline con colores de Bolivia */}
-            <div className="flex w-[120px] h-[5px] -mt-3 rounded-full overflow-hidden shadow-md border border-gray-200/50">
+            <div className="flex w-[120px] h-[5px] -mt-7 rounded-full overflow-hidden shadow-md border border-gray-200/50">
               <div className="flex-1 bg-red-600"></div>
               <div className="flex-1 bg-yellow-500"></div>
               <div className="flex-1 bg-green-600"></div>

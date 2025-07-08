@@ -96,7 +96,7 @@ export default function SectionCandidatos({ slug }: SectionCandidatosProps) {
 
   return (
     <div 
-      className="h-screen relative  overflow-hidden flex flex-col"
+      className="min-h-screen relative overflow-hidden flex flex-col pt-14 xs:pt-15 sm:pt-18 lg:pt-20"
       style={gradientStyle}
     >
       {/* Efectos de fondo */}
@@ -109,80 +109,80 @@ export default function SectionCandidatos({ slug }: SectionCandidatosProps) {
       <div className="absolute bottom-20 left-1/4 w-12 h-12 bg-white/25 rounded-full animate-pulse delay-700"></div>
       
       {/* Contenido principal */}
-      <div className={`relative -mt-12 z-10 container mx-auto px-4 py-4 flex-1 flex flex-col justify-center transition-all duration-1000 transform ${
+      <div className={`relative z-10 container mx-auto px-4 py-2 flex-1 flex flex-col justify-center transition-all duration-1000 transform ${
         isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
       }`}>
         
-        {/* Header con nombre del partido */}
-        <div className={`text-center mb-4 sm:mb-6 transition-all duration-1000 delay-200 transform ${
+        {/* Header con nombre del partido - optimizado para móvil */}
+        <div className={`text-center mb-2 sm:mb-3 md:mb-4 transition-all duration-1000 delay-200 transform ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white drop-shadow-lg mb-1">
+          <h1 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white drop-shadow-lg mb-1 px-2">
             {partido.sigla}
           </h1>
-          <p className="text-xs sm:text-sm md:text-base text-white/90 max-w-4xl mx-auto leading-relaxed px-4">
+          <p className="text-xs sm:text-sm md:text-base text-white/90 max-w-4xl mx-auto leading-relaxed px-3 sm:px-4">
             {partido.nombre}
           </p>
         </div>
 
-        {/* Fila principal: Presidente, Logo, Vicepresidente */}
+        {/* Fila principal: Layout móvil vertical optimizado */}
         <div className={`max-w-full mx-auto transition-all duration-1000 delay-400 transform ${
           isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
         }`}>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 lg:gap-8 items-end px-4 sm:px-0">
-            
-            {/* Presidente */}
-            <div className="group text-center order-2 sm:order-1">
+          {/* Layout móvil: vertical centrado */}
+          <div className="sm:hidden flex flex-col items-center space-y-3">
+            {/* Presidente - arriba */}
+            <div className="group text-center">
               <div className="relative">
-              {/* Foto del presidente sin marco circular */}
-              <div className="relative w-40 h-56 sm:w-44 sm:h-60 md:w-48 md:h-64 lg:w-64 lg:h-96 mx-auto overflow-hidden shadow-2xl group-hover:shadow-3xl transition-all duration-500 transform group-hover:scale-105 rounded-2xl">
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent z-10 rounded-2xl"></div>
-              <Image
-              src={partido.imagenes.presidente}
-              alt={partido.presidente}
-              fill
-              className="object-cover object-top"
-              onError={(e) => {
-                const target = e.target as HTMLImageElement;
-                target.src = '/logo3.svg'; // Fallback mejorado
-              }}
-              />
-              
-              {/* Nombre del presidente y badge dentro de la imagen */}
-              <div className="absolute bottom-0 left-0 right-0 p-3 z-20 rounded-b-2xl">
-              <h2 className="text-base sm:text-lg md:text-xl font-bold text-white mb-2 drop-shadow-lg">
-                {partido.presidente}
-              </h2>
-              
-              <div className="flex flex-col items-center space-y-2">
-                <Badge className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black border-0 text-xs sm:text-sm font-bold px-4 py-2 shadow-xl animate-pulse">
-                  PRESIDENTE
-                </Badge>
-                
-                {/* Botón de biografía */}
-                {perfiles.presidente && (
-                  <button
-                    onClick={() => openModal(perfiles.presidente!, 'presidente')}
-                    className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-4 py-2 rounded-full text-xs font-semibold transition-all duration-300 hover:scale-110 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 flex items-center space-x-2 border-2 border-white/30"
-                  >
-                    <User className="w-4 h-4" />
-                    <span>Ver Perfil</span>
-                  </button>
-                )}
-              </div>
-              </div>
-              </div>
+                {/* Foto del presidente optimizada para móvil */}
+                <div className="relative w-36 h-48 xs:w-40 xs:h-52 mx-auto overflow-hidden shadow-2xl group-hover:shadow-3xl transition-all duration-500 transform group-hover:scale-105 rounded-2xl">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent z-10 rounded-2xl"></div>
+                  <Image
+                    src={partido.imagenes.presidente}
+                    alt={partido.presidente}
+                    fill
+                    className="object-cover object-top"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.src = '/logo3.svg'; // Fallback mejorado
+                    }}
+                  />
+                  
+                  {/* Nombre del presidente y badge dentro de la imagen */}
+                  <div className="absolute bottom-0 left-0 right-0 p-2 z-20 rounded-b-2xl">
+                    <h2 className="text-sm xs:text-base font-bold text-white mb-1 drop-shadow-lg leading-tight">
+                      {partido.presidente}
+                    </h2>
+                    
+                    <div className="flex flex-col items-center space-y-1">
+                      <Badge className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black border-0 text-xs font-bold px-2 xs:px-3 py-1 shadow-xl animate-pulse">
+                        PRESIDENTE
+                      </Badge>
+                      
+                      {/* Botón de biografía optimizado */}
+                      {perfiles.presidente && (
+                        <button
+                          onClick={() => openModal(perfiles.presidente!, 'presidente')}
+                          className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-2 xs:px-3 py-1 rounded-full text-xs font-semibold transition-all duration-300 hover:scale-110 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 flex items-center space-x-1 border-2 border-white/30"
+                        >
+                          <User className="w-3 h-3" />
+                          <span>Ver Perfil</span>
+                        </button>
+                      )}
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
-            {/* Logo del partido - centro - más grande */}
-            <div className="group text-center order-1 sm:order-2">
-              <div className="relative w-52 h-68 sm:w-56 sm:h-72 md:w-64 md:h-80 lg:w-72 lg:h-90 mx-auto overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:scale-105 rounded-2xl bg-white/20 backdrop-blur-sm">
+            {/* Logo del partido - centro */}
+            <div className="group text-center">
+              <div className="relative w-32 h-40 xs:w-36 xs:h-44 mx-auto overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:scale-105 rounded-2xl bg-white/20 backdrop-blur-sm">
                 <Image
                   src={partido.imagenes.logo}
                   alt={`Logo ${partido.nombre}`}
                   fill
-                  className="object-contain p-4 sm:p-6 md:p-8"
+                  className="object-contain p-3 xs:p-4"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     target.src = '/logo3.svg'; // Fallback mejorado
@@ -193,47 +193,156 @@ export default function SectionCandidatos({ slug }: SectionCandidatosProps) {
               </div>
             </div>
 
-            {/* Vicepresidente */}
-            <div className="group text-center order-3 sm:order-3">
+            {/* Vicepresidente - abajo */}
+            <div className="group text-center">
               <div className="relative">
-              {/* Foto del vicepresidente sin marco circular */}
-              <div className="relative w-40 h-56 sm:w-44 sm:h-60 md:w-48 md:h-64 lg:w-64 lg:h-96 mx-auto overflow-hidden shadow-2xl group-hover:shadow-3xl transition-all duration-500 transform group-hover:scale-105 rounded-2xl">
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent z-10"></div>
-                <Image
-                src={partido.imagenes.vicepresidente}
-                alt={partido.vicepresidente}
-                fill
-                className="object-cover object-top "
-                onError={(e) => {
-                  const target = e.target as HTMLImageElement;
-                  target.src = '/logo3.svg'; // Fallback mejorado
-                }}
-                />
-                
-                {/* Nombre del vicepresidente y badge dentro de la imagen */}
-                <div className="absolute bottom-0 left-0 right-0 p-3 z-20">
-                <h2 className="text-base sm:text-lg md:text-xl font-bold text-white mb-2 drop-shadow-lg">
-                  {partido.vicepresidente}
-                </h2>
-                
-                <div className="flex flex-col items-center space-y-2">
-                  <Badge className="bg-gradient-to-r from-blue-400 to-cyan-500 text-white border-0 text-xs sm:text-sm font-bold px-4 py-2 shadow-xl animate-pulse">
-                    VICEPRESIDENTE
-                  </Badge>
+                {/* Foto del vicepresidente optimizada para móvil */}
+                <div className="relative w-36 h-48 xs:w-40 xs:h-52 mx-auto overflow-hidden shadow-2xl group-hover:shadow-3xl transition-all duration-500 transform group-hover:scale-105 rounded-2xl">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent z-10"></div>
+                  <Image
+                    src={partido.imagenes.vicepresidente}
+                    alt={partido.vicepresidente}
+                    fill
+                    className="object-cover object-top"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.src = '/logo3.svg'; // Fallback mejorado
+                    }}
+                  />
                   
-                  {/* Botón de biografía */}
-                  {perfiles.vicepresidente && (
-                    <button
-                      onClick={() => openModal(perfiles.vicepresidente!, 'vicepresidente')}
-                      className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-4 py-2 rounded-full text-xs font-semibold transition-all duration-300 hover:scale-110 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 flex items-center space-x-2 border-2 border-white/30"
-                    >
-                      <User className="w-4 h-4" />
-                      <span>Ver Perfil</span>
-                    </button>
-                  )}
-                </div>
+                  {/* Nombre del vicepresidente y badge dentro de la imagen */}
+                  <div className="absolute bottom-0 left-0 right-0 p-2 z-20">
+                    <h2 className="text-sm xs:text-base font-bold text-white mb-1 drop-shadow-lg leading-tight">
+                      {partido.vicepresidente}
+                    </h2>
+                    
+                    <div className="flex flex-col items-center space-y-1">
+                      <Badge className="bg-gradient-to-r from-blue-400 to-cyan-500 text-white border-0 text-xs font-bold px-2 xs:px-3 py-1 shadow-xl animate-pulse">
+                        VICEPRESIDENTE
+                      </Badge>
+                      
+                      {/* Botón de biografía optimizado */}
+                      {perfiles.vicepresidente && (
+                        <button
+                          onClick={() => openModal(perfiles.vicepresidente!, 'vicepresidente')}
+                          className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-2 xs:px-3 py-1 rounded-full text-xs font-semibold transition-all duration-300 hover:scale-110 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 flex items-center space-x-1 border-2 border-white/30"
+                        >
+                          <User className="w-3 h-3" />
+                          <span>Ver Perfil</span>
+                        </button>
+                      )}
+                    </div>
+                  </div>
                 </div>
               </div>
+            </div>
+          </div>
+
+          {/* Layout desktop: horizontal (grid de 3 columnas) */}
+          <div className="hidden sm:grid sm:grid-cols-3 gap-3 md:gap-4 lg:gap-6 items-end px-4 lg:px-0">
+            {/* Presidente - desktop */}
+            <div className="group text-center">
+              <div className="relative">
+                {/* Foto del presidente para desktop */}
+                <div className="relative w-44 h-60 md:w-48 md:h-64 lg:w-64 lg:h-96 mx-auto overflow-hidden shadow-2xl group-hover:shadow-3xl transition-all duration-500 transform group-hover:scale-105 rounded-2xl">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent z-10 rounded-2xl"></div>
+                  <Image
+                    src={partido.imagenes.presidente}
+                    alt={partido.presidente}
+                    fill
+                    className="object-cover object-top"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.src = '/logo3.svg'; // Fallback mejorado
+                    }}
+                  />
+                  
+                  {/* Nombre del presidente y badge dentro de la imagen - desktop */}
+                  <div className="absolute bottom-0 left-0 right-0 p-3 z-20 rounded-b-2xl">
+                    <h2 className="text-lg md:text-xl font-bold text-white mb-2 drop-shadow-lg leading-tight">
+                      {partido.presidente}
+                    </h2>
+                    
+                    <div className="flex flex-col items-center space-y-2">
+                      <Badge className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black border-0 text-sm font-bold px-4 py-2 shadow-xl animate-pulse">
+                        PRESIDENTE
+                      </Badge>
+                      
+                      {/* Botón de biografía para desktop */}
+                      {perfiles.presidente && (
+                        <button
+                          onClick={() => openModal(perfiles.presidente!, 'presidente')}
+                          className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-4 py-2 rounded-full text-xs font-semibold transition-all duration-300 hover:scale-110 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 flex items-center space-x-2 border-2 border-white/30"
+                        >
+                          <User className="w-4 h-4" />
+                          <span>Ver Perfil</span>
+                        </button>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Logo del partido - centro - desktop */}
+            <div className="group text-center">
+              <div className="relative w-56 h-72 md:w-64 md:h-80 lg:w-72 lg:h-90 mx-auto overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500 transform hover:scale-105 rounded-2xl bg-white/20 backdrop-blur-sm">
+                <Image
+                  src={partido.imagenes.logo}
+                  alt={`Logo ${partido.nombre}`}
+                  fill
+                  className="object-contain p-6 md:p-8"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.src = '/logo3.svg'; // Fallback mejorado
+                  }}
+                />
+                {/* Efecto de brillo */}
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-white/10 via-transparent to-transparent"></div>
+              </div>
+            </div>
+
+            {/* Vicepresidente - desktop */}
+            <div className="group text-center">
+              <div className="relative">
+                {/* Foto del vicepresidente para desktop */}
+                <div className="relative w-44 h-60 md:w-48 md:h-64 lg:w-64 lg:h-96 mx-auto overflow-hidden shadow-2xl group-hover:shadow-3xl transition-all duration-500 transform group-hover:scale-105 rounded-2xl">
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent z-10"></div>
+                  <Image
+                    src={partido.imagenes.vicepresidente}
+                    alt={partido.vicepresidente}
+                    fill
+                    className="object-cover object-top"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.src = '/logo3.svg'; // Fallback mejorado
+                    }}
+                  />
+                  
+                  {/* Nombre del vicepresidente y badge dentro de la imagen - desktop */}
+                  <div className="absolute bottom-0 left-0 right-0 p-3 z-20">
+                    <h2 className="text-lg md:text-xl font-bold text-white mb-2 drop-shadow-lg leading-tight">
+                      {partido.vicepresidente}
+                    </h2>
+                    
+                    <div className="flex flex-col items-center space-y-2">
+                      <Badge className="bg-gradient-to-r from-blue-400 to-cyan-500 text-white border-0 text-sm font-bold px-4 py-2 shadow-xl animate-pulse">
+                        VICEPRESIDENTE
+                      </Badge>
+                      
+                      {/* Botón de biografía para desktop */}
+                      {perfiles.vicepresidente && (
+                        <button
+                          onClick={() => openModal(perfiles.vicepresidente!, 'vicepresidente')}
+                          className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-4 py-2 rounded-full text-xs font-semibold transition-all duration-300 hover:scale-110 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 flex items-center space-x-2 border-2 border-white/30"
+                        >
+                          <User className="w-4 h-4" />
+                          <span>Ver Perfil</span>
+                        </button>
+                      )}
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -241,7 +350,7 @@ export default function SectionCandidatos({ slug }: SectionCandidatosProps) {
 
         {/* Información adicional - muy compacta */}
         {(partido.descripcion || partido.sitioWeb) && (
-          <div className={`text-center mt-3 transition-all duration-1000 delay-600 transform ${
+          <div className={`text-center mt-2 transition-all duration-1000 delay-600 transform ${
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
           }`}>
             {partido.descripcion && (
@@ -266,18 +375,18 @@ export default function SectionCandidatos({ slug }: SectionCandidatosProps) {
         )}
       </div>
 
-      {/* Botón de regreso */}
-      <div className="absolute top-8 left-8 z-20">
+      {/* Botón de regreso - ajustado para no quedar detrás del navbar */}
+      <div className="absolute top-16 xs:top-17 sm:top-20 lg:top-22 left-4 sm:left-8 z-20">
         <button
           onClick={() => window.history.back()}
-          className="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white p-3 rounded-full transition-all duration-300 hover:scale-110 shadow-lg"
+          className="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white p-2 sm:p-3 rounded-full transition-all duration-300 hover:scale-110 shadow-lg"
         >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
         </button>
       </div>
-
+      
       {/* Modal de biografía */}
       <Modal
         isOpen={modalState.isOpen}

@@ -129,6 +129,20 @@ export default function AboutPage() {
                 ></motion.div>
               )}
             </button>
+            <button
+              className={`px-4 py-2 font-medium text-sm transition-colors relative ${
+                activeTab === "policy" ? "text-primary" : "text-gray-500 hover:text-gray-700"
+              }`}
+              onClick={() => setActiveTab("policy")}
+            >
+              Política
+              {activeTab === "policy" && (
+                <motion.div
+                  layoutId="activeTab"
+                  className="absolute bottom-0 left-0 right-0 h-0.5 bg-primary"
+                ></motion.div>
+              )}
+            </button>
           </div>
 
           {activeTab === "about" && (
@@ -146,7 +160,7 @@ export default function AboutPage() {
 
                     </p>
                     <p className="text-lg">
-                      Esta campaña nació como una propuesta de Natalia y Gabriel (líder de Presente.bo) durante un bootcamp de sensibilización y capacitación realizado en Cochabamba, donde participaron 28 creadores de contenido comprometidos con frenar la desinformación en contextos electorales. Hoy, en alianza con ellos, impulsamos esta segunda versión de Chequea Tu Voto, ahora con un alcance más amplio, dirigido a toda la ciudadanía, porque creemos que votar es importante, pero votar informados lo es aún más.
+                      Esta campaña nació como una propuesta de Natalia y Gabriel (miembro de Presente.bo) durante un bootcamp de sensibilización y capacitación realizado en Cochabamba, donde participaron 28 creadores de contenido comprometidos con frenar la desinformación en contextos electorales. Hoy, en alianza con ellos, impulsamos esta segunda versión de Chequea Tu Voto, ahora con un alcance más amplio, dirigido a toda la ciudadanía, porque creemos que votar es importante, pero votar informados lo es aún más.
 
                     </p>
                     <p className="text-lg">En un mundo donde la información circula velozmente —y no siempre de forma confiable—, esta página se convierte en una herramienta para ejercer tu derecho al voto con libertad y conciencia.
@@ -229,6 +243,29 @@ export default function AboutPage() {
               </div>
 
               
+            </motion.div>
+          )}
+
+          {activeTab === "policy" && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.3 }}
+              className="space-y-6"
+            >
+              <Card className="overflow-hidden">
+                <CardContent className="p-6">
+                  <h2 className="text-2xl font-semibold mb-6">Política de corrección de datos</h2>
+                  <div className="space-y-4">
+                    <p className="text-lg leading-relaxed">
+                      En este portal web asumimos con responsabilidad el compromiso de brindar información verificada y precisa. En caso de detectarse algún error nos comprometemos a revisar la información de forma inmediata, corregirla con transparencia y dejar constancia de la rectificación para mantener la confianza y el rigor informativo que nos caracteriza.
+                    </p>
+                    <p className="text-lg leading-relaxed">
+                      Si nuestros usuarios, hombres y mujeres, consideran que alguna de nuestras publicaciones tiene errores o es incompleta, pueden contactarnos a través de nuestras redes sociales o la línea de WhatsApp <a  href="https://wa.me/59178370590" target="_blank" rel="noopener noreferrer"><span className="font-semibold text-red text-primary">78370590</span></a>. El único requisito que exigimos es que el usuario se identifique plenamente.
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
             </motion.div>
           )}
         </div>
