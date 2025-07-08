@@ -12,6 +12,9 @@ import {
 import { Button } from "@/components/ui/button";
 import { CardCandidatos } from "./components/card-candidatos";
 import { CardPartidos } from "./components/card-partidos";
+import ContentFakeNews from "./components/content-fake";
+import AvoidSharingSection from "./components/avoid-sharing";
+import SurveyDetectionSection from "./components/survey-detection";
 import HeroSection from "@/components/ui/hero-section";
 import FeaturesGrid from "@/components/ui/features-grid";
 import AnimatedTimeline from "@/components/ui/animated-timeline";
@@ -137,7 +140,7 @@ const timelineEvents = [
     date: "19 de mayo",
     title: "Publicación de lista de entidades habilitadas para estudios de opinión",
     description:
-      "Publicación de lista de empresas especializadas de opinión pública, medios de comunicación, instituciones académicas y cualquier otra entidad habilitada por el Tribunal Supremo Electoral o los Tribunales Electorales Departamentales para realizar estudios de opinión en materia electoral..",
+      "Publicación de lista de entidades habilitadas por el Tribunal Supremo Electoral para realizar estudios de opinión en materia electoral. ",
     detailsUrl: "https://www.oep.org.bo/wp-content/uploads/2025/05/08-05-2025-Actividad-16_97.pdf"
   },
   {
@@ -199,6 +202,9 @@ export default function Home() {
             <FeaturesGrid features={features} />
             <AnimatedTimeline events={timelineEvents} />
             <CardPartidos />
+            <ContentFakeNews />
+            <AvoidSharingSection />
+            <SurveyDetectionSection />
           </div>
         </div>
       )}
@@ -241,7 +247,20 @@ export default function Home() {
                 <CardPartidos />
               </div>
               
+              {/* Sección de Identificación de Noticias Falsas */}
+              <div id="fake-news" className="mt-32 sm:mt-20">
+                <ContentFakeNews />
+              </div>
               
+              {/* Sección de Evitar Compartir */}
+              <div id="avoid-sharing" className="mt-32 sm:mt-20">
+                <AvoidSharingSection />
+              </div>
+              
+              {/* Sección de Detección de Encuestas Falsas */}
+              <div id="survey-detection" className="mt-32 sm:mt-20">
+                <SurveyDetectionSection />
+              </div>
               
               <div className="mt-16 text-center">
                 <Button

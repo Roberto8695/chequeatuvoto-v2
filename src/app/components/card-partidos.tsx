@@ -14,7 +14,7 @@ export function CardPartidos() {
         <div className="h-2 rounded-full overflow-hidden flex shadow-lg mx-auto max-w-md mb-8 animate-pulse">
           <div className="flex-1 bg-gradient-to-r from-[#de2488] to-[#00cfaf]"></div>
         </div>
-        <h2 className="text-3xl lg:text-4xl font-bold text-black mb-4">
+        <h2 className="text-3xl lg:text-4xl font-bold font-round text-black mb-4">
           PARTIDOS POLÍTICOS Y ALIANZAS
         </h2>
         <p className="text-xl text-gray-700 max-w-3xl mx-auto font-medium">

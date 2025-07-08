@@ -21,9 +21,9 @@ export function CardCandidatos() {
       slug: "apb-sumate",
     },
     {
-      title: "Jaime Dunn",
+      title: "Por confirmar",
       team: "NGP",
-      src: "/imagenes2/IMAGENES PAGINA WEB/jaime-dunn.jpg",
+      src: "/imagenes2/IMAGENES PAGINA WEB/proximamente-extra.jpg",
       slug: "ngp",
     },
     {

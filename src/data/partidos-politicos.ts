@@ -43,7 +43,7 @@ export const partidosPoliticos: PartidoPolitico[] = [
   },
   {
     id: "2",
-    slug: "adn",
+    slug: "proximamente",
     nombre: "Acción Democrática Nacionalista",
     sigla: "ADN",
     programas: "https://www.oep.org.bo/wp-content/uploads/2025/05/PROGRAMA-DE-GOBIERNO-LIBERTAD-Y-PROGRESO-ADN.pdf ",
@@ -80,16 +80,16 @@ export const partidosPoliticos: PartidoPolitico[] = [
   
   {
     id: "4",
-    slug: "ngp",
+    slug: "proximamente",
     nombre: "Nueva Generación Política",
     sigla: "NGP",
     programas: "https://www.oep.org.bo/wp-content/uploads/2025/06/PROGRAMA-DE-GOBIERNO-NUEVA-GENERACION-PATRIOTICA_v4.pdf",
-    presidente: "Jaime Dunn",
-    vicepresidente: "Edgar Uriona",
+    presidente: "Pendiente",
+    vicepresidente: "Pendiente",
     imagenes: {
       logo: "/binomios/ngp/logo.png", // Agrega cuando tengas el logo
-      presidente: "/binomios/ngp/presidente.png",
-      vicepresidente: "/binomios/ngp/vicepresidente.png",
+      presidente: "/imagenes2/IMAGENES PAGINA WEB/proximamente-extra.jpg",
+      vicepresidente: "/imagenes2/IMAGENES PAGINA WEB/proximamente-extra.jpg",
     },
     colores: {
       primary: "#fb9c1c",
