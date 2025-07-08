@@ -274,44 +274,7 @@ export default function SurveyDetectionSection() {
         </div>
       </div>
 
-      {/* Sección final compacta */}
-      <div className="mt-8 text-center relative">
-        <div className="relative p-6 rounded-2xl backdrop-blur-sm border border-white/20 overflow-hidden">
-          {/* Background sutil */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#de2487]/10 via-transparent to-[#04cfaf]/10"></div>
-          
-          {/* Contenido compacto */}
-          <div className="relative z-10">
-            <div className="flex justify-center items-center space-x-3 mb-4">
-              <div className="text-3xl">🔍</div>
-              <div className="text-3xl">⚠️</div>
-              <div className="text-3xl">✅</div>
-            </div>
-            
-            <h3 className="text-2xl lg:text-3xl font-black text-white mb-4">
-              ¡VERIFICA ANTES DE CREER!
-            </h3>
-            
-            <p className="text-sm lg:text-base text-white/90 max-w-3xl mx-auto leading-relaxed mb-6">
-              No permitas que la desinformación influya en tu voto. 
-              <span className="font-bold bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">
-                TÚ TIENES EL PODER
-              </span> de verificar la verdad.
-            </p>
-
-            {/* Botones compactos */}
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
-              <button className="px-6 py-3 bg-gradient-to-r from-[#de2487] to-pink-600 text-white rounded-full font-bold text-sm shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
-                🛡️ VERIFICAR AHORA
-              </button>
-              
-              <button className="px-6 py-3 bg-gradient-to-r from-[#04cfaf] to-teal-600 text-white rounded-full font-bold text-sm shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
-                📢 REPORTAR FRAUDE
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+      
 
       {/* Estilos CSS adicionales */}
       <style jsx>{`
