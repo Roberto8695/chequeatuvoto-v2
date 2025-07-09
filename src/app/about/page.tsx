@@ -40,7 +40,7 @@ const socialLinks = [
     ],
   },
   {
-    name: "La Aparicio",
+    name: "Natalia Aparicio",
     image: "/imagenes2/IMAGENES PAGINA WEB/natalia aparicio.jpg",
     imageAlt: "La Aparicio",
     links: [

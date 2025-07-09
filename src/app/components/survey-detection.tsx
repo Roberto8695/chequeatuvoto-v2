@@ -196,7 +196,14 @@ export default function SurveyDetectionSection() {
 
                       {/* Partículas orbitales mejoradas */}
                       <div className="absolute inset-0">
-                        {[...Array(6)].map((_, i) => (
+                        {[
+                          { top: '65%', left: '90%', delay: '0ms' },
+                          { top: '20%', left: '80%', delay: '200ms' },
+                          { top: '10%', left: '50%', delay: '400ms' },
+                          { top: '20%', left: '20%', delay: '600ms' },
+                          { top: '65%', left: '10%', delay: '800ms' },
+                          { top: '80%', left: '50%', delay: '1000ms' }
+                        ].map((particle, i) => (
                           <div
                             key={i}
                             className={`
@@ -205,9 +212,9 @@ export default function SurveyDetectionSection() {
                             `}
                             style={{
                               backgroundColor: rule.color,
-                              top: `${30 + Math.sin(i * 60 * Math.PI / 180) * 35}%`,
-                              left: `${50 + Math.cos(i * 60 * Math.PI / 180) * 40}%`,
-                              animationDelay: `${i * 200}ms`,
+                              top: particle.top,
+                              left: particle.left,
+                              animationDelay: particle.delay,
                               boxShadow: `0 0 10px ${rule.color}`
                             }}
                           />
