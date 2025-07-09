@@ -21,7 +21,7 @@ export function CardCandidatos() {
       slug: "apb-sumate",
     },
     {
-      title: "Decidio No Participar",
+      title: "Decidió No Participar",
       team: "NGP",
       src: "/imagenes2/IMAGENES PAGINA WEB/ngp-noparticipa.webp",
       slug: "ngp",

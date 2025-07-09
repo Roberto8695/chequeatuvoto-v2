@@ -38,7 +38,7 @@ const features = [
       "El OEP no brinda información digerible ni en medios de comunicación abiertos.",
     ],
     icon: Vote,
-    image: "/imagenes2/IMAGENES PAGINA WEB/bg-1.jpg",
+    image: "/imagenes2/IMAGENES PAGINA WEB/bg-1.webp",
     color: "bg-blue-50",
   },
   {
@@ -59,7 +59,7 @@ const features = [
       "Algún miembro del binomio ha cambiado de partido o postura de manera oportunista durante su carrera política.",
     ],
     icon: History,
-    image: "/imagenes2/IMAGENES PAGINA WEB/candidatos-bg.png",
+    image: "/imagenes2/IMAGENES PAGINA WEB/candidatos-bg.webp",
     color: "bg-amber-50",
   },
   {
@@ -95,7 +95,7 @@ const features = [
       "Solo existe información suya en forma de propaganda política.",
     ],
     icon: UserCheck,
-    image: "/imagenes2/IMAGENES PAGINA WEB/parlamentario.png",
+    image: "/imagenes2/IMAGENES PAGINA WEB/parlamentario.webp",
     color: "bg-green-50",
   },
 ];
