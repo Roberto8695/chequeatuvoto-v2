@@ -43,16 +43,16 @@ export const partidosPoliticos: PartidoPolitico[] = [
   },
   {
     id: "2",
-    slug: "proximamente",
+    slug: "adn",
     nombre: "Acción Democrática Nacionalista",
     sigla: "ADN",
     programas: "https://www.oep.org.bo/wp-content/uploads/2025/05/PROGRAMA-DE-GOBIERNO-LIBERTAD-Y-PROGRESO-ADN.pdf ",
     presidente: "A confirmar",
-    vicepresidente: "A confirmar",
+    vicepresidente: "Antonio Saravia",
     imagenes: {
       logo: "/binomios/adn/logo.png", // Agrega cuando tengas el logo
-      presidente: "/binomios/adn/presidente.png",
-      vicepresidente: "/binomios/adn/vicepresidente.png",
+      presidente: "/binomios/adn/presidente.webp",
+      vicepresidente: "/binomios/adn/vicepresidente.webp",
     },
     colores: {
       primary: "#ff030f",
