@@ -67,34 +67,36 @@ export function CardPartidos() {
                   </p>
                 </div>
 
-                {/* Botón de programa de gobierno */}
-                <Button
-                  size="sm"
-                  className="w-full text-white font-bold rounded-xl transition-all duration-300 hover:scale-[1.02] shadow-md hover:shadow-lg text-xs group/btn"
-                  style={{
-                    backgroundColor: partido.colores?.primary || "#6c757d",
-                    borderColor: partido.colores?.primary || "#6c757d",
-                  }}
-                  onMouseEnter={(e) => {
-                    const target = e.target as HTMLElement;
-                    if (partido.colores?.primary) {
-                      // Crear un color más oscuro para el hover
-                      const color = partido.colores.primary;
-                      const darkColor = color + "dd"; // Agregar opacidad para oscurecer
-                      target.style.backgroundColor = darkColor;
-                    }
-                  }}
-                  onMouseLeave={(e) => {
-                    const target = e.target as HTMLElement;
-                    if (partido.colores?.primary) {
-                      target.style.backgroundColor = partido.colores.primary;
-                    }
-                  }}
-                  onClick={() => window.open(partido.programas, "_blank", "noopener,noreferrer")}
-                >
-                  <ExternalLink className="h-3 w-3 mr-1 transition-transform group-hover/btn:scale-110" />
-                  Programa de Gobierno
-                </Button>
+                {/* Botón de programa de gobierno - oculto para NGP */}
+                {partido.sigla !== "NGP" && (
+                  <Button
+                    size="sm"
+                    className="w-full text-white font-bold rounded-xl transition-all duration-300 hover:scale-[1.02] shadow-md hover:shadow-lg text-xs group/btn"
+                    style={{
+                      backgroundColor: partido.colores?.primary || "#6c757d",
+                      borderColor: partido.colores?.primary || "#6c757d",
+                    }}
+                    onMouseEnter={(e) => {
+                      const target = e.target as HTMLElement;
+                      if (partido.colores?.primary) {
+                        // Crear un color más oscuro para el hover
+                        const color = partido.colores.primary;
+                        const darkColor = color + "dd"; // Agregar opacidad para oscurecer
+                        target.style.backgroundColor = darkColor;
+                      }
+                    }}
+                    onMouseLeave={(e) => {
+                      const target = e.target as HTMLElement;
+                      if (partido.colores?.primary) {
+                        target.style.backgroundColor = partido.colores.primary;
+                      }
+                    }}
+                    onClick={() => window.open(partido.programas, "_blank", "noopener,noreferrer")}
+                  >
+                    <ExternalLink className="h-3 w-3 mr-1 transition-transform group-hover/btn:scale-110" />
+                    Programa de Gobierno
+                  </Button>
+                )}
               </div>
 
               {/* Línea decorativa inferior */}

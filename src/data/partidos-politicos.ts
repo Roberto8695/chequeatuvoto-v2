@@ -83,7 +83,7 @@ export const partidosPoliticos: PartidoPolitico[] = [
     slug: "proximamente",
     nombre: "Nueva Generación Política",
     sigla: "NGP",
-    programas: "https://www.oep.org.bo/wp-content/uploads/2025/06/PROGRAMA-DE-GOBIERNO-NUEVA-GENERACION-PATRIOTICA_v4.pdf",
+    programas: "/candidatos/not-found",
     presidente: "Pendiente",
     vicepresidente: "Pendiente",
     imagenes: {
