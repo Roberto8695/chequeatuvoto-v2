@@ -98,9 +98,9 @@ export const partidosPoliticos: PartidoPolitico[] = [
   },
   {
     id: "5",
-    slug: "fri",
-    nombre: "Frente Revolucionario de Izquierda",
-    sigla: "FRI",
+    slug: "libre",
+    nombre: "Alianza Libertad y Democracia",
+    sigla: "LIBRE",
     programas: "https://www.oep.org.bo/wp-content/uploads/2025/05/PROGRAMA-DE-GOBIERNO-ALIANZA-LIBERTAD-Y-DEMOCRACIA.pdf",
     presidente: "Jorge Tuto Quiroga",
     vicepresidente: "Juan Pablo Velasco",
@@ -123,7 +123,7 @@ export const partidosPoliticos: PartidoPolitico[] = [
     presidente: "Jhonny Fernández",
     vicepresidente: "Felipe Quispe",
     imagenes: {
-      logo: "/binomios/ucs/logo.png", // Agrega cuando tengas el logo
+      logo: "/binomios/ucs/logo.webp", // Agrega cuando tengas el logo
       presidente: "/binomios/ucs/presidente.png",
       vicepresidente: "/binomios/ucs/vicepresidente.png",
     },
@@ -170,14 +170,14 @@ export const partidosPoliticos: PartidoPolitico[] = [
   },
   {
     id: "9",
-    slug: "un",
-    nombre: "Unidad Nacional",
-    sigla: "UN",
+    slug: "alianza-unidad",
+    nombre: "Alianza Unidad",
+    sigla: "Alianza Unidad",
     programas: "https://www.oep.org.bo/wp-content/uploads/2025/05/PROGRAMA-DE-GOBIERNO-ALIANZA-UNIDAD.pdf",
     presidente: "Samuel Doria Medina",
     vicepresidente: "José Luis Lupo",
     imagenes: {
-      logo: "/binomios/un/logo.png", // Agrega cuando tengas el logo
+      logo: "/binomios/un/logo.webp", // Agrega cuando tengas el logo
       presidente: "/binomios/un/presidente.png",
       vicepresidente: "/binomios/un/vicepresidente.png",
     },

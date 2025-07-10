@@ -28,9 +28,9 @@ export function CardCandidatos() {
     },
     {
       title: "Jorge Tuto Quiroga",
-      team: "FRI",
+      team: "LIBRE",
       src: "/imagenes2/IMAGENES PAGINA WEB/tutito.jpg",
-      slug: "fri",
+      slug: "libre",
     },
     {
       title: "Jhonny Fernández",
@@ -52,9 +52,9 @@ export function CardCandidatos() {
     },
      {
       title: "Samuel Doria Medina",
-      team: "UN",
+      team: "Alianza Unidad",
       src: "/imagenes2/IMAGENES PAGINA WEB/samuel-doria-medina.jpg",
-      slug: "un",
+      slug: "alianza-unidad",
     },
     {
       title: "Rodrigo Paz Pereira",
