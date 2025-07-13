@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import Image from 'next/image';
 import { User } from 'lucide-react';
@@ -14,7 +14,7 @@ interface SectionCandidatosProps {
   slug: string;
 }
 
-export default function SectionCandidatos({ slug }: SectionCandidatosProps) {
+function SectionCandidatosContent({ slug }: SectionCandidatosProps) {
   const searchParams = useSearchParams();
   const [partido, setPartido] = useState<PartidoPolitico | null>(null);
   const [perfiles, setPerfiles] = useState<{ presidente: PerfilCandidato | null, vicepresidente: PerfilCandidato | null }>({
@@ -474,5 +474,18 @@ export default function SectionCandidatos({ slug }: SectionCandidatosProps) {
         )}
       </Modal>
     </div>
+  );
+}
+
+// Componente wrapper con Suspense
+export default function SectionCandidatos({ slug }: SectionCandidatosProps) {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-600"></div>
+      </div>
+    }>
+      <SectionCandidatosContent slug={slug} />
+    </Suspense>
   );
 }
