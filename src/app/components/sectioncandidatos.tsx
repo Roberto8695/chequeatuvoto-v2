@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 import Image from 'next/image';
 import { User } from 'lucide-react';
 import { getPartidoBySlug, PartidoPolitico } from '@/data/partidos-politicos';
@@ -14,6 +15,7 @@ interface SectionCandidatosProps {
 }
 
 export default function SectionCandidatos({ slug }: SectionCandidatosProps) {
+  const searchParams = useSearchParams();
   const [partido, setPartido] = useState<PartidoPolitico | null>(null);
   const [perfiles, setPerfiles] = useState<{ presidente: PerfilCandidato | null, vicepresidente: PerfilCandidato | null }>({
     presidente: null,
@@ -54,6 +56,73 @@ export default function SectionCandidatos({ slug }: SectionCandidatosProps) {
 
     return () => clearTimeout(timer);
   }, [slug]);
+
+  // Efecto para manejar la navegación hacia atrás
+  useEffect(() => {
+    const fromParties = searchParams.get('from') === 'parties';
+    
+    // Marcar que esta página viene de parties
+    if (fromParties) {
+      localStorage.setItem('candidatePageFromParties', 'true');
+      localStorage.setItem('currentCandidatePage', window.location.href);
+    }
+
+    const handleVisibilityChange = () => {
+      // Cuando la página se vuelve visible después de estar oculta,
+      // verificar si debe ir a parties
+      if (document.visibilityState === 'visible') {
+        const shouldGoToParties = localStorage.getItem('shouldReturnToParties');
+        if (shouldGoToParties) {
+          localStorage.removeItem('shouldReturnToParties');
+          localStorage.removeItem('candidatePageFromParties');
+          localStorage.removeItem('currentCandidatePage');
+          window.location.href = '/#parties';
+        }
+      }
+    };
+
+    const handlePageHide = () => {
+      // Cuando la página se oculta (navegación hacia atrás en móvil),
+      // marcar que debe ir a parties si viene de allí
+      const fromPartiesStored = localStorage.getItem('candidatePageFromParties');
+      if (fromPartiesStored === 'true') {
+        localStorage.setItem('shouldReturnToParties', 'true');
+      }
+    };
+
+    const handlePopState = () => {
+      // Para navegación con botón atrás del navegador
+      const fromPartiesStored = localStorage.getItem('candidatePageFromParties');
+      if (fromPartiesStored === 'true') {
+        localStorage.removeItem('candidatePageFromParties');
+        localStorage.removeItem('currentCandidatePage');
+        window.location.href = '/#parties';
+      }
+    };
+
+    // Eventos para diferentes tipos de navegación
+    document.addEventListener('visibilitychange', handleVisibilityChange);
+    window.addEventListener('pagehide', handlePageHide);
+    window.addEventListener('popstate', handlePopState);
+
+    return () => {
+      document.removeEventListener('visibilitychange', handleVisibilityChange);
+      window.removeEventListener('pagehide', handlePageHide);
+      window.removeEventListener('popstate', handlePopState);
+    };
+  }, [searchParams]);
+
+  // Efecto de limpieza al desmontar el componente
+  useEffect(() => {
+    return () => {
+      // Limpiar localStorage cuando el componente se desmonte normalmente
+      const currentPage = localStorage.getItem('currentCandidatePage');
+      if (currentPage === window.location.href) {
+        localStorage.removeItem('candidatePageFromParties');
+        localStorage.removeItem('currentCandidatePage');
+      }
+    };
+  }, []);
 
   const openModal = (candidato: PerfilCandidato, tipo: 'presidente' | 'vicepresidente') => {
     setModalState({
@@ -96,7 +165,7 @@ export default function SectionCandidatos({ slug }: SectionCandidatosProps) {
 
   return (
     <div 
-      className="min-h-screen relative overflow-hidden flex flex-col pt-14 xs:pt-15 sm:pt-18 lg:pt-20"
+      className="min-h-screen relative overflow-hidden flex flex-col pt-2 xs:pt-15 sm:pt-18 lg:pt-0"
       style={gradientStyle}
     >
       {/* Efectos de fondo */}
@@ -375,15 +444,18 @@ export default function SectionCandidatos({ slug }: SectionCandidatosProps) {
         )}
       </div>
 
-      {/* Botón de regreso - ajustado para no quedar detrás del navbar */}
+      {/* Botón de regreso - más llamativo y con texto "Volver atrás" */}
       <div className="absolute top-16 xs:top-17 sm:top-20 lg:top-22 left-4 sm:left-8 z-20">
         <button
-          onClick={() => window.history.back()}
-          className="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white p-2 sm:p-3 rounded-full transition-all duration-300 hover:scale-110 shadow-lg"
+          onClick={() => {
+            window.location.href = '/#parties';
+          }}
+          className="flex items-center gap-2 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 hover:from-pink-600 hover:to-blue-600 text-white font-bold px-4 py-2 sm:px-5 sm:py-3 rounded-full shadow-2xl border-2 border-white/30 transition-all duration-300 hover:scale-105 hover:shadow-3xl"
         >
           <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
+          <span className="text-sm sm:text-base drop-shadow-lg">Volver atrás</span>
         </button>
       </div>
       

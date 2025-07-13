@@ -188,6 +188,47 @@ export default function Home() {
     preloadComponents();
   }, []);
 
+  // Efecto para manejar el scroll automático cuando hay un hash en la URL
+  useEffect(() => {
+    const handleScrollToSection = () => {
+      // Solo ejecutar después de que termine el loading
+      if (!isLoading) {
+        const hash = window.location.hash;
+        if (hash) {
+          // Pequeño delay para asegurar que los componentes están renderizados
+          setTimeout(() => {
+            const element = document.querySelector(hash);
+            if (element) {
+              element.scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start' 
+              });
+            }
+          }, 100);
+        }
+      }
+    };
+
+    const handlePopState = () => {
+      // Manejar navegación hacia atrás/adelante
+      handleScrollToSection();
+    };
+
+    // Escuchar cambios en el hash
+    window.addEventListener('hashchange', handleScrollToSection);
+    
+    // Escuchar navegación hacia atrás/adelante
+    window.addEventListener('popstate', handlePopState);
+    
+    // Ejecutar al cargar la página si ya hay un hash
+    handleScrollToSection();
+
+    return () => {
+      window.removeEventListener('hashchange', handleScrollToSection);
+      window.removeEventListener('popstate', handlePopState);
+    };
+  }, [isLoading]);
+
   const handleLoadingComplete = () => {
     setIsLoading(false);
   };

@@ -20,6 +20,24 @@ export function Navbar() {
     setIsMenuOpen(!isMenuOpen)
   }
 
+  const handleLinkClick = (href: string) => {
+    setIsMenuOpen(false);
+    
+    // Si es un enlace con hash (anchor), hacer scroll suave
+    if (href.startsWith('/#')) {
+      const targetId = href.substring(2); // Remover '/#'
+      setTimeout(() => {
+        const element = document.getElementById(targetId);
+        if (element) {
+          element.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start' 
+          });
+        }
+      }, 100);
+    }
+  };
+
   return (    <nav className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="mx-auto max-w-screen-lg px-2 sm:px-6 lg:px-6">
         <div className="flex h-18 items-center justify-between py-2">          {/* Logo */}
@@ -47,6 +65,7 @@ export function Navbar() {
                 key={item.name}
                 href={item.href}
                 className="text-base font-medium text-muted-foreground transition-colors hover:text-foreground"
+                onClick={() => handleLinkClick(item.href)}
               >
                 {item.name}
               </Link>
@@ -83,7 +102,7 @@ export function Navbar() {
               key={item.name}
               href={item.href}
               className="block rounded-md px-3 py-3 text-base font-medium text-muted-foreground hover:bg-muted hover:text-foreground transition-colors"
-              onClick={() => setIsMenuOpen(false)}
+              onClick={() => handleLinkClick(item.href)}
             >
               {item.name}
             </Link>

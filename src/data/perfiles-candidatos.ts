@@ -178,9 +178,9 @@ export const perfilesCandidatos: BinomioCandidatos[] = [
   },
   {
     partido: {
-      nombre: "Frente Revolucionario de Izquierda",
-      sigla: "FRI",
-      slug: "fri"
+      nombre: "Alianza Libertad y Democracia",
+      sigla: "LIBRE",
+      slug: "libre"
     },
     presidente: {
       nombre: "Jorge Fernando Tuto Quiroga Ramirez",
@@ -527,9 +527,9 @@ export const perfilesCandidatos: BinomioCandidatos[] = [
   },
   {
     partido: {
-      nombre: "Unidad Nacional",
-      sigla: "UN",
-      slug: "un"
+      nombre: "Alianza Unidad",
+      sigla: "Alianza Unidad",
+      slug: "alianza-unidad"
     },
     presidente: {
       nombre: "Samuel Jorge Doria Medina Auza",

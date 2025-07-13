@@ -65,7 +65,7 @@ export default async function CandidatoPage({ params }: CandidatoPageProps) {
   }
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen ">
       <SectionCandidatos slug={slug} />
     </main>
   );

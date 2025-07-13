@@ -71,7 +71,7 @@ export const Card = React.memo(
     // Si tiene slug, envolver en Link, sino devolver solo el contenido
     if (card.slug) {
       return (
-        <Link href={`/candidatos/${card.slug}`} className="block">
+        <Link href={`/candidatos/${card.slug}?from=parties`} className="block">
           {CardContent}
         </Link>
       );
