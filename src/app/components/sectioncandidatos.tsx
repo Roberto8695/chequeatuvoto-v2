@@ -445,7 +445,7 @@ function SectionCandidatosContent({ slug }: SectionCandidatosProps) {
       </div>
 
       {/* Botón de regreso - más llamativo y con texto "Volver atrás" */}
-      <div className="absolute top-16 xs:top-17 sm:top-20 lg:top-22 left-4 sm:left-8 z-20">
+      <div className="absolute top-8 xs:top-17 sm:top-20 lg:top-22 left-4 sm:left-8 z-20">
         <button
           onClick={() => {
             window.location.href = '/#parties';
