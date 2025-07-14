@@ -40,10 +40,15 @@ export const Card = React.memo(
           fill
           className="object-cover object-center group-hover:transition-transform duration-500"
         />
+        {/* Gradiente de fondo para mejor legibilidad en móviles */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent md:from-transparent md:via-transparent md:to-transparent"></div>
+        
         <div
           className={cn(
-            "absolute inset-0 bg-black/50 flex items-end py-3 px-3 transition-opacity duration-300",
-            hovered === index ? "opacity-100" : "opacity-0"
+            "absolute inset-0 flex items-end py-3 px-3 transition-opacity duration-300",
+            // En móviles siempre visible, en desktop solo con hover (con fondo negro)
+            "md:opacity-0 opacity-100",
+            hovered === index && "md:opacity-100 md:bg-black/50"
           )}
         >
           <div className="w-full">
@@ -71,7 +76,7 @@ export const Card = React.memo(
     // Si tiene slug, envolver en Link, sino devolver solo el contenido
     if (card.slug) {
       return (
-        <Link href={`/candidatos/${card.slug}`} className="block">
+        <Link href={`/candidatos/${card.slug}?from=parties`} className="block">
           {CardContent}
         </Link>
       );
