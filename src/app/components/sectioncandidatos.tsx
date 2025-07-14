@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { User } from 'lucide-react';
 import { getPartidoBySlug, PartidoPolitico } from '@/data/partidos-politicos';
@@ -14,6 +15,7 @@ interface SectionCandidatosProps {
 }
 
 export default function SectionCandidatos({ slug }: SectionCandidatosProps) {
+  const router = useRouter();
   const [partido, setPartido] = useState<PartidoPolitico | null>(null);
   const [perfiles, setPerfiles] = useState<{ presidente: PerfilCandidato | null, vicepresidente: PerfilCandidato | null }>({
     presidente: null,
@@ -378,7 +380,75 @@ export default function SectionCandidatos({ slug }: SectionCandidatosProps) {
       {/* Botón de regreso - ajustado para no quedar detrás del navbar */}
       <div className="absolute top-16 xs:top-17 sm:top-20 lg:top-22 left-4 sm:left-8 z-20">
         <button
-          onClick={() => window.history.back()}
+          onClick={() => {
+            // Técnica controlada con anclas y scroll manual mejorada
+            const navigateToPartiesSection = () => {
+              // Si ya estamos en la página principal, usar la función global de scroll
+              if (window.location.pathname === '/') {
+                const scrollToSection = (window as any).scrollToSection;
+                if (scrollToSection) {
+                  scrollToSection('candidatos-cards');
+                } else {
+                  // Fallback si la función global no está disponible
+                  const candidatosCards = document.getElementById('candidatos-cards');
+                  if (candidatosCards) {
+                    const navbarHeight = 64;
+                    const elementPosition = candidatosCards.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+                    
+                    window.scrollTo({
+                      top: offsetPosition,
+                      behavior: 'smooth'
+                    });
+                  }
+                }
+                return;
+              }
+              
+              // Si no estamos en la página principal, navegar y después hacer scroll
+              window.location.href = '/';
+              
+              // Esperar a que la página cargue y luego hacer scroll con manejo de errores
+              const attemptScroll = (attempts = 0) => {
+                const maxAttempts = 20; // Máximo 20 intentos (2 segundos)
+                
+                if (attempts >= maxAttempts) {
+                  console.warn('No se pudo hacer scroll a las tarjetas de candidatos después de múltiples intentos');
+                  return;
+                }
+                
+                const candidatosCards = document.getElementById('candidatos-cards');
+                const scrollToSection = (window as any).scrollToSection;
+                
+                if (candidatosCards) {
+                  if (scrollToSection) {
+                    scrollToSection('candidatos-cards');
+                  } else {
+                    // Fallback manual
+                    const navbarHeight = 64;
+                    const elementPosition = candidatosCards.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+                    
+                    window.scrollTo({
+                      top: offsetPosition,
+                      behavior: 'smooth'
+                    });
+                  }
+                } else {
+                  // Reintentar después de 100ms
+                  setTimeout(() => attemptScroll(attempts + 1), 100);
+                }
+              };
+              
+              // Usar tanto el evento load como timeouts escalonados
+              window.addEventListener('load', () => attemptScroll(), { once: true });
+              setTimeout(() => attemptScroll(), 300);
+              setTimeout(() => attemptScroll(), 600);
+              setTimeout(() => attemptScroll(), 1000);
+            };
+            
+            navigateToPartiesSection();
+          }}
           className="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white p-2 sm:p-3 rounded-full transition-all duration-300 hover:scale-110 shadow-lg"
         >
           <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

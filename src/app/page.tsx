@@ -188,6 +188,57 @@ export default function Home() {
     preloadComponents();
   }, []);
 
+  // Manejar scroll hacia sección específica al cargar la página
+  useEffect(() => {
+    if (!isLoading) {
+      // Verificar si hay un hash en la URL
+      const hash = window.location.hash;
+      if (hash) {
+        // Función para hacer scroll suave y controlado
+        const scrollToSection = () => {
+          const element = document.querySelector(hash);
+          if (element) {
+            // Calcular offset para compensar el navbar
+            const navbarHeight = 64; // Altura aproximada del navbar
+            const elementPosition = element.getBoundingClientRect().top;
+            const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+            
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: 'smooth'
+            });
+          }
+        };
+        
+        // Intentar hacer scroll inmediatamente
+        setTimeout(scrollToSection, 200);
+        
+        // Fallback para asegurar el scroll
+        setTimeout(scrollToSection, 500);
+      }
+    }
+  }, [isLoading]);
+
+  // Función helper para scroll controlado a secciones específicas
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const navbarHeight = 64; // Altura aproximada del navbar
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - navbarHeight;
+      
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  };
+
+  // Exponer la función globalmente para uso desde otros componentes
+  useEffect(() => {
+    (window as any).scrollToSection = scrollToSection;
+  }, []);
+
   const handleLoadingComplete = () => {
     setIsLoading(false);
   };
