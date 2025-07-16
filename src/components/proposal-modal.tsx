@@ -71,7 +71,7 @@ export function ProposalModal({ isOpen, onClose, subPlan }: ProposalModalProps) 
                 onClick={onClose}
                 className="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-colors"
               >
-                <X className="w-5 h-5 text-white dark:text-white" />
+                <X className="w-5 h-5 text-white dark:text-white hover:text-black" />
               </button>
             </div>
 

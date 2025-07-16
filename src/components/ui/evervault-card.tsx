@@ -55,7 +55,7 @@ export const EvervaultCard = ({
   return (
     <div
       className={cn(
-        "p-0.5 bg-transparent flex items-center justify-center w-full h-full relative",
+        "p-0.5 bg-transparent  flex items-center justify-center w-full h-full relative",
         className
       )}
     >
@@ -75,15 +75,15 @@ export const EvervaultCard = ({
               {children}
             </div>
           ) : (
-            <div className="relative h-40 w-[290px] sm:w-[305px] lg:w-[310px] rounded-full flex items-center justify-center text-white font-bold text-4xl">
-              <div className="absolute w-32 h-32 bg-black/[0.8] dark:bg-black/[0.8] blur-sm rounded-full" />
+            <div className="relative  h-40 w-[290px]  sm:w-[305px]  lg:w-[310px] rounded-full flex items-center justify-center text-white font-bold text-4xl">
+              <div className="absolute w-32 h-32   bg-black/[0.6]  dark:bg-black/[0.8]  blur-sm rounded-full" />
               {imageSrc ? (
                 <Image
                   src={imageSrc}
                   alt={imageAlt || "Card image"}
                   width={100}
                   height={100}
-                  className="z-20 object-contain"
+                  className="z-20 object-contain "
                 />
               ) : (
                 <span className="dark:text-white text-black z-20">{text}</span>
