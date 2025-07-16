@@ -75,14 +75,14 @@ export const EvervaultCard = ({
               {children}
             </div>
           ) : (
-            <div className="relative h-48 w-[290px] sm:w-[305px] lg:w-[310px] rounded-full flex items-center justify-center text-white font-bold text-4xl">
-              <div className="absolute w-40 h-40 bg-black/[0.8] dark:bg-black/[0.8] blur-sm rounded-full" />
+            <div className="relative h-40 w-[290px] sm:w-[305px] lg:w-[310px] rounded-full flex items-center justify-center text-white font-bold text-4xl">
+              <div className="absolute w-32 h-32 bg-black/[0.8] dark:bg-black/[0.8] blur-sm rounded-full" />
               {imageSrc ? (
                 <Image
                   src={imageSrc}
                   alt={imageAlt || "Card image"}
-                  width={110}
-                  height={110}
+                  width={100}
+                  height={100}
                   className="z-20 object-contain"
                 />
               ) : (

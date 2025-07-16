@@ -1,10 +1,12 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { EvervaultCard, Icon } from "@/components/ui/evervault-card";
 import Image from "next/image";
+import { Eye } from "lucide-react";
 import { Partido } from "@/data/proposals";
 import { partidosPoliticos } from "@/data/partidos-politicos";
+import { PropuestaModal } from "./PropuestaModal";
 
 interface PartidoPropuestaCardProps {
   partido: Partido;
@@ -17,6 +19,20 @@ export function PartidoPropuestaCard({
   propuesta, 
   className = "" 
 }: PartidoPropuestaCardProps) {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Detectar si es dispositivo móvil
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   // Función auxiliar para obtener las imágenes de candidatos
   const getPartidoImages = (partidoId: string) => {
     const partidoCompleto = partidosPoliticos.find(p => p.slug === partidoId);
@@ -24,6 +40,14 @@ export function PartidoPropuestaCard({
   };
 
   const images = getPartidoImages(partido.id);
+
+  const handleOpenModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
 
   return (
     <div className={`border border-white/20 dark:border-white/[0.2] flex flex-col items-start max-w-sm mx-auto p-4 relative h-[30rem] bg-gradient-to-br from-slate-900 to-slate-800 rounded-lg ${className}`}>
@@ -68,8 +92,8 @@ export function PartidoPropuestaCard({
               />
             </div>
             <div>
-              <p className="text-white text-xs font-medium">Presidente</p>
-              <p className="text-white/80 text-xs">{partido.president}</p>
+              <p className="text-white text-sm font-medium">Presidente</p>
+              <p className="text-white/80 text-sm">{partido.president}</p>
             </div>
           </div>
           
@@ -84,8 +108,8 @@ export function PartidoPropuestaCard({
               />
             </div>
             <div>
-              <p className="text-white text-xs font-medium">Vicepresidente</p>
-              <p className="text-white/80 text-xs">{partido.vicepresident}</p>
+              <p className="text-white text-sm font-medium">Vicepresidente</p>
+              <p className="text-white/80 text-sm">{partido.vicepresident}</p>
             </div>
           </div>
         </div>
@@ -93,19 +117,46 @@ export function PartidoPropuestaCard({
         {/* Proposal */}
         <div className="flex-1">
           <h4 className="text-white text-sm font-medium mb-2">Propuesta:</h4>
-          {propuesta ? (
-            <p className="text-white/90 text-xs leading-relaxed line-clamp-4">
-              {propuesta}
-            </p>
+          
+          {isMobile ? (
+            // Vista móvil: Solo botón
+            <button
+              onClick={handleOpenModal}
+              className={`w-full px-4 py-3 rounded-lg font-medium transition-colors ${
+                propuesta 
+                  ? 'bg-blue-600 hover:bg-blue-700 text-white' 
+                  : 'bg-slate-700 hover:bg-slate-600 text-white/80'
+              }`}
+            >
+              <div className="flex items-center justify-center">
+                <Eye className="w-4 h-4 mr-2" />
+                {propuesta ? 'Ver propuesta' : 'No hay propuestas disponibles'}
+              </div>
+            </button>
           ) : (
-            <div className="bg-slate-800/50 rounded-lg p-3 text-center border border-white/10">
-              <p className="text-white/60 text-xs font-medium">
-                No hay propuesta disponible
+            // Vista desktop: Mostrar propuesta completa
+            propuesta ? (
+              <p className="text-white/90 text-xs leading-relaxed line-clamp-4">
+                {propuesta}
               </p>
-            </div>
+            ) : (
+              <div className="bg-slate-800/50 rounded-lg p-3 text-center border border-white/10">
+                <p className="text-white/60 text-xs font-medium">
+                  No hay propuesta disponible
+                </p>
+              </div>
+            )
           )}
         </div>
       </div>
+
+      {/* Modal para propuestas */}
+      <PropuestaModal
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        partido={partido}
+        propuesta={propuesta}
+      />
 
       
     </div>
