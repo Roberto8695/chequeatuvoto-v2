@@ -19,7 +19,7 @@ import HeroSection from "@/components/ui/hero-section";
 import FeaturesGrid from "@/components/ui/features-grid";
 import AnimatedTimeline from "@/components/ui/animated-timeline";
 import LoadingScreen from "@/components/ui/loading-screen";
-import { EvervaultCardDemo } from "./components/evervault";
+
 const features = [
   {
     name: "¿Sé para qué son estas elecciones? ¿Entiendo la importancia de mi voto?",
@@ -317,7 +317,7 @@ export default function Home() {
                   desinformación electoral
                 </p>
               </div>
-              <div className="mt-16 text-center bg-black p-4"><EvervaultCardDemo  /></div>
+              
               
             </div>
           </main>
