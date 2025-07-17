@@ -9,6 +9,7 @@ const navItems = [
   { name: "Inicio", href: "/" },
   { name: "Calendario Electoral", href: "/#timeline" },
   { name: "Candidaturas", href: "/#parties" },
+  { name: "Propuestas", href: "/propuestas" },
   { name: "Quienes somos", href: "/about" },
   { name: "TSE", href: "https://www.oep.org.bo/" },
 ]
