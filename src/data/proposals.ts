@@ -37,15 +37,17 @@ export interface Plan {
 }
 
 // Mapear los datos de partidos políticos para usar en las propuestas
-export const partidos: Partido[] = partidosPoliticos.map(partido => ({
-  id: partido.slug,
-  name: partido.nombre,
-  shortName: partido.sigla,
-  logo: partido.imagenes.logo,
-  color: partido.colores?.primary || "#666666",
-  president: partido.presidente,
-  vicepresident: partido.vicepresidente
-}));
+export const partidos: Partido[] = partidosPoliticos
+  .sort((a, b) => parseInt(a.id) - parseInt(b.id)) // Ordenar por id numérico
+  .map(partido => ({
+    id: partido.slug,
+    name: partido.nombre,
+    shortName: partido.sigla,
+    logo: partido.imagenes.logo,
+    color: partido.colores?.primary || "#666666",
+    president: partido.presidente,
+    vicepresident: partido.vicepresidente
+  }));
 
 // Datos basados en el archivo EJE.txt - Estructura de propuestas por partidos
 export const proposalsData: Plan[] = [

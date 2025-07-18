@@ -13,20 +13,17 @@ interface PropuestaModalProps {
 }
 
 export function PropuestaModal({ isOpen, onClose, partido, propuesta }: PropuestaModalProps) {
-  
-
-  if (!isOpen) return null;
-
   return (
-    <AnimatePresence>
-      <motion.div
+    <AnimatePresence initial={false} mode="wait">
+      {isOpen && (
+        <motion.div key="overlay"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
         className="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
         onClick={onClose}
       >
-        <motion.div
+        <motion.div key="content"
           initial={{ scale: 0.9, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 0.9, opacity: 0 }}
@@ -95,6 +92,7 @@ export function PropuestaModal({ isOpen, onClose, partido, propuesta }: Propuest
           </div>
         </motion.div>
       </motion.div>
+    )}
     </AnimatePresence>
   );
 }
