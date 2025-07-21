@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { Eye} from "lucide-react";
+import { Eye } from "lucide-react";
 import { Partido } from "@/data/proposals";
 import { PropuestaModal } from "./PropuestaModal";
 
@@ -18,17 +18,13 @@ export function PartidoPropuestaCard({
   className = "" 
 }: PartidoPropuestaCardProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  
 
   // Detectar si es dispositivo móvil
   useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
+   
 
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
+  
   }, []);
 
   const handleOpenModal = () => {
@@ -40,122 +36,129 @@ export function PartidoPropuestaCard({
   };
 
   return (
-    <div className={`group relative bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 rounded-xl shadow-2xl border border-white/10 hover:border-white/20 transition-all duration-300 hover:shadow-3xl hover:scale-[1.02] overflow-hidden ${className}`}>
-      {/* Fondo decorativo con gradiente del color del partido */}
-      <div 
-        className="absolute inset-0 opacity-5 group-hover:opacity-10 transition-opacity duration-300"
-        style={{
-          background: `linear-gradient(135deg, ${partido.color}20 0%, transparent 70%)`
-        }}
-      />
+    <div className={`group relative overflow-hidden rounded-2xl bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 border border-white/10 hover:border-white/20 transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/10 ${className}`}>
+      {/* Fondo animado */}
+      <div className="absolute inset-0 bg-gradient-to-r from-blue-500/5 via-purple-500/5 to-pink-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
       
-      {/* Borde superior con color del partido */}
-      <div 
-        className="absolute top-0 left-0 right-0 h-1 rounded-t-xl"
-        style={{ backgroundColor: partido.color }}
-      />
-
+      {/* Partículas decorativas */}
+      <div className="absolute top-4 right-4 w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
+      <div className="absolute bottom-6 left-6 w-1 h-1 bg-purple-400 rounded-full animate-ping"></div>
+      
+      
       <div className="relative z-10 p-6 h-full flex flex-col">
-        {/* Header con Logo y Candidatos */}
-        <div className="flex items-start mb-4">
+        {/* Header con logo y candidatos */}
+        <div className="flex items-start gap-4 mb-4">
+          {/* Logo del partido */}
           <div className="relative flex-shrink-0">
-            <div className="w-16 h-16 rounded-full bg-white/10 backdrop-blur-sm p-2 ring-2 ring-white/20 group-hover:ring-white/30 transition-all duration-300">
-              <Image
-                src={partido.logo}
-                alt={`Logo ${partido.shortName}`}
-                width={48}
-                height={48}
-                className="w-full h-full object-contain"
-              />
-            </div>
-            {/* Indicator dot */}
             <div 
-              className="absolute -top-1 -right-1 w-4 h-4 rounded-full border-2 border-slate-900"
-              style={{ backgroundColor: partido.color }}
-            />
+              className="w-16 h-16 sm:w-20 sm:h-20 rounded-xl p-3 shadow-lg transition-transform duration-300 group-hover:scale-105 bg-white/90 backdrop-blur-sm"
+            >
+              <div className="w-full h-full flex items-center justify-center">
+                <Image
+                  src={partido.logo}
+                  alt={`Logo ${partido.shortName}`}
+                  width={60}
+                  height={60}
+                  className="object-contain filter drop-shadow-sm"
+                />
+              </div>
+            </div>
+            {/* Glow effect */}
+            <div 
+              className="absolute inset-0 rounded-xl blur-xl opacity-30 group-hover:opacity-50 transition-opacity duration-300"
+              style={{ backgroundColor: partido.color || '#3B82F6' }}
+            ></div>
           </div>
           
-          {/* Candidatos al lado del logo */}
-          <div className="ml-4 flex-1">
-            <div className="space-y-2">
-              <div>
-                <p className="text-xs font-medium text-white/70 uppercase tracking-wider">
-                  Presidente
-                </p>
-                <p className="text-xs font-semibold text-white">
-                  {partido.president}
-                </p>
-              </div>
-              <div>
-                <p className="text-xs font-medium text-white/70 uppercase tracking-wider">
-                  Vicepresidente
-                </p>
-                <p className="text-xs font-semibold text-white">
-                  {partido.vicepresident}
-                </p>
-              </div>
+          {/* Candidatos a la derecha */}
+          <div className="flex-1 min-w-0 space-y-1 -mt-1">
+            {/* Presidente */}
+            <div>
+              <span className="text-xs font-semibold text-yellow-300 uppercase tracking-wider">
+                Presidente
+              </span>
+              <p className="text-sm font-medium text-white leading-tight">
+                {partido.president}
+              </p>
+            </div>
+
+            {/* Vicepresidente */}
+            <div>
+              <span className="text-xs font-semibold text-blue-300 uppercase tracking-wider">
+                Vicepresidente
+              </span>
+              <p className="text-sm font-medium text-white leading-tight">
+                {partido.vicepresident}
+              </p>
             </div>
           </div>
         </div>
 
-        {/* Nombre del Partido */}
-        <div className="mb-4 text-left">
-          <h2 className="text-xl font-bold text-white mb-1 group-hover:text-white/90 transition-colors">
+        {/* Nombre del partido */}
+        <div className="mb-4">
+          <h2 className="text-lg sm:text-xl font-bold text-white mb-1">
             {partido.shortName}
           </h2>
-          <p className="text-white/60 text-xs font-medium">
-            {partido.name}
-          </p>
+          
         </div>
 
-        {/* Propuestas */}
+        {/* Propuesta */}
         <div className="flex-1 flex flex-col">
-          <div className="flex items-center mb-3">
-            <div className="w-2 h-2 rounded-full mr-2" style={{ backgroundColor: partido.color }} />
-            <h4 className="text-white text-sm font-semibold uppercase tracking-wider">
-              Propuestas
+          <div className="flex items-center gap-2 mb-3">
+            <div className="w-1 h-4 bg-gradient-to-b from-purple-400 to-pink-400 rounded-full"></div>
+            <h4 className="text-sm font-semibold text-white uppercase tracking-wider">
+              Propuesta
             </h4>
           </div>
           
-          <div className="flex-1 flex flex-col justify-end">
-            {isMobile ? (
-              // Vista móvil: Solo botón
-              <button
-                onClick={handleOpenModal}
-                className={`w-full px-4 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-[1.02] ${
-                  propuesta 
-                    ? 'bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white shadow-lg' 
-                    : 'bg-gradient-to-r from-slate-700 to-slate-800 hover:from-slate-600 hover:to-slate-700 text-white/80 shadow-lg'
-                }`}
-              >
-                <div className="flex items-center justify-center">
-                  <Eye className="w-4 h-4 mr-2" />
-                  {propuesta ? 'Ver propuesta completa' : 'No hay propuestas disponibles'}
+          <div className="flex-1 flex flex-col justify-between">
+            {propuesta ? (
+              <>
+                {/* Vista móvil: Botón */}
+                <div className="sm:hidden">
+                  <button
+                    onClick={handleOpenModal}
+                    className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-3 rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/25 active:scale-95"
+                  >
+                    <div className="flex items-center justify-center gap-2">
+                      <Eye className="w-4 h-4" />
+                      Ver propuesta completa
+                    </div>
+                  </button>
                 </div>
-              </button>
-            ) : (
-              // Vista desktop: Mostrar propuesta completa
-              propuesta ? (
-                <div className="bg-white/5 rounded-lg p-4 border border-white/10 backdrop-blur-sm">
-                  <p className="text-white/90 text-sm leading-relaxed line-clamp-4">
-                    {propuesta}
-                  </p>
-                  <div className="mt-2 flex justify-end">
-                    <button
-                      onClick={handleOpenModal}
-                      className="text-xs text-blue-400 hover:text-blue-300 font-medium transition-colors"
-                    >
-                      Ver completa →
-                    </button>
+
+                {/* Vista desktop: Texto */}
+                <div className="hidden sm:block">
+                  <div className="bg-slate-800/50 rounded-lg p-4 border border-white/10 backdrop-blur-sm mb-3">
+                    <p className="text-white/90 text-xs leading-relaxed line-clamp-3">
+                      {propuesta}
+                    </p>
                   </div>
+                  <button
+                    onClick={handleOpenModal}
+                    className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white py-2 rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/25 active:scale-95 text-sm"
+                  >
+                    <div className="flex items-center justify-center gap-2">
+                      <Eye className="w-4 h-4" />
+                      Ver completa
+                    </div>
+                  </button>
                 </div>
-              ) : (
-                <div className="bg-red-500/10 rounded-lg p-4 border border-red-500/20 text-center">
-                  <p className="text-red-400 text-sm font-medium">
-                    No hay propuesta disponible
-                  </p>
+              </>
+            ) : (
+              <div className="bg-slate-800/30 rounded-lg p-4 border border-white/5 backdrop-blur-sm text-center">
+                <div className="text-white/40 mb-2">
+                  <svg className="w-8 h-8 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                  </svg>
                 </div>
-              )
+                <p className="text-white/60 text-xs font-medium">
+                  Propuesta no disponible
+                </p>
+                <p className="text-white/40 text-xs mt-1">
+                  Información próximamente
+                </p>
+              </div>
             )}
           </div>
         </div>

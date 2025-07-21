@@ -67,5 +67,9 @@ export function CardCandidatos() {
     
   ];
 
-  return <FocusCards cards={cards} />;
+  return (
+    <div id="candidatos-cards" className="w-full">
+      <FocusCards cards={cards} />
+    </div>
+  );
 }
