@@ -82,7 +82,7 @@ export function TablaGeneralCTV() {
   };
 
   const sortedData = React.useMemo(() => {
-    let sortableData = [...datosTabla];
+    const sortableData = [...datosTabla];
     if (sortConfig.key) {
       sortableData.sort((a, b) => {
         const aValue = a[sortConfig.key!];
@@ -131,9 +131,8 @@ export function TablaGeneralCTV() {
           <div className="p-3 rounded-full bg-gradient-to-r from-blue-500 to-purple-600">
             <BarChart3 className="w-6 h-6 text-white" />
           </div>
-          <h2 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            Análisis Comparativo
-          </h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-black font-round">
+            ANÁLISIS COMPARATIVO        </h2>
         </div>
         <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
           Índices económicos y ratios de transparencia por alianza política
