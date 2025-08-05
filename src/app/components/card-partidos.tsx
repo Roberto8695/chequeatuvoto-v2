@@ -68,7 +68,7 @@ export function CardPartidos() {
                 </div>
 
                 {/* Botón de programa de gobierno - oculto para NGP */}
-                {partido.sigla !== "NGP" && (
+                {partido.sigla !== "NGP" && partido.sigla !== "MORENA" && (
                   <Button
                     size="sm"
                     className="w-full text-white font-bold rounded-xl transition-all duration-300 hover:scale-[1.02] shadow-md hover:shadow-lg text-xs group/btn"
