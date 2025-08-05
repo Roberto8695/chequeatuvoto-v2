@@ -45,7 +45,7 @@ export function CardCandidatos() {
       slug: "mas-ipsp",
     },
     {
-      title: "Eva Copa",
+      title: "Decidió No Participar",
       team: "MORENA",
       src: "/imagenes2/IMAGENES PAGINA WEB/eva-copa.jpg",
       slug: "morena",
