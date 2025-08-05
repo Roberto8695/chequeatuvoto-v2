@@ -28,7 +28,7 @@ export const partidosPoliticos: PartidoPolitico[] = [
     slug: "alianza-popular",
     nombre: "Alianza Popular",
     sigla: "ALIANZA POPULAR",
-    programas: "https://www.oep.org.bo/wp-content/uploads/2025/05/PROGRAMA-DE-GOBIERNO-ALIANZA-POPULAR.pdf",
+    programas: "https://drive.google.com/file/d/13VKaytw6bHmykmxTUhoTxWOMbLvI46vg/view?usp=sharing",
     presidente: "Andrónico Rodríguez Ledezma",
     vicepresidente: "Mariana Prado Noya",
     imagenes: {
@@ -46,7 +46,7 @@ export const partidosPoliticos: PartidoPolitico[] = [
     slug: "adn",
     nombre: "Acción Democrática Nacionalista",
     sigla: "ADN",
-    programas: "https://www.oep.org.bo/wp-content/uploads/2025/05/PROGRAMA-DE-GOBIERNO-LIBERTAD-Y-PROGRESO-ADN.pdf ",
+    programas: "https://drive.google.com/file/d/1boN9_AUUMPVh2JjhAaeNe9Fg20qv5Ptu/view?usp=sharing",
     presidente: "A confirmar",
     vicepresidente: "Antonio Saravia",
     imagenes: {
@@ -64,7 +64,7 @@ export const partidosPoliticos: PartidoPolitico[] = [
     slug: "apb-sumate",
     nombre: "Autonomías para Bolivia - Súmate",
     sigla: "APB-SUMATE",
-    programas: "https://www.oep.org.bo/wp-content/uploads/2025/05/PROGRAMA-DE-GOBIERNO-APB-SUMATE.pdf",
+    programas: "https://drive.google.com/file/d/1yWyRFBGQaUTXIPuJoH89MPuoxqf4KS4g/view?usp=sharing",
     presidente: "Manfred Reyes Villa",
     vicepresidente: "Juan Carlos Medrano",
     imagenes: {
@@ -101,7 +101,7 @@ export const partidosPoliticos: PartidoPolitico[] = [
     slug: "libre",
     nombre: "Alianza Libertad y Democracia",
     sigla: "LIBRE",
-    programas: "https://www.oep.org.bo/wp-content/uploads/2025/05/PROGRAMA-DE-GOBIERNO-ALIANZA-LIBERTAD-Y-DEMOCRACIA.pdf",
+    programas: "https://drive.google.com/file/d/1BxaqEV1sOfXFTblX5LcaII82XbMVz9Ux/view?usp=sharing",
     presidente: "Jorge Tuto Quiroga",
     vicepresidente: "Juan Pablo Velasco",
     imagenes: {
@@ -119,7 +119,7 @@ export const partidosPoliticos: PartidoPolitico[] = [
     slug: "fp",
     nombre: "Frente Para la Victoria",
     sigla: "FP",
-    programas: "https://www.oep.org.bo/wp-content/uploads/2025/06/PROGRAMA-DE-GOBIERNO-ALIANZA-LA-FUERZA-DEL-PUEBLO-1.pdf",
+    programas: "https://drive.google.com/file/d/1uqrLCcYmvoijVFkDFMYQC8KtaWolUmpj/view?usp=sharing",
     presidente: "Jhonny Fernández",
     vicepresidente: "Felipe Quispe",
     imagenes: {
@@ -137,7 +137,7 @@ export const partidosPoliticos: PartidoPolitico[] = [
     slug: "mas-ipsp",
     nombre: "Movimiento al Socialismo ",
     sigla: "MAS-IPSP",
-    programas: "https://www.oep.org.bo/wp-content/uploads/2025/05/PROGRAMA-DE-GOBIERNO-MAS-IPSP.pdf",
+    programas: "https://drive.google.com/file/d/1EmJDYr4ghZ_wYxGVypsfac4dx2oCiHtJ/view?usp=sharing",
     presidente: "Eduardo Del Castillo",
     vicepresidente: "Milan Berna",
     imagenes: {
@@ -155,7 +155,7 @@ export const partidosPoliticos: PartidoPolitico[] = [
     slug: "morena",
     nombre: "Movimiento de Regeneración Nacional",
     sigla: "MORENA",
-    programas: "https://www.oep.org.bo/wp-content/uploads/2025/05/PROGRAMA-DE-GOBIERNO-MORENA.pdf",
+    programas: "https://drive.google.com/file/d/1fK2O15BxzjRVeJJBAJU_SSten9rZau0C/view?usp=sharing",
     presidente: "Eva Copa",
     vicepresidente: "Jorge Richter",
     imagenes: {
@@ -173,7 +173,7 @@ export const partidosPoliticos: PartidoPolitico[] = [
     slug: "alianza-unidad",
     nombre: "Alianza Unidad",
     sigla: "Alianza Unidad",
-    programas: "https://www.oep.org.bo/wp-content/uploads/2025/05/PROGRAMA-DE-GOBIERNO-ALIANZA-UNIDAD.pdf",
+    programas: "https://drive.google.com/file/d/1B2z5uYCX12G1PPSgfKXLH4BTSggfqluA/view?usp=sharing",
     presidente: "Samuel Doria Medina",
     vicepresidente: "José Luis Lupo",
     imagenes: {
@@ -191,7 +191,7 @@ export const partidosPoliticos: PartidoPolitico[] = [
     slug: "pdc",
     nombre: "Partido Demócrata Cristiano",
     sigla: "PDC",
-    programas: "https://www.oep.org.bo/wp-content/uploads/2025/05/PROGRAMA-DE-GOBIERNO-PARTIDO-DEMOCRATA-CRISTIANO.pdf",
+    programas: "https://drive.google.com/file/d/1ckMu4jyif7xBrY2FzUHVbfIyL4ChItWH/view?usp=sharing",
     presidente: "Rodrigo Paz Pereira",
     vicepresidente: "Edman Lara",
     imagenes: {
