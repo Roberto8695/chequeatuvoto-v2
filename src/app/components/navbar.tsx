@@ -71,14 +71,14 @@ export function Navbar() {
 
   return (    <nav className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="mx-auto max-w-screen-lg px-2 sm:px-6 lg:px-6">
-        <div className="flex h-18 items-center justify-between py-2">          {/* Logo */}
+        <div className="flex h-18 items-center justify-between py-5">          {/* Logo */}
           <Link href="/" className="flex flex-col items-center group">
             <Image
               src="/logo3.svg"
               alt="Chequea tu Voto Logo"
               width={110}
               height={32}
-              className="h-auto w-[140px] object-contain transition-transform duration-300 group-hover:scale-105"
+              className="h-auto w-[140px] object-contain transition-transform duration-300 -mt-4 group-hover:scale-105"
               priority
             />            {/* Underline con colores de Bolivia */}
             <div className="flex w-[120px] h-[5px] -mt-7 rounded-full overflow-hidden shadow-md border border-gray-200/50">
