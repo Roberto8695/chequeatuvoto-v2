@@ -151,19 +151,131 @@ export function TablaGeneralCTV() {
 
   return (
     <div className="w-full max-w-7xl mx-auto">
-      {/* Header */}
-      <div className="text-center mb-8">
-        <div className="flex items-center justify-center gap-3 mb-4">
-          <div className="p-3 rounded-full bg-gradient-to-r from-blue-500 to-purple-600">
-            <BarChart3 className="w-6 h-6 text-white" />
-          </div>
-          <h2 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            Análisis Comparativo
-          </h2>
+
+      {/* Vista móvil - Layout por secciones */}
+      <div className="md:hidden space-y-8">
+        <div className="text-center mb-6">
+          <h3 className="text-lg font-bold text-gray-600 uppercase tracking-wide">
+            Para Dispositivos Móviles
+          </h3>
         </div>
-        <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-          Índices económicos y ratios de transparencia por alianza política
-        </p>
+
+        {sortedData.map((row, index) => (
+          <div key={index} className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
+            {/* Header del partido */}
+            <div className="p-4 bg-gradient-to-r from-gray-50 to-gray-100 border-b border-gray-200">
+              <div className="flex items-center gap-3">
+                <div 
+                  className="w-4 h-8 rounded-full shadow-md"
+                  style={{ backgroundColor: row.colorPartido || '#6b7280' }}
+                ></div>
+                <h3 className="font-bold text-gray-900 text-lg">{row.alianza}</h3>
+              </div>
+            </div>
+
+            {/* PRIMERA SECCION - Análisis Económico */}
+            <div className="p-6 border-b border-gray-200">
+              <div className="text-center mb-4">
+                <h4 className="text-base font-bold text-gray-700 uppercase mb-1">Primera Sección</h4>
+                <h5 className="text-lg font-bold text-[#00cfaf] flex items-center justify-center gap-2">
+                  <DollarSign className="w-5 h-5" />
+                  ANÁLISIS ECONÓMICO
+                </h5>
+              </div>
+
+              <div className="space-y-4">
+                {/* Escala visual 1-10 */}
+                <div className="flex items-center gap-2">
+                  <span className="text-sm font-medium text-gray-500 w-4">1</span>
+                  <div className="flex-1 h-6 bg-gray-200 rounded-full overflow-hidden shadow-inner relative">
+                    <div 
+                      className={`h-full bg-gradient-to-r ${getProgressColor(row.analisisEconomico)} transition-all duration-700 ease-out relative`}
+                      style={{ width: `${(row.analisisEconomico / 10) * 100}%` }}
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent"></div>
+                    </div>
+                    {/* Marcador del valor */}
+                    <div 
+                      className="absolute top-0 h-full w-1 bg-gray-800 shadow-lg"
+                      style={{ left: `${(row.analisisEconomico / 10) * 100}%`, transform: 'translateX(-50%)' }}
+                    ></div>
+                  </div>
+                  <span className="text-sm font-medium text-gray-500 w-6">10</span>
+                </div>
+
+                {/* Valor numérico destacado */}
+                <div className="text-center">
+                  <div className={`inline-flex items-center gap-2 px-6 py-3 rounded-xl border-2 ${getScoreBg(row.analisisEconomico)} backdrop-blur-sm shadow-lg`}>
+                    <span className={`font-bold text-2xl ${getScoreColor(row.analisisEconomico)}`}>
+                      {row.analisisEconomico}
+                    </span>
+                    {row.analisisEconomico >= 5 && <Award className="w-5 h-5 text-yellow-500" />}
+                  </div>
+                </div>
+
+                {/* Botón VER ANÁLISIS ECONÓMICO COMPLETO */}
+                <div className="text-center">
+                  <button className="px-6 py-3 bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold rounded-lg transition-all duration-300 hover:shadow-md border border-gray-300 text-xs uppercase tracking-wide">
+                    Ver Análisis Económico Completo
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* SEGUNDA SECCION - Análisis Jurídico */}
+            <div className="p-6">
+              <div className="text-center mb-4">
+                <h4 className="text-base font-bold text-gray-700 uppercase mb-1">Segunda Sección</h4>
+                <h5 className="text-lg font-bold text-[#de2488] flex items-center justify-center gap-2">
+                  <Scale className="w-5 h-5" />
+                  ANÁLISIS JURÍDICO
+                </h5>
+              </div>
+
+              <div className="space-y-4">
+                {/* Barras de greenflags y redflags */}
+                <div className="space-y-3">
+                  {/* Barra de Greenflags */}
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-8 bg-[#00cfaf] rounded flex items-center justify-center text-white font-bold text-sm">
+                      {row.analisisJuridico.greenFlags}
+                    </div>
+                    <div className="flex-1 h-8 bg-gray-200 rounded-lg overflow-hidden">
+                      <div 
+                        className="h-full bg-[#00cfaf] transition-all duration-700"
+                        style={{ 
+                          width: `${(row.analisisJuridico.greenFlags / Math.max(row.analisisJuridico.greenFlags, row.analisisJuridico.redFlags, 10)) * 100}%` 
+                        }}
+                      ></div>
+                    </div>
+                  </div>
+
+                  {/* Barra de Redflags */}
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-8 bg-[#de2488] rounded flex items-center justify-center text-white font-bold text-sm">
+                      {row.analisisJuridico.redFlags}
+                    </div>
+                    <div className="flex-1 h-8 bg-gray-200 rounded-lg overflow-hidden">
+                      <div 
+                        className="h-full bg-[#de2488] transition-all duration-700"
+                        style={{ 
+                          width: `${(row.analisisJuridico.redFlags / Math.max(row.analisisJuridico.greenFlags, row.analisisJuridico.redFlags, 10)) * 100}%` 
+                        }}
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Botón VER ANÁLISIS JURÍDICO COMPLETO */}
+                <div className="text-center">
+                  <button className="px-6 py-3 bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold rounded-lg transition-all duration-300 hover:shadow-md border border-gray-300 text-xs uppercase tracking-wide">
+                    Ver Análisis Jurídico Completo
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
 
       {/* Vista desktop - Tabla original */}
