@@ -1,69 +1,72 @@
 "use client";
 
 import React, { useState } from "react";
-import { TrendingUp, TrendingDown, Award, BarChart3 } from "lucide-react";
+import { TrendingUp, TrendingDown, Award, Info, FileText, Scale, DollarSign, HelpCircle } from "lucide-react";
 
 interface TablaData {
   alianza: string;
-  indiceEconomico1: number;
-  indiceEconomico2: number;
-  ratioGreenRed: string;
+  analisisEconomico: number; // Escala 1-10
+  analisisJuridico: {
+    greenFlags: number;
+    redFlags: number;
+  };
+  colorPartido?: string; // Color del partido para personalización
 }
 
 const datosTabla: TablaData[] = [
   {
     alianza: "UNIDAD",
-    indiceEconomico1: 6,
-    indiceEconomico2: 6,
-    ratioGreenRed: "24:5"
+    analisisEconomico: 6,
+    analisisJuridico: { greenFlags: 24, redFlags: 5 },
+    colorPartido: "#003b69"
   },
   {
     alianza: "LIBERTAD Y PROGRESO ADN",
-    indiceEconomico1: 3.9,
-    indiceEconomico2: 3,
-    ratioGreenRed: "24:2"
+    analisisEconomico: 3.45,
+    analisisJuridico: { greenFlags: 24, redFlags: 2 },
+    colorPartido: "#ff030f"
   },
   {
     alianza: "LA FUERZA DEL PUEBLO",
-    indiceEconomico1: 3.1,
-    indiceEconomico2: 3,
-    ratioGreenRed: "17:7"
+    analisisEconomico: 3.1,
+    analisisJuridico: { greenFlags: 17, redFlags: 7 },
+    colorPartido: "#d19d03"
   },
   {
     alianza: "PDC",
-    indiceEconomico1: 3.9,
-    indiceEconomico2: 3,
-    ratioGreenRed: "12:5"
+    analisisEconomico: 3.9,
+    analisisJuridico: { greenFlags: 12, redFlags: 5 },
+    colorPartido: "#f83728"
   },
   {
     alianza: "APB-SÚMATE",
-    indiceEconomico1: 4.3,
-    indiceEconomico2: 4,
-    ratioGreenRed: "23:5"
+    analisisEconomico: 4.3,
+    analisisJuridico: { greenFlags: 23, redFlags: 5 },
+    colorPartido: "#ff1616"
   },
   {
     alianza: "MAS-IPSP",
-    indiceEconomico1: 2.6,
-    indiceEconomico2: 4,
-    ratioGreenRed: "12:0"
+    analisisEconomico: 2.6,
+    analisisJuridico: { greenFlags: 12, redFlags: 0 },
+    colorPartido: "#173983"
   },
   {
     alianza: "ALIANZA POPULAR",
-    indiceEconomico1: 3.8,
-    indiceEconomico2: 3,
-    ratioGreenRed: "24:2"
+    analisisEconomico: 3.8,
+    analisisJuridico: { greenFlags: 24, redFlags: 2 },
+    colorPartido: "#56a6d9"
   },
   {
     alianza: "MORENA",
-    indiceEconomico1: 4,
-    indiceEconomico2: 4,
-    ratioGreenRed: "9:1"
+    analisisEconomico: 4,
+    analisisJuridico: { greenFlags: 9, redFlags: 1 },
+    colorPartido: "#676767"
   },
   {
     alianza: "LIBERTAD Y DEMOCRACIA (LIBRE)",
-    indiceEconomico1: 6.33,
-    indiceEconomico2: 5,
-    ratioGreenRed: "6:3"
+    analisisEconomico: 6.33,
+    analisisJuridico: { greenFlags: 6, redFlags: 3 },
+    colorPartido: "#ff0000"
   }
 ];
 
@@ -72,6 +75,7 @@ export function TablaGeneralCTV() {
     key: keyof TablaData | null;
     direction: 'asc' | 'desc';
   }>({ key: null, direction: 'asc' });
+  const [showTooltip, setShowTooltip] = useState<string | null>(null);
 
   const handleSort = (key: keyof TablaData) => {
     let direction: 'asc' | 'desc' = 'asc';
@@ -82,11 +86,19 @@ export function TablaGeneralCTV() {
   };
 
   const sortedData = React.useMemo(() => {
-    let sortableData = [...datosTabla];
+    const sortableData = [...datosTabla];
     if (sortConfig.key) {
       sortableData.sort((a, b) => {
-        const aValue = a[sortConfig.key!];
-        const bValue = b[sortConfig.key!];
+        const aValue = sortConfig.key === 'analisisEconomico' 
+          ? a.analisisEconomico 
+          : sortConfig.key === 'alianza' 
+            ? a.alianza 
+            : a.analisisJuridico.greenFlags;
+        const bValue = sortConfig.key === 'analisisEconomico' 
+          ? b.analisisEconomico 
+          : sortConfig.key === 'alianza' 
+            ? b.alianza 
+            : b.analisisJuridico.greenFlags;
         
         if (typeof aValue === 'number' && typeof bValue === 'number') {
           return sortConfig.direction === 'asc' ? aValue - bValue : bValue - aValue;
@@ -105,191 +117,373 @@ export function TablaGeneralCTV() {
   }, [sortConfig]);
 
   const getScoreColor = (score: number) => {
-    if (score >= 5) return "text-green-400";
-    if (score >= 4) return "text-yellow-400";
-    if (score >= 3) return "text-orange-400";
-    return "text-red-400";
+    if (score >= 5) return "text-[#00cfaf]";
+    return "text-[#de2488]";
   };
 
   const getScoreBg = (score: number) => {
-    if (score >= 5) return "bg-green-500/20 border-green-500/30";
-    if (score >= 4) return "bg-yellow-500/20 border-yellow-500/30";
-    if (score >= 3) return "bg-orange-500/20 border-orange-500/30";
-    return "bg-red-500/20 border-red-500/30";
+    if (score >= 5) return "bg-[#00cfaf]/10 border-[#00cfaf]/30";
+    return "bg-[#de2488]/10 border-[#de2488]/30";
   };
 
-  const parseRatio = (ratio: string) => {
-    const [green, red] = ratio.split(':').map(Number);
-    return { green, red, total: green + red };
+  const getProgressColor = (score: number) => {
+    if (score >= 5) return "from-[#00cfaf] to-[#00cfaf]/80";
+    return "from-[#de2488] to-[#de2488]/80";
   };
+
+  const Tooltip = ({ content, children, id }: { content: string; children: React.ReactNode; id: string }) => (
+    <div className="relative inline-block">
+      <div
+        onMouseEnter={() => setShowTooltip(id)}
+        onMouseLeave={() => setShowTooltip(null)}
+        className="cursor-help"
+      >
+        {children}
+      </div>
+      {showTooltip === id && (
+        <div className="absolute z-50 px-3 py-2 text-sm bg-gray-900 text-white rounded-lg shadow-lg -top-12 left-1/2 transform -translate-x-1/2 whitespace-nowrap animate-fade-in">
+          {content}
+          <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-2 h-2 bg-gray-900 rotate-45"></div>
+        </div>
+      )}
+    </div>
+  );
 
   return (
     <div className="w-full max-w-7xl mx-auto">
-      {/* Header */}
-      <div className="text-center mb-8">
-        <div className="flex items-center justify-center gap-3 mb-4">
-          <div className="p-3 rounded-full bg-gradient-to-r from-blue-500 to-purple-600">
-            <BarChart3 className="w-6 h-6 text-white" />
-          </div>
-          <h2 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-            Análisis Comparativo
-          </h2>
-        </div>
-        <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-          Índices económicos y ratios de transparencia por alianza política
-        </p>
-      </div>
 
-      {/* Tabla */}
-      <div className="relative overflow-hidden rounded-2xl bg-white dark:bg-slate-900 shadow-2xl border border-gray-200 dark:border-slate-700">
-        {/* Fondo animado */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-pink-500/5"></div>
-        
-        {/* Partículas decorativas */}
-        <div className="absolute top-4 right-4 w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
-        <div className="absolute bottom-6 left-6 w-1 h-1 bg-purple-400 rounded-full animate-ping"></div>
-        <div className="absolute top-1/2 right-8 w-1.5 h-1.5 bg-pink-400 rounded-full animate-bounce"></div>
-
-        <div className="relative z-10 overflow-x-auto">
-          <table className="w-full">
-            {/* Header de la tabla */}
-            <thead>
-              <tr className="bg-gradient-to-r from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-700 border-b border-gray-200 dark:border-slate-600">
-                <th 
-                  className="px-6 py-4 text-left cursor-pointer hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors duration-200"
-                  onClick={() => handleSort('alianza')}
-                >
-                  <div className="flex items-center gap-2">
-                    <span className="font-semibold text-gray-900 dark:text-white text-sm sm:text-base">
-                      Alianza/Partido
-                    </span>
-                    {sortConfig.key === 'alianza' && (
-                      sortConfig.direction === 'asc' ? 
-                        <TrendingUp className="w-4 h-4 text-blue-500" /> : 
-                        <TrendingDown className="w-4 h-4 text-blue-500" />
-                    )}
-                  </div>
-                </th>
-                
-                <th 
-                  className="px-6 py-4 text-center cursor-pointer hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors duration-200"
-                  onClick={() => handleSort('indiceEconomico1')}
-                >
-                  <div className="flex items-center justify-center gap-2">
-                    <span className="font-semibold text-gray-900 dark:text-white text-sm sm:text-base">
-                      Índice Económico
-                    </span>
-                    {sortConfig.key === 'indiceEconomico1' && (
-                      sortConfig.direction === 'asc' ? 
-                        <TrendingUp className="w-4 h-4 text-blue-500" /> : 
-                        <TrendingDown className="w-4 h-4 text-blue-500" />
-                    )}
-                  </div>
-                </th>
-                
-                <th 
-                  className="px-6 py-4 text-center cursor-pointer hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors duration-200"
-                  onClick={() => handleSort('indiceEconomico2')}
-                >
-                  <div className="flex items-center justify-center gap-2">
-                    <span className="font-semibold text-gray-900 dark:text-white text-sm sm:text-base">
-                      Índice Económico 2
-                    </span>
-                    {sortConfig.key === 'indiceEconomico2' && (
-                      sortConfig.direction === 'asc' ? 
-                        <TrendingUp className="w-4 h-4 text-blue-500" /> : 
-                        <TrendingDown className="w-4 h-4 text-blue-500" />
-                    )}
-                  </div>
-                </th>
-                
-                <th className="px-6 py-4 text-center">
-                  <span className="font-semibold text-gray-900 dark:text-white text-sm sm:text-base">
-                    Ratio Greenflags:Redflags
-                  </span>
-                </th>
-              </tr>
-            </thead>
-            
-            {/* Cuerpo de la tabla */}
-            <tbody>
-              {sortedData.map((row, index) => {
-                const ratio = parseRatio(row.ratioGreenRed);
-                const greenPercentage = (ratio.green / ratio.total) * 100;
-                
-                return (
-                  <tr 
-                    key={index}
-                    className="border-b border-gray-200 dark:border-slate-700 hover:bg-gradient-to-r hover:from-blue-50/50 hover:to-purple-50/50 dark:hover:from-slate-800/50 dark:hover:to-slate-700/50 transition-all duration-300 group"
-                  >
-                    {/* Alianza/Partido */}
-                    <td className="px-6 py-4">
-                      <div className="flex items-center gap-3">
-                        <div className="w-3 h-8 bg-gradient-to-b from-blue-500 to-purple-600 rounded-full group-hover:scale-110 transition-transform duration-300"></div>
-                        <span className="font-medium text-gray-900 dark:text-white text-sm sm:text-base group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
-                          {row.alianza}
-                        </span>
-                      </div>
-                    </td>
-                    
-                    {/* Índice Económico 1 */}
-                    <td className="px-6 py-4 text-center">
-                      <div className={`inline-flex items-center gap-2 px-3 py-2 rounded-lg border ${getScoreBg(row.indiceEconomico1)} backdrop-blur-sm`}>
-                        <span className={`font-bold text-lg ${getScoreColor(row.indiceEconomico1)}`}>
-                          {row.indiceEconomico1}
-                        </span>
-                        {row.indiceEconomico1 >= 5 && <Award className="w-4 h-4 text-yellow-500" />}
-                      </div>
-                    </td>
-                    
-                    {/* Índice Económico 2 */}
-                    <td className="px-6 py-4 text-center">
-                      <div className={`inline-flex items-center gap-2 px-3 py-2 rounded-lg border ${getScoreBg(row.indiceEconomico2)} backdrop-blur-sm`}>
-                        <span className={`font-bold text-lg ${getScoreColor(row.indiceEconomico2)}`}>
-                          {row.indiceEconomico2}
-                        </span>
-                        {row.indiceEconomico2 >= 5 && <Award className="w-4 h-4 text-yellow-500" />}
-                      </div>
-                    </td>
-                    
-                    {/* Ratio */}
-                    <td className="px-6 py-4">
-                      <div className="flex items-center justify-center gap-3">
-                        <span className="font-mono font-bold text-gray-900 dark:text-white text-sm sm:text-base">
-                          {row.ratioGreenRed}
-                        </span>
-                        <div className="flex-1 max-w-24 h-2 bg-gray-200 dark:bg-slate-700 rounded-full overflow-hidden">
-                          <div 
-                            className="h-full bg-gradient-to-r from-green-400 to-green-500 transition-all duration-700 ease-out"
-                            style={{ width: `${greenPercentage}%` }}
-                          ></div>
-                        </div>
-                        <span className="text-xs text-gray-500 dark:text-gray-400 font-medium">
-                          {greenPercentage.toFixed(0)}%
-                        </span>
-                      </div>
-                    </td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
+      {/* Vista móvil - Layout por secciones */}
+      <div className="md:hidden space-y-8">
+        <div className="text-center mb-6">
+          <h3 className="text-lg font-bold text-gray-600 uppercase tracking-wide">
+            Para Dispositivos Móviles
+          </h3>
         </div>
-        
-        {/* Footer */}
-        <div className="px-6 py-4 bg-gradient-to-r from-slate-50 to-slate-100 dark:from-slate-800 dark:to-slate-700 border-t border-gray-200 dark:border-slate-600">
-          <div className="flex items-center justify-between text-xs sm:text-sm text-gray-600 dark:text-gray-400">
-            <span>Datos actualizados: Julio 2025</span>
-            <div className="flex items-center gap-4">
-              <div className="flex items-center gap-2">
-                <div className="w-3 h-3 bg-green-400 rounded-full"></div>
-                <span>Greenflags</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-3 h-3 bg-red-400 rounded-full"></div>
-                <span>Redflags</span>
+
+        {sortedData.map((row, index) => (
+          <div key={index} className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
+            {/* Header del partido */}
+            <div className="p-4 bg-gradient-to-r from-gray-50 to-gray-100 border-b border-gray-200">
+              <div className="flex items-center gap-3">
+                <div 
+                  className="w-4 h-8 rounded-full shadow-md"
+                  style={{ backgroundColor: row.colorPartido || '#6b7280' }}
+                ></div>
+                <h3 className="font-bold text-gray-900 text-lg">{row.alianza}</h3>
               </div>
             </div>
+
+            {/* PRIMERA SECCION - Análisis Económico */}
+            <div className="p-6 border-b border-gray-200">
+              <div className="text-center mb-4">
+                <h4 className="text-base font-bold text-gray-700 uppercase mb-1">Primera Sección</h4>
+                <h5 className="text-lg font-bold text-[#00cfaf] flex items-center justify-center gap-2">
+                  <DollarSign className="w-5 h-5" />
+                  ANÁLISIS ECONÓMICO
+                </h5>
+              </div>
+
+              <div className="space-y-4">
+                {/* Escala visual 1-10 */}
+                <div className="flex items-center gap-2">
+                  <span className="text-sm font-medium text-gray-500 w-4">1</span>
+                  <div className="flex-1 h-6 bg-gray-200 rounded-full overflow-hidden shadow-inner relative">
+                    <div 
+                      className={`h-full bg-gradient-to-r ${getProgressColor(row.analisisEconomico)} transition-all duration-700 ease-out relative`}
+                      style={{ width: `${(row.analisisEconomico / 10) * 100}%` }}
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent"></div>
+                    </div>
+                    {/* Marcador del valor */}
+                    <div 
+                      className="absolute top-0 h-full w-1 bg-gray-800 shadow-lg"
+                      style={{ left: `${(row.analisisEconomico / 10) * 100}%`, transform: 'translateX(-50%)' }}
+                    ></div>
+                  </div>
+                  <span className="text-sm font-medium text-gray-500 w-6">10</span>
+                </div>
+
+                {/* Valor numérico destacado */}
+                <div className="text-center">
+                  <div className={`inline-flex items-center gap-2 px-6 py-3 rounded-xl border-2 ${getScoreBg(row.analisisEconomico)} backdrop-blur-sm shadow-lg`}>
+                    <span className={`font-bold text-2xl ${getScoreColor(row.analisisEconomico)}`}>
+                      {row.analisisEconomico}
+                    </span>
+                    {row.analisisEconomico >= 5 && <Award className="w-5 h-5 text-yellow-500" />}
+                  </div>
+                </div>
+
+                {/* Botón VER ANÁLISIS ECONÓMICO COMPLETO */}
+                <div className="text-center">
+                  <button className="px-6 py-3 bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold rounded-lg transition-all duration-300 hover:shadow-md border border-gray-300 text-xs uppercase tracking-wide">
+                    Ver Análisis Económico Completo
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            {/* SEGUNDA SECCION - Análisis Jurídico */}
+            <div className="p-6">
+              <div className="text-center mb-4">
+                <h4 className="text-base font-bold text-gray-700 uppercase mb-1">Segunda Sección</h4>
+                <h5 className="text-lg font-bold text-[#de2488] flex items-center justify-center gap-2">
+                  <Scale className="w-5 h-5" />
+                  ANÁLISIS JURÍDICO
+                </h5>
+              </div>
+
+              <div className="space-y-4">
+                {/* Barras de greenflags y redflags */}
+                <div className="space-y-3">
+                  {/* Barra de Greenflags */}
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-8 bg-[#00cfaf] rounded flex items-center justify-center text-white font-bold text-sm">
+                      {row.analisisJuridico.greenFlags}
+                    </div>
+                    <div className="flex-1 h-8 bg-gray-200 rounded-lg overflow-hidden">
+                      <div 
+                        className="h-full bg-[#00cfaf] transition-all duration-700"
+                        style={{ 
+                          width: `${(row.analisisJuridico.greenFlags / Math.max(row.analisisJuridico.greenFlags, row.analisisJuridico.redFlags, 10)) * 100}%` 
+                        }}
+                      ></div>
+                    </div>
+                  </div>
+
+                  {/* Barra de Redflags */}
+                  <div className="flex items-center gap-3">
+                    <div className="w-12 h-8 bg-[#de2488] rounded flex items-center justify-center text-white font-bold text-sm">
+                      {row.analisisJuridico.redFlags}
+                    </div>
+                    <div className="flex-1 h-8 bg-gray-200 rounded-lg overflow-hidden">
+                      <div 
+                        className="h-full bg-[#de2488] transition-all duration-700"
+                        style={{ 
+                          width: `${(row.analisisJuridico.redFlags / Math.max(row.analisisJuridico.greenFlags, row.analisisJuridico.redFlags, 10)) * 100}%` 
+                        }}
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Botón VER ANÁLISIS JURÍDICO COMPLETO */}
+                <div className="text-center">
+                  <button className="px-6 py-3 bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold rounded-lg transition-all duration-300 hover:shadow-md border border-gray-300 text-xs uppercase tracking-wide">
+                    Ver Análisis Jurídico Completo
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Vista desktop - Tabla original */}
+      <div className="hidden md:block">
+        {/* Contenedor principal de la tabla */}
+        <div className="relative overflow-hidden rounded-3xl bg-white shadow-2xl border border-gray-200">
+          {/* Elementos decorativos de fondo */}
+          <div className="absolute inset-0 bg-gradient-to-br from-[#de2488]/3 via-white to-[#00cfaf]/3"></div>
+          <div className="absolute top-6 right-6 w-3 h-3 bg-[#de2488]/20 rounded-full animate-pulse"></div>
+          <div className="absolute bottom-8 left-8 w-2 h-2 bg-[#00cfaf]/20 rounded-full animate-ping"></div>
+
+          <div className="relative z-10 overflow-x-auto">
+            <table className="w-full">
+              {/* Header de la tabla */}
+              <thead>
+                <tr className="bg-gradient-to-r from-gray-50 to-gray-100 border-b-2 border-gray-200">
+                  <th 
+                    className="px-6 py-6 text-left cursor-pointer hover:bg-gray-200 transition-all duration-300"
+                    onClick={() => handleSort('alianza')}
+                  >
+                    <div className="flex items-center gap-3">
+                      <span className="font-bold text-gray-900 text-base sm:text-lg font-round">
+                        Alianza/Partido
+                      </span>
+                      {sortConfig.key === 'alianza' && (
+                        sortConfig.direction === 'asc' ? 
+                          <TrendingUp className="w-5 h-5 text-[#de2488]" /> : 
+                          <TrendingDown className="w-5 h-5 text-[#de2488]" />
+                      )}
+                    </div>
+                  </th>
+                  
+                  <th className="px-6 py-6 text-center">
+                    <div className="flex items-center justify-center gap-3">
+                      <DollarSign className="w-5 h-5 text-[#00cfaf]" />
+                      <div className="flex flex-col items-center">
+                        <span className="font-bold text-gray-900 text-base sm:text-lg font-round">
+                          ANÁLISIS ECONÓMICO
+                        </span>
+                        <Tooltip content="Escala del 1-10 basada en viabilidad y fundamentos de propuestas económicas" id="economic-tooltip">
+                          <div className="flex items-center gap-1 text-xs text-gray-500 mt-1 cursor-help">
+                            <HelpCircle className="w-3 h-3" />
+                            <span>escala 1-10</span>
+                          </div>
+                        </Tooltip>
+                      </div>
+                    </div>
+                  </th>
+                  
+                  <th className="px-6 py-6 text-center">
+                    <div className="flex items-center justify-center gap-3">
+                      <Scale className="w-5 h-5 text-[#de2488]" />
+                      <div className="flex flex-col items-center">
+                        <span className="font-bold text-gray-900 text-base sm:text-lg font-round">
+                          ANÁLISIS JURÍDICO
+                        </span>
+                        <Tooltip content="Greenflags: aspectos positivos, Redflags: procesos, denuncias o señales de alerta" id="legal-tooltip">
+                          <div className="flex items-center gap-1 text-xs text-gray-500 mt-1 cursor-help">
+                            <HelpCircle className="w-3 h-3" />
+                            <span>greenflags vs redflags</span>
+                          </div>
+                        </Tooltip>
+                      </div>
+                    </div>
+                  </th>
+                  
+                  <th className="px-6 py-6 text-center">
+                    <span className="font-bold text-gray-900 text-base sm:text-lg font-round">
+                      
+                    </span>
+                  </th>
+                </tr>
+              </thead>
+              
+              {/* Cuerpo de la tabla */}
+              <tbody>
+                {sortedData.map((row, index) => {
+                  const totalFlags = row.analisisJuridico.greenFlags + row.analisisJuridico.redFlags;
+                  const greenPercentage = totalFlags > 0 ? (row.analisisJuridico.greenFlags / totalFlags) * 100 : 0;
+                  
+                  return (
+                    <tr 
+                      key={index}
+                      className="border-b border-gray-200 hover:bg-gradient-to-r hover:from-[#de2488]/5 hover:to-[#00cfaf]/5 transition-all duration-300 group"
+                    >
+                      {/* Alianza/Partido */}
+                      <td className="px-6 py-6">
+                        <div className="flex items-center gap-4">
+                          <div 
+                            className="w-4 h-12 rounded-full shadow-md group-hover:scale-110 transition-transform duration-300"
+                            style={{ backgroundColor: row.colorPartido || '#6b7280' }}
+                          ></div>
+                          <div>
+                            <span className="font-bold text-gray-900 text-base sm:text-lg group-hover:text-[#de2488] transition-colors duration-300">
+                              {row.alianza}
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+                      
+                      {/* Análisis Económico */}
+                      <td className="px-6 py-6">
+                        <div className="flex flex-col items-center space-y-3">
+                          {/* Valor numérico */}
+                          <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl border-2 ${getScoreBg(row.analisisEconomico)} backdrop-blur-sm shadow-lg`}>
+                            <span className={`font-bold text-xl ${getScoreColor(row.analisisEconomico)}`}>
+                              {row.analisisEconomico}
+                            </span>
+                            {row.analisisEconomico >= 5 && <Award className="w-5 h-5 text-yellow-500" />}
+                          </div>
+                          
+                          {/* Escala visual 1-10 */}
+                          <div className="flex items-center gap-2 w-full max-w-xs">
+                            <span className="text-sm font-medium text-gray-500">1</span>
+                            <div className="flex-1 h-4 bg-gray-200 rounded-full overflow-hidden shadow-inner">
+                              <div 
+                                className={`h-full bg-gradient-to-r ${getProgressColor(row.analisisEconomico)} transition-all duration-700 ease-out relative`}
+                                style={{ width: `${(row.analisisEconomico / 10) * 100}%` }}
+                              >
+                                <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent"></div>
+                              </div>
+                            </div>
+                            <span className="text-sm font-medium text-gray-500">10</span>
+                          </div>
+                          
+                          {/* Botón VER RESULTADOS */}
+                          <button className="px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 text-sm font-semibold rounded-lg transition-all duration-300 hover:shadow-md border border-gray-300">
+                            VER RESULTADOS
+                          </button>
+                        </div>
+                      </td>
+                      
+                      {/* Análisis Jurídico */}
+                      <td className="px-6 py-6">
+                        <div className="flex flex-col items-center space-y-4">
+                          {/* Números principales */}
+                          <div className="flex items-center gap-3">
+                            <div className="flex items-center gap-2 px-3 py-2 bg-[#00cfaf]/10 rounded-lg border border-[#00cfaf]/30">
+                              <div className="w-3 h-3 bg-[#00cfaf] rounded-full"></div>
+                              <span className="font-bold text-[#00cfaf] text-lg">{row.analisisJuridico.greenFlags}</span>
+                            </div>
+                            <div className="flex items-center gap-2 px-3 py-2 bg-[#de2488]/10 rounded-lg border border-[#de2488]/30">
+                              <div className="w-3 h-3 bg-[#de2488] rounded-full"></div>
+                              <span className="font-bold text-[#de2488] text-lg">{row.analisisJuridico.redFlags}</span>
+                            </div>
+                          </div>
+                          
+                          {/* Barra de progreso */}
+                          <div className="w-full max-w-32 h-3 bg-gray-200 rounded-full overflow-hidden shadow-inner">
+                            <div 
+                              className="h-full bg-gradient-to-r from-[#00cfaf] to-[#00cfaf]/80 transition-all duration-700 ease-out"
+                              style={{ width: `${greenPercentage}%` }}
+                            ></div>
+                          </div>
+                          
+                          {/* Botón RESULTADOS */}
+                          <button className="px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 text-sm font-semibold rounded-lg transition-all duration-300 hover:shadow-md border border-gray-300">
+                            VER RESULTADOS
+                          </button>
+                        </div>
+                      </td>
+                      
+                      {/* Botón Análisis Completo */}
+                      <td className="px-6 py-6 text-center">
+                        <button className="px-6 py-3 bg-gradient-to-r from-[#de2488] to-[#00cfaf] text-white font-bold rounded-xl hover:shadow-lg hover:scale-105 transition-all duration-300 text-sm">
+                          ANÁLISIS COMPLETO
+                        </button>
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+          
+          {/* Footer mejorado */}
+          <div className="relative z-20 px-6 py-6 bg-gradient-to-r from-gray-50 to-gray-100 border-t-2 border-gray-200">
+            <div className="flex items-center justify-between text-sm">
+              <div className="flex items-center gap-2">
+                <Info className="w-4 h-4 text-gray-700" />
+                <span className="font-bold text-black">Datos actualizados: Agosto 2025</span>
+              </div>
+              <div className="flex items-center gap-6">
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 bg-[#00cfaf] rounded-full shadow-sm"></div>
+                  <span className="font-bold text-black">Greenflags (Aspectos positivos)</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <div className="w-3 h-3 bg-[#de2488] rounded-full shadow-sm"></div>
+                  <span className="font-bold text-black">Redflags (Señales de alerta)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      {/* Nota explicativa */}
+      <div className="mt-8 p-6 bg-gradient-to-r from-[#de2488]/5 to-[#00cfaf]/5 rounded-2xl border border-gray-200">
+        <div className="flex items-start gap-3">
+          <FileText className="w-5 h-5 text-gray-600 mt-1 flex-shrink-0" />
+          <div className="text-sm text-gray-700 leading-relaxed">
+            <p className="font-semibold mb-2">Metodología de análisis:</p>
+            <p>
+              <strong>Análisis Económico:</strong> Evaluación de la viabilidad, fundamentación y coherencia de las propuestas económicas en una escala del 1 al 10.
+              <br />
+              <strong>Análisis Jurídico:</strong> Revisión de antecedentes legales, procesos pendientes y trayectoria jurídica de los candidatos.
+            </p>
           </div>
         </div>
       </div>

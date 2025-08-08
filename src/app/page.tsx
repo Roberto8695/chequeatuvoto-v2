@@ -15,7 +15,6 @@ import { CardPartidos } from "./components/card-partidos";
 import ContentFakeNews from "./components/content-fake";
 import AvoidSharingSection from "./components/avoid-sharing";
 import SurveyDetectionSection from "./components/survey-detection";
-import TablaGeneralCTV from "./components/tabla-general-ctv";
 import HeroSection from "@/components/ui/hero-section";
 import FeaturesGrid from "@/components/ui/features-grid";
 import AnimatedTimeline from "@/components/ui/animated-timeline";
@@ -244,7 +243,6 @@ export default function Home() {
             <FeaturesGrid features={features} />
             <AnimatedTimeline events={timelineEvents} />
             <CardPartidos />
-            <TablaGeneralCTV />
             <ContentFakeNews />
             <AvoidSharingSection />
             <SurveyDetectionSection />
@@ -288,11 +286,6 @@ export default function Home() {
               {/* Sección de Partidos Políticos */}
               <div id="political-parties" className="mt-32 sm:mt-20">
                 <CardPartidos />
-              </div>
-              
-              {/* Sección de Análisis Comparativo */}
-              <div id="analisis-comparativo" className="mt-32 sm:mt-20">
-                <TablaGeneralCTV />
               </div>
               
               {/* Sección de Identificación de Noticias Falsas */}
