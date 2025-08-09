@@ -11,6 +11,11 @@ interface TablaData {
     redFlags: number;
   };
   colorPartido?: string; // Color del partido para personalización
+  enlaces: {
+    completo: string;
+    economico: string;
+    redflag: string;
+  };
 }
 
 const datosTabla: TablaData[] = [
@@ -18,55 +23,100 @@ const datosTabla: TablaData[] = [
     alianza: "UNIDAD",
     analisisEconomico: 6,
     analisisJuridico: { greenFlags: 24, redFlags: 5 },
-    colorPartido: "#003b69"
+    colorPartido: "#003b69",
+    enlaces: {
+      completo: "https://drive.google.com/file/d/1oGuO5W0nqI7cGacJnO68B66t__QUb9AB/view?usp=sharing",
+      economico: "https://drive.google.com/file/d/1qDSz1yVKNXHOYlS4ebkAs45zi2fYdw9-/view?usp=sharing",
+      redflag: "https://drive.google.com/file/d/1-6wOoH1Yo9m_ebD-Mht76jnmmmC7Jsgk/view?usp=sharing"
+    }
   },
   {
     alianza: "LIBERTAD Y PROGRESO ADN",
     analisisEconomico: 3.45,
     analisisJuridico: { greenFlags: 24, redFlags: 2 },
-    colorPartido: "#ff030f"
+    colorPartido: "#ff030f",
+    enlaces: {
+      completo: "https://drive.google.com/file/d/1aOo0gzEF8U5oQeXMJV2opYXPdSBGv6s3/view?usp=sharing",
+      economico: "https://drive.google.com/file/d/18boRRCHWGci-8ijafpDnvAsId9jvlNVZ/view?usp=sharing",
+      redflag: "https://drive.google.com/file/d/1X9jeRvRogHKjE7iQJfargn9TCDTqWhbD/view?usp=sharing"
+    }
   },
   {
     alianza: "LA FUERZA DEL PUEBLO",
     analisisEconomico: 3.1,
     analisisJuridico: { greenFlags: 17, redFlags: 7 },
-    colorPartido: "#d19d03"
+    colorPartido: "#d19d03",
+    enlaces: {
+      completo: "https://drive.google.com/file/d/1uM5vFLv_l-i_SVfjpRbHkUgT38-Qws5d/view?usp=sharing",
+      economico: "https://drive.google.com/file/d/1VhPao5jLy6z01u2mEGtLWeS6taoZov8Q/view?usp=sharing",
+      redflag: "https://drive.google.com/file/d/139g3dICQFIWh38-UFChF1ORTTxQbRYYy/view?usp=sharing"
+    }
   },
   {
     alianza: "PDC",
     analisisEconomico: 3.9,
     analisisJuridico: { greenFlags: 12, redFlags: 5 },
-    colorPartido: "#f83728"
+    colorPartido: "#f83728",
+    enlaces: {
+      completo: "https://drive.google.com/file/d/1cWprXiEIzPt2546SYGp5iQbWxe_qi-Jo/view?usp=sharing",
+      economico: "https://drive.google.com/file/d/1PwC-Krlb9RP8axaOKY0AE69z5GkKNqI3/view?usp=sharing",
+      redflag: "https://drive.google.com/file/d/1lXVQsKmIhCb8HrxgvD296bRCrN4u2VdU/view?usp=sharing"
+    }
   },
   {
     alianza: "APB-SÚMATE",
     analisisEconomico: 4.3,
     analisisJuridico: { greenFlags: 23, redFlags: 5 },
-    colorPartido: "#ff1616"
+    colorPartido: "#ff1616",
+    enlaces: {
+      completo: "https://drive.google.com/file/d/1Nva3q5ieEi_Dv94IK43TjbHnnmTSiB9v/view?usp=sharing",
+      economico: "https://drive.google.com/file/d/1YkQedLUAN-mdHv3diAb83B4nc1qRk4nq/view?usp=sharing",
+      redflag: "https://drive.google.com/file/d/1eXZYD94zhoCWCpc8AoXj5GvXy82ei9RO/view?usp=sharing"
+    }
   },
   {
     alianza: "MAS-IPSP",
     analisisEconomico: 2.6,
     analisisJuridico: { greenFlags: 12, redFlags: 0 },
-    colorPartido: "#173983"
+    colorPartido: "#173983",
+    enlaces: {
+      completo: "https://drive.google.com/file/d/1udQ5jWtGk_HG5BEjkRvd2sm3o9oSQdXD/view?usp=sharing",
+      economico: "https://drive.google.com/file/d/1w7VFAOOQgoI94bIKCzj41CBniPcyRfg-/view?usp=sharing",
+      redflag: "https://drive.google.com/file/d/1z9UEbt7YNtMmoA4ZuSPSHPTVbNcpLnCQ/view?usp=sharing"
+    }
   },
   {
     alianza: "ALIANZA POPULAR",
     analisisEconomico: 3.8,
     analisisJuridico: { greenFlags: 24, redFlags: 2 },
-    colorPartido: "#56a6d9"
+    colorPartido: "#56a6d9",
+    enlaces: {
+      completo: "https://drive.google.com/file/d/1H0qg4ktb_4vPJLqPkdn2ffTefpzgSqbc/view?usp=sharing",
+      economico: "https://drive.google.com/file/d/1Mye6voG6ue4K5EFBYrj8XUS3Y2DyFoUl/view?usp=sharing",
+      redflag: "https://drive.google.com/file/d/1UUDcsSKdRRb6P-8EHmZxOEQ4yvnwxtxD/view?usp=sharing"
+    }
   },
   {
     alianza: "MORENA",
     analisisEconomico: 4,
     analisisJuridico: { greenFlags: 9, redFlags: 1 },
-    colorPartido: "#676767"
+    colorPartido: "#676767",
+    enlaces: {
+      completo: "https://drive.google.com/file/d/1H0qg4ktb_4vPJLqPkdn2ffTefpzgSqbc/view?usp=sharing",
+      economico: "https://drive.google.com/file/d/1Mye6voG6ue4K5EFBYrj8XUS3Y2DyFoUl/view?usp=sharing",
+      redflag: "https://drive.google.com/file/d/1UUDcsSKdRRb6P-8EHmZxOEQ4yvnwxtxD/view?usp=sharing"
+    }
   },
   {
     alianza: "LIBERTAD Y DEMOCRACIA (LIBRE)",
     analisisEconomico: 6.33,
     analisisJuridico: { greenFlags: 6, redFlags: 3 },
-    colorPartido: "#ff0000"
+    colorPartido: "#ff0000",
+    enlaces: {
+      completo: "https://drive.google.com/file/d/1WVEWSo9589x8u9lirA6mEMBhcFTghSeR/view?usp=sharing",
+      economico: "https://drive.google.com/file/d/1zvkgTGmPitKSEwHlj0eRoStpxYS8HZQI/view?usp=sharing",
+      redflag: "https://drive.google.com/file/d/1TPuZFcEYveifPkaXmJABaITyjO-G48JH/view?usp=sharing"
+    }
   }
 ];
 
@@ -149,6 +199,10 @@ export function TablaGeneralCTV() {
     </div>
   );
 
+  const abrirEnlace = (url: string) => {
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <div className="w-full max-w-7xl mx-auto">
 
@@ -215,7 +269,10 @@ export function TablaGeneralCTV() {
 
                 {/* Botón VER ANÁLISIS ECONÓMICO COMPLETO */}
                 <div className="text-center">
-                  <button className="px-6 py-3 bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold rounded-lg transition-all duration-300 hover:shadow-md border border-gray-300 text-xs uppercase tracking-wide">
+                  <button 
+                    onClick={() => abrirEnlace(row.enlaces.economico)}
+                    className="px-6 py-3 bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold rounded-lg transition-all duration-300 hover:shadow-md border border-gray-300 text-xs uppercase tracking-wide"
+                  >
                     Ver Análisis Económico Completo
                   </button>
                 </div>
@@ -268,7 +325,10 @@ export function TablaGeneralCTV() {
 
                 {/* Botón VER ANÁLISIS JURÍDICO COMPLETO */}
                 <div className="text-center">
-                  <button className="px-6 py-3 bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold rounded-lg transition-all duration-300 hover:shadow-md border border-gray-300 text-xs uppercase tracking-wide">
+                  <button 
+                    onClick={() => abrirEnlace(row.enlaces.redflag)}
+                    className="px-6 py-3 bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold rounded-lg transition-all duration-300 hover:shadow-md border border-gray-300 text-xs uppercase tracking-wide"
+                  >
                     Ver Análisis Jurídico Completo
                   </button>
                 </div>
@@ -402,7 +462,10 @@ export function TablaGeneralCTV() {
                           </div>
                           
                           {/* Botón VER RESULTADOS */}
-                          <button className="px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 text-sm font-semibold rounded-lg transition-all duration-300 hover:shadow-md border border-gray-300">
+                          <button 
+                            onClick={() => abrirEnlace(row.enlaces.economico)}
+                            className="px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 text-sm font-semibold rounded-lg transition-all duration-300 hover:shadow-md border border-gray-300"
+                          >
                             VER RESULTADOS
                           </button>
                         </div>
@@ -432,7 +495,10 @@ export function TablaGeneralCTV() {
                           </div>
                           
                           {/* Botón RESULTADOS */}
-                          <button className="px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 text-sm font-semibold rounded-lg transition-all duration-300 hover:shadow-md border border-gray-300">
+                          <button 
+                            onClick={() => abrirEnlace(row.enlaces.redflag)}
+                            className="px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 text-sm font-semibold rounded-lg transition-all duration-300 hover:shadow-md border border-gray-300"
+                          >
                             VER RESULTADOS
                           </button>
                         </div>
@@ -440,7 +506,10 @@ export function TablaGeneralCTV() {
                       
                       {/* Botón Análisis Completo */}
                       <td className="px-6 py-6 text-center">
-                        <button className="px-6 py-3 bg-gradient-to-r from-[#de2488] to-[#00cfaf] text-white font-bold rounded-xl hover:shadow-lg hover:scale-105 transition-all duration-300 text-sm">
+                        <button 
+                          onClick={() => abrirEnlace(row.enlaces.completo)}
+                          className="px-6 py-3 bg-gradient-to-r from-[#de2488] to-[#00cfaf] text-white font-bold rounded-xl hover:shadow-lg hover:scale-105 transition-all duration-300 text-sm"
+                        >
                           ANÁLISIS COMPLETO
                         </button>
                       </td>
