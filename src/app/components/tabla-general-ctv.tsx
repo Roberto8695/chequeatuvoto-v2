@@ -97,17 +97,6 @@ const datosTabla: TablaData[] = [
     }
   },
   {
-    alianza: "MORENA",
-    analisisEconomico: 4,
-    analisisJuridico: { greenFlags: 9, redFlags: 1 },
-    colorPartido: "#676767",
-    enlaces: {
-      completo: "https://drive.google.com/file/d/1H0qg4ktb_4vPJLqPkdn2ffTefpzgSqbc/view?usp=sharing",
-      economico: "https://drive.google.com/file/d/1Mye6voG6ue4K5EFBYrj8XUS3Y2DyFoUl/view?usp=sharing",
-      redflag: "https://drive.google.com/file/d/1UUDcsSKdRRb6P-8EHmZxOEQ4yvnwxtxD/view?usp=sharing"
-    }
-  },
-  {
     alianza: "LIBERTAD Y DEMOCRACIA (LIBRE)",
     analisisEconomico: 6.33,
     analisisJuridico: { greenFlags: 6, redFlags: 3 },
