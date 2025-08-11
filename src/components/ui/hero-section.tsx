@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import ElectionCountdown from "@/components/ui/countdown"
 
 
@@ -33,6 +34,49 @@ export default function HeroSection() {
             {/* Countdown integrado debajo del texto */}
             <div className="flex justify-center">
               <ElectionCountdown />
+            </div>
+            
+            {/* Logo Tinku Electoral - clickeable */}
+            <div className="mt-8 flex flex-col items-center justify-center gap-2">
+              <a
+                href="https://tinkuelectoral.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative inline-block transition-all duration-300 hover:scale-105 focus:scale-105 focus:outline-none sm:hover:scale-105 scale-100 sm:scale-100"
+              >
+                {/* Contenedor con efectos hover - activos en móvil */}
+                <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl p-4 shadow-xl border border-[#de2488]/30 sm:shadow-lg sm:border-gray-200/50 sm:hover:shadow-xl sm:hover:border-[#de2488]/30 transition-all duration-300">
+                  {/* Glow effect - siempre visible en móvil */}
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#de2488]/20 to-[#00cfaf]/20 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 blur-xl"></div>
+                  
+                  {/* Logo */}
+                  <div className="relative">
+                    <Image
+                      src="/images/logo_tinku_zoom.webp"
+                      alt="Tinku Electoral - Análisis Electoral"
+                      width={120}
+                      height={80}
+                      className="object-contain transition-all duration-300 brightness-110 sm:brightness-100 sm:group-hover:brightness-110"
+                    />
+                  </div>
+                  
+                  {/* Indicador visual de link - siempre visible en móvil */}
+                  <div className="absolute -top-2 -right-2 bg-[#de2488] text-white rounded-full p-1.5 opacity-100 scale-100 sm:opacity-0 sm:scale-75 sm:group-hover:opacity-100 sm:group-hover:scale-100 transition-all duration-300">
+                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                  </div>
+                </div>
+              </a>
+              
+              {/* Texto informativo - siempre visible en móvil */}
+              <div className="text-center opacity-100 sm:opacity-0 sm:absolute sm:-bottom-8 sm:left-1/2 sm:transform sm:-translate-x-1/2 sm:group-hover:opacity-100 sm:transition-all sm:duration-300">
+                <div className="bg-gray-900/90 text-white text-xs px-3 py-1 rounded-full whitespace-nowrap">
+                  Visitar Tinku Electoral
+                </div>
+                {/* Flecha hacia arriba - solo visible en desktop hover */}
+                <div className="hidden sm:block absolute -top-1 left-1/2 transform -translate-x-1/2 w-2 h-2 bg-gray-900/90 rotate-45"></div>
+              </div>
             </div>
           </div>
         </div>
