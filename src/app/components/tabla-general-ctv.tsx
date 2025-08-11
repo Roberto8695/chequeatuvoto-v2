@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { TrendingUp, TrendingDown, Award, Info, FileText, Scale, DollarSign, HelpCircle } from "lucide-react";
+import { TrendingUp, TrendingDown, Info, FileText, Scale, DollarSign, HelpCircle } from "lucide-react";
+import AnalistasInfo from "./analistas-info";
 
 interface TablaData {
   alianza: string;
@@ -198,9 +199,7 @@ export function TablaGeneralCTV() {
       {/* Vista móvil - Layout por secciones */}
       <div className="md:hidden space-y-8">
         <div className="text-center mb-6">
-          <h3 className="text-lg font-bold text-gray-600 uppercase tracking-wide">
-            Para Dispositivos Móviles
-          </h3>
+          
         </div>
 
         {sortedData.map((row, index) => (
@@ -252,7 +251,6 @@ export function TablaGeneralCTV() {
                     <span className={`font-bold text-2xl ${getScoreColor(row.analisisEconomico)}`}>
                       {row.analisisEconomico}
                     </span>
-                    {row.analisisEconomico >= 5 && <Award className="w-5 h-5 text-yellow-500" />}
                   </div>
                 </div>
 
@@ -364,9 +362,14 @@ export function TablaGeneralCTV() {
                         <span className="font-bold text-gray-900 text-base sm:text-lg font-round">
                           ANÁLISIS ECONÓMICO
                         </span>
+                        
+                          <div className="flex items-center gap-1 text-xs text-gray-500 mt-1 cursor-help">
+                            <span>Promedios en la</span>
+                          </div>
+                        
                         <Tooltip content="Escala del 1-10 basada en viabilidad y fundamentos de propuestas económicas" id="economic-tooltip">
                           <div className="flex items-center gap-1 text-xs text-gray-500 mt-1 cursor-help">
-                            <HelpCircle className="w-3 h-3" />
+                            
                             <span>escala 1-10</span>
                           </div>
                         </Tooltip>
@@ -433,7 +436,6 @@ export function TablaGeneralCTV() {
                             <span className={`font-bold text-xl ${getScoreColor(row.analisisEconomico)}`}>
                               {row.analisisEconomico}
                             </span>
-                            {row.analisisEconomico >= 5 && <Award className="w-5 h-5 text-yellow-500" />}
                           </div>
                           
                           {/* Escala visual 1-10 */}
@@ -455,7 +457,7 @@ export function TablaGeneralCTV() {
                             onClick={() => abrirEnlace(row.enlaces.economico)}
                             className="px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 text-sm font-semibold rounded-lg transition-all duration-300 hover:shadow-md border border-gray-300"
                           >
-                            VER RESULTADOS
+                            VER ANALISIS
                           </button>
                         </div>
                       </td>
@@ -488,7 +490,7 @@ export function TablaGeneralCTV() {
                             onClick={() => abrirEnlace(row.enlaces.redflag)}
                             className="px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 text-sm font-semibold rounded-lg transition-all duration-300 hover:shadow-md border border-gray-300"
                           >
-                            VER RESULTADOS
+                            VER REDFLAGS
                           </button>
                         </div>
                       </td>
@@ -531,6 +533,9 @@ export function TablaGeneralCTV() {
         </div>
       </div>
       
+      {/* Información de Analistas */}
+      <AnalistasInfo />
+      
       {/* Nota explicativa */}
       <div className="mt-8 p-6 bg-gradient-to-r from-[#de2488]/5 to-[#00cfaf]/5 rounded-2xl border border-gray-200">
         <div className="flex items-start gap-3">
@@ -540,13 +545,13 @@ export function TablaGeneralCTV() {
             <p>
               <strong>Análisis Económico:</strong> Evaluación de la viabilidad, fundamentación y coherencia de las propuestas económicas en una escala del 1 al 10.
               <br />
-              <strong>Análisis Jurídico:</strong> Revisión de antecedentes legales, procesos pendientes y trayectoria jurídica de los candidatos.
+              <strong>Análisis Jurídico:</strong>  Es sobre la viabilidad legal de las propuestas económicas.
             </p>
           </div>
         </div>
       </div>
     </div>
-  );
+  );  
 }
 
 export default TablaGeneralCTV;
