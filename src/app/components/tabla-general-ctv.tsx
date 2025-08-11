@@ -44,7 +44,7 @@ const datosTabla: TablaData[] = [
   },
   {
     alianza: "LA FUERZA DEL PUEBLO",
-    analisisEconomico: 3.1,
+    analisisEconomico: 3.05,
     analisisJuridico: { greenFlags: 17, redFlags: 7 },
     colorPartido: "#d19d03",
     enlaces: {
@@ -55,7 +55,7 @@ const datosTabla: TablaData[] = [
   },
   {
     alianza: "PDC",
-    analisisEconomico: 3.9,
+    analisisEconomico: 3.45,
     analisisJuridico: { greenFlags: 12, redFlags: 5 },
     colorPartido: "#f83728",
     enlaces: {
@@ -66,7 +66,7 @@ const datosTabla: TablaData[] = [
   },
   {
     alianza: "APB-SÚMATE",
-    analisisEconomico: 4.3,
+    analisisEconomico: 4.15,
     analisisJuridico: { greenFlags: 23, redFlags: 5 },
     colorPartido: "#ff1616",
     enlaces: {
@@ -77,7 +77,7 @@ const datosTabla: TablaData[] = [
   },
   {
     alianza: "MAS-IPSP",
-    analisisEconomico: 2.6,
+    analisisEconomico: 3.3,
     analisisJuridico: { greenFlags: 12, redFlags: 0 },
     colorPartido: "#173983",
     enlaces: {
@@ -88,7 +88,7 @@ const datosTabla: TablaData[] = [
   },
   {
     alianza: "ALIANZA POPULAR",
-    analisisEconomico: 3.8,
+    analisisEconomico: 3.4,
     analisisJuridico: { greenFlags: 24, redFlags: 2 },
     colorPartido: "#56a6d9",
     enlaces: {
@@ -99,7 +99,7 @@ const datosTabla: TablaData[] = [
   },
   {
     alianza: "LIBERTAD Y DEMOCRACIA (LIBRE)",
-    analisisEconomico: 6.33,
+    analisisEconomico: 5.66,
     analisisJuridico: { greenFlags: 6, redFlags: 3 },
     colorPartido: "#ff0000",
     enlaces: {
