@@ -490,7 +490,7 @@ export function TablaGeneralCTV() {
                             onClick={() => abrirEnlace(row.enlaces.redflag)}
                             className="px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 text-sm font-semibold rounded-lg transition-all duration-300 hover:shadow-md border border-gray-300"
                           >
-                            VER REDFLAGS
+                            VER FLAGS
                           </button>
                         </div>
                       </td>
@@ -533,8 +533,21 @@ export function TablaGeneralCTV() {
         </div>
       </div>
       
+      {/* Separador visual elegante entre tabla y equipo de análisis */}
+      <div className="my-16 relative">
+        <div className="absolute inset-0 flex items-center">
+          <div className="w-full border-t border-gray-300"></div>
+        </div>
+        <div className="relative flex justify-center">
+          
+        </div>
+      </div>
+      
       {/* Información de Analistas */}
       <AnalistasInfo />
+      
+      {/* Separador antes de la metodología */}
+      <div className="mt-12 mb-8 h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
       
       {/* Nota explicativa */}
       <div className="mt-8 p-6 bg-gradient-to-r from-[#de2488]/5 to-[#00cfaf]/5 rounded-2xl border border-gray-200">

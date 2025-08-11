@@ -98,7 +98,7 @@ export function AnalistasInfo() {
       <div className="bg-white rounded-2xl border border-gray-200 shadow-lg p-6 mb-8">
         {/* Header */}
         <div className="text-center mb-6">
-          <h3 className="text-2xl font-bold font-round bg-gradient-to-r from-[#de2488] to-[#00cfaf] bg-clip-text text-transparent mb-2">
+          <h3 className="text-2xl font-bold font-round bg-gradient-to-r from-[#000000] to-[#000000] bg-clip-text text-transparent mb-2">
             Equipo de Análisis
           </h3>
           <p className="text-gray-600 text-sm">
@@ -148,9 +148,7 @@ export function AnalistasInfo() {
 
         {/* Línea decorativa */}
         <div className="mt-6 pt-4 border-t border-gray-200">
-          <div className="h-1 rounded-full overflow-hidden flex shadow-sm mx-auto max-w-md">
-            <div className="flex-1 bg-gradient-to-r from-[#de2488] to-[#00cfaf]"></div>
-          </div>
+          
         </div>
       </div>
 

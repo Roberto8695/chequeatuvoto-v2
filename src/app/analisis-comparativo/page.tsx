@@ -32,10 +32,7 @@ export default function AnalisisComparativo() {
             solo facilita su publicación para el voto informado.
           </p>
 
-          {/* Línea decorativa superior */}
-          <div className="h-2 rounded-full overflow-hidden flex shadow-lg mx-auto max-w-md mb-8 animate-pulse">
-            <div className="flex-1 bg-gradient-to-r from-[#de2488] to-[#00cfaf]"></div>
-          </div>
+          
         </div>
       </section>
 
