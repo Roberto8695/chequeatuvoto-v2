@@ -26,7 +26,7 @@ export default function AnalisisComparativo() {
             EVALUACIÓN TÉCNICA
           </h2>
           
-          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto mb-8 leading-relaxed">
+          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto mb-8 leading-relaxed text-justify">
             Este bloque presenta opiniones técnicas independientes de especialistas invitados. 
             ChequeaBolivia, Natalia Aparicio y Presente.bo, no avalan ni respaldan estas conclusiones; 
             solo facilita su publicación para el voto informado.

@@ -154,10 +154,16 @@ export function AnalistasInfo() {
 
       {/* Modal */}
       {analistaSeleccionado && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4">
-          <div className="bg-white rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4"
+          onClick={cerrarModal}
+        >
+          <div 
+            className="bg-white rounded-2xl max-w-4xl w-full shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
             {/* Header del Modal */}
-            <div className="sticky top-0 bg-white border-b border-gray-200 p-6 rounded-t-2xl">
+            <div className="bg-white border-b border-gray-200 p-6 rounded-t-2xl">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-4">
                   <div 
@@ -193,15 +199,15 @@ export function AnalistasInfo() {
             {/* Contenido del Modal */}
             <div className="p-6">
               {/* Información básica */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-5">
                 {analistaSeleccionado.cargo && (
-                  <div className="flex items-center gap-2 p-3 bg-gray-50 rounded-lg">
+                  <div className="flex items-center gap-2 p-2 bg-gray-50 rounded-lg">
                     <Briefcase className="w-4 h-4 text-gray-600" />
                     <span className="text-sm text-gray-700">{analistaSeleccionado.cargo}</span>
                   </div>
                 )}
                 {analistaSeleccionado.ubicacion && (
-                  <div className="flex items-center gap-2 p-3 bg-gray-50 rounded-lg">
+                  <div className="flex items-center gap-2 p-2 bg-gray-50 rounded-lg">
                     <MapPin className="w-4 h-4 text-gray-600" />
                     <span className="text-sm text-gray-700">{analistaSeleccionado.ubicacion}</span>
                   </div>
@@ -209,7 +215,7 @@ export function AnalistasInfo() {
               </div>
 
               {/* Biografía */}
-              <div className="mb-6">
+              <div className="mb-5">
                 <div className="flex items-center gap-2 mb-3">
                   <BookOpen className="w-5 h-5 text-gray-600" />
                   <h3 className="text-lg font-bold text-gray-900">Biografía</h3>
@@ -220,16 +226,16 @@ export function AnalistasInfo() {
               </div>
 
               {/* Logros y Experiencia */}
-              <div>
-                <div className="flex items-center gap-2 mb-4">
+              <div className="pb-2">
+                <div className="flex items-center gap-2 mb-3">
                   <Award className="w-5 h-5 text-gray-600" />
                   <h3 className="text-lg font-bold text-gray-900">Logros y Experiencia</h3>
                 </div>
-                <div className="space-y-2">
+                <div className="space-y-2 max-h-48 overflow-y-auto pr-2">
                   {analistaSeleccionado.logros.map((logro, index) => (
                     <div 
                       key={index} 
-                      className="flex items-start gap-3 p-3 bg-gradient-to-r from-gray-50 to-white rounded-lg border border-gray-200"
+                      className="flex items-start gap-3 p-2 bg-gradient-to-r from-gray-50 to-white rounded-lg border border-gray-200"
                     >
                       <div 
                         className="w-2 h-2 rounded-full mt-2 flex-shrink-0"
@@ -239,18 +245,6 @@ export function AnalistasInfo() {
                     </div>
                   ))}
                 </div>
-              </div>
-            </div>
-
-            {/* Footer del Modal */}
-            <div className="border-t border-gray-200 p-6 bg-gray-50 rounded-b-2xl">
-              <div className="text-center">
-                <button
-                  onClick={cerrarModal}
-                  className="px-6 py-3 bg-gradient-to-r from-[#de2488] to-[#00cfaf] text-white font-bold rounded-xl hover:shadow-lg hover:scale-105 transition-all duration-300"
-                >
-                  Cerrar
-                </button>
               </div>
             </div>
           </div>
