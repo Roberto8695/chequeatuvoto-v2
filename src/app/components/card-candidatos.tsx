@@ -47,7 +47,7 @@ export function CardCandidatos() {
     {
       title: "Decidió No Participar",
       team: "MORENA",
-      src: "/imagenes2/IMAGENES PAGINA WEB/morena.webp",
+      src: "/imagenes2/IMAGENES PAGINA WEB/Morena.webp",
       slug: "morena",
     },
      {
