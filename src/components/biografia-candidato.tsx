@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { User, BookOpen, Calendar, MapPin, GraduationCap, Briefcase, Flag, Award, AlertTriangle, Scale } from 'lucide-react';
+import { User, BookOpen, Calendar, MapPin, GraduationCap, Briefcase, Flag, Award, AlertTriangle, Scale, Heart } from 'lucide-react';
 import { PerfilCandidato } from '@/data/perfiles-candidatos';
 import { Badge } from '@/components/ui/badge';
 
@@ -143,6 +143,18 @@ export default function BiografiaCandidato({ candidato, partidoColor = '#3B82F6'
                 </h3>
                 <p className="text-gray-700 bg-red-50 p-3 rounded-lg border border-red-200">
                   {candidato.situacionLegal}
+                </p>
+              </div>
+            )}
+
+            {candidato.religion && (
+              <div>
+                <h3 className="flex items-center space-x-2 text-lg font-semibold text-gray-900 mb-3">
+                  <Heart className="w-5 h-5 text-purple-600" />
+                  <span>Religión</span>
+                </h3>
+                <p className="text-gray-700 bg-purple-50 p-3 rounded-lg border border-purple-200">
+                  {candidato.religion}
                 </p>
               </div>
             )}

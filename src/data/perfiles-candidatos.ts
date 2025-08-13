@@ -13,6 +13,7 @@ export interface PerfilCandidato {
   logrosDestacados?: string[];
   controversias?: string[];
   situacionLegal?: string;
+  religion?: string;
 }
 
 export interface BinomioCandidatos {
@@ -58,7 +59,9 @@ export const perfilesCandidatos: BinomioCandidatos[] = [
         "Inicio en el sindicalismo cocalero a los 23 años",
         "Elegido vicepresidente de federaciones cocaleras (2018)",
         "Ratificado por unanimidad en el cargo sindical (2021, 2023)",
-        "Asumió la Presidencia del Senado, ratificado en cinco ocasiones"
+        "Senador por Cochabamba (2020) - MAS",
+        "Presidente del Senado (2020-2025) - ratificado en cinco ocasiones",
+        "Primera candidatura presidencial (2025) - Alianza Popular"
       ],
       partidosAnteriores: [
         "Movimiento Al Socialismo (gestiones de Evo Morales y Luis Arce)"
@@ -131,11 +134,13 @@ export const perfilesCandidatos: BinomioCandidatos[] = [
       ],
       carreraPolitica: [
         "Vicepresidente del Concejo Municipal de Cochabamba (1992)",
-        "Alcalde de Cochabamba (1993-2000, cuatro periodos consecutivos)",
-        "Candidato presidencial (2000)",
-        "Primer Prefecto de Cochabamba elegido democráticamente (2005)",
-        "Candidato presidencial (2009) - segundo lugar",
-        "Alcalde de Cochabamba (2021-presente) - quinta vez"
+        "Alcalde de Cochabamba (1994-1996) - NFR (Electo)",
+        "Alcalde de Cochabamba (1996-2000) - NFR (Reelecto)",
+        "Alcalde de Cochabamba (2000) - NFR (Electo)",
+        "Candidato presidencial NFR (2002) - No electo",
+        "Prefecto de Cochabamba (2006-2008) - AUN (Electo)",
+        "Alcalde de Cochabamba (2021-2025) - SUMATE (Electo)",
+        "Candidato presidencial APB SUMATE (2025) - segunda candidatura"
       ],
       partidosAnteriores: [
         "Acción Democrática Nacionalista (ADN)",
@@ -199,13 +204,17 @@ export const perfilesCandidatos: BinomioCandidatos[] = [
         "Investigador en Woodrow Wilson Center"
       ],
       carreraPolitica: [
-        "Subsecretario de Inversión Pública (1989) - gobierno de Jaime Paz Zamora",
+        "Subsecretario de Inversión Pública y Cooperación Internacional (1989) - Ministerio de Planeamiento",
+        "Subsecretario de Inversión Pública (1990)",
         "Ministro de Finanzas (1992)",
         "Director de campaña electoral ADN (1993)",
         "Subjefe Nacional ADN (1995)",
         "Vicepresidente de Bolivia (1997-2001) - gobierno de Hugo Banzer",
         "Presidente de Bolivia (2001-2002)",
-        "Candidato presidencial (2005, 2014, 2020, 2025)"
+        "Candidato presidencial PODEMOS (2005) - No electo",
+        "Candidato presidencial PDC (2014) - No electo",
+        "Candidato presidencial Libre21 (2020) - Retirado antes de la elección",
+        "Candidato presidencial LIBRE (2025) - cuarta candidatura"
       ],
       partidosAnteriores: [
         "MIR", "ADN", "PODEMOS", "Partido Demócrata Cristiano (PDC)"
@@ -353,7 +362,8 @@ export const perfilesCandidatos: BinomioCandidatos[] = [
         "Primera mujer presidenta del Senado de Bolivia",
         "Alcaldesa de la segunda ciudad más poblada de Bolivia",
         "Liderazgo juvenil y universitario"
-      ]
+      ],
+      religion: "Metodista"
     },
     vicepresidente: {
       nombre: "Jorge Guillermo Richter Ramírez",
@@ -412,12 +422,12 @@ export const perfilesCandidatos: BinomioCandidatos[] = [
         "Administrador público municipal"
       ],
       carreraPolitica: [
-        "Líder de la agrupación ciudadana UNIR",
-        "Diputado por MIR (2002)",
-        "Candidato con PODEMOS (2005)",
-        "Presidente del Concejo Municipal de Tarija (2013)",
-        "Alcalde de Tarija (2015)",
-        "Senador por Comunidad Ciudadana (2020)"
+        "Diputado uninominal MIR-NM-FRI (2002-2003) - Electo",
+        "Diputado uninominal PODEMOS (2005-2010) - Electo",
+        "Concejal Municipal UNIR (2010-2015) - Electo",
+        "Alcalde Municipal UNIR (2015-2020) - Electo",
+        "Senador Comunidad Ciudadana (2020-2025) - Electo",
+        "Candidato presidencial PDC (2025) - primera candidatura presidencial"
       ],
       partidosAnteriores: [
         "MIR", "PODEMOS", "Comunidad Ciudadana", "UNIR", "Primero la Gente"
@@ -426,7 +436,8 @@ export const perfilesCandidatos: BinomioCandidatos[] = [
         "Hijo del expresidente Jaime Paz Zamora",
         "Experiencia ejecutiva y legislativa",
         "Formación internacional en gestión política"
-      ]
+      ],
+      religion: "Católico"
     },
     vicepresidente: {
       nombre: "Edmand Lara Montaño",
@@ -486,12 +497,14 @@ export const perfilesCandidatos: BinomioCandidatos[] = [
         "Jefe de barrio La Cuchilla, Club Hípico Santa Cruz"
       ],
       carreraPolitica: [
-        "Concejal municipal (1989-1991)",
-        "Alcalde de Santa Cruz (1996-2000, reelecto en 2000)",
+        "Concejal municipal (1989-1991) - UCS (Electo)",
+        "Alcalde de Santa Cruz (1995-1999) - UCS (Electo)",
+        "Alcalde de Santa Cruz (2000-2002) - UCS (Reelecto)",
+        "Candidato presidencial UCS (2002) - No electo",
         "Jefe nacional del partido UCS (desde 1996)",
-        "Candidato presidencial (2002)",
-        "Candidato a primer concejal (2015)",
-        "Alcalde de Santa Cruz (2021-2026) con 35.41% de votos"
+        "Candidato a primer concejal (2015) - UCS (Electo)",
+        "Alcalde de Santa Cruz (2021-2025) - UCS (Electo) con 35.41% de votos",
+        "Candidato presidencial UCS (2025) - segunda candidatura"
       ],
       partidosAnteriores: [
         "Unidad Cívica Solidaridad (UCS)", "ADN", "MIR"
@@ -547,11 +560,14 @@ export const perfilesCandidatos: BinomioCandidatos[] = [
         "Constructor de Green Tower (uno de los edificios más modernos de Bolivia)"
       ],
       carreraPolitica: [
-        "Ministro de Planeamiento (1991) - gobierno de Jaime Paz Zamora",
-        "Candidato a vicepresidente por MIR (1997)",
-        "Candidato presidencial con Unidad Nacional (2005, 2009, 2014)",
-        "Aspirante a vicepresidente con Jeanine Áñez (2020)",
-        "Candidato presidencial (2025)"
+        "Ministro de Planeamiento y Coordinación (1992) - gobierno de Jaime Paz Zamora",
+        "Candidato a vicepresidente por MIR (1997) - No electo",
+        "Candidato presidencial con Unidad Nacional (2005) - No electo",
+        "Asambleista Constituyente (2006-2009) - UN (Electo)",
+        "Candidato presidencial UN (2009) - No electo",
+        "Candidato presidencial Unidad Demócrata (2014) - No electo",
+        "Candidato a vicepresidente Juntos (2020) - Retirado antes de la elección",
+        "Candidato presidencial UNIDAD (2025) - cuarta candidatura"
       ],
       partidosAnteriores: [
         "MIR", "Unidad Nacional", "Consenso Popular", "Unidad Demócrata", "Juntos"
@@ -601,45 +617,47 @@ export const perfilesCandidatos: BinomioCandidatos[] = [
       slug: "ngp"
     },
     presidente: {
-      nombre: "No confirmado",
+      nombre: "Jaime Guillermo Dunn de Avila",
       cargo: "presidente",
-      fechaNacimiento: "No disponible",
-      lugarNacimiento: "No disponible",
-      profesion: "No disponible",
+      fechaNacimiento: "21 de mayo de 1968",
+      lugarNacimiento: "Camiri, Santa Cruz",
+      profesion: "Analista Financiero",
+      edad: 58,
       educacion: [
-        "No disponible"
+        "Formación en análisis financiero",
+        "Estudios especializados en economía y finanzas"
       ],
       experienciaLaboral: [
-        "No disponible"
+        "Analista financiero con experiencia en sector privado",
+        "Consultoría en gestión financiera"
       ],
       carreraPolitica: [
-        "No disponible"
+        "Primera candidatura presidencial (2025)"
       ],
-      partidosAnteriores: [
-        "No disponible"
+      partidosAnteriores: [],
+      logrosDestacados: [
+        "Experiencia en análisis financiero y económico",
+        "Propuesta de renovación política generacional"
       ]
     },
     vicepresidente: {
-      nombre: "No confirmado",
+      nombre: "Información pendiente",
       cargo: "vicepresidente",
       fechaNacimiento: "No disponible",
       lugarNacimiento: "No disponible",
       profesion: "No disponible",
       educacion: [
-        "No disponible"
+        "Información no disponible"
       ],
       experienciaLaboral: [
-        "No disponible"
+        "Información no disponible"
       ],
       carreraPolitica: [
-        "No disponible"
+        "Información no disponible"
       ],
-      partidosAnteriores: [
-        "No disponible"
-      ]
+      partidosAnteriores: []
     },
-    estado: "pendiente",
-    observaciones: "No hay candidatura confirmada aún y no hay perfiles disponibles"
+    estado: "habilitado"
   },
   {
     partido: {
@@ -648,22 +666,27 @@ export const perfilesCandidatos: BinomioCandidatos[] = [
       slug: "adn"
     },
     presidente: {
-      nombre: "Paulo César Rodríguez Folster",
+      nombre: "Pavel Antonio Aracena Vargas",
       cargo: "presidente",
-      fechaNacimiento: "No disponible",
-      lugarNacimiento: "No disponible",
-      profesion: "No disponible",
+      fechaNacimiento: "No especificada",
+      lugarNacimiento: "Challapata, Oruro",
+      profesion: "Ingeniero Civil",
+      edad: 55,
       educacion: [
-        "Información no disponible"
+        "Ingeniería Civil",
+        "Formación técnica en construcción e infraestructura"
       ],
       experienciaLaboral: [
-        "Información no disponible"
+        "Ejercicio profesional como ingeniero civil",
+        "Experiencia en sector de construcción"
       ],
       carreraPolitica: [
-        "Aspirante a la presidencia por Alianza Libertad y Progreso ADN"
+        "Primera candidatura presidencial (2025)"
       ],
-      partidosAnteriores: [
-        "Alianza Libertad y Progreso ADN"
+      partidosAnteriores: [],
+      logrosDestacados: [
+        "Experiencia técnica en ingeniería civil",
+        "Propuesta renovadora en ADN"
       ],
       situacionLegal: "Inhabilitado por el TSE"
     },

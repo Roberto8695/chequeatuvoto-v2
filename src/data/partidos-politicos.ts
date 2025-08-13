@@ -47,7 +47,7 @@ export const partidosPoliticos: PartidoPolitico[] = [
     nombre: "Acción Democrática Nacionalista",
     sigla: "ADN",
     programas: "https://drive.google.com/file/d/1boN9_AUUMPVh2JjhAaeNe9Fg20qv5Ptu/view?usp=sharing",
-    presidente: "A confirmar",
+    presidente: "Pavel Antonio Aracena Vargas",
     vicepresidente: "Antonio Saravia",
     imagenes: {
       logo: "/binomios/adn/logo.png", // Agrega cuando tengas el logo

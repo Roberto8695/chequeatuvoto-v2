@@ -5,19 +5,19 @@ export function CardCandidatos() {
     {
       title: "Andrónico Rodríguez",
       team: "ALIANZA POPULAR",
-      src: "/imagenes2/IMAGENES PAGINA WEB/andronico.jpg",
+      src: "/imagenes2/IMAGENES PAGINA WEB/andronico.webp",
       slug: "alianza-popular",
     },
     {
-      title: "A confirmar",
+      title: "Pavel Antonio Aracena Vargas",
       team: "ADN",
-      src: "/imagenes2/IMAGENES PAGINA WEB/proximamente-extra.jpg",
+      src: "/imagenes2/IMAGENES PAGINA WEB/pavel.webp",
       slug: "adn",
     },
     {
       title: "Manfred Reyes Villa",
       team: "APB-SUMATE",
-      src: "/imagenes2/IMAGENES PAGINA WEB/Manfred.jpg",
+      src: "/imagenes2/IMAGENES PAGINA WEB/Manfred.webp",
       slug: "apb-sumate",
     },
     {
@@ -29,37 +29,37 @@ export function CardCandidatos() {
     {
       title: "Jorge Tuto Quiroga",
       team: "LIBRE",
-      src: "/imagenes2/IMAGENES PAGINA WEB/tutito.jpg",
+      src: "/imagenes2/IMAGENES PAGINA WEB/tutito.webp",
       slug: "libre",
     },
     {
       title: "Jhonny Fernández",
       team: "FP",
-      src: "/imagenes2/IMAGENES PAGINA WEB/jhonny-fernandez.jpg",
+      src: "/imagenes2/IMAGENES PAGINA WEB/jhonny-fernandez.webp",
       slug: "fp",
     },
     {
       title: "Eduardo Del Castillo",
       team: "MAS-IPSP",
-      src: "/imagenes2/IMAGENES PAGINA WEB/eduardo-del-castillo.jpg",
+      src: "/imagenes2/IMAGENES PAGINA WEB/eduardo-del-castillo.webp",
       slug: "mas-ipsp",
     },
     {
       title: "Decidió No Participar",
       team: "MORENA",
-      src: "/imagenes2/IMAGENES PAGINA WEB/eva-copa.jpg",
+      src: "/imagenes2/IMAGENES PAGINA WEB/morena.webp",
       slug: "morena",
     },
      {
       title: "Samuel Doria Medina",
       team: "Alianza Unidad",
-      src: "/imagenes2/IMAGENES PAGINA WEB/samuel-doria-medina.jpg",
+      src: "/imagenes2/IMAGENES PAGINA WEB/samuel-doria-medina.webp",
       slug: "alianza-unidad",
     },
     {
       title: "Rodrigo Paz Pereira",
       team: "PDC",
-      src: "/imagenes2/IMAGENES PAGINA WEB/rodrigo-paz.jpg",
+      src: "/imagenes2/IMAGENES PAGINA WEB/rodrigo-paz.webp",
       slug: "pdc",
     },
     
