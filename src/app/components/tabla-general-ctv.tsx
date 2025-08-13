@@ -44,7 +44,7 @@ const datosTabla: TablaData[] = [
   },
   {
     alianza: "LA FUERZA DEL PUEBLO",
-    analisisEconomico: 3.1,
+    analisisEconomico: 3.05,
     analisisJuridico: { greenFlags: 17, redFlags: 7 },
     colorPartido: "#d19d03",
     enlaces: {
@@ -55,7 +55,7 @@ const datosTabla: TablaData[] = [
   },
   {
     alianza: "PDC",
-    analisisEconomico: 3.9,
+    analisisEconomico: 3.45,
     analisisJuridico: { greenFlags: 12, redFlags: 5 },
     colorPartido: "#f83728",
     enlaces: {
@@ -66,7 +66,7 @@ const datosTabla: TablaData[] = [
   },
   {
     alianza: "APB-SÚMATE",
-    analisisEconomico: 4.3,
+    analisisEconomico: 4.15,
     analisisJuridico: { greenFlags: 23, redFlags: 5 },
     colorPartido: "#ff1616",
     enlaces: {
@@ -77,7 +77,7 @@ const datosTabla: TablaData[] = [
   },
   {
     alianza: "MAS-IPSP",
-    analisisEconomico: 2.6,
+    analisisEconomico: 3.3,
     analisisJuridico: { greenFlags: 12, redFlags: 0 },
     colorPartido: "#173983",
     enlaces: {
@@ -88,7 +88,7 @@ const datosTabla: TablaData[] = [
   },
   {
     alianza: "ALIANZA POPULAR",
-    analisisEconomico: 3.8,
+    analisisEconomico: 3.4,
     analisisJuridico: { greenFlags: 24, redFlags: 2 },
     colorPartido: "#56a6d9",
     enlaces: {
@@ -99,7 +99,7 @@ const datosTabla: TablaData[] = [
   },
   {
     alianza: "LIBERTAD Y DEMOCRACIA (LIBRE)",
-    analisisEconomico: 6.33,
+    analisisEconomico: 5.66,
     analisisJuridico: { greenFlags: 6, redFlags: 3 },
     colorPartido: "#ff0000",
     enlaces: {
@@ -238,9 +238,13 @@ export function TablaGeneralCTV() {
                     </div>
                     {/* Marcador del valor */}
                     <div 
-                      className="absolute top-0 h-full w-1 bg-gray-800 shadow-lg"
+                      className="absolute top-0 h-full w-1 shadow-lg"
                       style={{ left: `${(row.analisisEconomico / 10) * 100}%`, transform: 'translateX(-50%)' }}
                     ></div>
+                    {/* Texto centrado */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <span className="text-black font-semibold text-xs">Puntaje del índice económico</span>
+                    </div>
                   </div>
                   <span className="text-sm font-medium text-gray-500 w-6">10</span>
                 </div>
@@ -281,31 +285,37 @@ export function TablaGeneralCTV() {
                 <div className="space-y-3">
                   {/* Barra de Greenflags */}
                   <div className="flex items-center gap-3">
-                    <div className="w-12 h-8 bg-[#00cfaf] rounded flex items-center justify-center text-white font-bold text-sm">
+                    <div className="w-12 h-8 bg-[#00cfaf] rounded flex items-center justify-center text-black font-bold text-sm">
                       {row.analisisJuridico.greenFlags}
                     </div>
-                    <div className="flex-1 h-8 bg-gray-200 rounded-lg overflow-hidden">
+                    <div className="flex-1 h-8 bg-gray-200 rounded-lg overflow-hidden relative">
                       <div 
                         className="h-full bg-[#00cfaf] transition-all duration-700"
                         style={{ 
                           width: `${(row.analisisJuridico.greenFlags / Math.max(row.analisisJuridico.greenFlags, row.analisisJuridico.redFlags, 10)) * 100}%` 
                         }}
                       ></div>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <span className="text-black font-semibold text-sm">Greenflags</span>
+                      </div>
                     </div>
                   </div>
 
                   {/* Barra de Redflags */}
                   <div className="flex items-center gap-3">
-                    <div className="w-12 h-8 bg-[#de2488] rounded flex items-center justify-center text-white font-bold text-sm">
+                    <div className="w-12 h-8 bg-[#de2488] rounded flex items-center justify-center text-black font-bold text-sm">
                       {row.analisisJuridico.redFlags}
                     </div>
-                    <div className="flex-1 h-8 bg-gray-200 rounded-lg overflow-hidden">
+                    <div className="flex-1 h-8 bg-gray-200 rounded-lg overflow-hidden relative">
                       <div 
                         className="h-full bg-[#de2488] transition-all duration-700"
                         style={{ 
                           width: `${(row.analisisJuridico.redFlags / Math.max(row.analisisJuridico.greenFlags, row.analisisJuridico.redFlags, 10)) * 100}%` 
                         }}
                       ></div>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <span className="text-black font-semibold text-sm">Redflags</span>
+                      </div>
                     </div>
                   </div>
                 </div>
