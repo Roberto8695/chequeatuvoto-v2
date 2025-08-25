@@ -102,69 +102,74 @@ const features = [
 
 const timelineEvents = [
   {
-    date: "3 de abril",
-    title: "Convocatoria a Elecciones Generales",
+    date: "31 de agosto",
+    title: "Convocatoria a Segunda Vuelta",
     description:
-      "Convocatoria realizada por el Tribunal Supremo Electoral para las elecciones generales de 2025.",
-    detailsUrl: "https://www.oep.org.bo/wp-content/uploads/2025/04/RESOLUCION_202-2025.pdf"
+      "Convocatoria a Segunda Vuelta por el Tribunal Supremo Electoral.",
+    
   },
   {
-    date: "18 de abril al 7 de mayo",
-    title: "Empadronamiento biométrico masivo",
+    date: "31 de agosto",
+    title: "Difusión o publicación de estudios",
     description:
-      "Periodo en el que los ciudadanos pueden registrarse en el padrón electoral biométrico.",
-    detailsUrl: "https://fuentedirecta.oep.org.bo/noticia/empadronamiento-masivo-durante-20-dias-se-realizaron-mas-de-178-mil-nuevos-registros-en-todo-el-pais/"
+      "Difusión o publicación de estudios de opinión en materia electoral (encuestas). (segunda vuelta).",
+    
   },
   {
-    date: "18 de abril",
-    title: "Último día para registro de alianzas",
+    date: "31 de agosto",
+    title: "Difusión de propaganda electoral",
     description:
-      "Fecha límite para que las alianzas políticas soliciten su registro ante el TSE.",
-    detailsUrl: "https://www.facebook.com/share/p/1AaGnewSZe/"
+      "Difusión de propaganda electoral en actos públicos de campaña y en medios de comunicación. (segunda vuelta).",
+    
   },
   {
-    date: "9 al 19 de mayo",
-    title: "Presentación del programa de gobierno",
+    date: "3 de septiembre",
+    title: "Sorteo de ubicación de las franjas",
     description:
-      "Periodo para que partidos y alianzas presenten su programa ante el Tribunal Supremo Electoral.",
-    detailsUrl: "https://www.oep.org.bo/elecciones-generales-2025/nacional-2025/"
+      "Sorteo de ubicación de las franjas y aprobación del diseño de la papeleta de sufragio por el Tribunal Supremo Electoral. (segunda vuelta).",
+    
   },
   {
-    date: "14 al 19 de mayo",
-    title: "Inscripción de candidaturas",
+    date: "19 de septiembre",
+    title: "Sorteo público para la selección de Jurados Electorales",
     description:
-      "Inscripción oficial de candidaturas y entrega de documentos habilitantes ante el TSE.",
-    detailsUrl: "https://www.oep.org.bo/elecciones-generales-2025/nacional-2025/"
+      "Sorteo público para la selección de Jurados Electorales de mesas de sufragio por los Tribunales Electorales Departamentales y por el Tribunal Supremo Electoral para las mesas de sufragio en el exterior. (segunda vuelta).",
+    
   },
   {
-    date: "19 de mayo",
-    title: "Publicación de lista de entidades habilitadas para estudios de opinión",
+    date: "20 de septiembre",
+    title: "Notificación a los jurados",
     description:
-      "Publicación de lista de entidades habilitadas por el Tribunal Supremo Electoral para realizar estudios de opinión en materia electoral. ",
-    detailsUrl: "https://www.oep.org.bo/wp-content/uploads/2025/05/08-05-2025-Actividad-16_97.pdf"
+      "Notificación a los jurados de mesa de sufragio designados por los Tribunales Electorales Departamentales para voto nacional y notificación de jurados de las mesas de sufragio designados por el Tribunal Supremo Electoral para voto en el exterior. (segunda vuelta).",
+    
   },
   {
-    date: "25 de mayo",
-    title: "Publicación de programas de gobierno",
+    date: "21 de septiembre",
+    title: "Publicación en medios de prensa escrita y portal web del OEP",
     description:
-      "Los programas presentados se publican en los portales del TSE y TEDs.",
-    detailsUrl: "https://www.oep.org.bo/elecciones-generales-2025/nacional-2025/"
+      "Publicación en medios de prensa escrita y portal web del OEP de la nómina de los jurados de mesas de sufragio, por parte de los Tribunales Electorales Departamentales. Para el voto en el exterior, el Tribunal Supremo Electoral publicará la lista de jurados de mesa en el portal web del OEP. (segunda vuelta).",
+    
   },
   {
-    date: "6 de junio",
-    title: "Publicación de candidaturas habilitadas",
-    description: "El TSE publica la lista oficial de candidaturas habilitadas.",
-    detailsUrl: "https://www.oep.org.bo/elecciones-generales-2025/nacional-2025/"
+    date: "22 de septiembre",
+    title: "Presentación de excusas para el ejercicio",
+    description: "Presentación de excusas para el ejercicio de la labor de jurados de mesas de sufragio ante los Tribunales Electorales Departamentales y ante los Representantes Notarios para voto en el exterior. (segunda vuelta).",
+    
   },
   {
-    date: "13 de julio",
-    title: "Publicación de candidaturas con sustitución",
-    description: "El TSE publica las candidaturas modificadas por renuncia.",
+    date: "29 de septiembre",
+    title: "Conformación de la directiva de mesas de sufragio",
+    description: "Conformación de la directiva de mesas de sufragio y capacitación a Jurados Electorales. (segunda vuelta).",
   },
   {
-    date: "17 de agosto",
-    title: "Elecciones generales",
-    description: "Día oficial para las elecciones generales 2025.",
+    date: "15 de octubre",
+    title: "Publicación del lugar donde se realizará el cómputo departamental",
+    description: "Publicación del lugar donde se realizará el cómputo departamental (por los Tribunales Electorales Departamentales) y el cómputo del voto en el exterior (por el Tribunal Supremo Electoral) en el portal WEB del OEP. (segunda vuelta).",
+  },
+  {
+    date: "17 de octubre",
+    title: "Prohibición a los medios de comunicación",
+    description: "Prohibición a los medios de comunicación sobre la difusión de contenidos que puedan favorecer, perjudicar o dar trato preferencial a alguna organización política o candidatura; o difundir programas que puedan influir en las preferencias electorales",
   },
   {
     date: "19 de octubre",
@@ -273,12 +278,11 @@ export default function Home() {
               
               <div id="parties" className="mt-16 sm:mt-20">
                 <h2 className="text-3xl font-bold mb-6 text-center font-round">
-                  CANDIDATURAS
+                  FINALISTAS SEGUNDA VUELTA
                 </h2>
                
                 <h3 className="text-base mb-6 text-center">
-                  Aquí encontrarás información sobre procesos penales, denuncias
-                  contra ellos y ellas, y su recorrido político en general.
+                  Conoce a los candidatos finalistas que competirán en la segunda vuelta electoral del 19 de octubre
                 </h3>
                 <CardCandidatos/>
               </div>

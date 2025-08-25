@@ -24,7 +24,7 @@ export default function ElectionCountdown() {
     setMounted(true)
     // Calcular inmediatamente el tiempo correcto al montar
     const calculateTimeLeft = (): TimeLeft => {
-      const electionDate = new Date('2025-08-17T08:00:00-04:00')
+      const electionDate = new Date('2025-10-19T08:00:00-04:00')
       const now = new Date()
       const difference = electionDate.getTime() - now.getTime()
 
@@ -45,8 +45,8 @@ export default function ElectionCountdown() {
 
   useEffect(() => {
     const calculateTimeLeft = (): TimeLeft => {
-      // Fecha de las elecciones: 17 de agosto de 2025 a las 8:00 AM (hora de Bolivia)
-      const electionDate = new Date('2025-08-17T08:00:00-04:00') // UTC-4 (hora de Bolivia)
+      // Fecha de las elecciones segunda vuelta: 19 de octubre de 2025 a las 8:00 AM (hora de Bolivia)
+      const electionDate = new Date('2025-10-19T08:00:00-04:00') // UTC-4 (hora de Bolivia)
       const now = new Date()
       const difference = electionDate.getTime() - now.getTime()
 
@@ -77,7 +77,7 @@ export default function ElectionCountdown() {
           <CardContent className="p-8">
             <div className="text-center">
               <h2 className="text-3xl md:text-4xl font-bold text-black mb-8">
-                CUENTA REGRESIVA PARA LAS ELECCIONES
+                CUENTA REGRESIVA PARA LA SEGUNDA VUELTA DE LAS ELECCIONES
               </h2>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
                 {[0, 1, 2, 3].map((i) => (
@@ -109,7 +109,7 @@ export default function ElectionCountdown() {
         <CardContent className="p-8">
           <div className="text-center">
             <h2 className="text-3xl md:text-4xl font-bold  text-black mb-8">
-              {isElectionDay ? '¡HOY SON LAS ELECCIONES!' : 'CUENTA REGRESIVA PARA LAS ELECCIONES'}
+              {isElectionDay ? '¡HOY ES LA SEGUNDA VUELTA DE LAS ELECCIONES!' : 'CUENTA REGRESIVA PARA LA SEGUNDA VUELTA DE LAS ELECCIONES'}
             </h2>
             
             
@@ -162,14 +162,14 @@ export default function ElectionCountdown() {
                   ¡Es hora de votar!
                 </div>
                 <div className="text-lg text-gray-700 font-medium">
-                  Domingo 17 de Agosto, 2025
+                  Domingo 19 de Octubre, 2025
                 </div>
               </div>
             )}
             
             <div className="mt-8 text-center">
               <p className="text-lg md:text-xl font-semibold bg-gradient-to-r from-[#de2488] to-[#00cfaf] bg-clip-text text-transparent">
-                Domingo 17 de Agosto, 2025
+                Domingo 19 de Octubre, 2025
               </p>
               
             </div>

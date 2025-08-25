@@ -21,39 +21,6 @@ interface TablaData {
 
 const datosTabla: TablaData[] = [
   {
-    alianza: "UNIDAD",
-    analisisEconomico: 6,
-    analisisJuridico: { greenFlags: 24, redFlags: 5 },
-    colorPartido: "#003b69",
-    enlaces: {
-      completo: "https://drive.google.com/file/d/1oGuO5W0nqI7cGacJnO68B66t__QUb9AB/view?usp=sharing",
-      economico: "https://drive.google.com/file/d/1qDSz1yVKNXHOYlS4ebkAs45zi2fYdw9-/view?usp=sharing",
-      redflag: "https://drive.google.com/file/d/1-6wOoH1Yo9m_ebD-Mht76jnmmmC7Jsgk/view?usp=sharing"
-    }
-  },
-  {
-    alianza: "LIBERTAD Y PROGRESO ADN",
-    analisisEconomico: 3.45,
-    analisisJuridico: { greenFlags: 24, redFlags: 2 },
-    colorPartido: "#ff030f",
-    enlaces: {
-      completo: "https://drive.google.com/file/d/1aOo0gzEF8U5oQeXMJV2opYXPdSBGv6s3/view?usp=sharing",
-      economico: "https://drive.google.com/file/d/18boRRCHWGci-8ijafpDnvAsId9jvlNVZ/view?usp=sharing",
-      redflag: "https://drive.google.com/file/d/1X9jeRvRogHKjE7iQJfargn9TCDTqWhbD/view?usp=sharing"
-    }
-  },
-  {
-    alianza: "LA FUERZA DEL PUEBLO",
-    analisisEconomico: 3.05,
-    analisisJuridico: { greenFlags: 17, redFlags: 7 },
-    colorPartido: "#d19d03",
-    enlaces: {
-      completo: "https://drive.google.com/file/d/1uM5vFLv_l-i_SVfjpRbHkUgT38-Qws5d/view?usp=sharing",
-      economico: "https://drive.google.com/file/d/1VhPao5jLy6z01u2mEGtLWeS6taoZov8Q/view?usp=sharing",
-      redflag: "https://drive.google.com/file/d/139g3dICQFIWh38-UFChF1ORTTxQbRYYy/view?usp=sharing"
-    }
-  },
-  {
     alianza: "PDC",
     analisisEconomico: 3.45,
     analisisJuridico: { greenFlags: 12, redFlags: 5 },
@@ -62,39 +29,6 @@ const datosTabla: TablaData[] = [
       completo: "https://drive.google.com/file/d/1cWprXiEIzPt2546SYGp5iQbWxe_qi-Jo/view?usp=sharing",
       economico: "https://drive.google.com/file/d/1PwC-Krlb9RP8axaOKY0AE69z5GkKNqI3/view?usp=sharing",
       redflag: "https://drive.google.com/file/d/1lXVQsKmIhCb8HrxgvD296bRCrN4u2VdU/view?usp=sharing"
-    }
-  },
-  {
-    alianza: "APB-SÚMATE",
-    analisisEconomico: 4.15,
-    analisisJuridico: { greenFlags: 23, redFlags: 5 },
-    colorPartido: "#ff1616",
-    enlaces: {
-      completo: "https://drive.google.com/file/d/1Nva3q5ieEi_Dv94IK43TjbHnnmTSiB9v/view?usp=sharing",
-      economico: "https://drive.google.com/file/d/1YkQedLUAN-mdHv3diAb83B4nc1qRk4nq/view?usp=sharing",
-      redflag: "https://drive.google.com/file/d/1eXZYD94zhoCWCpc8AoXj5GvXy82ei9RO/view?usp=sharing"
-    }
-  },
-  {
-    alianza: "MAS-IPSP",
-    analisisEconomico: 3.3,
-    analisisJuridico: { greenFlags: 12, redFlags: 0 },
-    colorPartido: "#173983",
-    enlaces: {
-      completo: "https://drive.google.com/file/d/1udQ5jWtGk_HG5BEjkRvd2sm3o9oSQdXD/view?usp=sharing",
-      economico: "https://drive.google.com/file/d/1w7VFAOOQgoI94bIKCzj41CBniPcyRfg-/view?usp=sharing",
-      redflag: "https://drive.google.com/file/d/1z9UEbt7YNtMmoA4ZuSPSHPTVbNcpLnCQ/view?usp=sharing"
-    }
-  },
-  {
-    alianza: "ALIANZA POPULAR",
-    analisisEconomico: 3.4,
-    analisisJuridico: { greenFlags: 24, redFlags: 2 },
-    colorPartido: "#56a6d9",
-    enlaces: {
-      completo: "https://drive.google.com/file/d/1H0qg4ktb_4vPJLqPkdn2ffTefpzgSqbc/view?usp=sharing",
-      economico: "https://drive.google.com/file/d/1Mye6voG6ue4K5EFBYrj8XUS3Y2DyFoUl/view?usp=sharing",
-      redflag: "https://drive.google.com/file/d/1UUDcsSKdRRb6P-8EHmZxOEQ4yvnwxtxD/view?usp=sharing"
     }
   },
   {

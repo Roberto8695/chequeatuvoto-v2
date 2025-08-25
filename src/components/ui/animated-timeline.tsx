@@ -81,9 +81,9 @@ export default function AnimatedTimeline({ events }: AnimatedTimelineProps) {
   const getEventStatus = (index: number) => {
     const eventDateStr = events[index].date
     
-    if (eventDateStr.includes('abril') || eventDateStr.includes('mayo') || eventDateStr.includes('junio')) {
+    if (eventDateStr.includes('agosto') || eventDateStr.includes('septiembre') || eventDateStr.includes('junio')) {
       return 'completed'
-    } else if (eventDateStr.includes('agosto')) {
+    } else if (eventDateStr.includes('octubre')) {
       return 'upcoming'
     } else {
       return 'future'
@@ -91,7 +91,7 @@ export default function AnimatedTimeline({ events }: AnimatedTimelineProps) {
   }
 
   const isElectionDay = (index: number) => {
-    return events[index].date.includes('17 de agosto')
+    return events[index].date.includes('19 de octubre')
   }
 
   const getEventIcon = (status: string) => {
@@ -154,7 +154,7 @@ export default function AnimatedTimeline({ events }: AnimatedTimelineProps) {
           CALENDARIO ELECTORAL 2025
         </h2>
         <p className="text-xl text-gray-700 max-w-3xl mx-auto animate-fade-in-delay font-medium">
-          Fechas importantes para las elecciones presidenciales y legislativas
+          Fechas importantes para la segunda vuelta de las elecciones presidenciales y legislativas
         </p>
       </div>
       
@@ -318,7 +318,7 @@ export default function AnimatedTimeline({ events }: AnimatedTimelineProps) {
                               <div className={`w-2 h-2 ${colors.dot} rounded-full mr-2`} />
                               <span className="text-xs font-medium text-gray-600 uppercase">
                                 {status === 'completed' ? 'Ejecutado' : 
-                                 status === 'upcoming' ? 'Próximo' : 'Por Ejecutar'}
+                                status === 'upcoming' ? 'Próximo' : 'Por Ejecutar'}
                               </span>
                             </div>
                             {event.detailsUrl && (

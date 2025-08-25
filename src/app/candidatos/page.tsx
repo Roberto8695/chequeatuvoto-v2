@@ -1,3 +1,5 @@
+"use client";
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { User } from 'lucide-react';
@@ -29,13 +31,24 @@ const finalistasSegundaVuelta = [
   }
 ];
 
-export function CardCandidatos() {
+export default function CandidatosPage() {
   return (
-    <div className="w-full">
-
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black">
+      {/* Header */}
+      <div className="relative pt-20 pb-12">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#de2488]/20 to-[#00cfaf]/20"></div>
+        <div className="relative z-10 text-center">
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 drop-shadow-lg">
+            SEGUNDA VUELTA
+          </h1>
+          <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto px-4">
+            Conoce a los candidatos finalistas que competirán en la segunda vuelta electoral
+          </p>
+        </div>
+      </div>
 
       {/* Contenedor principal de candidatos */}
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto px-4 pb-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           {finalistasSegundaVuelta.map((candidato) => (
             <div
@@ -47,23 +60,23 @@ export function CardCandidatos() {
               <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16"></div>
               <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full translate-y-12 -translate-x-12"></div>
               
-              <div className="relative z-10 p-6 md:p-8">
+              <div className="relative z-10 p-8">
                 {/* Header del partido */}
                 <div className="text-center mb-8">
-                  <h4 className="text-4xl md:text-5xl font-bold text-white mb-2 drop-shadow-lg">
+                  <h2 className="text-5xl md:text-6xl font-bold text-white mb-2 drop-shadow-lg">
                     {candidato.partido}
-                  </h4>
-                  <p className="text-base md:text-lg text-white/90 font-medium">
+                  </h2>
+                  <p className="text-lg text-white/90 font-medium">
                     {candidato.nombreCompleto}
                   </p>
                 </div>
 
                 {/* Grid de candidatos */}
-                <div className="grid grid-cols-2 gap-4 md:gap-6">
+                <div className="grid grid-cols-2 gap-6">
                   {/* Presidente */}
                   <div className="text-center group">
                     <div className="relative mb-4">
-                      <div className="relative w-full h-56 md:h-72 overflow-hidden rounded-2xl shadow-xl group-hover:shadow-2xl transition-all duration-500 transform group-hover:scale-105">
+                      <div className="relative w-full h-64 md:h-80 overflow-hidden rounded-2xl shadow-xl group-hover:shadow-2xl transition-all duration-500 transform group-hover:scale-105">
                         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent z-10"></div>
                         <Image
                           src={candidato.imagenPresidente}
@@ -77,11 +90,11 @@ export function CardCandidatos() {
                         />
                         
                         {/* Overlay con información */}
-                        <div className="absolute bottom-0 left-0 right-0 p-3 md:p-4 z-20">
-                          <h5 className="text-sm md:text-lg font-bold text-white mb-2 drop-shadow-lg leading-tight">
+                        <div className="absolute bottom-0 left-0 right-0 p-4 z-20">
+                          <h3 className="text-lg md:text-xl font-bold text-white mb-2 drop-shadow-lg leading-tight">
                             {candidato.presidente}
-                          </h5>
-                          <Badge className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black border-0 text-xs md:text-sm font-bold px-2 md:px-3 py-1 shadow-xl">
+                          </h3>
+                          <Badge className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black border-0 text-sm font-bold px-3 py-1 shadow-xl">
                             PRESIDENTE
                           </Badge>
                         </div>
@@ -92,7 +105,7 @@ export function CardCandidatos() {
                   {/* Vicepresidente */}
                   <div className="text-center group">
                     <div className="relative mb-4">
-                      <div className="relative w-full h-56 md:h-72 overflow-hidden rounded-2xl shadow-xl group-hover:shadow-2xl transition-all duration-500 transform group-hover:scale-105">
+                      <div className="relative w-full h-64 md:h-80 overflow-hidden rounded-2xl shadow-xl group-hover:shadow-2xl transition-all duration-500 transform group-hover:scale-105">
                         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent z-10"></div>
                         <Image
                           src={candidato.imagenVicepresidente}
@@ -106,11 +119,11 @@ export function CardCandidatos() {
                         />
                         
                         {/* Overlay con información */}
-                        <div className="absolute bottom-0 left-0 right-0 p-3 md:p-4 z-20">
-                          <h5 className="text-sm md:text-lg font-bold text-white mb-2 drop-shadow-lg leading-tight">
+                        <div className="absolute bottom-0 left-0 right-0 p-4 z-20">
+                          <h3 className="text-lg md:text-xl font-bold text-white mb-2 drop-shadow-lg leading-tight">
                             {candidato.vicepresidente}
-                          </h5>
-                          <Badge className="bg-gradient-to-r from-blue-400 to-cyan-500 text-white border-0 text-xs md:text-sm font-bold px-2 md:px-3 py-1 shadow-xl">
+                          </h3>
+                          <Badge className="bg-gradient-to-r from-blue-400 to-cyan-500 text-white border-0 text-sm font-bold px-3 py-1 shadow-xl">
                             VICEPRESIDENTE
                           </Badge>
                         </div>
@@ -120,12 +133,12 @@ export function CardCandidatos() {
                 </div>
 
                 {/* Botón para ver más detalles */}
-                <div className="text-center mt-6 md:mt-8">
+                <div className="text-center mt-8">
                   <Link
                     href={`/candidatos/${candidato.slug}`}
-                    className="inline-flex items-center space-x-2 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white font-bold px-4 md:px-6 py-2 md:py-3 rounded-full transition-all duration-300 hover:scale-105 shadow-xl border-2 border-white/30 text-sm md:text-base"
+                    className="inline-flex items-center space-x-2 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white font-bold px-6 py-3 rounded-full transition-all duration-300 hover:scale-105 shadow-xl border-2 border-white/30"
                   >
-                    <User className="w-4 h-4 md:w-5 md:h-5" />
+                    <User className="w-5 h-5" />
                     <span>Ver Perfil Completo</span>
                   </Link>
                 </div>
@@ -136,24 +149,24 @@ export function CardCandidatos() {
       </div>
 
       {/* Call to action */}
-      <div className="text-center mt-12">
-        <div className="max-w-4xl mx-auto">
-          <h4 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
+      <div className="text-center pb-16">
+        <div className="max-w-4xl mx-auto px-4">
+          <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
             ¿Quieres conocer más?
-          </h4>
-          <p className="text-lg text-gray-600 mb-8">
-            Explora el análisis comparativo de propuestas y conoce todos los partidos políticos
+          </h3>
+          <p className="text-xl text-gray-300 mb-8">
+            Explora el análisis comparativo de propuestas y conoce en detalle las biografías de cada candidato
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/analisis-comparativo"
-              className="bg-gradient-to-r from-[#de2488] to-[#00cfaf] text-white font-bold px-6 md:px-8 py-3 md:py-4 rounded-xl hover:shadow-lg hover:scale-105 transition-all duration-300 text-sm md:text-base"
+              className="bg-gradient-to-r from-[#de2488] to-[#00cfaf] text-white font-bold px-8 py-4 rounded-xl hover:shadow-lg hover:scale-105 transition-all duration-300"
             >
               Ver Análisis Comparativo
             </Link>
             <Link
-              href="#political-parties"
-              className="bg-white hover:bg-gray-50 text-gray-800 font-bold px-6 md:px-8 py-3 md:py-4 rounded-xl transition-all duration-300 hover:scale-105 border-2 border-gray-300 text-sm md:text-base"
+              href="/#parties"
+              className="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white font-bold px-8 py-4 rounded-xl transition-all duration-300 hover:scale-105 border-2 border-white/30"
             >
               Ver Todos los Partidos
             </Link>

@@ -1,6 +1,6 @@
 "use client"
 
-import Image from "next/image"
+{/*import Image from "next/image"*/}
 import ElectionCountdown from "@/components/ui/countdown"
 
 
@@ -36,7 +36,7 @@ export default function HeroSection() {
               <ElectionCountdown />
             </div>
             
-            {/* Logo Tinku Electoral - clickeable */}
+            {/* Logo Tinku Electoral - clickeable
             <div className="mt-8 w-full max-w-3xl mx-auto">
               <a
                 href="https://tinkuelectoral.com/"
@@ -44,12 +44,12 @@ export default function HeroSection() {
                 rel="noopener noreferrer"
                 className="group relative block transition-all duration-300 hover:scale-105 focus:scale-105 focus:outline-none sm:hover:scale-105 scale-100 sm:scale-100"
               >
-                {/* Contenedor con efectos hover - mismo ancho que contador */}
+                {/* Contenedor con efectos hover - mismo ancho que contador 
                 <div className="relative bg-gradient-to-br from-[#de2488]/10 via-white to-[#00cfaf]/10 backdrop-blur-sm rounded-2xl p-6 shadow-2xl border-2 border-[#de2488]/30 transition-all duration-300 sm:hover:shadow-xl sm:hover:border-[#de2488]/50">
-                  {/* Glow effect - siempre visible en móvil */}
+                  {/* Glow effect - siempre visible en móvil 
                   <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#de2488]/20 to-[#00cfaf]/20 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 blur-xl"></div>
                   
-                  {/* Logo centrado y más grande */}
+                  {/* Logo centrado y más grande 
                   <div className="relative flex justify-center items-center">
                     <Image
                       src="/images/tinku_electoral_logo.webp"
@@ -60,14 +60,14 @@ export default function HeroSection() {
                     />
                   </div>
                   
-                  {/* Indicador visual de link - siempre visible en móvil */}
+                  {/* Indicador visual de link - siempre visible en móvil 
                   <div className="absolute -top-2 -right-2 bg-[#de2488] text-white rounded-full p-1.5 opacity-100 scale-100 sm:opacity-0 sm:scale-75 sm:group-hover:opacity-100 sm:group-hover:scale-100 transition-all duration-300">
                     <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                     </svg>
                   </div>
                   
-                  {/* Texto informativo centrado */}
+                  {/* Texto informativo centrado 
                   <div className="mt-4 text-center">
                     <div className="bg-gradient-to-r from-[#de2488] to-[#00cfaf] bg-clip-text text-transparent text-sm font-semibold">
                       Visitar Tinku Electoral
@@ -76,6 +76,7 @@ export default function HeroSection() {
                 </div>
               </a>
             </div>
+            */}
           </div>
         </div>
 
