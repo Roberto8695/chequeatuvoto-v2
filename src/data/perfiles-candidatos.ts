@@ -688,7 +688,7 @@ export const perfilesCandidatos: BinomioCandidatos[] = [
         "Experiencia técnica en ingeniería civil",
         "Propuesta renovadora en ADN"
       ],
-      situacionLegal: "Inhabilitado por el TSE"
+      situacionLegal: "Habilitado por el TSE"
     },
     vicepresidente: {
       nombre: "Antonio Víctor Isaac Saravia Tapia",
