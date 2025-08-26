@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react'
 import { Card, CardContent } from '@/components/ui/card'
-import { Calendar, Clock, CheckCircle, AlertCircle, ExternalLink } from 'lucide-react'
+import { Calendar, Clock, CheckCircle, ExternalLink } from 'lucide-react'
 
 interface TimelineEvent {
   date: string
@@ -81,11 +81,55 @@ export default function AnimatedTimeline({ events }: AnimatedTimelineProps) {
   const getEventStatus = (index: number) => {
     const eventDateStr = events[index].date
     
-    if (eventDateStr.includes('agosto') || eventDateStr.includes('septiembre') || eventDateStr.includes('junio')) {
+    // Función para convertir fecha en formato "dd de mes" a Date object
+    const parseEventDate = (dateStr: string): Date => {
+      const currentYear = 2025
+      const months: { [key: string]: number } = {
+        'enero': 0, 'febrero': 1, 'marzo': 2, 'abril': 3,
+        'mayo': 4, 'junio': 5, 'julio': 6, 'agosto': 7,
+        'septiembre': 8, 'octubre': 9, 'noviembre': 10, 'diciembre': 11
+      }
+      
+      // Extraer día y mes del string (ej: "31 de agosto", "19 de octubre")
+      const match = dateStr.match(/(\d+) de (\w+)/)
+      if (!match) {
+        // Si no encuentra el patrón, intenta con formato más flexible
+        console.warn(`No se pudo parsear la fecha: ${dateStr}`)
+        return new Date()
+      }
+      
+      const day = parseInt(match[1])
+      const monthName = match[2].toLowerCase()
+      const month = months[monthName]
+      
+      if (month === undefined) {
+        console.warn(`Mes no reconocido: ${monthName}`)
+        return new Date()
+      }
+      
+      return new Date(currentYear, month, day)
+    }
+    
+    const eventDate = parseEventDate(eventDateStr)
+    const today = new Date()
+    
+    // Normalizar las fechas para comparar solo día, mes y año (sin horas)
+    const normalizeDate = (date: Date) => {
+      return new Date(date.getFullYear(), date.getMonth(), date.getDate())
+    }
+    
+    const normalizedEventDate = normalizeDate(eventDate)
+    const normalizedToday = normalizeDate(today)
+    
+    // Calcular diferencia en días
+    const diffTime = normalizedEventDate.getTime() - normalizedToday.getTime()
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24))
+    
+    if (diffDays < 0) {
+      // Evento ya pasó
       return 'completed'
-    } else if (eventDateStr.includes('octubre')) {
-      return 'upcoming'
     } else {
+      // Evento futuro (pendiente de ejecutar)
       return 'future'
     }
   }
@@ -98,8 +142,6 @@ export default function AnimatedTimeline({ events }: AnimatedTimelineProps) {
     switch (status) {
       case 'completed':
         return <CheckCircle className="h-6 w-6 text-white" />
-      case 'upcoming':
-        return <AlertCircle className="h-6 w-6 text-white" />
       default:
         return <Clock className="h-6 w-6 text-white" />
     }
@@ -112,13 +154,6 @@ export default function AnimatedTimeline({ events }: AnimatedTimelineProps) {
           border: 'border-[#de2488]/30',
           dot: 'bg-gradient-to-br from-[#de2488] to-[#de2488]/80',
           shadow: 'shadow-[#de2488]/20'
-        }
-      case 'upcoming':
-        return {
-          bg: 'bg-gradient-to-br from-[#00cfaf]/10 to-[#00cfaf]/5',
-          border: 'border-[#00cfaf]/30',
-          dot: 'bg-gradient-to-br from-[#00cfaf] to-[#00cfaf]/80',
-          shadow: 'shadow-[#00cfaf]/20'
         }
       default:
         return {
@@ -317,8 +352,7 @@ export default function AnimatedTimeline({ events }: AnimatedTimelineProps) {
                             <div className="flex items-center">
                               <div className={`w-2 h-2 ${colors.dot} rounded-full mr-2`} />
                               <span className="text-xs font-medium text-gray-600 uppercase">
-                                {status === 'completed' ? 'Ejecutado' : 
-                                status === 'upcoming' ? 'Próximo' : 'Por Ejecutar'}
+                                {status === 'completed' ? 'Ejecutado' : 'Por Ejecutar'}
                               </span>
                             </div>
                             {event.detailsUrl && (
@@ -501,16 +535,14 @@ export default function AnimatedTimeline({ events }: AnimatedTimelineProps) {
                                 <>
                                   <div className={`w-2 h-2 ${colors.dot} rounded-full`} />
                                   <span className="text-xs font-medium text-gray-600 uppercase mr-2">
-                                    {status === 'completed' ? 'Ejecutado' : 
-                                     status === 'upcoming' ? 'Próximo' : 'Por Ejecutar'}
+                                    {status === 'completed' ? 'Ejecutado' : 'Por Ejecutar'}
                                   </span>
                                 </>
                               ) : (
                                 <>
                                   <div className={`w-2 h-2 ${colors.dot} rounded-full mr-2`} />
                                   <span className="text-xs font-medium text-gray-600 uppercase">
-                                    {status === 'completed' ? 'Ejecutado' : 
-                                     status === 'upcoming' ? 'Próximo' : 'Por Ejecutar'}
+                                    {status === 'completed' ? 'Ejecutado' : 'Por Ejecutar'}
                                   </span>
                                 </>
                               )}
