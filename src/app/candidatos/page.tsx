@@ -148,31 +148,8 @@ export default function CandidatosPage() {
         </div>
       </div>
 
-      {/* Call to action */}
-      <div className="text-center pb-16">
-        <div className="max-w-4xl mx-auto px-4">
-          <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            ¿Quieres conocer más?
-          </h3>
-          <p className="text-xl text-gray-300 mb-8">
-            Explora el análisis comparativo de propuestas y conoce en detalle las biografías de cada candidato
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/analisis-comparativo"
-              className="bg-gradient-to-r from-[#de2488] to-[#00cfaf] text-white font-bold px-8 py-4 rounded-xl hover:shadow-lg hover:scale-105 transition-all duration-300"
-            >
-              Ver Análisis Comparativo
-            </Link>
-            <Link
-              href="/#parties"
-              className="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white font-bold px-8 py-4 rounded-xl transition-all duration-300 hover:scale-105 border-2 border-white/30"
-            >
-              Ver Todos los Partidos
-            </Link>
-          </div>
-        </div>
-      </div>
+
+      
     </div>
   );
 }

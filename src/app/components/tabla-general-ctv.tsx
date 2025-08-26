@@ -163,7 +163,7 @@ export function TablaGeneralCTV() {
                 {/* Escala visual 1-10 */}
                 <div className="flex items-center gap-2">
                   <span className="text-sm font-medium text-gray-500 w-4">1</span>
-                  <div className="flex-1 h-6 bg-gray-200 rounded-full overflow-hidden shadow-inner relative">
+                  <div className="flex-1 h-8 bg-gray-200 rounded-lg overflow-hidden shadow-inner relative">
                     <div 
                       className={`h-full bg-gradient-to-r ${getProgressColor(row.analisisEconomico)} transition-all duration-700 ease-out relative`}
                       style={{ width: `${(row.analisisEconomico / 10) * 100}%` }}
@@ -177,7 +177,7 @@ export function TablaGeneralCTV() {
                     ></div>
                     {/* Texto centrado */}
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="text-black font-semibold text-xs">Puntaje del índice económico</span>
+                      <span className="text-black font-semibold text-sm">Puntaje del índice económico</span>
                     </div>
                   </div>
                   <span className="text-sm font-medium text-gray-500 w-6">10</span>
@@ -344,8 +344,7 @@ export function TablaGeneralCTV() {
               {/* Cuerpo de la tabla */}
               <tbody>
                 {sortedData.map((row, index) => {
-                  const totalFlags = row.analisisJuridico.greenFlags + row.analisisJuridico.redFlags;
-                  const greenPercentage = totalFlags > 0 ? (row.analisisJuridico.greenFlags / totalFlags) * 100 : 0;
+                 
                   
                   return (
                     <tr 
@@ -380,7 +379,7 @@ export function TablaGeneralCTV() {
                           {/* Escala visual 1-10 */}
                           <div className="flex items-center gap-2 w-full max-w-xs">
                             <span className="text-sm font-medium text-gray-500">1</span>
-                            <div className="flex-1 h-4 bg-gray-200 rounded-full overflow-hidden shadow-inner relative">
+                            <div className="flex-1 h-8 bg-gray-200 rounded-lg overflow-hidden shadow-inner relative">
                               <div 
                                 className={`h-full bg-gradient-to-r ${getProgressColor(row.analisisEconomico)} transition-all duration-700 ease-out relative`}
                                 style={{ width: `${(row.analisisEconomico / 10) * 100}%` }}
@@ -389,7 +388,7 @@ export function TablaGeneralCTV() {
                               </div>
                               {/* Texto centrado */}
                               <div className="absolute inset-0 flex items-center justify-center">
-                                <span className="text-black font-semibold text-xs">Puntaje del índice económico</span>
+                                <span className="text-black font-semibold text-sm">Puntaje del índice económico</span>
                               </div>
                             </div>
                             <span className="text-sm font-medium text-gray-500">10</span>
@@ -408,36 +407,49 @@ export function TablaGeneralCTV() {
                       {/* Análisis Jurídico */}
                       <td className="px-6 py-6">
                         <div className="flex flex-col items-center space-y-4">
-                          {/* Números principales */}
-                          <div className="flex items-center gap-3">
-                            <div className="flex items-center gap-2 px-3 py-2 bg-[#00cfaf]/10 rounded-lg border border-[#00cfaf]/30">
-                              <div className="w-3 h-3 bg-[#00cfaf] rounded-full"></div>
-                              <span className="font-bold text-[#00cfaf] text-lg">{row.analisisJuridico.greenFlags}</span>
+                          {/* Barras de greenflags y redflags - mismo diseño que móvil */}
+                          <div className="space-y-3 w-full max-w-xs">
+                            {/* Barra de Greenflags */}
+                            <div className="flex items-center gap-3">
+                              <div className="w-12 h-8 bg-[#00cfaf] rounded flex items-center justify-center text-black font-bold text-sm">
+                                {row.analisisJuridico.greenFlags}
+                              </div>
+                              <div className="flex-1 h-8 bg-gray-200 rounded-lg overflow-hidden relative">
+                                <div 
+                                  className="h-full bg-[#00cfaf] transition-all duration-700"
+                                  style={{ 
+                                    width: `${(row.analisisJuridico.greenFlags / Math.max(row.analisisJuridico.greenFlags, row.analisisJuridico.redFlags, 10)) * 100}%` 
+                                  }}
+                                ></div>
+                                <div className="absolute inset-0 flex items-center justify-center">
+                                  <span className="text-black font-semibold text-sm">Greenflags</span>
+                                </div>
+                              </div>
                             </div>
-                            <div className="flex items-center gap-2 px-3 py-2 bg-[#de2488]/10 rounded-lg border border-[#de2488]/30">
-                              <div className="w-3 h-3 bg-[#de2488] rounded-full"></div>
-                              <span className="font-bold text-[#de2488] text-lg">{row.analisisJuridico.redFlags}</span>
-                            </div>
-                          </div>
-                          
-                          {/* Barra de progreso */}
-                          <div className="w-full max-w-32 h-3 bg-gray-200 rounded-full overflow-hidden shadow-inner relative">
-                            <div 
-                              className="h-full bg-gradient-to-r from-[#00cfaf] to-[#00cfaf]/80 transition-all duration-700 ease-out"
-                              style={{ width: `${greenPercentage}%` }}
-                            ></div>
-                            {/* Texto centrado para Greenflags */}
-                            <div className="absolute inset-0 flex items-center justify-center">
-                              <span className="text-black font-semibold text-xs">
-                                {greenPercentage > 50 ? "Greenflags" : "Redflags"}
-                              </span>
+
+                            {/* Barra de Redflags */}
+                            <div className="flex items-center gap-3">
+                              <div className="w-12 h-8 bg-[#de2488] rounded flex items-center justify-center text-black font-bold text-sm">
+                                {row.analisisJuridico.redFlags}
+                              </div>
+                              <div className="flex-1 h-8 bg-gray-200 rounded-lg overflow-hidden relative">
+                                <div 
+                                  className="h-full bg-[#de2488] transition-all duration-700"
+                                  style={{ 
+                                    width: `${(row.analisisJuridico.redFlags / Math.max(row.analisisJuridico.greenFlags, row.analisisJuridico.redFlags, 10)) * 100}%` 
+                                  }}
+                                ></div>
+                                <div className="absolute inset-0 flex items-center justify-center">
+                                  <span className="text-black font-semibold text-sm">Redflags</span>
+                                </div>
+                              </div>
                             </div>
                           </div>
                           
                           {/* Botón RESULTADOS */}
                           <button 
                             onClick={() => abrirEnlace(row.enlaces.redflag)}
-                            className="px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 text-sm font-semibold rounded-lg transition-all duration-300 hover:shadow-md border border-gray-300"
+                            className="px-4 py-2  bg-gray-100 hover:bg-gray-200 text-gray-700 text-sm font-semibold rounded-lg transition-all duration-300 hover:shadow-md border border-gray-300"
                           >
                             VER FLAGS
                           </button>

@@ -1,7 +1,13 @@
+'use client';
+
 import Image from 'next/image';
-import Link from 'next/link';
+
 import { User } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
+import { useState } from 'react';
+import Modal from '@/components/ui/modal';
+import BiografiaCandidato from '@/components/biografia-candidato';
+import { perfilesCandidatos, PerfilCandidato } from '@/data/perfiles-candidatos';
 
 // Datos de los finalistas de segunda vuelta
 const finalistasSegundaVuelta = [
@@ -30,6 +36,51 @@ const finalistasSegundaVuelta = [
 ];
 
 export function CardCandidatos() {
+  const [modalState, setModalState] = useState<{
+    isOpen: boolean;
+    candidato: PerfilCandidato | null;
+    tipo: 'presidente' | 'vicepresidente' | null;
+    partidoSlug: string | null;
+  }>({
+    isOpen: false,
+    candidato: null,
+    tipo: null,
+    partidoSlug: null
+  });
+
+  const openModal = (candidato: PerfilCandidato, tipo: 'presidente' | 'vicepresidente', partidoSlug: string) => {
+    setModalState({
+      isOpen: true,
+      candidato,
+      tipo,
+      partidoSlug
+    });
+  };
+
+  const closeModal = () => {
+    setModalState({
+      isOpen: false,
+      candidato: null,
+      tipo: null,
+      partidoSlug: null
+    });
+  };
+
+  // Función para obtener el perfil del candidato
+  const getPerfilCandidato = (partidoSlug: string, tipo: 'presidente' | 'vicepresidente'): PerfilCandidato | null => {
+    const perfilPartido = perfilesCandidatos.find(p => p.partido.slug === partidoSlug);
+    if (perfilPartido) {
+      return tipo === 'presidente' ? perfilPartido.presidente : perfilPartido.vicepresidente;
+    }
+    return null;
+  };
+
+  // Función para obtener el color del partido
+  const getPartidoColor = (partidoSlug: string): string => {
+    const candidato = finalistasSegundaVuelta.find(c => c.slug === partidoSlug);
+    return candidato?.color || '#3B82F6';
+  };
+
   return (
     <div className="w-full">
 
@@ -81,9 +132,23 @@ export function CardCandidatos() {
                           <h5 className="text-sm md:text-lg font-bold text-white mb-2 drop-shadow-lg leading-tight">
                             {candidato.presidente}
                           </h5>
-                          <Badge className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black border-0 text-xs md:text-sm font-bold px-2 md:px-3 py-1 shadow-xl">
+                          <Badge className="bg-gradient-to-r from-yellow-400 to-orange-500 text-black border-0 text-xs md:text-sm font-bold px-2 md:px-3 py-1 shadow-xl mb-2">
                             PRESIDENTE
                           </Badge>
+                          <div>
+                            <button
+                              onClick={() => {
+                                const perfil = getPerfilCandidato(candidato.slug, 'presidente');
+                                if (perfil) {
+                                  openModal(perfil, 'presidente', candidato.slug);
+                                }
+                              }}
+                              className="inline-flex items-center space-x-1 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white font-bold px-2 md:px-3 py-1 md:py-2 rounded-full transition-all duration-300 hover:scale-105 shadow-xl border border-white/30 text-xs md:text-sm"
+                            >
+                              <User className="w-3 h-3 md:w-4 md:h-4" />
+                              <span>Ver Perfil</span>
+                            </button>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -110,24 +175,27 @@ export function CardCandidatos() {
                           <h5 className="text-sm md:text-lg font-bold text-white mb-2 drop-shadow-lg leading-tight">
                             {candidato.vicepresidente}
                           </h5>
-                          <Badge className="bg-gradient-to-r from-blue-400 to-cyan-500 text-white border-0 text-xs md:text-sm font-bold px-2 md:px-3 py-1 shadow-xl">
+                          <Badge className="bg-gradient-to-r from-blue-400 to-cyan-500 text-white border-0 text-xs md:text-sm font-bold px-2 md:px-3 py-1 shadow-xl mb-2">
                             VICEPRESIDENTE
                           </Badge>
+                          <div>
+                            <button
+                              onClick={() => {
+                                const perfil = getPerfilCandidato(candidato.slug, 'vicepresidente');
+                                if (perfil) {
+                                  openModal(perfil, 'vicepresidente', candidato.slug);
+                                }
+                              }}
+                              className="inline-flex items-center space-x-1 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white font-bold px-2 md:px-3 py-1 md:py-2 rounded-full transition-all duration-300 hover:scale-105 shadow-xl border border-white/30 text-xs md:text-sm"
+                            >
+                              <User className="w-3 h-3 md:w-4 md:h-4" />
+                              <span>Ver Perfil</span>
+                            </button>
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-
-                {/* Botón para ver más detalles */}
-                <div className="text-center mt-6 md:mt-8">
-                  <Link
-                    href={`/candidatos/${candidato.slug}`}
-                    className="inline-flex items-center space-x-2 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white font-bold px-4 md:px-6 py-2 md:py-3 rounded-full transition-all duration-300 hover:scale-105 shadow-xl border-2 border-white/30 text-sm md:text-base"
-                  >
-                    <User className="w-4 h-4 md:w-5 md:h-5" />
-                    <span>Ver Perfil Completo</span>
-                  </Link>
                 </div>
               </div>
             </div>
@@ -135,31 +203,22 @@ export function CardCandidatos() {
         </div>
       </div>
 
-      {/* Call to action */}
-      <div className="text-center mt-12">
-        <div className="max-w-4xl mx-auto">
-          <h4 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4">
-            ¿Quieres conocer más?
-          </h4>
-          <p className="text-lg text-gray-600 mb-8">
-            Explora el análisis comparativo de propuestas y conoce todos los partidos políticos
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/analisis-comparativo"
-              className="bg-gradient-to-r from-[#de2488] to-[#00cfaf] text-white font-bold px-6 md:px-8 py-3 md:py-4 rounded-xl hover:shadow-lg hover:scale-105 transition-all duration-300 text-sm md:text-base"
-            >
-              Ver Análisis Comparativo
-            </Link>
-            <Link
-              href="#political-parties"
-              className="bg-white hover:bg-gray-50 text-gray-800 font-bold px-6 md:px-8 py-3 md:py-4 rounded-xl transition-all duration-300 hover:scale-105 border-2 border-gray-300 text-sm md:text-base"
-            >
-              Ver Todos los Partidos
-            </Link>
-          </div>
-        </div>
-      </div>
+      {/* Modal de biografía */}
+      <Modal
+        isOpen={modalState.isOpen}
+        onClose={closeModal}
+        title={modalState.candidato ? `Biografía de ${modalState.candidato.nombre}` : ''}
+        maxWidth="4xl"
+      >
+        {modalState.candidato && modalState.partidoSlug && (
+          <BiografiaCandidato
+            candidato={modalState.candidato}
+            partidoColor={getPartidoColor(modalState.partidoSlug)}
+          />
+        )}
+      </Modal>
+
+      
     </div>
   );
 }
