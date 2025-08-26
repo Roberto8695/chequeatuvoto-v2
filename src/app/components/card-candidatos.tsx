@@ -91,10 +91,17 @@ export function CardCandidatos() {
           {finalistasSegundaVuelta.map((candidato) => (
             <div
               key={candidato.partido}
-              className={`relative overflow-hidden rounded-3xl shadow-2xl transition-all duration-500 hover:scale-105 bg-gradient-to-br ${candidato.gradiente}`}
+              className={`relative overflow-hidden rounded-3xl shadow-2xl transition-all duration-500 hover:scale-105 ${
+                candidato.partido === 'PDC' 
+                  ? 'bg-cover bg-center bg-no-repeat' 
+                  : `bg-gradient-to-br ${candidato.gradiente}`
+              }`}
+              style={candidato.partido === 'PDC' ? {
+                backgroundImage: 'url(/images/pdc-bg.png)'
+              } : {}}
             >
               {/* Efectos decorativos */}
-              <div className="absolute inset-0 bg-black/20"></div>
+              <div className={`absolute inset-0 ${candidato.partido === 'PDC' ? 'bg-black/30' : 'bg-black/20'}`}></div>
               <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-16 translate-x-16"></div>
               <div className="absolute bottom-0 left-0 w-24 h-24 bg-white/10 rounded-full translate-y-12 -translate-x-12"></div>
               
