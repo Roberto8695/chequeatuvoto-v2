@@ -26,7 +26,7 @@ const finalistasSegundaVuelta = [
     partido: "PDC",
     nombreCompleto: "Partido Demócrata Cristiano",
     presidente: "Rodrigo Paz Pereira",
-    vicepresidente: "Edman Lara",
+    vicepresidente: "Edman Lara Montaño",
     color: "#f83728",
     gradiente: "from-red-500 via-orange-600 to-red-700",
     imagenPresidente: "/binomios/pdc/presidente.png",
