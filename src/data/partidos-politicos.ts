@@ -193,7 +193,7 @@ export const partidosPoliticos: PartidoPolitico[] = [
     sigla: "PDC",
     programas: "https://drive.google.com/file/d/1ckMu4jyif7xBrY2FzUHVbfIyL4ChItWH/view?usp=sharing",
     presidente: "Rodrigo Paz Pereira",
-    vicepresidente: "Edman Lara",
+    vicepresidente: "Edman Lara Montaño",
     imagenes: {
       logo: "/binomios/pdc/logo.png", // Agrega cuando tengas el logo
       presidente: "/binomios/pdc/presidente.png",
