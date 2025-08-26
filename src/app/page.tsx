@@ -22,9 +22,9 @@ import LoadingScreen from "@/components/ui/loading-screen";
 
 const features = [
   {
-    name: "¿Sé para qué son estas elecciones? ¿Entiendo la importancia de mi voto?",
+    name: "¿Cuál es la diferencia entre los dos binomios que compiten en esta segunda vuelta?",
     description:
-      "Este 2025 elegiremos al Presidente, Vicepresidente y representantes de la Asamblea Legislativa Plurinacional.",
+      "Revisa las principales diferencias en sus propuestas, experiencia, valores y liderazgo. Conoce qué representan para el país y qué cambios quieren impulsar.",
     moreInfo:
       "En 2025 no solo elegiremos al próximo Presidente y Vicepresidente de Bolivia. También decidiremos quiénes nos representarán en la Asamblea Legislativa Plurinacional. Serán 130 diputadas y diputados y 36 senadoras y senadores que tendrán en sus manos la creación, modificación y aprobación de leyes que afectarán directamente nuestra vida cotidiana. Los candidatos varían según tu departamento y tu provincia. Cada voto cuenta y es importante, porque durante los próximos cinco años, estas autoridades influirán en decisiones clave sobre nuestra economía, salud, educación, seguridad y justicia.",
 
@@ -42,11 +42,11 @@ const features = [
     color: "bg-blue-50",
   },
   {
-    name: "¿Conozco a TODOS los binomios presidenciales? ¿Conozco sus historiales políticos?",
+    name: "¿Cuál es el impacto tangible (positivos y negativos) de las propuestas de cada binomio en mi región o sector?",
     description:
-      "Es imprescindible conocer a todos los candidatos y sus historiales políticos.",
+      "Observa proyectos vinculados a áreas como salud, educación, empleo o infraestructura en tu departamento o provincia. Analiza si son viables técnicamente, si el financiamiento está asegurado o si ya hay experiencias similares.",
     moreInfo:
-      "Muchos candidatos y candidatas tienen un pasado que no necesariamente los define actualmente, sin embargo, si nos puede dar ciertas luces del comportamiento político. Algunos han pasado de partido en partido según su conveniencia o interés, otros han sido procesados o están siendo procesados penalmente, otros han creado grandes fortunas a través de ilícitos. Saber esta información nos puede ayudar a tener una idea de si lo que prometen tiene coherencia con lo que hacen, hicieron o harán y su discurso de cara a la gente.",
+      "Observa proyectos vinculados a áreas como salud, educación, empleo o infraestructura en tu departamento o provincia. Analiza si son viables técnicamente, si el financiamiento está asegurado o si ya hay experiencias similares.",
 
     risks: [
       "Solo conozco a uno o algunos candidatos.",
@@ -63,11 +63,11 @@ const features = [
     color: "bg-amber-50",
   },
   {
-    name: "¿Las propuestas de los candidatos son realistas y están bien fundamentadas?",
+    name: "¿Son transparentes y confiables las promesas y el historial de estos candidatos?",
     description:
-      "Es importante saber si las propuestas son factibles y tienen fundamentos sólidos.",
+      "Verifica si sus programas y antecedentes fueron fiscalizados (por el TSE, la prensa independiente o plataformas de transparencia como ChequeaBolivia), si han cumplido compromisos previos o enfrentan cuestionamientos documentados.",
     moreInfo:
-      "Una ciudadanía informada fortalece la democracia. Muchas veces votamos por intuición o 'al tink'azo', pero es clave ir más allá: entender qué se propone y, sobre todo, cómo se piensa lograr. Analizar la lógica y viabilidad de las propuestas ayuda a imaginar cómo gobernarían en temas como trabajo, salud, educación, justicia y seguridad. Más allá de la propaganda, vale la pena evaluar perfiles, antecedentes y planes concretos.",
+      "Verifica si sus programas y antecedentes fueron fiscalizados (por el TSE, la prensa independiente o plataformas de transparencia como ChequeaBolivia), si han cumplido compromisos previos o enfrentan cuestionamientos documentados.",
     risks: [
       "Me informo de las propuestas solo en redes sociales y de solo contenido que me hace sentir cómodo o cómoda. ",
     ],
@@ -81,11 +81,11 @@ const features = [
     color: "bg-purple-50",
   },
   {
-    name: "¿Conozco a los candidatos a parlamentarios que representarán mi departamento y provincia?",
+    name: "¿Cómo mi voto contribuye al equilibrio democrático y al fortalecimiento institucional?",
     moreInfo:
-      "Los parlamentarios que son los miembros de la Asamblea Legislativa Plurinacional, o sea diputados y senadores son usualmente líderes más o menos cercanos a nosotros. Es fundamental intentar indagar en su historial político, informarse no solo con propaganda creada por ellos mismos. ",
+      "Reflexiona más allá del binomio: cómo influye una victoria en términos de control legislativo, gobernabilidad, diálogo interinstitucional y continuidad de políticas públicas en todo el país.",
     description:
-      "Es clave investigar sus antecedentes y evitar votar solo por propaganda.",
+      "Reflexiona más allá del binomio: cómo influye una victoria en términos de control legislativo, gobernabilidad, diálogo interinstitucional y continuidad de políticas públicas en todo el país.",
     risks: [
       "No saber quien es el representante parlamentario de mi circunscripcion.",
     ],
