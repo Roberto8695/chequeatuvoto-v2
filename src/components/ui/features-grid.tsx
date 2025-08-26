@@ -159,7 +159,7 @@ export default function FeaturesGrid({ features }: FeaturesGridProps) {
                     }}
                   ></div>                  {/* Título con gradiente más compacto */}
                   <h3 
-                    className="text-lg font-bold mb-3 leading-tight min-h-[3.5rem] flex items-start transition-all duration-300 group-hover:scale-[1.02]"
+                    className="text-lg text-justify font-bold mb-1 leading-tight min-h-[3.5rem] flex items-start transition-all duration-300 group-hover:scale-[1.02]"
                     style={{
                       background: `linear-gradient(135deg, ${index % 2 === 0 ? '#de2488' : '#00cfaf'}, #374151)`,
                       WebkitBackgroundClip: 'text',
@@ -171,7 +171,7 @@ export default function FeaturesGrid({ features }: FeaturesGridProps) {
                   </h3>
                   
                   {/* Descripción más concisa */}
-                  <p className="text-gray-600 leading-relaxed text-sm group-hover:text-gray-700 transition-colors duration-300 flex-grow mb-4 line-clamp-3">
+                  <p className="text-gray-600 text-justify leading-relaxed text-sm group-hover:text-gray-700 transition-colors duration-300 flex-grow mb-4 line-clamp-3">
                     {feature.description}
                   </p>
 
