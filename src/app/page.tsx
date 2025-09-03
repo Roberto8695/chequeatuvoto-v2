@@ -28,8 +28,9 @@ const features = [
       "Una ciudadanía informada fortalece la democracia. Es lógico que en una segunda vuelta electoral nos dejemos arrastrar por nuestras emociones, pero es muy importante analizar las propuestas para saber cómo gobernaría el próximo binomio en temas como la economía, la justicia y o la seguridad. Más allá de la propaganda, vale la pena evaluar los planes de gobierno.",
 
     risks: [
-      "Me informo de las propuestas solo en redes sociales y de solo contenido que me hace sentir cómodo o cómoda.",
+      "Me informo de las propuestas solo en redes sociales y solo de contenido que me hace sentir cómodo o cómoda.",
       "Me quedo solo con lo que vi de los candidatos en las entrevistas y me niego a debatirlas.",
+      "Me quedo solo con lo que vi de los candidatos en las entrevistas y me niego a debatir.",
     ],
     myrisk: [
       "Su discurso está basado principalmente en el ataque a otro candidato, partido, ideología o gestión gubernamental.",
