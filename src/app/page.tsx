@@ -6,7 +6,6 @@ import { useState, useEffect } from "react";
 import {
   Vote,
   History,
-  UserCheck,
   FileCheck,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -22,81 +21,63 @@ import LoadingScreen from "@/components/ui/loading-screen";
 
 const features = [
   {
-    name: "¿Cuál es la diferencia entre los dos binomios que compiten en esta segunda vuelta?",
+    name: "¿Las promesas de los candidatos son factibles y están bien fundamentadas?",
     description:
-      "Revisa las principales diferencias en sus propuestas, experiencia, valores y liderazgo. Conoce qué representan para el país y qué cambios quieren impulsar.",
+      "Es importante saber si los candidatos no están haciendo promesas vacías simplemente no factibles.",
     moreInfo:
-      "En 2025 no solo elegiremos al próximo Presidente y Vicepresidente de Bolivia. También decidiremos quiénes nos representarán en la Asamblea Legislativa Plurinacional. Serán 130 diputadas y diputados y 36 senadoras y senadores que tendrán en sus manos la creación, modificación y aprobación de leyes que afectarán directamente nuestra vida cotidiana. Los candidatos varían según tu departamento y tu provincia. Cada voto cuenta y es importante, porque durante los próximos cinco años, estas autoridades influirán en decisiones clave sobre nuestra economía, salud, educación, seguridad y justicia.",
+      "Una ciudadanía informada fortalece la democracia. Es lógico que en una segunda vuelta electoral nos dejemos arrastrar por nuestras emociones, pero es muy importante analizar las propuestas para saber cómo gobernaría el próximo binomio en temas como la economía, la justicia y o la seguridad. Más allá de la propaganda, vale la pena evaluar los planes de gobierno.",
 
     risks: [
-      "Pienso que la política no me afecta y por eso no es importante informarse.",
-      "Voto porque es obligatorio y para poder hacer transacciones bancarias.",
+      "Me informo de las propuestas solo en redes sociales y de solo contenido que me hace sentir cómodo o cómoda.",
+      "Me quedo solo con lo que vi de los candidatos en las entrevistas y me niego a debatirlas.",
+    ],
+    myrisk: [
+      "Su discurso está basado principalmente en el ataque a otro candidato, partido, ideología o gestión gubernamental.",
+      "Sus propuestas son inviables porque prometen demasiado y no saben cómo las ejecutarán.",
+      "Sus propuestas implican sólo la acción del nivel ejecutivo (presidente y vicepresidente) o necesitarán de otras instancias (Asamblea) para que puedan ejecutarlas.",
+    ],
+    icon: Vote,
+    image: "/Nuevos/img2.webp",
+    color: "bg-blue-50",
+  },
+  {
+    name: "¿Comprendo cómo funciona la segunda vuelta electoral?",
+    description:
+      "Es la primera vez que Bolivia celebrará una segunda vuelta electoral.",
+    moreInfo:
+      "La segunda vuelta electoral se celebra en Bolivia si ninguno de los candidatos obtuvo más del 50% de los votos válidos emitidos en la primera vuelta; o un mínimo del 40% de los votos válidos emitidos, con una diferencia de al menos 10% en relación a la segunda candidatura más votada.",
+
+    risks: [
+      "Pienso que se trata de nuevas elecciones, cuyos resultados cambiarán toda la estructura política.",
+      "No es importante volver a votar porque ya participé en las elecciones del 17 de agosto.",
       "Pienso a menudo que mi voto no hará la diferencia.",
       "Pienso que tengo que votar por alguien que solo solucione lo urgente.",
     ],
     myrisk: [
-      "El OEP no brinda información digerible ni en medios de comunicación abiertos.",
-    ],
-    icon: Vote,
-    image: "/imagenes2/IMAGENES PAGINA WEB/bg-1.webp",
-    color: "bg-blue-50",
-  },
-  {
-    name: "¿Cuál es el impacto tangible (positivos y negativos) de las propuestas de cada binomio en mi región o sector?",
-    description:
-      "Observa proyectos vinculados a áreas como salud, educación, empleo o infraestructura en tu departamento o provincia. Analiza si son viables técnicamente, si el financiamiento está asegurado o si ya hay experiencias similares.",
-    moreInfo:
-      "Observa proyectos vinculados a áreas como salud, educación, empleo o infraestructura en tu departamento o provincia. Analiza si son viables técnicamente, si el financiamiento está asegurado o si ya hay experiencias similares.",
-
-    risks: [
-      "Solo conozco a uno o algunos candidatos.",
-      "Usé solo un medio para informarme.",
-      "Algún candidato tiene procesos por corrupción o malversación.",
-      "Ha cambiado de partido de manera oportunista.",
-    ],
-    myrisk: [
-      "Algún miembro del binomio tiene un proceso o más en su contra por corrupción, malversación de fondos, violencia o nepotismo.",
-      "Algún miembro del binomio ha cambiado de partido o postura de manera oportunista durante su carrera política.",
+      "Tienen discursos polarizantes que llaman a la violencia o que fomentan el discurso de odio.",
     ],
     icon: History,
-    image: "/imagenes2/IMAGENES PAGINA WEB/candidatos-bg.webp",
+    image: "/Nuevos/img4.webp",
     color: "bg-amber-50",
   },
   {
-    name: "¿Son transparentes y confiables las promesas y el historial de estos candidatos?",
+    name: "¿Conozco a los dos binomios presidenciales y sus historiales políticos?",
     description:
-      "Verifica si sus programas y antecedentes fueron fiscalizados (por el TSE, la prensa independiente o plataformas de transparencia como ChequeaBolivia), si han cumplido compromisos previos o enfrentan cuestionamientos documentados.",
+      "Es imprescindible conocer a los candidatos de los dos frentes y sus historiales políticos.",
     moreInfo:
-      "Verifica si sus programas y antecedentes fueron fiscalizados (por el TSE, la prensa independiente o plataformas de transparencia como ChequeaBolivia), si han cumplido compromisos previos o enfrentan cuestionamientos documentados.",
+      "Es importante conocer el historial político de los dos binomios que están habilitados para la segunda vuelta electoral. Saber si se trata de la primera vez que están en la arena política, si transitaron por otros partidos o si enfrentan denuncias de corrupción en gestiones anteriores ocupando cargos electivos.",
     risks: [
-      "Me informo de las propuestas solo en redes sociales y de solo contenido que me hace sentir cómodo o cómoda. ",
+      "Solo conozco a los candidatos por lo que he leído o visto en las redes sociales.",
+      "He hecho seguimiento a mi binomio favorito, lo demás no me importa.",
+      "Algún candidato tiene procesos abiertos por denuncias de corrupción o malversación de fondos.",
+      "No tiene una identidad política, ha cambiado de partido en función a su conveniencia.",
     ],
     myrisk: [
-      "Todas sus propuestas están dirigidas a atender solo temas urgentes.",
-      "Sus propuestas son sumamente densas y tienen contradicciones importantes. ",
-      "Su discurso está basado principalmente en el ataque a otro candidato, partido, ideología o gestión gubernamental.",
+      "Los candidatos se niegan a ser cuestionados por su pasado político o por denuncias de corrupción en su contra.",
     ],
     icon: FileCheck,
-    image: "/imagenes2/IMAGENES PAGINA WEB/bg-3.webp",
+    image: "/Nuevos/img3.webp",
     color: "bg-purple-50",
-  },
-  {
-    name: "¿Cómo mi voto contribuye al equilibrio democrático y al fortalecimiento institucional?",
-    moreInfo:
-      "Reflexiona más allá del binomio: cómo influye una victoria en términos de control legislativo, gobernabilidad, diálogo interinstitucional y continuidad de políticas públicas en todo el país.",
-    description:
-      "Reflexiona más allá del binomio: cómo influye una victoria en términos de control legislativo, gobernabilidad, diálogo interinstitucional y continuidad de políticas públicas en todo el país.",
-    risks: [
-      "No saber quien es el representante parlamentario de mi circunscripcion.",
-    ],
-    myrisk: [
-      "Nunca se involucró en temas políticos o sociales antes en tu localidad, ciudad o región y da la impresión que está buscando solo una pega o trabajo.",
-      "Cuando hablan en prensa o cualquier otro medio solo repiten el mismo discurso que el Presidente o Vicepresidente de su partido o alianza política. ",
-      "Solo existe información suya en forma de propaganda política.",
-    ],
-    icon: UserCheck,
-    image: "/imagenes2/IMAGENES PAGINA WEB/parlamentario.webp",
-    color: "bg-green-50",
   },
 ];
 
