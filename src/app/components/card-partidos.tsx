@@ -45,7 +45,7 @@ export function CardPartidos() {
           PARTIDOS POLÍTICOS Y ALIANZAS
         </h2>
         <p className="text-xl text-gray-700 max-w-3xl mx-auto font-medium">
-          Conoce los programas de gobierno de los partidos finalistas de segunda vuelta
+          Explora las propuestas de los partidos que llegaron a la segunda vuelta
         </p>
       </div>
 
