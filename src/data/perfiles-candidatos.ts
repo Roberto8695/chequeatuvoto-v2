@@ -507,7 +507,7 @@ export const perfilesCandidatos: BinomioCandidatos[] = [
         }
       ],
       logrosDestacados: [
-        "Hijo del expresidente Jaime Paz Zamora",
+        
         "Experiencia ejecutiva y legislativa",
         "Formación internacional en gestión política"
       ],

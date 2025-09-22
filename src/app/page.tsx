@@ -3,11 +3,7 @@
 import type React from "react";
 
 import { useState, useEffect } from "react";
-import {
-  Vote,
-  History,
-  FileCheck,
-} from "lucide-react";
+import { Vote, History, FileCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CardCandidatos } from "./components/card-candidatos";
 import { CardPartidos } from "./components/card-partidos";
@@ -29,7 +25,7 @@ const features = [
 
     risks: [
       "Me informo de las propuestas solo en redes sociales y solo de contenido que me hace sentir cómodo o cómoda.",
-      "Me quedo solo con lo que vi de los candidatos en las entrevistas y me niego a debatirlas.",
+      
       "Me quedo solo con lo que vi de los candidatos en las entrevistas y me niego a debatir.",
     ],
     myrisk: [
@@ -54,9 +50,7 @@ const features = [
       "Pienso a menudo que mi voto no hará la diferencia.",
       "Pienso que tengo que votar por alguien que solo solucione lo urgente.",
     ],
-    myrisk: [
-      
-    ],
+    myrisk: [],
     icon: History,
     image: "/Nuevos/img4.webp",
     color: "bg-amber-50",
@@ -70,11 +64,12 @@ const features = [
     risks: [
       "Solo conozco a los candidatos por lo que he leído o visto en las redes sociales.",
       "He hecho seguimiento a mi binomio favorito, lo demás no me importa.",
-      "Algún candidato tiene procesos abiertos por denuncias de corrupción o malversación de fondos.",
-      "No tiene una identidad política, ha cambiado de partido en función a su conveniencia.",
+      
     ],
     myrisk: [
       "Los candidatos se niegan a ser cuestionados por su pasado político o por denuncias de corrupción en su contra.",
+      "Algún candidato tiene procesos abiertos por denuncias de corrupción o malversación de fondos.",
+      "No tiene una identidad política, ha cambiado de partido en función a su conveniencia.",
     ],
     icon: FileCheck,
     image: "/Nuevos/img3.webp",
@@ -88,70 +83,66 @@ const timelineEvents = [
     title: "Convocatoria a Segunda Vuelta",
     description:
       "Convocatoria a Segunda Vuelta por el Tribunal Supremo Electoral.",
-    
   },
   {
     date: "31 de agosto",
     title: "Difusión o publicación de estudios",
     description:
       "Difusión o publicación de estudios de opinión en materia electoral (encuestas). (segunda vuelta).",
-    
   },
   {
     date: "31 de agosto",
     title: "Difusión de propaganda electoral",
     description:
       "Difusión de propaganda electoral en actos públicos de campaña y en medios de comunicación. (segunda vuelta).",
-    
   },
   {
     date: "3 de septiembre",
     title: "Sorteo de ubicación de las franjas",
     description:
       "Sorteo de ubicación de las franjas y aprobación del diseño de la papeleta de sufragio por el Tribunal Supremo Electoral. (segunda vuelta).",
-    
   },
   {
     date: "19 de septiembre",
     title: "Sorteo público para la selección de Jurados Electorales",
     description:
       "Sorteo público para la selección de Jurados Electorales de mesas de sufragio por los Tribunales Electorales Departamentales y por el Tribunal Supremo Electoral para las mesas de sufragio en el exterior. (segunda vuelta).",
-    
   },
   {
     date: "20 de septiembre",
     title: "Notificación a los jurados",
     description:
       "Notificación a los jurados de mesa de sufragio designados por los Tribunales Electorales Departamentales para voto nacional y notificación de jurados de las mesas de sufragio designados por el Tribunal Supremo Electoral para voto en el exterior. (segunda vuelta).",
-    
   },
   {
     date: "21 de septiembre",
     title: "Publicación en medios de prensa escrita y portal web del OEP",
     description:
       "Publicación en medios de prensa escrita y portal web del OEP de la nómina de los jurados de mesas de sufragio, por parte de los Tribunales Electorales Departamentales. Para el voto en el exterior, el Tribunal Supremo Electoral publicará la lista de jurados de mesa en el portal web del OEP. (segunda vuelta).",
-    
   },
   {
     date: "22 de septiembre",
     title: "Presentación de excusas para el ejercicio",
-    description: "Presentación de excusas para el ejercicio de la labor de jurados de mesas de sufragio ante los Tribunales Electorales Departamentales y ante los Representantes Notarios para voto en el exterior. (segunda vuelta).",
-    
+    description:
+      "Presentación de excusas para el ejercicio de la labor de jurados de mesas de sufragio ante los Tribunales Electorales Departamentales y ante los Representantes Notarios para voto en el exterior. (segunda vuelta).",
   },
   {
     date: "29 de septiembre",
     title: "Conformación de la directiva de mesas de sufragio",
-    description: "Conformación de la directiva de mesas de sufragio y capacitación a Jurados Electorales. (segunda vuelta).",
+    description:
+      "Conformación de la directiva de mesas de sufragio y capacitación a Jurados Electorales. (segunda vuelta).",
   },
   {
     date: "15 de octubre",
     title: "Publicación del lugar donde se realizará el cómputo departamental",
-    description: "Publicación del lugar donde se realizará el cómputo departamental (por los Tribunales Electorales Departamentales) y el cómputo del voto en el exterior (por el Tribunal Supremo Electoral) en el portal WEB del OEP. (segunda vuelta).",
+    description:
+      "Publicación del lugar donde se realizará el cómputo departamental (por los Tribunales Electorales Departamentales) y el cómputo del voto en el exterior (por el Tribunal Supremo Electoral) en el portal WEB del OEP. (segunda vuelta).",
   },
   {
     date: "17 de octubre",
     title: "Prohibición a los medios de comunicación",
-    description: "Prohibición a los medios de comunicación sobre la difusión de contenidos que puedan favorecer, perjudicar o dar trato preferencial a alguna organización política o candidatura; o difundir programas que puedan influir en las preferencias electorales",
+    description:
+      "Prohibición a los medios de comunicación sobre la difusión de contenidos que puedan favorecer, perjudicar o dar trato preferencial a alguna organización política o candidatura; o difundir programas que puedan influir en las preferencias electorales",
   },
   {
     date: "19 de octubre",
@@ -169,7 +160,7 @@ export default function Home() {
     // Simular precarga de componentes pesados
     const preloadComponents = async () => {
       // Dar tiempo para que React monte los componentes en el fondo
-      await new Promise(resolve => setTimeout(resolve, 100));
+      await new Promise((resolve) => setTimeout(resolve, 100));
     };
 
     preloadComponents();
@@ -186,9 +177,9 @@ export default function Home() {
           setTimeout(() => {
             const element = document.querySelector(hash);
             if (element) {
-              element.scrollIntoView({ 
-                behavior: 'smooth',
-                block: 'start' 
+              element.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
               });
             }
           }, 100);
@@ -202,17 +193,17 @@ export default function Home() {
     };
 
     // Escuchar cambios en el hash
-    window.addEventListener('hashchange', handleScrollToSection);
-    
+    window.addEventListener("hashchange", handleScrollToSection);
+
     // Escuchar navegación hacia atrás/adelante
-    window.addEventListener('popstate', handlePopState);
-    
+    window.addEventListener("popstate", handlePopState);
+
     // Ejecutar al cargar la página si ya hay un hash
     handleScrollToSection();
 
     return () => {
-      window.removeEventListener('hashchange', handleScrollToSection);
-      window.removeEventListener('popstate', handlePopState);
+      window.removeEventListener("hashchange", handleScrollToSection);
+      window.removeEventListener("popstate", handlePopState);
     };
   }, [isLoading]);
 
@@ -224,7 +215,14 @@ export default function Home() {
     <>
       {/* Precargar componentes en el fondo mientras se muestra el loading */}
       {isLoading && (
-        <div style={{ position: 'absolute', left: '-9999px', top: '-9999px', visibility: 'hidden' }}>
+        <div
+          style={{
+            position: "absolute",
+            left: "-9999px",
+            top: "-9999px",
+            visibility: "hidden",
+          }}
+        >
           <HeroSection />
           <div className="max-w-screen-xl mx-auto">
             <FeaturesGrid features={features} />
@@ -252,43 +250,43 @@ export default function Home() {
               <div className="mt-16">
                 <FeaturesGrid features={features} />
               </div>
-              
-              
+
               <div id="timeline" className="mt-32 sm:mt-20">
                 <AnimatedTimeline events={timelineEvents} />
               </div>
-              
+
               <div id="parties" className="mt-16 sm:mt-20">
                 <h2 className="text-3xl font-bold mb-6 text-center font-round">
-                  FINALISTAS SEGUNDA VUELTA
+                 BINOMIOS QUE VAN A SEGUNDA
                 </h2>
-               
+
                 <h3 className="text-base mb-6 text-center">
-                  Conoce a los candidatos finalistas que competirán en la segunda vuelta electoral del 19 de octubre
+                  Conoce a los candidatos finalistas que competirán en la
+                  segunda vuelta electoral del 19 de octubre
                 </h3>
-                <CardCandidatos/>
+                <CardCandidatos />
               </div>
-              
+
               {/* Sección de Partidos Políticos */}
               <div id="political-parties" className="mt-32 sm:mt-20">
                 <CardPartidos />
               </div>
-              
+
               {/* Sección de Identificación de Noticias Falsas */}
               <div id="fake-news" className="mt-32 sm:mt-20">
                 <ContentFakeNews />
               </div>
-              
+
               {/* Sección de Evitar Compartir */}
               <div id="avoid-sharing" className="mt-32 sm:mt-20">
                 <AvoidSharingSection />
               </div>
-              
+
               {/* Sección de Detección de Encuestas Falsas */}
               <div id="survey-detection" className="mt-32 sm:mt-20">
                 <SurveyDetectionSection />
               </div>
-              
+
               <div className="mt-16 text-center">
                 <Button
                   className="bg-gray-900 hover:bg-gray-950 text-white font-bold py-3 px-6 sm:py-4 sm:px-10 rounded-lg shadow-lg transform transition-transform hover:scale-105 text-base sm:text-xl w-full sm:w-auto"
@@ -303,8 +301,6 @@ export default function Home() {
                   desinformación electoral
                 </p>
               </div>
-              
-              
             </div>
           </main>
         </>
