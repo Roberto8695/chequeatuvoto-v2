@@ -55,7 +55,7 @@ const features = [
       "Pienso que tengo que votar por alguien que solo solucione lo urgente.",
     ],
     myrisk: [
-      "Tienen discursos polarizantes que llaman a la violencia o que fomentan el discurso de odio.",
+      
     ],
     icon: History,
     image: "/Nuevos/img4.webp",

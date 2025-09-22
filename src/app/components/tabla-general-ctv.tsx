@@ -366,28 +366,12 @@ export function TablaGeneralCTV() {
                         <div className="flex flex-col items-center space-y-3">
                           
                           
-                          {/* Escala visual 1-10 */}
-                          <div className="flex items-center gap-2 w-full max-w-xs">
-                            <span className="text-sm font-medium text-gray-500">1</span>
-                            <div className="flex-1 h-8 bg-gray-200 rounded-lg overflow-hidden shadow-inner relative">
-                              <div 
-                                className={`h-full bg-gradient-to-r ${getProgressColor(row.analisisEconomico)} transition-all duration-700 ease-out relative`}
-                                style={{ width: `${(row.analisisEconomico / 10) * 100}%` }}
-                              >
-                                <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent"></div>
-                              </div>
-                              {/* Texto centrado */}
-                              <div className="absolute inset-0 flex items-center justify-center">
-                                <span className="text-black font-semibold text-sm">Puntaje del índice económico</span>
-                              </div>
-                            </div>
-                            <span className="text-sm font-medium text-gray-500">10</span>
-                          </div>
+                          
                           
                           {/* Botón VER RESULTADOS */}
                           <button 
                             onClick={() => abrirEnlace(row.enlaces.economico)}
-                            className="px-4 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 text-sm font-semibold rounded-lg transition-all duration-300 hover:shadow-md border border-gray-300"
+                            className="px-4 py-2 bg-gradient-to-r from-[#de2488] to-[#00cfaf] hover:bg-gray-200 text-white text-lg font-semibold rounded-lg transition-all duration-300 hover:shadow-md border border-gray-300"
                           >
                             VER ANÁLISIS
                           </button>
