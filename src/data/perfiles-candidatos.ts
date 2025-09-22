@@ -1,4 +1,24 @@
 // Tipos de datos para los perfiles de candidatos
+export interface CargosPublicos {
+  año: string;
+  cargo: string;
+  detalle?: string;
+}
+
+export interface Postulacion {
+  año: string;
+  partido: string;
+  cargo: string;
+  resultado: string;
+}
+
+export interface CasoJudicial {
+  año: string;
+  tipo: string;
+  descripcion: string;
+  estado: string;
+}
+
 export interface PerfilCandidato {
   nombre: string;
   cargo: "presidente" | "vicepresidente";
@@ -10,6 +30,9 @@ export interface PerfilCandidato {
   experienciaLaboral: string[];
   carreraPolitica: string[];
   partidosAnteriores: string[];
+  cargosPublicos?: CargosPublicos[];
+  postulaciones?: Postulacion[];
+  casosJudiciales?: CasoJudicial[];
   logrosDestacados?: string[];
   controversias?: string[];
   situacionLegal?: string;
@@ -218,6 +241,34 @@ export const perfilesCandidatos: BinomioCandidatos[] = [
       ],
       partidosAnteriores: [
         "MIR", "ADN", "PODEMOS", "Partido Demócrata Cristiano (PDC)"
+      ],
+      cargosPublicos: [
+        { año: "1989", cargo: "Subsecretario de Inversión Pública y Cooperación Internacional", detalle: "Min. de Planeamiento" },
+        { año: "1990", cargo: "Subsecretario de Inversión Pública" },
+        { año: "1992", cargo: "Ministro de Finanzas" },
+        { año: "1997-2001", cargo: "Vicepresidente de la República" },
+        { año: "2001-2002", cargo: "Presidente de la República" }
+      ],
+      postulaciones: [
+        { año: "1997", partido: "ADN", cargo: "Vicepresidencia", resultado: "Electo" },
+        { año: "2005", partido: "PODEMOS", cargo: "Presidencia", resultado: "No electo" },
+        { año: "2014", partido: "PDC", cargo: "Presidencia", resultado: "No electo" },
+        { año: "2020", partido: "Libre21", cargo: "Presidencia", resultado: "Retirado antes de la elección" },
+        { año: "2025", partido: "LIBRE", cargo: "Presidencia", resultado: "Candidatura actual (4ta)" }
+      ],
+      casosJudiciales: [
+        { 
+          año: "2005", 
+          tipo: "Petrocontratos", 
+          descripcion: "Firma de 4 contratos para la exploración de campos petroleros durante su gestión presidencial (2001-2002)", 
+          estado: "Amnistía entregada por E. Morales (2018)" 
+        },
+        { 
+          año: "2009", 
+          tipo: "Juicio por difamación", 
+          descripcion: "Acusó al Banco Unión de ser 'lavandería de corrupción'", 
+          estado: "Condena inicial de dos años de cárcel fue anulada. Reactivado (2025)" 
+        }
       ],
       logrosDestacados: [
         "Vicepresidente más joven de Bolivia (37 años)",
@@ -431,6 +482,29 @@ export const perfilesCandidatos: BinomioCandidatos[] = [
       ],
       partidosAnteriores: [
         "MIR", "PODEMOS", "Comunidad Ciudadana", "UNIR", "Primero la Gente"
+      ],
+      cargosPublicos: [
+        { año: "2002-2003", cargo: "Diputado uninominal" },
+        { año: "2005-2010", cargo: "Diputado Uninominal" },
+        { año: "2010-2015", cargo: "Concejal Municipal" },
+        { año: "2015-2020", cargo: "Alcalde Municipal" },
+        { año: "2020-2025", cargo: "Senador" }
+      ],
+      postulaciones: [
+        { año: "2002", partido: "MIR-NM-FRI", cargo: "Diputación", resultado: "Electo" },
+        { año: "2005", partido: "PODEMOS", cargo: "Diputación", resultado: "Electo" },
+        { año: "2010", partido: "UNIR", cargo: "Concejalía", resultado: "Electo" },
+        { año: "2015", partido: "UNIR", cargo: "Alcaldía Municipal", resultado: "Electo" },
+        { año: "2020", partido: "CC", cargo: "Senadoría", resultado: "Electo" },
+        { año: "2025", partido: "PDC", cargo: "Presidencia", resultado: "Candidatura actual (1era)" }
+      ],
+      casosJudiciales: [
+        { 
+          año: "2018", 
+          tipo: "Contratos lesivos, conducta antieconómica e incumplimiento de deberes", 
+          descripcion: "Construcción del puente 04 de julio Tarija. 'Ciudad inteligente'", 
+          estado: "Proceso en curso" 
+        }
       ],
       logrosDestacados: [
         "Hijo del expresidente Jaime Paz Zamora",

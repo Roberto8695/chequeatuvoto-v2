@@ -306,12 +306,7 @@ export function TablaGeneralCTV() {
                         <span className="font-bold text-gray-900 text-base sm:text-lg font-round">
                           ANÁLISIS ECONÓMICO
                         </span>
-                        <Tooltip content="Escala del 1-10 basada en viabilidad y fundamentos de propuestas económicas" id="economic-tooltip">
-                          <div className="flex items-center gap-1 text-xs text-gray-500 mt-1 cursor-help">
-                            <HelpCircle className="w-3 h-3" />
-                            <span>Promedios en la escala 1-10</span>
-                          </div>
-                        </Tooltip>
+                        
                       </div>
                     </div>
                   </th>
@@ -369,12 +364,7 @@ export function TablaGeneralCTV() {
                       {/* Análisis Económico */}
                       <td className="px-6 py-6">
                         <div className="flex flex-col items-center space-y-3">
-                          {/* Valor numérico */}
-                          <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl border-2 ${getScoreBg(row.analisisEconomico)} backdrop-blur-sm shadow-lg`}>
-                            <span className={`font-bold text-xl ${getScoreColor(row.analisisEconomico)}`}>
-                              {row.analisisEconomico}
-                            </span>
-                          </div>
+                          
                           
                           {/* Escala visual 1-10 */}
                           <div className="flex items-center gap-2 w-full max-w-xs">

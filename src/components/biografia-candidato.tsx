@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { User, BookOpen, Calendar, MapPin, GraduationCap, Briefcase, Flag, Award, AlertTriangle, Scale, Heart } from 'lucide-react';
+import { User, BookOpen, Calendar, MapPin, GraduationCap, Briefcase, Building, Vote, Gavel, Award, AlertTriangle, Scale, Heart } from 'lucide-react';
 import { PerfilCandidato } from '@/data/perfiles-candidatos';
 import { Badge } from '@/components/ui/badge';
 
@@ -11,7 +11,7 @@ interface BiografiaCandidatoProps {
 }
 
 export default function BiografiaCandidato({ candidato, partidoColor = '#3B82F6' }: BiografiaCandidatoProps) {
-  const [activeTab, setActiveTab] = useState<'general' | 'educacion' | 'experiencia' | 'politica'>('general');
+  const [activeTab, setActiveTab] = useState<'general' | 'educacion' | 'experiencia' | 'cargos' | 'postulaciones' | 'casos'>('general');
 
   const tabStyle = (isActive: boolean) => ({
     backgroundColor: isActive ? partidoColor : 'transparent',
@@ -88,12 +88,28 @@ export default function BiografiaCandidato({ candidato, partidoColor = '#3B82F6'
           Experiencia
         </button>
         <button
-          onClick={() => setActiveTab('politica')}
+          onClick={() => setActiveTab('cargos')}
           className="px-4 py-2 rounded-t-lg border-b-2 font-medium transition-all duration-200"
-          style={tabStyle(activeTab === 'politica')}
+          style={tabStyle(activeTab === 'cargos')}
         >
-          <Flag className="w-4 h-4 inline mr-2" />
-          Política
+          <Building className="w-4 h-4 inline mr-2" />
+          Cargos Públicos
+        </button>
+        <button
+          onClick={() => setActiveTab('postulaciones')}
+          className="px-4 py-2 rounded-t-lg border-b-2 font-medium transition-all duration-200"
+          style={tabStyle(activeTab === 'postulaciones')}
+        >
+          <Vote className="w-4 h-4 inline mr-2" />
+          Postulaciones
+        </button>
+        <button
+          onClick={() => setActiveTab('casos')}
+          className="px-4 py-2 rounded-t-lg border-b-2 font-medium transition-all duration-200"
+          style={tabStyle(activeTab === 'casos')}
+        >
+          <Gavel className="w-4 h-4 inline mr-2" />
+          Casos Judiciales
         </button>
       </div>
 
@@ -195,35 +211,117 @@ export default function BiografiaCandidato({ candidato, partidoColor = '#3B82F6'
           </div>
         )}
 
-        {activeTab === 'politica' && (
-          <div className="space-y-4">
-            <div>
-              <h3 className="flex items-center space-x-2 text-lg font-semibold text-gray-900 mb-4">
-                <Flag className="w-5 h-5" style={iconStyle} />
-                <span>Carrera Política</span>
-              </h3>
-              <ul className="space-y-3">
-                {candidato.carreraPolitica.map((cargo, index) => (
-                  <li key={index} className="flex items-start space-x-3 p-3 bg-gray-50 rounded-lg">
-                    <span className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: partidoColor }}></span>
-                    <span className="text-gray-700">{cargo}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {candidato.partidosAnteriores && candidato.partidosAnteriores.length > 0 && (
-              <div>
-                <h4 className="text-md font-semibold text-gray-900 mb-3">Partidos Anteriores</h4>
-                <div className="flex flex-wrap gap-2">
-                  {candidato.partidosAnteriores.map((partido, index) => (
-                    <Badge key={index} variant="outline" className="text-sm">
-                      {partido}
+        {activeTab === 'cargos' && candidato.cargosPublicos && candidato.cargosPublicos.length > 0 && (
+          <div>
+            <h3 className="flex items-center space-x-2 text-lg font-semibold text-gray-900 mb-4">
+              <Building className="w-5 h-5" style={iconStyle} />
+              <span>Cargos Públicos</span>
+            </h3>
+            <div className="space-y-3">
+              {candidato.cargosPublicos.map((cargo, index) => (
+                <div key={index} className="p-4 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg border border-blue-200">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="font-semibold text-blue-800">{cargo.cargo}</span>
+                    <Badge variant="outline" className="text-blue-600 border-blue-300">
+                      {cargo.año}
                     </Badge>
-                  ))}
+                  </div>
+                  {cargo.detalle && (
+                    <p className="text-sm text-blue-700">{cargo.detalle}</p>
+                  )}
                 </div>
-              </div>
-            )}
+              ))}
+            </div>
+          </div>
+        )}
+
+        {activeTab === 'cargos' && (!candidato.cargosPublicos || candidato.cargosPublicos.length === 0) && (
+          <div className="text-center py-8">
+            <Building className="w-16 h-16 mx-auto text-gray-400 mb-4" />
+            <h3 className="text-lg font-medium text-gray-600 mb-2">Sin cargos públicos registrados</h3>
+            <p className="text-gray-500">Este candidato no tiene cargos públicos registrados en el sistema.</p>
+          </div>
+        )}
+
+        {activeTab === 'postulaciones' && candidato.postulaciones && candidato.postulaciones.length > 0 && (
+          <div>
+            <h3 className="flex items-center space-x-2 text-lg font-semibold text-gray-900 mb-4">
+              <Vote className="w-5 h-5" style={iconStyle} />
+              <span>Postulaciones Electorales</span>
+            </h3>
+            <div className="space-y-3">
+              {candidato.postulaciones.map((postulacion, index) => (
+                <div key={index} className="p-4 bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg border border-purple-200">
+                  <div className="flex items-center justify-between mb-2">
+                    <div className="flex items-center space-x-2">
+                      <span className="font-semibold text-purple-800">{postulacion.cargo}</span>
+                      <Badge variant="outline" className="text-purple-600 border-purple-300">
+                        {postulacion.partido}
+                      </Badge>
+                    </div>
+                    <span className="text-sm text-purple-600 font-medium">{postulacion.año}</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <span className="text-sm text-purple-700">Resultado:</span>
+                    <Badge 
+                      className={`text-xs ${
+                        postulacion.resultado.toLowerCase().includes('electo') 
+                          ? 'bg-green-100 text-green-800 border-green-300' 
+                          : postulacion.resultado.toLowerCase().includes('no electo')
+                          ? 'bg-red-100 text-red-800 border-red-300'
+                          : 'bg-yellow-100 text-yellow-800 border-yellow-300'
+                      }`}
+                      variant="outline"
+                    >
+                      {postulacion.resultado}
+                    </Badge>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {activeTab === 'postulaciones' && (!candidato.postulaciones || candidato.postulaciones.length === 0) && (
+          <div className="text-center py-8">
+            <Vote className="w-16 h-16 mx-auto text-gray-400 mb-4" />
+            <h3 className="text-lg font-medium text-gray-600 mb-2">Sin postulaciones registradas</h3>
+            <p className="text-gray-500">Este candidato no tiene postulaciones electorales registradas en el sistema.</p>
+          </div>
+        )}
+
+        {activeTab === 'casos' && candidato.casosJudiciales && candidato.casosJudiciales.length > 0 && (
+          <div>
+            <h3 className="flex items-center space-x-2 text-lg font-semibold text-gray-900 mb-4">
+              <Gavel className="w-5 h-5 text-red-600" />
+              <span>Casos Judiciales</span>
+            </h3>
+            <div className="space-y-4">
+              {candidato.casosJudiciales.map((caso, index) => (
+                <div key={index} className="p-4 bg-gradient-to-r from-red-50 to-orange-50 rounded-lg border border-red-200">
+                  <div className="flex items-center justify-between mb-3">
+                    <h4 className="font-semibold text-red-800">{caso.tipo}</h4>
+                    <Badge variant="outline" className="text-red-600 border-red-300">
+                      {caso.año}
+                    </Badge>
+                  </div>
+                  <p className="text-red-700 mb-3">{caso.descripcion}</p>
+                  <div className="flex items-center space-x-2">
+                    <Scale className="w-4 h-4 text-red-600" />
+                    <span className="text-sm font-medium text-red-800">Estado:</span>
+                    <span className="text-sm text-red-700">{caso.estado}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {activeTab === 'casos' && (!candidato.casosJudiciales || candidato.casosJudiciales.length === 0) && (
+          <div className="text-center py-8">
+            <Gavel className="w-16 h-16 mx-auto text-gray-400 mb-4" />
+            <h3 className="text-lg font-medium text-gray-600 mb-2">Sin casos judiciales registrados</h3>
+            <p className="text-gray-500">Este candidato no tiene casos judiciales en el registro actual.</p>
           </div>
         )}
       </div>
