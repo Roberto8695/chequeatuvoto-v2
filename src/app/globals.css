@@ -212,4 +212,28 @@ html {
       background-position: 100% 50%;
     }
   }
+
+  /* Ocultar navbar y footer en páginas de error */
+  .error-404-page ~ * nav,
+  .error-404-page ~ * header,
+  .error-404-page ~ * footer,
+  body:has(.error-404-page) nav,
+  body:has(.error-404-page) header, 
+  body:has(.error-404-page) footer {
+    display: none !important;
+  }
+
+  /* Asegurar que la página 404 ocupe toda la pantalla */
+  body:has(.error-404-page) {
+    overflow: hidden;
+  }
+
+  .error-404-page {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    z-index: 9999 !important;
+  }
 }
