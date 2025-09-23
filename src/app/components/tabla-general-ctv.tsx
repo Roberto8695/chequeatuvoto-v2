@@ -92,10 +92,7 @@ export function TablaGeneralCTV() {
 
  
 
-  const getProgressColor = (score: number) => {
-    if (score >= 5) return "from-[#00cfaf] to-[#00cfaf]/80";
-    return "from-[#de2488] to-[#de2488]/80";
-  };
+  
 
   const Tooltip = ({ content, children, id }: { content: string; children: React.ReactNode; id: string }) => (
     <div className="relative inline-block">
@@ -152,28 +149,7 @@ export function TablaGeneralCTV() {
               </div>
 
               <div className="space-y-4">
-                {/* Escala visual 1-10 */}
-                <div className="flex items-center gap-2">
-                  <span className="text-sm font-medium text-gray-500 w-4">1</span>
-                  <div className="flex-1 h-8 bg-gray-200 rounded-lg overflow-hidden shadow-inner relative">
-                    <div 
-                      className={`h-full bg-gradient-to-r ${getProgressColor(row.analisisEconomico)} transition-all duration-700 ease-out relative`}
-                      style={{ width: `${(row.analisisEconomico / 10) * 100}%` }}
-                    >
-                      <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent"></div>
-                    </div>
-                    {/* Marcador del valor */}
-                    <div 
-                      className="absolute top-0 h-full w-1 shadow-lg"
-                      style={{ left: `${(row.analisisEconomico / 10) * 100}%`, transform: 'translateX(-50%)' }}
-                    ></div>
-                    {/* Texto centrado */}
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <span className="text-black font-semibold text-sm">Puntaje del índice económico</span>
-                    </div>
-                  </div>
-                  <span className="text-sm font-medium text-gray-500 w-6">10</span>
-                </div>
+                
 
                 
 
