@@ -90,15 +90,7 @@ export function TablaGeneralCTV() {
     return sortableData;
   }, [sortConfig]);
 
-  const getScoreColor = (score: number) => {
-    if (score >= 5) return "text-[#00cfaf]";
-    return "text-[#de2488]";
-  };
-
-  const getScoreBg = (score: number) => {
-    if (score >= 5) return "bg-[#00cfaf]/10 border-[#00cfaf]/30";
-    return "bg-[#de2488]/10 border-[#de2488]/30";
-  };
+ 
 
   const getProgressColor = (score: number) => {
     if (score >= 5) return "from-[#00cfaf] to-[#00cfaf]/80";
@@ -183,20 +175,13 @@ export function TablaGeneralCTV() {
                   <span className="text-sm font-medium text-gray-500 w-6">10</span>
                 </div>
 
-                {/* Valor numérico destacado */}
-                <div className="text-center">
-                  <div className={`inline-flex items-center gap-2 px-6 py-3 rounded-xl border-2 ${getScoreBg(row.analisisEconomico)} backdrop-blur-sm shadow-lg`}>
-                    <span className={`font-bold text-2xl ${getScoreColor(row.analisisEconomico)}`}>
-                      {row.analisisEconomico}
-                    </span>
-                  </div>
-                </div>
+                
 
                 {/* Botón VER ANÁLISIS ECONÓMICO COMPLETO */}
                 <div className="text-center">
                   <button 
                     onClick={() => abrirEnlace(row.enlaces.economico)}
-                    className="px-6 py-3 bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold rounded-lg transition-all duration-300 hover:shadow-md border border-gray-300 text-xs uppercase tracking-wide"
+                    className="px-6 py-3 bg-gradient-to-r from-[#de2488] to-[#00cfaf] hover:bg-gray-300 text-white font-bold rounded-lg transition-all duration-300 hover:shadow-md border border-gray-300 text-xs uppercase tracking-wide"
                   >
                     Ver Análisis Económico Completo
                   </button>
@@ -207,7 +192,7 @@ export function TablaGeneralCTV() {
             {/* SEGUNDA SECCION - Análisis Jurídico */}
             <div className="p-6">
               <div className="text-center mb-4">
-                <h4 className="text-base font-bold text-gray-700 uppercase mb-1">Segunda Sección</h4>
+                <h4 className="text-base font-bold  text-gray-700 uppercase mb-1">Segunda Sección</h4>
                 <h5 className="text-lg font-bold text-[#de2488] flex items-center justify-center gap-2">
                   <Scale className="w-5 h-5" />
                   ANÁLISIS JURÍDICO
@@ -258,7 +243,7 @@ export function TablaGeneralCTV() {
                 <div className="text-center">
                   <button 
                     onClick={() => abrirEnlace(row.enlaces.redflag)}
-                    className="px-6 py-3 bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold rounded-lg transition-all duration-300 hover:shadow-md border border-gray-300 text-xs uppercase tracking-wide"
+                    className="px-6 py-3 bg-gradient-to-r from-[#de2488] to-[#00cfaf] hover:bg-gray-300 text-white font-bold rounded-lg transition-all duration-300 hover:shadow-md border border-gray-300 text-xs uppercase tracking-wide"
                   >
                     Ver Análisis Jurídico Completo
                   </button>
