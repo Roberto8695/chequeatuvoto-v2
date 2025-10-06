@@ -37,7 +37,7 @@ export default function HeroSection() {
             </div>
             
             {/* Logo Tinku Electoral - clickeable */}
-            <div className="mt-8 w-full max-w-3xl mx-auto">
+            <div className="mt-8 w-full max-w-lg mx-auto">
               <a
                 href="https://tinkuelectoral.com/"
                 target="_blank"
