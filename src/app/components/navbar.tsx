@@ -70,7 +70,7 @@ export function Navbar() {
   };
 
   return (    <nav className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="mx-auto max-w-screen-lg px-2 sm:px-6 lg:px-6">
+      <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-18 items-center justify-between py-5">          {/* Logo */}
           <Link href="/" className="flex flex-col items-center group">
             <Image
@@ -90,7 +90,7 @@ export function Navbar() {
 
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex md:items-center md:space-x-8">
+          <div className="hidden md:flex md:items-center md:space-x-6">
             {navItems.map((item) => (
               <Link
                 key={item.name}
@@ -103,6 +103,21 @@ export function Navbar() {
                 {item.name}
               </Link>
             ))}
+            
+            {/* Cheki-Bot Button */}
+            <Link
+              href="https://chekibot.chequeabolivia.bo/"
+              className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#de2488] to-[#00cfaf] text-white font-semibold rounded-md hover:from-purple-700 hover:to-blue-700 transition-all duration-600 transform hover:scale-105 shadow-lg hover:shadow-xl"
+            >
+              <Image
+                src="/images/cheki.jpg"
+                alt="Cheki Bot"
+                width={28}
+                height={28}
+                className="rounded-full object-cover"
+              />
+              <span className="text-sm">Cheki-Bot</span>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -169,6 +184,29 @@ export function Navbar() {
               {item.name}
             </Link>
           ))}
+          
+          {/* Cheki-Bot Button - Mobile */}
+          <Link
+            href="#"
+            className={`flex items-center gap-3 mt-4 px-4 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-full hover:from-purple-700 hover:to-blue-700 transition-all duration-300 shadow-lg transform ${
+              isMenuOpen 
+                ? "translate-x-0 opacity-100" 
+                : "translate-x-4 opacity-0"
+            }`}
+            style={{
+              transitionDelay: isMenuOpen ? `${navItems.length * 50}ms` : "0ms"
+            }}
+            onClick={() => setIsMenuOpen(false)}
+          >
+            <Image
+              src="/images/cheki.jpg"
+              alt="Cheki Bot"
+              width={32}
+              height={32}
+              className="rounded-full object-cover"
+            />
+            <span>Cheki-Bot</span>
+          </Link>
         </div>
       </div>
     </nav>
