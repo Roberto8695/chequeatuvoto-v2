@@ -17,7 +17,7 @@ const partidosFinalistasSegundaVuelta = [
     colores: {
       primary: "#ff0000"
     },
-    programas: "https://drive.google.com/file/d/1WVEWSo9589x8u9lirA6mEMBhcFTghSeR/view?usp=sharing"
+    programas: "https://drive.google.com/file/d/1BxaqEV1sOfXFTblX5LcaII82XbMVz9Ux/view"
   },
   {
     id: "pdc",
@@ -29,7 +29,7 @@ const partidosFinalistasSegundaVuelta = [
     colores: {
       primary: "#f83728"
     },
-    programas: "https://drive.google.com/file/d/1cWprXiEIzPt2546SYGp5iQbWxe_qi-Jo/view?usp=sharing"
+    programas: "https://drive.google.com/file/d/1ckMu4jyif7xBrY2FzUHVbfIyL4ChItWH/view?usp=drive_link"
   }
 ];
 
