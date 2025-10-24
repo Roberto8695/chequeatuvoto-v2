@@ -3,12 +3,21 @@
 import { useState, useEffect } from 'react'
 import { Card, CardContent } from '@/components/ui/card'
 import Image from 'next/image'
+import Confetti from '@/components/ui/confetti'
 
 export default function ElectionResults() {
   const [mounted, setMounted] = useState(false)
+  const [showConfetti, setShowConfetti] = useState(false)
 
   useEffect(() => {
     setMounted(true)
+    
+    // Activar confeti después de que se monte el componente
+    const confettiTimer = setTimeout(() => {
+      setShowConfetti(true)
+    }, 500) // Pequeño delay para mejor efecto
+
+    return () => clearTimeout(confettiTimer)
   }, [])
 
   if (!mounted) {
@@ -30,7 +39,15 @@ export default function ElectionResults() {
   }
 
   return (
-    <div className="w-full max-w-4xl mx-auto p-6">
+    <div className="w-full max-w-4xl mx-auto p-6 relative">
+      {/* Componente de confeti */}
+      <Confetti 
+        active={showConfetti} 
+        duration={4000} 
+        particleCount={80} 
+      />
+      
+      
       <Card className="bg-gradient-to-br from-[#f83728]/10 via-white to-[#005e4a]/10 border-2 border-[#f83728]/30 shadow-2xl backdrop-blur-sm overflow-hidden relative">
         {/* Elementos decorativos del PDC */}
         <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-[#f83728]/20 to-transparent rounded-full -translate-y-16 translate-x-16"></div>
@@ -47,18 +64,28 @@ export default function ElectionResults() {
             <div className="bg-gradient-to-r from-[#f83728]/20 via-white/50 to-[#005e4a]/20 backdrop-blur-sm rounded-xl p-6 md:p-4 border-2 border-[#f83728]/40 shadow-2xl mb-6">
             
               
-              <div className="text-lg md:text-xl text-gray-700 font-medium mb-2">
+              <div className={`text-lg md:text-xl text-gray-700 font-medium mb-2 transition-all duration-1000 ${
+                mounted ? 'transform translate-y-0 opacity-100' : 'transform -translate-y-4 opacity-0'
+              }`}>
                 El 19 de octubre ganó el PDC con
               </div>
               
               {/* Porcentaje destacado */}
               <div className="relative">
-                <div className="text-4xl md:text-5xl font-black text-[#f83728] drop-shadow-lg mb-2">
+                <div className={`text-4xl md:text-5xl font-black text-[#f83728] drop-shadow-lg mb-2 transition-all duration-1000 ${
+                  mounted ? 'transform scale-100 rotate-0' : 'transform scale-75 rotate-12'
+                } ${showConfetti ? 'animate-none' : ''}`}>
                   54.96%
                 </div>
                 <div className="absolute inset-0 text-4xl md:text-5xl font-black text-[#005e4a] opacity-20 blur-sm">
                   54.96%
                 </div>
+                {/* Efecto de brillo cuando hay confeti */}
+                {showConfetti && (
+                  <div className="absolute inset-0 text-4xl md:text-5xl font-black text-yellow-400 opacity-30 animate-pulse">
+                    54.96%
+                  </div>
+                )}
               </div>
               
               
