@@ -27,9 +27,9 @@ export default function HeroSection() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">        {/* Header con texto principal centrado */}
         <div className="text-center mb-16">
           <div className="flex flex-col items-center justify-center">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold font-round mb-8 text-black leading-tight">
-              TE AYUDAMOS A VOTAR INFORMADO
-            </h1>
+            <h1 className="text-xl md:text-5xl font-bold bg-gradient-to-r from-[#f83728] to-[#005e4a] bg-clip-text text-transparent mb-4">
+                ¡PDC GANÓ LAS ELECCIONES!
+              </h1>
             
             {/* Countdown integrado debajo del texto */}
             <div className="flex justify-center">

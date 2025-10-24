@@ -251,9 +251,7 @@ export default function Home() {
                 <FeaturesGrid features={features} />
               </div>
 
-              <div id="timeline" className="mt-32 sm:mt-20">
-                <AnimatedTimeline events={timelineEvents} />
-              </div>
+              
 
               <div id="parties" className="mt-16 sm:mt-20">
                 <h2 className="text-3xl font-bold mb-6 text-center font-round">

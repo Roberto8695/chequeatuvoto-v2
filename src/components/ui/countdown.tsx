@@ -2,95 +2,25 @@
 
 import { useState, useEffect } from 'react'
 import { Card, CardContent } from '@/components/ui/card'
+import Image from 'next/image'
 
-interface TimeLeft {
-  days: number
-  hours: number
-  minutes: number
-  seconds: number
-}
-
-export default function ElectionCountdown() {
-  const [timeLeft, setTimeLeft] = useState<TimeLeft>({
-    days: 1, // Valor inicial que no sea 0 para evitar mostrar "hoy son las elecciones"
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
-  })
-
+export default function ElectionResults() {
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
     setMounted(true)
-    // Calcular inmediatamente el tiempo correcto al montar
-    const calculateTimeLeft = (): TimeLeft => {
-      const electionDate = new Date('2025-10-19T08:00:00-04:00')
-      const now = new Date()
-      const difference = electionDate.getTime() - now.getTime()
-
-      if (difference > 0) {
-        return {
-          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-          hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-          minutes: Math.floor((difference / 1000 / 60) % 60),
-          seconds: Math.floor((difference / 1000) % 60),
-        }
-      }
-
-      return { days: 0, hours: 0, minutes: 0, seconds: 0 }
-    }
-    
-    setTimeLeft(calculateTimeLeft())
-  }, [])
-
-  useEffect(() => {
-    const calculateTimeLeft = (): TimeLeft => {
-      // Fecha de las elecciones segunda vuelta: 19 de octubre de 2025 a las 8:00 AM (hora de Bolivia)
-      const electionDate = new Date('2025-10-19T08:00:00-04:00') // UTC-4 (hora de Bolivia)
-      const now = new Date()
-      const difference = electionDate.getTime() - now.getTime()
-
-      if (difference > 0) {
-        return {
-          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-          hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-          minutes: Math.floor((difference / 1000 / 60) % 60),
-          seconds: Math.floor((difference / 1000) % 60),
-        }
-      }
-
-      return { days: 0, hours: 0, minutes: 0, seconds: 0 }
-    }
-
-    const timer = setInterval(() => {
-      setTimeLeft(calculateTimeLeft())
-    }, 1000)
-
-    return () => clearInterval(timer)
   }, [])
 
   if (!mounted) {
-    // Mostrar un skeleton o loading en lugar de null para evitar el flash
     return (
       <div className="w-full max-w-4xl mx-auto p-6">
-        <Card className="bg-gradient-to-br from-[#de2488]/10 via-white to-[#00cfaf]/10 border-2 border-[#de2488]/30 shadow-2xl backdrop-blur-sm">
+        <Card className="bg-gradient-to-br from-[#f83728]/10 via-white to-[#005e4a]/10 border-2 border-[#f83728]/30 shadow-2xl backdrop-blur-sm">
           <CardContent className="p-8">
             <div className="text-center">
-              <h2 className="text-3xl md:text-4xl font-bold text-black mb-8">
-                CUENTA REGRESIVA PARA LA SEGUNDA VUELTA DE LAS ELECCIONES
-              </h2>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-                {[0, 1, 2, 3].map((i) => (
-                  <div key={i} className="bg-gradient-to-br from-gray-300 to-gray-400 rounded-xl p-4 md:p-6 shadow-xl animate-pulse">
-                    <div className="text-3xl md:text-5xl font-bold text-white mb-2">--</div>
-                    <div className="text-sm md:text-base font-semibold text-white/90">Loading</div>
-                  </div>
-                ))}
-              </div>
-              <div className="mt-8 text-center">
-                <p className="text-lg md:text-xl font-semibold bg-gradient-to-r from-[#de2488] to-[#00cfaf] bg-clip-text text-transparent">
-                  Domingo 17 de Agosto, 2025
-                </p>
+              <div className="animate-pulse">
+                <div className="h-8 bg-gray-300 rounded mb-4"></div>
+                <div className="h-24 bg-gray-300 rounded mb-4"></div>
+                <div className="h-6 bg-gray-300 rounded"></div>
               </div>
             </div>
           </CardContent>
@@ -99,85 +29,71 @@ export default function ElectionCountdown() {
     )
   }
 
-  const isElectionDay = timeLeft.days === 0 && timeLeft.hours === 0 && timeLeft.minutes === 0 && timeLeft.seconds === 0
   return (
     <div className="w-full max-w-4xl mx-auto p-6">
-      
-      
-
-      <Card className="bg-gradient-to-br from-[#de2488]/10 via-white to-[#00cfaf]/10 border-2 border-[#de2488]/30 shadow-2xl backdrop-blur-sm">
-        <CardContent className="p-8">
+      <Card className="bg-gradient-to-br from-[#f83728]/10 via-white to-[#005e4a]/10 border-2 border-[#f83728]/30 shadow-2xl backdrop-blur-sm overflow-hidden relative">
+        {/* Elementos decorativos del PDC */}
+        <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-[#f83728]/20 to-transparent rounded-full -translate-y-16 translate-x-16"></div>
+        <div className="absolute bottom-0 left-0 w-40 h-40 bg-gradient-to-tr from-[#005e4a]/20 to-transparent rounded-full translate-y-20 -translate-x-20"></div>
+        
+        <CardContent className="p-8 relative z-10">
           <div className="text-center">
-            <h2 className="text-3xl md:text-4xl font-bold  text-black mb-8">
-              {isElectionDay ? '¡HOY ES LA SEGUNDA VUELTA DE LAS ELECCIONES!' : 'CUENTA REGRESIVA PARA LA SEGUNDA VUELTA DE LAS ELECCIONES'}
-            </h2>
+            {/* Logo PDC */}
             
+
+           
             
-            {!isElectionDay ? (
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-                <div className="bg-gradient-to-br from-[#de2488] to-[#de2488]/80 rounded-xl p-4 md:p-6 shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-white/20">
-                  <div className="text-3xl md:text-5xl font-bold text-white mb-2 drop-shadow-lg">
-                    {timeLeft.days.toString().padStart(2, '0')}
-                  </div>
-                  <div className="text-sm md:text-base font-semibold text-white/90 uppercase tracking-wide">
-                    Días
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-xl pointer-events-none"></div>
+            {/* Mensaje de victoria */}
+            <div className="bg-gradient-to-r from-[#f83728]/20 via-white/50 to-[#005e4a]/20 backdrop-blur-sm rounded-xl p-6 md:p-4 border-2 border-[#f83728]/40 shadow-2xl mb-6">
+            
+              
+              <div className="text-lg md:text-xl text-gray-700 font-medium mb-2">
+                El 19 de octubre ganó el PDC con
+              </div>
+              
+              {/* Porcentaje destacado */}
+              <div className="relative">
+                <div className="text-4xl md:text-5xl font-black text-[#f83728] drop-shadow-lg mb-2">
+                  54.96%
                 </div>
-                
-                <div className="bg-gradient-to-br from-[#00cfaf] to-[#00cfaf]/80 rounded-xl p-4 md:p-6 shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-white/20 relative">
-                  <div className="text-3xl md:text-5xl font-bold text-white mb-2 drop-shadow-lg">
-                    {timeLeft.hours.toString().padStart(2, '0')}
-                  </div>
-                  <div className="text-sm md:text-base font-semibold text-white/90 uppercase tracking-wide">
-                    Horas
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-xl pointer-events-none"></div>
-                </div>
-                
-                <div className="bg-gradient-to-br from-[#de2488] to-[#de2488]/80 rounded-xl p-4 md:p-6 shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-white/20 relative">
-                  <div className="text-3xl md:text-5xl font-bold text-white mb-2 drop-shadow-lg">
-                    {timeLeft.minutes.toString().padStart(2, '0')}
-                  </div>
-                  <div className="text-sm md:text-base font-semibold text-white/90 uppercase tracking-wide">
-                    Minutos
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-xl pointer-events-none"></div>
-                </div>
-                
-                <div className="bg-gradient-to-br from-[#00cfaf] to-[#00cfaf]/80 rounded-xl p-4 md:p-6 shadow-xl transform hover:scale-105 transition-all duration-300 border-2 border-white/20 relative">
-                  <div className="text-3xl md:text-5xl font-bold text-white mb-2 drop-shadow-lg">
-                    {timeLeft.seconds.toString().padStart(2, '0')}
-                  </div>
-                  <div className="text-sm md:text-base font-semibold text-white/90 uppercase tracking-wide">
-                    Segundos
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-xl pointer-events-none"></div>
+                <div className="absolute inset-0 text-4xl md:text-5xl font-black text-[#005e4a] opacity-20 blur-sm">
+                  54.96%
                 </div>
               </div>
-            ) : (
-              <div className="bg-gradient-to-br from-[#de2488]/20 to-[#00cfaf]/20 backdrop-blur-sm rounded-xl p-8 border-2 border-[#de2488]/40 shadow-2xl">
-                <div className="text-6xl md:text-8xl mb-4">🗳️</div>
-                <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-[#de2488] to-[#00cfaf] bg-clip-text text-transparent mb-4">
-                  ¡Es hora de votar!
-                </div>
-                <div className="text-lg text-gray-700 font-medium">
-                  Domingo 19 de Octubre, 2025
-                </div>
-              </div>
-            )}
-            
-            <div className="mt-8 text-center">
-              <p className="text-lg md:text-xl font-semibold bg-gradient-to-r from-[#de2488] to-[#00cfaf] bg-clip-text text-transparent">
-                Domingo 19 de Octubre, 2025
-              </p>
+              
               
             </div>
+
+            {/* Imagen del binomio ganador */}
+            <div className="mb-6 flex justify-center">
+              <div className="relative">
+                <Image
+                  src="/images/paz-lara.webp"
+                  alt="Rodrigo Paz Pereira y Edman Lara Montaño - Binomio PDC"
+                  width={500}
+                  height={200}
+                  className="rounded-lg shadow-2xl border-2 border-[#f83728]/30 object-cover"
+                />
+                {/* Overlay con colores del PDC */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-[#f83728]/10 via-transparent to-[#005e4a]/10 rounded-lg"></div>
+              </div>
+            </div>
+
+            {/* Información adicional */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+              <div className="bg-[#f83728]/10 rounded-lg p-4 border border-[#f83728]/20 text-center">
+                <div className="text-lg font-bold text-[#f83728] mb-1">Presidente Electo</div>
+                <div className="text-lg text-gray-700 font-semibold">Rodrigo Paz Pereira</div>
+              </div>
+              <div className="bg-[#005e4a]/10 rounded-lg p-4 border border-[#005e4a]/20 text-center">
+                <div className="text-lg font-bold text-[#005e4a] mb-1">Vicepresidente Electo</div>
+                <div className="text-lg text-gray-700 font-semibold">Edman Lara Montaño</div>
+              </div>
+            </div>
+      
           </div>
         </CardContent>
       </Card>
-      
-      
     </div>
   )
 }
