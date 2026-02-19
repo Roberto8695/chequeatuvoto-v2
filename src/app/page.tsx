@@ -79,76 +79,52 @@ const features = [
 
 const timelineEvents = [
   {
-    date: "31 de agosto",
-    title: "Convocatoria a Segunda Vuelta",
+    date: "20 de noviembre de 2025",
+    title: "Convocatoria Electoral Subnacional",
     description:
-      "Convocatoria a Segunda Vuelta por el Tribunal Supremo Electoral.",
+      "Convocatoria a la Elección de Autoridades Políticas Departamentales, Regionales y Municipales (Elecciones Subnacionales 2026) por el Tribunal Supremo Electoral.",
   },
   {
-    date: "31 de agosto",
-    title: "Difusión o publicación de estudios",
+    date: "21 de noviembre de 2025",
+    title: "Registro de Entidades para Encuestas",
     description:
-      "Difusión o publicación de estudios de opinión en materia electoral (encuestas). (segunda vuelta).",
+      "Registro y habilitación de empresas, medios de comunicación, instituciones académicas y cualquier otra entidad que realice y/o difunda estudios de opinión en materia electoral (encuestas, boca de urna o conteos rápidos) ante los tribunales electorales departamentales.",
   },
   {
-    date: "31 de agosto",
-    title: "Difusión de propaganda electoral",
+    date: "4 de diciembre de 2025",
+    title: "Empadronamiento Biométrico Masivo",
     description:
-      "Difusión de propaganda electoral en actos públicos de campaña y en medios de comunicación. (segunda vuelta).",
+      "Inicio del proceso de empadronamiento biométrico masivo para las Elecciones Subnacionales 2026. Los ciudadanos podrán actualizar y registrar sus datos biométricos en los puntos habilitados.",
   },
   {
-    date: "3 de septiembre",
-    title: "Sorteo de ubicación de las franjas",
+    date: "12 de diciembre de 2025",
+    title: "Registro de Alianzas Políticas",
     description:
-      "Sorteo de ubicación de las franjas y aprobación del diseño de la papeleta de sufragio por el Tribunal Supremo Electoral. (segunda vuelta).",
+      "Solicitud de registro de alianzas políticas ante el Tribunal Supremo Electoral o los tribunales electorales departamentales para su participación en las Elecciones Subnacionales 2026.",
   },
   {
-    date: "19 de septiembre",
-    title: "Sorteo público para la selección de Jurados Electorales",
+    date: "17 de diciembre de 2025",
+    title: "Inscripción de Candidaturas",
     description:
-      "Sorteo público para la selección de Jurados Electorales de mesas de sufragio por los Tribunales Electorales Departamentales y por el Tribunal Supremo Electoral para las mesas de sufragio en el exterior. (segunda vuelta).",
+      "Inscripción de candidaturas de las organizaciones políticas y alianzas, y presentación de documentos habilitantes ante los tribunales electorales departamentales.",
   },
   {
-    date: "20 de septiembre",
-    title: "Notificación a los jurados",
+    date: "21 de diciembre de 2025",
+    title: "Publicación de Entidades Habilitadas",
     description:
-      "Notificación a los jurados de mesa de sufragio designados por los Tribunales Electorales Departamentales para voto nacional y notificación de jurados de las mesas de sufragio designados por el Tribunal Supremo Electoral para voto en el exterior. (segunda vuelta).",
+      "Publicación de la lista de empresas especializadas de opinión pública, medios de comunicación, instituciones académicas y cualquier otra entidad habilitada por los tribunales electorales departamentales para realizar estudios de opinión en materia electoral.",
   },
   {
-    date: "21 de septiembre",
-    title: "Publicación en medios de prensa escrita y portal web del OEP",
+    date: "9 de enero de 2026",
+    title: "Publicación de Candidaturas Habilitadas",
     description:
-      "Publicación en medios de prensa escrita y portal web del OEP de la nómina de los jurados de mesas de sufragio, por parte de los Tribunales Electorales Departamentales. Para el voto en el exterior, el Tribunal Supremo Electoral publicará la lista de jurados de mesa en el portal web del OEP. (segunda vuelta).",
+      "Publicación de la lista de candidaturas habilitadas de las organizaciones políticas y/o alianzas, por los tribunales electorales departamentales en el portal web oficial.",
   },
   {
-    date: "22 de septiembre",
-    title: "Presentación de excusas para el ejercicio",
+    date: "10 de febrero de 2026",
+    title: "Publicación de Medios Autorizados",
     description:
-      "Presentación de excusas para el ejercicio de la labor de jurados de mesas de sufragio ante los Tribunales Electorales Departamentales y ante los Representantes Notarios para voto en el exterior. (segunda vuelta).",
-  },
-  {
-    date: "29 de septiembre",
-    title: "Conformación de la directiva de mesas de sufragio",
-    description:
-      "Conformación de la directiva de mesas de sufragio y capacitación a Jurados Electorales. (segunda vuelta).",
-  },
-  {
-    date: "15 de octubre",
-    title: "Publicación del lugar donde se realizará el cómputo departamental",
-    description:
-      "Publicación del lugar donde se realizará el cómputo departamental (por los Tribunales Electorales Departamentales) y el cómputo del voto en el exterior (por el Tribunal Supremo Electoral) en el portal WEB del OEP. (segunda vuelta).",
-  },
-  {
-    date: "17 de octubre",
-    title: "Prohibición a los medios de comunicación",
-    description:
-      "Prohibición a los medios de comunicación sobre la difusión de contenidos que puedan favorecer, perjudicar o dar trato preferencial a alguna organización política o candidatura; o difundir programas que puedan influir en las preferencias electorales",
-  },
-  {
-    date: "19 de octubre",
-    title: "Segunda vuelta",
-    description:
-      "Segunda vuelta presidencial en caso de que ningún candidato logre mayoría absoluta.",
+      "Publicación de la lista de medios habilitados para la difusión de propaganda electoral, por el Tribunal Supremo Electoral y tribunales electorales departamentales.",
   },
 ];
 
@@ -251,7 +227,10 @@ export default function Home() {
                 <FeaturesGrid features={features} />
               </div>
 
-              
+              {/* Timeline Section */}
+              <div id="timeline" className="mt-32 sm:mt-20">
+                <AnimatedTimeline events={timelineEvents} />
+              </div>
 
               <div id="parties" className="mt-16 sm:mt-20">
                 <h2 className="text-3xl font-bold mb-6 text-center font-round">

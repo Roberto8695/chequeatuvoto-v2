@@ -81,33 +81,47 @@ export default function AnimatedTimeline({ events }: AnimatedTimelineProps) {
   const getEventStatus = (index: number) => {
     const eventDateStr = events[index].date
     
-    // Función para convertir fecha en formato "dd de mes" a Date object
+    // Función para convertir fecha en formato "dd de mes de año" a Date object
     const parseEventDate = (dateStr: string): Date => {
-      const currentYear = 2025
       const months: { [key: string]: number } = {
         'enero': 0, 'febrero': 1, 'marzo': 2, 'abril': 3,
         'mayo': 4, 'junio': 5, 'julio': 6, 'agosto': 7,
         'septiembre': 8, 'octubre': 9, 'noviembre': 10, 'diciembre': 11
       }
       
-      // Extraer día y mes del string (ej: "31 de agosto", "19 de octubre")
-      const match = dateStr.match(/(\d+) de (\w+)/)
-      if (!match) {
-        // Si no encuentra el patrón, intenta con formato más flexible
-        console.warn(`No se pudo parsear la fecha: ${dateStr}`)
-        return new Date()
+      // Extraer día, mes y año del string (ej: "9 de enero de 2026", "21 de diciembre de 2025")
+      const matchWithYear = dateStr.match(/(\d+) de (\w+) de (\d{4})/)
+      if (matchWithYear) {
+        const day = parseInt(matchWithYear[1])
+        const monthName = matchWithYear[2].toLowerCase()
+        const year = parseInt(matchWithYear[3])
+        const month = months[monthName]
+        
+        if (month === undefined) {
+          console.warn(`Mes no reconocido: ${monthName}`)
+          return new Date()
+        }
+        
+        return new Date(year, month, day)
       }
       
-      const day = parseInt(match[1])
-      const monthName = match[2].toLowerCase()
-      const month = months[monthName]
-      
-      if (month === undefined) {
-        console.warn(`Mes no reconocido: ${monthName}`)
-        return new Date()
+      // Fallback para formato sin año (asume 2025)
+      const matchWithoutYear = dateStr.match(/(\d+) de (\w+)/)
+      if (matchWithoutYear) {
+        const day = parseInt(matchWithoutYear[1])
+        const monthName = matchWithoutYear[2].toLowerCase()
+        const month = months[monthName]
+        
+        if (month === undefined) {
+          console.warn(`Mes no reconocido: ${monthName}`)
+          return new Date()
+        }
+        
+        return new Date(2025, month, day)
       }
       
-      return new Date(currentYear, month, day)
+      console.warn(`No se pudo parsear la fecha: ${dateStr}`)
+      return new Date()
     }
     
     const eventDate = parseEventDate(eventDateStr)
