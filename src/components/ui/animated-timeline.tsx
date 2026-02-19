@@ -7,7 +7,7 @@ import { Calendar, Clock, CheckCircle, ExternalLink } from 'lucide-react'
 interface TimelineEvent {
   date: string
   title: string
- 
+  description?: string
   actividades?: string
   diasAntesYDespuesDeLaVotacion?: string
   fechaDesde?: string
@@ -323,7 +323,11 @@ export default function AnimatedTimeline({ events }: AnimatedTimelineProps) {
                             <h3 className="text-xl font-black text-black mb-3">
                               🗳️ {event.title.toUpperCase()}
                             </h3>
-                            
+                            {event.description && (
+                              <p className="text-black text-sm font-medium leading-relaxed mb-3">
+                                {event.description}
+                              </p>
+                            )}
                             {(event.diasAntesYDespuesDeLaVotacion ||
                               event.fechaDesde ||
                               event.fechaHasta ||
@@ -407,7 +411,11 @@ export default function AnimatedTimeline({ events }: AnimatedTimelineProps) {
                           <h3 className="text-lg font-bold text-gray-800 mb-2">
                             {event.title}
                           </h3>
-                         
+                          {event.description && (
+                            <p className="text-gray-700 text-sm leading-relaxed mb-3">
+                              {event.description}
+                            </p>
+                          )}
                           {(event.diasAntesYDespuesDeLaVotacion ||
                             event.fechaDesde ||
                             event.fechaHasta ||
@@ -554,6 +562,11 @@ export default function AnimatedTimeline({ events }: AnimatedTimelineProps) {
                               🗳️ {event.title.toUpperCase()}
                             </h3>
                             
+                            {event.description && (
+                              <p className="text-gray-700 text-center mb-4 leading-relaxed">
+                                {event.description}
+                              </p>
+                            )}
                             
                             {(event.diasAntesYDespuesDeLaVotacion ||
                               event.fechaDesde ||
@@ -666,6 +679,12 @@ export default function AnimatedTimeline({ events }: AnimatedTimelineProps) {
                           <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-gray-900 transition-colors">
                             {event.title}
                           </h3>
+                          
+                          {event.description && (
+                            <p className="text-gray-600 mb-4 leading-relaxed">
+                              {event.description}
+                            </p>
+                          )}
                           
                           {(event.diasAntesYDespuesDeLaVotacion ||
                             event.fechaDesde ||

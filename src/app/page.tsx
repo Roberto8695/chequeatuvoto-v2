@@ -18,38 +18,79 @@ import CandidatosLaPaz from "@/components/ui/candidatos-la-paz";
 
 const features = [
   {
-    name: "¿Las promesas de los candidatos son factibles y están bien fundamentadas?",
+    name: "¿El candidato promete cosas que realmente puede cumplir?",
     description:
       "Es importante saber si los candidatos no están haciendo promesas vacías simplemente no factibles.",
     moreInfo:
       "Una ciudadanía informada fortalece la democracia. Es lógico que en una segunda vuelta electoral nos dejemos arrastrar por nuestras emociones, pero es muy importante analizar las propuestas para saber cómo gobernaría el próximo binomio en temas como la economía, la justicia y o la seguridad. Más allá de la propaganda, vale la pena evaluar los planes de gobierno.",
 
     risks: [
+
+      "Sé poco o nada sobre las propuestas de los candidatos.",
+
       "Me informo de las propuestas solo en redes sociales y solo de contenido que me hace sentir cómodo o cómoda.",
-      
+
       "Me quedo solo con lo que vi de los candidatos en las entrevistas y me niego a debatir.",
+
+      "Baso mis decisiones en superficialidades y no en propuestas concretas; me influye más un video gracioso o que alguien me caiga bien que las propuestas.",
+
+      "Apoyo propuestas sin preguntarme cómo se implementarían en la práctica.",
+
+      "Creo en promesas que ofrecen soluciones inmediatas a problemas complejos.",
+
+      "No comparo propuestas entre candidatos antes de tomar una decisión.",
+
     ],
     myrisk: [
-      "Su discurso está basado principalmente en el ataque a otro candidato, partido, ideología o gestión gubernamental.",
-      "Sus propuestas son inviables porque prometen demasiado y no saben cómo las ejecutarán.",
-      "Sus propuestas implican sólo la acción del nivel ejecutivo (presidente y vicepresidente) o necesitarán de otras instancias (Asamblea) para que puedan ejecutarlas.",
+
+      "Promete cielo, mar y tierra sin un sustento real.",
+
+      "No tiene propuestas o estas son mínimas, dedicándose mayormente a atacar a otros.",
+
+      "No explica con claridad cómo se llegará a cumplir lo que propone.",
+
+      "Se basa en datos cuestionables o falsos al momento de presentar sus propuestas.",
+
+      "Muestra desconocimiento sobre sus competencias, mezclando atribuciones del órgano central con las locales.",
+
+      "Cambia sus propuestas constantemente y estas no figuran en su plan de gobierno.",
+
+      "Demuestra que no sabe qué es lo que está escrito en su propio plan de gobierno.",
+
+      "Evita responder preguntas concretas sobre sus propuestas y recurre a generalidades.",
+
+      "Promete resultados inmediatos para problemas estructurales que son complejos.",
+
+      "Presenta un plan de gobierno que es excesivamente genérico.",
+
+      "Apela más a las emociones de la gente que a presentar soluciones concretas.",
+
     ],
     icon: Vote,
     image: "/Nuevos/img2.webp",
     color: "bg-blue-50",
   },
   {
-    name: "¿Comprendo cómo funciona la segunda vuelta electoral?",
+    name: "¿Comprendo en qué consisten las Elecciones Subnacionales?",
     description:
-      "Es la primera vez que Bolivia celebrará una segunda vuelta electoral.",
+      "Son elecciones en las que elegimos autoridades departamentales y municipales.",
     moreInfo:
-      "La segunda vuelta electoral se celebra en Bolivia si ninguno de los candidatos obtuvo más del 50% de los votos válidos emitidos en la primera vuelta; o un mínimo del 40% de los votos válidos emitidos, con una diferencia de al menos 10% en relación a la segunda candidatura más votada.",
+      "En estas elecciones se elige principalmente a gobernadores, alcaldes y asambleístas departamentales y concejales municipales. Cada uno cumple funciones distintas: Los gobernadores administran y gestionan el departamento; los alcaldes están a cargo de las alcadías  y los asambleístas y concejales fiscalizan, deliberan y aprueban normas en sus respectivos niveles. Por eso es importante entender qué hace cada cargo antes de evaluar las propuestas.",
 
     risks: [
-      "Pienso que se trata de nuevas elecciones, cuyos resultados cambiarán toda la estructura política.",
-      "No es importante volver a votar porque ya participé en las elecciones del 17 de agosto.",
-      "Pienso a menudo que mi voto no hará la diferencia.",
-      "Pienso que tengo que votar por alguien que solo solucione lo urgente.",
+      "Pienso que se trata de nuevas elecciones, cuyos resultados cambiarán toda la estructura política. No es importante volver a votar porque ya participé en las elecciones del 17 de agosto. Pienso a menudo que mi voto no hará la diferencia. Pienso que tengo que votar por alguien que solo solucione lo urgente.",
+
+      "Pienso que mi voto no hará la diferencia.",
+
+      "Me da igual quién gane y elijo mi voto al azar.",
+
+      "Solo voy a votar por evitar sanciones, sin haberme informado previamente.",
+
+      "Pienso de antemano que habrá fraude sin tener evidencia alguna de ello.",
+
+      "No comprendo mínimamente la diferencia entre los cargos que se van a elegir.",
+
+      "No verifico la información antes de compartir denuncias sobre el proceso electoral.",
     ],
     myrisk: [],
     icon: History,
@@ -57,20 +98,51 @@ const features = [
     color: "bg-amber-50",
   },
   {
-    name: "¿Conozco a los dos binomios presidenciales y sus historiales políticos?",
+    name: "¿Conozco las candidaturas?",
     description:
-      "Es imprescindible conocer a los candidatos de los dos frentes y sus historiales políticos.",
+      "En estas elecciones habrá numerosas candidaturas, es imprescindible conocer a quienes postulan y revisar sus antecedentes y trayectoria política.",
     moreInfo:
-      "Es importante conocer el historial político de los dos binomios que están habilitados para la segunda vuelta electoral. Saber si se trata de la primera vez que están en la arena política, si transitaron por otros partidos o si enfrentan denuncias de corrupción en gestiones anteriores ocupando cargos electivos.",
+      "Es importante conocer el historial político de los postulantes habilitados para las Elecciones Subnacioanles. Saber si se trata de la primera vez que están en la arena política, si transitaron por otros partidos o si enfrentan denuncias de corrupción en gestiones anteriores ocupando cargos electivos.",
     risks: [
-      "Solo conozco a los candidatos por lo que he leído o visto en las redes sociales.",
-      "He hecho seguimiento a mi binomio favorito, lo demás no me importa.",
+      "No conozco realmente a los candidatos que se postulan.",
+
+      "Conozco a los candidatos únicamente por lo que he leído o visto en las redes sociales.",
+
+      "Hice seguimiento solo a mi candidato favorito y lo que digan los demás no me importa.",
+
+      "Doy por cierta cualquier información sobre un candidato sin contrastarla con otras fuentes.",
+
+      "Idealizo a un candidato y dejo de evaluar críticamente lo que propone.",
       
     ],
     myrisk: [
-      "Los candidatos se niegan a ser cuestionados por su pasado político o por denuncias de corrupción en su contra.",
-      "Algún candidato tiene procesos abiertos por denuncias de corrupción o malversación de fondos.",
-      "No tiene una identidad política, ha cambiado de partido en función a su conveniencia.",
+      
+      "Se niega a ser cuestionado por su pasado político o por denuncias de corrupción en su contra.",
+
+      "Tiene procesos abiertos por denuncias de corrupción o malversación de fondos.",
+
+      "No tiene una identidad política definida y ha cambiado de partido solo por conveniencia.",
+
+      "Evita rendir cuentas sobre lo que hizo en su gestión pasada.",
+
+      "Cambia de partido con frecuencia sin explicar las razones reales de esos cambios.",
+
+      "Nunca asume sus propios errores, prefiriendo culpar a otros.",
+
+      "Cambia su discurso según el público al que se dirige para quedar bien con todos.",
+
+      "Utiliza discursos de odio o estigmatiza a determinados grupos de la sociedad.",
+
+      "Normaliza la violencia verbal o desacredita a la prensa cuando se siente cuestionado.",
+
+      "Rodea su campaña de información falsa o manipulada y no se molesta en corregirla.",
+
+      "Incumple las normas de campaña o las reglas de financiamiento electoral.",
+
+      "Difunde desinformación sobre el proceso electoral sin presentar ninguna evidencia.",
+
+      "Pone en duda los resultados antes de que exista información oficial o pruebas verificables.",
+
     ],
     icon: FileCheck,
     image: "/Nuevos/img3.webp",
