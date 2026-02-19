@@ -5,7 +5,7 @@ import type React from "react";
 import { useState, useEffect } from "react";
 import { Vote, History, FileCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { CardCandidatos } from "./components/card-candidatos";
+
 import { CardPartidos } from "./components/card-partidos";
 import ContentFakeNews from "./components/content-fake";
 import AvoidSharingSection from "./components/avoid-sharing";
@@ -14,6 +14,8 @@ import HeroSection from "@/components/ui/hero-section";
 import FeaturesGrid from "@/components/ui/features-grid";
 import AnimatedTimeline from "@/components/ui/animated-timeline";
 import LoadingScreen from "@/components/ui/loading-screen";
+import CandidatosCochabamba from "@/components/ui/candidatos-cochabamba";
+import CandidatosSantaCruz from "@/components/ui/candidatos-santa-cruz";
 import CandidatosLaPaz from "@/components/ui/candidatos-la-paz";
 
 const features = [
@@ -202,8 +204,8 @@ const timelineEvents = [
   {
     date: "20 de febrero de 2026",
     title: "Difusión de la propaganda electoral en medios de comunicación masivos",
-    description:
-      "",
+   
+ 
     diasAntesYDespuesDeLaVotacion: "30 días antes de la votación",
     fechaDesde: "viernes, 20 de febrero de 2026",
     fechaHasta: "miércoles, 18 de marzo de 2026",
@@ -214,8 +216,8 @@ const timelineEvents = [
     date: "1 de marzo de 2026",
     title:
       "Conformación de la directiva de mesas de sufragio y capacitación a Jurados Electorales",
-    description:
-      "",
+   
+   
     diasAntesYDespuesDeLaVotacion: "21 días antes de la votación",
     fechaDesde: "domingo, 1 de marzo de 2026",
     fechaHasta: "domingo, 22 de marzo de 2026",
@@ -226,8 +228,8 @@ const timelineEvents = [
     date: "15 de marzo de 2026",
     title:
       "Publicación y difusión de mesas de sufragio (recintos y asientos electorales)",
-    description:
-      "",
+  
+   
     diasAntesYDespuesDeLaVotacion: "7 días antes de la votación",
     fechaDesde: "domingo, 15 de marzo de 2026",
     fechaHasta: "domingo, 15 de marzo de 2026",
@@ -238,8 +240,7 @@ const timelineEvents = [
     date: "20 de marzo de 2026",
     title:
       "Prohibición a los medios de comunicación sobre difusión de contenidos",
-    description:
-      "",
+   
     diasAntesYDespuesDeLaVotacion: "2 días antes de la votación",
     fechaDesde: "viernes, 20 de marzo de 2026",
     fechaHasta: "domingo, 22 de marzo de 2026",
@@ -250,8 +251,8 @@ const timelineEvents = [
     date: "22 de marzo de 2026",
     title:
       "Elección de autoridades políticas departamentales, regionales y municipales 2026",
-    description:
-      "Elección de Autoridades Políticas Departamentales, Regionales y Municipales (Elecciones Subnacionales 2026).",
+   
+  
     diasAntesYDespuesDeLaVotacion: "0 días antes de la votación",
     fechaDesde: "domingo, 22 de marzo de 2026",
     fechaHasta: "domingo, 22 de marzo de 2026",
@@ -358,30 +359,23 @@ export default function Home() {
               <div className="mt-16">
                 <FeaturesGrid features={features} />
               </div>
-
-              {/* Timeline Section */}
               <div id="timeline" className="mt-16 sm:mt-20">
                 <AnimatedTimeline events={timelineEvents} />
               </div>
 
-              <div id="parties" className="mt-16 sm:mt-20">
-                <h2 className="text-3xl font-bold mb-6 text-center font-round">
-                 CANDIDATURAS SUBNACIONALES 2026
-                </h2>
+              
 
-                <h3 className="text-base mb-6 text-center">
-                  Conoce a los candidatos que competirán en las elecciones departamentales, regionales y municipales
-                </h3>
-                <CardCandidatos />
+          
+              <div id="candidatos-cochabamba" className="mt-16 sm:mt-20">
+                <CandidatosCochabamba />
+              </div>
+
+              <div id="candidatos-santa-cruz" className="mt-16 sm:mt-20">
+                <CandidatosSantaCruz />
               </div>
 
               <div id="candidatos-la-paz" className="mt-16 sm:mt-20">
                 <CandidatosLaPaz />
-              </div>
-
-              {/* Sección de Partidos Políticos */}
-              <div id="political-parties" className="mt-32 sm:mt-20">
-                <CardPartidos />
               </div>
 
               {/* Sección de Identificación de Noticias Falsas */}
