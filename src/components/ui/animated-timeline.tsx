@@ -1,4 +1,4 @@
-"use client"
+﻿"use client"
 
 import { useState, useEffect, useRef } from 'react'
 import { Card, CardContent } from '@/components/ui/card'
@@ -8,6 +8,12 @@ interface TimelineEvent {
   date: string
   title: string
   description: string
+  actividades?: string
+  diasAntesYDespuesDeLaVotacion?: string
+  fechaDesde?: string
+  fechaHasta?: string
+  duracion?: string
+  referenciaNormativa?: string
   detailsUrl?: string
 }
 
@@ -79,17 +85,22 @@ export default function AnimatedTimeline({ events }: AnimatedTimelineProps) {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
   const getEventStatus = (index: number) => {
-    const eventDateStr = events[index].date
-    
+    const eventDateStr = events[index]?.date
+
     // Función para convertir fecha en formato "dd de mes" a Date object
-    const parseEventDate = (dateStr: string): Date => {
-      const currentYear = 2025
+    const parseEventDate = (dateStr?: string): Date => {
+      if (!dateStr) {
+        console.warn('No se pudo parsear la fecha: valor vacío')
+        return new Date()
+      }
+
+      const currentYear = 2026
       const months: { [key: string]: number } = {
         'enero': 0, 'febrero': 1, 'marzo': 2, 'abril': 3,
         'mayo': 4, 'junio': 5, 'julio': 6, 'agosto': 7,
         'septiembre': 8, 'octubre': 9, 'noviembre': 10, 'diciembre': 11
       }
-      
+
       // Extraer día y mes del string (ej: "31 de agosto", "19 de octubre")
       const match = dateStr.match(/(\d+) de (\w+)/)
       if (!match) {
@@ -97,45 +108,44 @@ export default function AnimatedTimeline({ events }: AnimatedTimelineProps) {
         console.warn(`No se pudo parsear la fecha: ${dateStr}`)
         return new Date()
       }
-      
+
       const day = parseInt(match[1])
       const monthName = match[2].toLowerCase()
       const month = months[monthName]
-      
+
       if (month === undefined) {
         console.warn(`Mes no reconocido: ${monthName}`)
         return new Date()
       }
-      
+
       return new Date(currentYear, month, day)
     }
-    
+
     const eventDate = parseEventDate(eventDateStr)
     const today = new Date()
-    
+
     // Normalizar las fechas para comparar solo día, mes y año (sin horas)
     const normalizeDate = (date: Date) => {
       return new Date(date.getFullYear(), date.getMonth(), date.getDate())
     }
-    
+
     const normalizedEventDate = normalizeDate(eventDate)
     const normalizedToday = normalizeDate(today)
-    
+
     // Calcular diferencia en días
     const diffTime = normalizedEventDate.getTime() - normalizedToday.getTime()
     const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24))
-    
+
     if (diffDays < 0) {
       // Evento ya pasó
       return 'completed'
-    } else {
-      // Evento futuro (pendiente de ejecutar)
-      return 'future'
     }
+    // Evento futuro (pendiente de ejecutar)
+    return 'future'
   }
 
   const isElectionDay = (index: number) => {
-    return events[index].date.includes('19 de octubre')
+    return events[index]?.date?.includes('22 de marzo') ?? false
   }
 
   const getEventIcon = (status: string) => {
@@ -160,11 +170,13 @@ export default function AnimatedTimeline({ events }: AnimatedTimelineProps) {
           bg: 'bg-gradient-to-br from-[#de2488]/8 via-white to-[#00cfaf]/8',
           border: 'border-[#de2488]/25',
           dot: 'bg-gradient-to-br from-[#de2488] via-[#00cfaf] to-[#de2488]',
-          shadow: 'shadow-[#de2488]/15'        }
+          shadow: 'shadow-[#de2488]/15'
+        }
     }
   }
   return (
-    <div id='timeline' className="w-full max-w-6xl mx-auto px-4">      {/* Estilos CSS para la animación de vibración */}
+    <div id="timeline" className="w-full max-w-6xl mx-auto px-4">
+      {/* Estilos CSS para la animación de vibración */}
       <style dangerouslySetInnerHTML={{
         __html: `
           @keyframes vibrateWithPause {
@@ -180,21 +192,24 @@ export default function AnimatedTimeline({ events }: AnimatedTimelineProps) {
             animation: vibrateWithPause 2s ease-in-out infinite;
           }
         `
-      }} />{/* Header */}
+      }} />
+
+      {/* Header */}
       <div className="text-center mb-20">
         <div className="h-2 rounded-full overflow-hidden flex shadow-lg mx-auto max-w-md mb-8 animate-pulse">
           <div className="flex-1 bg-gradient-to-r from-[#de2488] to-[#00cfaf]"></div>
         </div>
         <h2 className="text-3xl lg:text-4xl font-bold text-black mb-4 animate-fade-in">
-          CALENDARIO ELECTORAL 2025
+          CALENDARIO ELECTORAL 2026
         </h2>
         <p className="text-xl text-gray-700 max-w-3xl mx-auto animate-fade-in-delay font-medium">
-          Fechas importantes para la segunda vuelta de las elecciones presidenciales y legislativas
+          Fechas importantes para la segundía vuelta de las elecciones presidenciales y legislativas
         </p>
       </div>
       
       {/* Timeline Container */}
-      <div className="relative pt-8">        {/* Línea central para desktop */}
+      <div className="relative pt-8">
+        {/* Línea central para desktop */}
         <div 
           ref={desktopLineRef}
           className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-gradient-to-b from-[#de2488]/20 to-[#00cfaf]/20 rounded-full overflow-hidden hidden lg:block"
@@ -228,7 +243,9 @@ export default function AnimatedTimeline({ events }: AnimatedTimelineProps) {
               boxShadow: '0 0 20px rgba(222, 36, 136, 0.3)'
             }}
           />
-        </div>{/* Eventos */}
+        </div>
+
+        {/* Eventos */}
         <div className="space-y-16 lg:space-y-24 pt-8">
           {events.map((event, index) => {
             const status = getEventStatus(index)
@@ -248,12 +265,14 @@ export default function AnimatedTimeline({ events }: AnimatedTimelineProps) {
                     ? 'animate-slide-in-up opacity-100' 
                     : 'opacity-0 translate-y-8'
                 } transition-all duration-700 ease-out`}
-                style={{ 
+                style={{
                   transitionDelay: `${index * 150}ms`,
                   minHeight: '140px'
                 }}
-              >                {/* Layout móvil */}
-                <div className="flex items-center lg:hidden">                  {/* Punto móvil */}
+              >
+                {/* Layout móvil */}
+                <div className="flex items-center lg:hidden">
+                  {/* Punto móvil */}
                   <div className="flex-shrink-0 relative z-10 ml-2">
                     <div 
                       className={`
@@ -278,7 +297,8 @@ export default function AnimatedTimeline({ events }: AnimatedTimelineProps) {
                   </div>
                   
                   {/* Tarjeta móvil */}
-                  <div className="ml-6 flex-1">                    {isElectionDay(index) ? (
+                  <div className="ml-6 flex-1">
+                    {isElectionDay(index) ? (
                       // Diseño especial para el día de elecciones - móvil
                       <div className="relative vibrate">
                         <div className="absolute -inset-1 bg-gradient-to-r from-[#de2488] via-[#00cfaf] to-[#de2488] rounded-2xl blur opacity-75"></div>
@@ -310,6 +330,54 @@ export default function AnimatedTimeline({ events }: AnimatedTimelineProps) {
                             <p className="text-black text-sm font-medium leading-relaxed">
                               {event.description}
                             </p>
+                            {(event.diasAntesYDespuesDeLaVotacion ||
+                              event.fechaDesde ||
+                              event.fechaHasta ||
+                              event.duracion ||
+                              event.referenciaNormativa) && (
+                              <div className="mt-4 text-xs text-gray-700 space-y-1">
+                                {event.actividades && (
+                                  <div>
+                                    <span className="font-semibold">Actividades:</span>{" "}
+                                    {event.actividades}
+                                  </div>
+                                )}
+                                {event.diasAntesYDespuesDeLaVotacion && (
+                                  <div>
+                                    <span className="font-semibold">
+                                      Días antes/después:
+                                    </span>{" "}
+                                    {event.diasAntesYDespuesDeLaVotacion}
+                                  </div>
+                                )}
+                                {event.fechaDesde && (
+                                  <div>
+                                    <span className="font-semibold">Desde:</span>{" "}
+                                    {event.fechaDesde}
+                                  </div>
+                                )}
+                                {event.fechaHasta && (
+                                  <div>
+                                    <span className="font-semibold">Hasta:</span>{" "}
+                                    {event.fechaHasta}
+                                  </div>
+                                )}
+                                {event.duracion && (
+                                  <div>
+                                    <span className="font-semibold">Duración:</span>{" "}
+                                    {event.duracion}
+                                  </div>
+                                )}
+                                {event.referenciaNormativa && (
+                                  <div>
+                                    <span className="font-semibold">
+                                      Referencia normativa:
+                                    </span>{" "}
+                                    {event.referenciaNormativa}
+                                  </div>
+                                )}
+                              </div>
+                            )}
                             <div className="mt-4 flex items-center justify-between">
                               <div className="flex items-center">
                                 <span className="text-xs font-bold text-black uppercase">
@@ -348,6 +416,54 @@ export default function AnimatedTimeline({ events }: AnimatedTimelineProps) {
                           <p className="text-gray-700 text-sm">
                             {event.description}
                           </p>
+                          {(event.diasAntesYDespuesDeLaVotacion ||
+                            event.fechaDesde ||
+                            event.fechaHasta ||
+                            event.duracion ||
+                            event.referenciaNormativa) && (
+                            <div className="mt-4 text-xs text-gray-600 space-y-1">
+                              {event.actividades && (
+                                <div>
+                                  <span className="font-semibold">Actividades:</span>{" "}
+                                  {event.actividades}
+                                </div>
+                              )}
+                              {event.diasAntesYDespuesDeLaVotacion && (
+                                <div>
+                                  <span className="font-semibold">
+                                    Días antes/después:
+                                  </span>{" "}
+                                  {event.diasAntesYDespuesDeLaVotacion}
+                                </div>
+                              )}
+                              {event.fechaDesde && (
+                                <div>
+                                  <span className="font-semibold">Desde:</span>{" "}
+                                  {event.fechaDesde}
+                                </div>
+                              )}
+                              {event.fechaHasta && (
+                                <div>
+                                  <span className="font-semibold">Hasta:</span>{" "}
+                                  {event.fechaHasta}
+                                </div>
+                              )}
+                              {event.duracion && (
+                                <div>
+                                  <span className="font-semibold">Duración:</span>{" "}
+                                  {event.duracion}
+                                </div>
+                              )}
+                              {event.referenciaNormativa && (
+                                <div>
+                                  <span className="font-semibold">
+                                    Referencia normativa:
+                                  </span>{" "}
+                                  {event.referenciaNormativa}
+                                </div>
+                              )}
+                            </div>
+                          )}
                           <div className="mt-4 flex items-center justify-between">
                             <div className="flex items-center">
                               <div className={`w-2 h-2 ${colors.dot} rounded-full mr-2`} />
@@ -369,8 +485,11 @@ export default function AnimatedTimeline({ events }: AnimatedTimelineProps) {
                       </Card>
                     )}
                   </div>
-                </div>                {/* Layout desktop */}
-                <div className="hidden lg:flex lg:items-center lg:justify-center lg:relative">                  {/* Punto central */}
+                </div>
+
+                {/* Layout desktop */}
+                <div className="hidden lg:flex lg:items-center lg:justify-center lg:relative">
+                  {/* Punto central */}
                   <div className="absolute left-1/2 transform -translate-x-1/2 z-20">
                     <div 
                       className={`
@@ -390,7 +509,9 @@ export default function AnimatedTimeline({ events }: AnimatedTimelineProps) {
                         getEventIcon(status)
                       )}
                     </div>
-                  </div>                  {/* Conector */}
+                  </div>
+
+                  {/* Conector */}
                   <div 
                     className={`
                       absolute w-16 h-0.5 ${colors.dot} z-10
@@ -411,7 +532,8 @@ export default function AnimatedTimeline({ events }: AnimatedTimelineProps) {
                       ? 'right-1/2 mr-24 text-right' 
                       : 'left-1/2 ml-24 text-left'
                     }
-                  `}>                    {isElectionDay(index) ? (
+                  `}>
+                    {isElectionDay(index) ? (
                       // Diseño especial para el día de elecciones - desktop
                       <div className="relative vibrate">
                         <div className="absolute -inset-2 bg-gradient-to-r from-[#de2488] via-[#00cfaf] to-[#de2488] rounded-3xl blur-lg opacity-60"></div>
@@ -460,6 +582,54 @@ export default function AnimatedTimeline({ events }: AnimatedTimelineProps) {
                             <p className="text-black leading-relaxed font-semibold text-lg mb-4">
                               {event.description}
                             </p>
+                            {(event.diasAntesYDespuesDeLaVotacion ||
+                              event.fechaDesde ||
+                              event.fechaHasta ||
+                              event.duracion ||
+                              event.referenciaNormativa) && (
+                              <div className="bg-gray-100 rounded-xl p-4 mb-4 border border-gray-200 text-sm text-black space-y-1">
+                                {event.actividades && (
+                                  <div>
+                                    <span className="font-bold">Actividades:</span>{" "}
+                                    {event.actividades}
+                                  </div>
+                                )}
+                                {event.diasAntesYDespuesDeLaVotacion && (
+                                  <div>
+                                    <span className="font-bold">
+                                      Días antes/después:
+                                    </span>{" "}
+                                    {event.diasAntesYDespuesDeLaVotacion}
+                                  </div>
+                                )}
+                                {event.fechaDesde && (
+                                  <div>
+                                    <span className="font-bold">Desde:</span>{" "}
+                                    {event.fechaDesde}
+                                  </div>
+                                )}
+                                {event.fechaHasta && (
+                                  <div>
+                                    <span className="font-bold">Hasta:</span>{" "}
+                                    {event.fechaHasta}
+                                  </div>
+                                )}
+                                {event.duracion && (
+                                  <div>
+                                    <span className="font-bold">Duración:</span>{" "}
+                                    {event.duracion}
+                                  </div>
+                                )}
+                                {event.referenciaNormativa && (
+                                  <div>
+                                    <span className="font-bold">
+                                      Referencia normativa:
+                                    </span>{" "}
+                                    {event.referenciaNormativa}
+                                  </div>
+                                )}
+                              </div>
+                            )}
                             
                             {/* Elementos adicionales para el día especial */}
                             <div className="bg-gray-100 rounded-xl p-4 mb-4 border border-gray-200">
@@ -528,6 +698,54 @@ export default function AnimatedTimeline({ events }: AnimatedTimelineProps) {
                           <p className="text-gray-700 leading-relaxed">
                             {event.description}
                           </p>
+                          {(event.diasAntesYDespuesDeLaVotacion ||
+                            event.fechaDesde ||
+                            event.fechaHasta ||
+                            event.duracion ||
+                            event.referenciaNormativa) && (
+                            <div className="mt-4 text-xs text-gray-600 space-y-1">
+                              {event.actividades && (
+                                <div>
+                                  <span className="font-semibold">Actividades:</span>{" "}
+                                  {event.actividades}
+                                </div>
+                              )}
+                              {event.diasAntesYDespuesDeLaVotacion && (
+                                <div>
+                                  <span className="font-semibold">
+                                    Días antes/después:
+                                  </span>{" "}
+                                  {event.diasAntesYDespuesDeLaVotacion}
+                                </div>
+                              )}
+                              {event.fechaDesde && (
+                                <div>
+                                  <span className="font-semibold">Desde:</span>{" "}
+                                  {event.fechaDesde}
+                                </div>
+                              )}
+                              {event.fechaHasta && (
+                                <div>
+                                  <span className="font-semibold">Hasta:</span>{" "}
+                                  {event.fechaHasta}
+                                </div>
+                              )}
+                              {event.duracion && (
+                                <div>
+                                  <span className="font-semibold">Duración:</span>{" "}
+                                  {event.duracion}
+                                </div>
+                              )}
+                              {event.referenciaNormativa && (
+                                <div>
+                                  <span className="font-semibold">
+                                    Referencia normativa:
+                                  </span>{" "}
+                                  {event.referenciaNormativa}
+                                </div>
+                              )}
+                            </div>
+                          )}
                           
                           <div className={`mt-4 flex items-center ${isLeft ? 'justify-between flex-row-reverse' : 'justify-between'}`}>
                             <div className={`flex items-center ${isLeft ? 'flex-row-reverse' : ''}`}>
@@ -565,7 +783,9 @@ export default function AnimatedTimeline({ events }: AnimatedTimelineProps) {
               </div>
             )
           })}
-        </div>        {/* Indicador de progreso */}
+        </div>
+
+        {/* Indicador de progreso */}
         <div className="mt-12 text-center">
           <div className="inline-flex items-center bg-gradient-to-r from-[#de2488]/5 via-white to-[#00cfaf]/5 backdrop-blur-sm rounded-full px-6 py-3 shadow-lg border border-[#de2488]/20">
             <div className="w-3 h-3 bg-gradient-to-r from-[#de2488] to-[#00cfaf] rounded-full mr-3 animate-pulse" />
@@ -578,3 +798,10 @@ export default function AnimatedTimeline({ events }: AnimatedTimelineProps) {
     </div>
   )
 }
+
+
+
+
+
+
+

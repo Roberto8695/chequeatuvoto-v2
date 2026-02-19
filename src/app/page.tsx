@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import type React from "react";
 
@@ -79,76 +79,58 @@ const features = [
 
 const timelineEvents = [
   {
-    date: "31 de agosto",
-    title: "Convocatoria a Segunda Vuelta",
-    description:
-      "Convocatoria a Segunda Vuelta por el Tribunal Supremo Electoral.",
+    date: "20 de febrero de 2026",
+    title: "Difusión de la propaganda electoral en medios de comunicación masivos",
+ 
+    diasAntesYDespuesDeLaVotacion: "30 días antes de la votación",
+    fechaDesde: "viernes, 20 de febrero de 2026",
+    fechaHasta: "miércoles, 18 de marzo de 2026",
+    duracion: "27 Días",
+    referenciaNormativa: "Ley N° 026. Art. 116 b).",
   },
   {
-    date: "31 de agosto",
-    title: "Difusión o publicación de estudios",
-    description:
-      "Difusión o publicación de estudios de opinión en materia electoral (encuestas). (segunda vuelta).",
+    date: "1 de marzo de 2026",
+    title:
+      "Conformación de la directiva de mesas de sufragio y capacitación a Jurados Electorales",
+   
+    diasAntesYDespuesDeLaVotacion: "21 días antes de la votación",
+    fechaDesde: "domingo, 1 de marzo de 2026",
+    fechaHasta: "domingo, 22 de marzo de 2026",
+    duracion: "22 Días",
+    referenciaNormativa: "Ley N° 018. Art. 56 Par. III",
   },
   {
-    date: "31 de agosto",
-    title: "Difusión de propaganda electoral",
-    description:
-      "Difusión de propaganda electoral en actos públicos de campaña y en medios de comunicación. (segunda vuelta).",
+    date: "15 de marzo de 2026",
+    title:
+      "Publicación y difusión de mesas de sufragio (recintos y asientos electorales)",
+   
+    diasAntesYDespuesDeLaVotacion: "7 días antes de la votación",
+    fechaDesde: "domingo, 15 de marzo de 2026",
+    fechaHasta: "domingo, 15 de marzo de 2026",
+    duracion: "1 Días",
+    referenciaNormativa: "Ley N° 018. Art. 38 Num. 13.",
   },
   {
-    date: "3 de septiembre",
-    title: "Sorteo de ubicación de las franjas",
-    description:
-      "Sorteo de ubicación de las franjas y aprobación del diseño de la papeleta de sufragio por el Tribunal Supremo Electoral. (segunda vuelta).",
+    date: "20 de marzo de 2026",
+    title:
+      "Prohibición a los medios de comunicación sobre difusión de contenidos",
+   
+    diasAntesYDespuesDeLaVotacion: "2 días antes de la votación",
+    fechaDesde: "viernes, 20 de marzo de 2026",
+    fechaHasta: "domingo, 22 de marzo de 2026",
+    duracion: "3 Días",
+    referenciaNormativa: "Ley N° 026. Art. 122.",
   },
   {
-    date: "19 de septiembre",
-    title: "Sorteo público para la selección de Jurados Electorales",
-    description:
-      "Sorteo público para la selección de Jurados Electorales de mesas de sufragio por los Tribunales Electorales Departamentales y por el Tribunal Supremo Electoral para las mesas de sufragio en el exterior. (segunda vuelta).",
-  },
-  {
-    date: "20 de septiembre",
-    title: "Notificación a los jurados",
-    description:
-      "Notificación a los jurados de mesa de sufragio designados por los Tribunales Electorales Departamentales para voto nacional y notificación de jurados de las mesas de sufragio designados por el Tribunal Supremo Electoral para voto en el exterior. (segunda vuelta).",
-  },
-  {
-    date: "21 de septiembre",
-    title: "Publicación en medios de prensa escrita y portal web del OEP",
-    description:
-      "Publicación en medios de prensa escrita y portal web del OEP de la nómina de los jurados de mesas de sufragio, por parte de los Tribunales Electorales Departamentales. Para el voto en el exterior, el Tribunal Supremo Electoral publicará la lista de jurados de mesa en el portal web del OEP. (segunda vuelta).",
-  },
-  {
-    date: "22 de septiembre",
-    title: "Presentación de excusas para el ejercicio",
-    description:
-      "Presentación de excusas para el ejercicio de la labor de jurados de mesas de sufragio ante los Tribunales Electorales Departamentales y ante los Representantes Notarios para voto en el exterior. (segunda vuelta).",
-  },
-  {
-    date: "29 de septiembre",
-    title: "Conformación de la directiva de mesas de sufragio",
-    description:
-      "Conformación de la directiva de mesas de sufragio y capacitación a Jurados Electorales. (segunda vuelta).",
-  },
-  {
-    date: "15 de octubre",
-    title: "Publicación del lugar donde se realizará el cómputo departamental",
-    description:
-      "Publicación del lugar donde se realizará el cómputo departamental (por los Tribunales Electorales Departamentales) y el cómputo del voto en el exterior (por el Tribunal Supremo Electoral) en el portal WEB del OEP. (segunda vuelta).",
-  },
-  {
-    date: "17 de octubre",
-    title: "Prohibición a los medios de comunicación",
-    description:
-      "Prohibición a los medios de comunicación sobre la difusión de contenidos que puedan favorecer, perjudicar o dar trato preferencial a alguna organización política o candidatura; o difundir programas que puedan influir en las preferencias electorales",
-  },
-  {
-    date: "19 de octubre",
-    title: "Segunda vuelta",
-    description:
-      "Segunda vuelta presidencial en caso de que ningún candidato logre mayoría absoluta.",
+    date: "22 de marzo de 2026",
+    title:
+      "Elección de autoridades políticas departamentales, regionales y municipales 2026",
+  
+    diasAntesYDespuesDeLaVotacion: "0 días antes de la votación",
+    fechaDesde: "domingo, 22 de marzo de 2026",
+    fechaHasta: "domingo, 22 de marzo de 2026",
+    duracion: "1 Días",
+    referenciaNormativa: "CPE. Art. 156 y Art. 166. Ley N° 026. Art. 94 - I.",
   },
 ];
 
@@ -250,6 +232,9 @@ export default function Home() {
               <div className="mt-16">
                 <FeaturesGrid features={features} />
               </div>
+              <div id="timeline" className="mt-16 sm:mt-20">
+                <AnimatedTimeline events={timelineEvents} />
+              </div>
 
               
 
@@ -306,3 +291,5 @@ export default function Home() {
     </>
   );
 }
+
+

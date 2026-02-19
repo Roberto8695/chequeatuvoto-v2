@@ -54,10 +54,10 @@ export default function ElectionResults() {
               {/* Porcentaje destacado */}
               <div className="relative">
                 <div className="text-4xl md:text-5xl font-black text-[#f83728] drop-shadow-lg mb-2">
-                  54.96%
+                  54.97%
                 </div>
                 <div className="absolute inset-0 text-4xl md:text-5xl font-black text-[#005e4a] opacity-20 blur-sm">
-                  54.96%
+                  54.97%
                 </div>
               </div>
               
