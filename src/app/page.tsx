@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import type React from "react";
 
@@ -14,6 +14,7 @@ import HeroSection from "@/components/ui/hero-section";
 import FeaturesGrid from "@/components/ui/features-grid";
 import AnimatedTimeline from "@/components/ui/animated-timeline";
 import LoadingScreen from "@/components/ui/loading-screen";
+import CandidatosLaPaz from "@/components/ui/candidatos-la-paz";
 
 const features = [
   {
@@ -228,20 +229,23 @@ export default function Home() {
               </div>
 
               {/* Timeline Section */}
-              <div id="timeline" className="mt-32 sm:mt-20">
+              <div id="timeline" className="mt-16 sm:mt-20">
                 <AnimatedTimeline events={timelineEvents} />
               </div>
 
               <div id="parties" className="mt-16 sm:mt-20">
                 <h2 className="text-3xl font-bold mb-6 text-center font-round">
-                 BINOMIOS QUE VAN A SEGUNDA
+                 CANDIDATURAS SUBNACIONALES 2026
                 </h2>
 
                 <h3 className="text-base mb-6 text-center">
-                  Conoce a los candidatos finalistas que competirán en la
-                  segunda vuelta electoral del 19 de octubre
+                  Conoce a los candidatos que competirán en las elecciones departamentales, regionales y municipales
                 </h3>
                 <CardCandidatos />
+              </div>
+
+              <div id="candidatos-la-paz" className="mt-16 sm:mt-20">
+                <CandidatosLaPaz />
               </div>
 
               {/* Sección de Partidos Políticos */}
@@ -285,3 +289,5 @@ export default function Home() {
     </>
   );
 }
+
+
