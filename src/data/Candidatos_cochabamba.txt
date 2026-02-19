@@ -1,0 +1,22 @@
+Candidatos a la alcaldía de Cochabamba
+
+id	candidato	cargo	unidad_territorial	nombre	departamento	partido
+1	CARLOS ALFREDO ZAVALETA PANIAGUA	Alcalde	Municipio	Cochabamba	Cochabamba	ALIANZA UNIDOS POR LOS PUEBLOS
+2	FRANCISCO JAVIER BELLOTT MONTALVO	Alcalde	Municipio	Cochabamba	Cochabamba	SOLUCIONES CON TODOS
+3	JAIME ADUANA QUINTANA	Alcalde	Municipio	Cochabamba	Cochabamba	FRENTE AMPLIO PATRIÓTICO
+4	JOSE CARLOS SANCHEZ VERAZAIN	Alcalde	Municipio	Cochabamba	Cochabamba	NUEVA GENERACIÓN PATRIÓTICA
+5	MANFRED ARMANDO ANTONIO REYES VILLA BACIGALUPI	Alcalde	Municipio	Cochabamba	Cochabamba	AUTONOMÍA PARA BOLIVIA SÚMATE
+6	RAMON OSCAR DAZA SALAMANCA	Alcalde	Municipio	Cochabamba	Cochabamba	ALIANZA PATRIA UNIDOS
+7	ROCIO ALEJANDRA MOLINA TRAVESI	Alcalde	Municipio	Cochabamba	Cochabamba	UNIDOS
+8	RONALD ANTONIO UNZUETA QUIROGA	Alcalde	Municipio	Cochabamba	Cochabamba	MOVIMIENTO TERCER SISTEMA
+
+Candidatos a la gobernación de Cochabamba
+						
+1	ALEJANDRO MOSTAJO RUEDA	Gobernador	Departamento	Departamento de Cochabamba	Cochabamba	MOVIMIENTO TERCER SISTEMA
+2	ESTHER SORIA GONZALES	Gobernador	Departamento	Departamento de Cochabamba	Cochabamba	UNIDOS
+3	JUAN ROBERTH FLORES ENCINAS	Gobernador	Departamento	Departamento de Cochabamba	Cochabamba	LIBERTAD Y REPÚBLICA
+4	MARIO ENRIQUE SEVERICH BUSTAMANTE	Gobernador	Departamento	Departamento de Cochabamba	Cochabamba	SOLUCIONES CON TODOS
+5	RUTH ALINA PERALTA CALVIMONTES	Gobernador	Departamento	Departamento de Cochabamba	Cochabamba	FRENTE REVOLUCIONARIO DE IZQUIERDA
+6	SERGIO OLIVER RODRIGUEZ MERCADO	Gobernador	Departamento	Departamento de Cochabamba	Cochabamba	AUTONOMÍA PARA BOLIVIA SÚMATE
+7	WILFREDO ROLANDO MORALES ZEBALLOS	Gobernador	Departamento	Departamento de Cochabamba	Cochabamba	ALIANZA PATRIA UNIDOS
+8	LEONARDO LOZA 	Gobernador	Departamento	Departamento de Cochabamba	Cochabamba	ALIANZA UNIDOS POR LOS PUEBLOS

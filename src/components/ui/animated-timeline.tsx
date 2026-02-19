@@ -7,7 +7,7 @@ import { Calendar, Clock, CheckCircle, ExternalLink } from 'lucide-react'
 interface TimelineEvent {
   date: string
   title: string
-  description: string
+ 
   actividades?: string
   diasAntesYDespuesDeLaVotacion?: string
   fechaDesde?: string
@@ -195,7 +195,7 @@ export default function AnimatedTimeline({ events }: AnimatedTimelineProps) {
       }} />
 
       {/* Header */}
-      <div className="text-center mb-20">
+      <div className="text-center mb-24">
         <div className="h-2 rounded-full overflow-hidden flex shadow-lg mx-auto max-w-md mb-8 animate-pulse">
           <div className="flex-1 bg-gradient-to-r from-[#de2488] to-[#00cfaf]"></div>
         </div>
@@ -208,7 +208,7 @@ export default function AnimatedTimeline({ events }: AnimatedTimelineProps) {
       </div>
       
       {/* Timeline Container */}
-      <div className="relative pt-8">
+      <div className="relative pt-8 mt-32">
         {/* Línea central para desktop */}
         <div 
           ref={desktopLineRef}
@@ -246,12 +246,13 @@ export default function AnimatedTimeline({ events }: AnimatedTimelineProps) {
         </div>
 
         {/* Eventos */}
-        <div className="space-y-16 lg:space-y-24 pt-8">
+        <div className="space-y-16 lg:space-y-28 pt-8">
           {events.map((event, index) => {
             const status = getEventStatus(index)
             const colors = getEventColors(status)
             const isVisible = visibleItems[index]
             const isLeft = index % 2 === 0
+            const isSpecialDay = isElectionDay(index)
 
             return (
               <div
@@ -267,7 +268,7 @@ export default function AnimatedTimeline({ events }: AnimatedTimelineProps) {
                 } transition-all duration-700 ease-out`}
                 style={{
                   transitionDelay: `${index * 150}ms`,
-                  minHeight: '140px'
+                  minHeight: isSpecialDay ? '220px' : '120px'
                 }}
               >
                 {/* Layout móvil */}
@@ -327,9 +328,7 @@ export default function AnimatedTimeline({ events }: AnimatedTimelineProps) {
                             <h3 className="text-xl font-black text-black mb-3">
                               🗳️ {event.title.toUpperCase()}
                             </h3>
-                            <p className="text-black text-sm font-medium leading-relaxed">
-                              {event.description}
-                            </p>
+                            
                             {(event.diasAntesYDespuesDeLaVotacion ||
                               event.fechaDesde ||
                               event.fechaHasta ||
@@ -413,9 +412,7 @@ export default function AnimatedTimeline({ events }: AnimatedTimelineProps) {
                           <h3 className="text-lg font-bold text-gray-800 mb-2">
                             {event.title}
                           </h3>
-                          <p className="text-gray-700 text-sm">
-                            {event.description}
-                          </p>
+                         
                           {(event.diasAntesYDespuesDeLaVotacion ||
                             event.fechaDesde ||
                             event.fechaHasta ||
@@ -511,31 +508,25 @@ export default function AnimatedTimeline({ events }: AnimatedTimelineProps) {
                     </div>
                   </div>
 
-                  {/* Conector */}
-                  <div 
-                    className={`
-                      absolute w-16 h-0.5 ${colors.dot} z-10
-                      transition-all duration-700
-                      ${isVisible ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0'}
-                      ${isLeft ? 'right-1/2 mr-8' : 'left-1/2 ml-8'}
-                    `}
-                    style={{ 
-                      transitionDelay: `${index * 250}ms`,
-                      transformOrigin: isLeft ? 'right center' : 'left center'
-                    }}
-                  />
+                  {!isSpecialDay && (
+                    <div 
+                      className={`
+                        absolute w-16 h-0.5 ${colors.dot} z-10
+                        transition-all duration-700
+                        ${isVisible ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0'}
+                        ${isLeft ? 'right-1/2 mr-8' : 'left-1/2 ml-8'}
+                      `}
+                      style={{ 
+                        transitionDelay: `${index * 250}ms`,
+                        transformOrigin: isLeft ? 'right center' : 'left center'
+                      }}
+                    />
+                  )}
 
                   {/* Tarjeta */}
-                  <div className={`
-                    w-80 absolute z-10
-                    ${isLeft 
-                      ? 'right-1/2 mr-24 text-right' 
-                      : 'left-1/2 ml-24 text-left'
-                    }
-                  `}>
-                    {isElectionDay(index) ? (
-                      // Diseño especial para el día de elecciones - desktop
-                      <div className="relative vibrate">
+                  {isSpecialDay ? (
+                    <div className="relative z-10 w-full flex justify-center">
+                      <div className="relative vibrate w-full max-w-3xl">
                         <div className="absolute -inset-2 bg-gradient-to-r from-[#de2488] via-[#00cfaf] to-[#de2488] rounded-3xl blur-lg opacity-60"></div>
                         <div className="absolute -inset-1 bg-gradient-to-r from-[#de2488]/50 via-[#00cfaf]/50 to-[#de2488]/50 rounded-2xl blur opacity-50"></div>
                         <Card 
@@ -545,7 +536,7 @@ export default function AnimatedTimeline({ events }: AnimatedTimelineProps) {
                             shadow-2xl hover:shadow-3xl
                             transition-all duration-500
                             ${isVisible ? 'scale-100 opacity-100' : 'scale-95 opacity-0'}
-                            hover:-translate-y-3 transform
+                            hover:-translate-y-2 transform
                             overflow-hidden
                             backdrop-blur-sm
                           `}
@@ -557,31 +548,18 @@ export default function AnimatedTimeline({ events }: AnimatedTimelineProps) {
                           <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-[#de2488] via-[#00cfaf] to-[#de2488]"></div>
 
                           <CardContent className="p-8 relative">
-                            <div className={`flex items-center mb-4 ${isLeft ? 'justify-end' : 'justify-start'}`}>
-                              {isLeft ? (
-                                <>
-                                  <time className="text-lg font-black text-black uppercase mr-3 tracking-wide">
-                                    {event.date}
-                                  </time>
-                                  <Calendar className="h-6 w-6 text-black" />
-                                </>
-                              ) : (
-                                <>
-                                  <Calendar className="h-6 w-6 text-black mr-3" />
-                                  <time className="text-lg font-black text-black uppercase tracking-wide">
-                                    {event.date}
-                                  </time>
-                                </>
-                              )}
+                            <div className="flex items-center justify-center mb-4 gap-3">
+                              <Calendar className="h-6 w-6 text-black" />
+                              <time className="text-lg font-black text-black uppercase tracking-wide">
+                                {event.date}
+                              </time>
                             </div>
                             
-                            <h3 className="text-2xl font-black text-black mb-4 leading-tight">
+                            <h3 className="text-2xl font-black text-black mb-4 leading-tight text-center">
                               🗳️ {event.title.toUpperCase()}
                             </h3>
                             
-                            <p className="text-black leading-relaxed font-semibold text-lg mb-4">
-                              {event.description}
-                            </p>
+                            
                             {(event.diasAntesYDespuesDeLaVotacion ||
                               event.fechaDesde ||
                               event.fechaHasta ||
@@ -633,7 +611,7 @@ export default function AnimatedTimeline({ events }: AnimatedTimelineProps) {
                             
                             {/* Elementos adicionales para el día especial */}
                             <div className="bg-gray-100 rounded-xl p-4 mb-4 border border-gray-200">
-                              <div className="flex items-center justify-between">
+                              <div className="flex items-center justify-center">
                                 <span className="text-sm font-bold text-black uppercase tracking-wide">
                                   ¡Tu voto es tu voz! 📢
                                 </span>
@@ -641,26 +619,24 @@ export default function AnimatedTimeline({ events }: AnimatedTimelineProps) {
                               </div>
                             </div>
                             
-                            <div className={`flex items-center ${isLeft ? 'justify-end' : 'justify-start'}`}>
-                              {isLeft ? (
-                                <>
-                                  <span className="text-sm font-black text-black uppercase mr-3">
-                                    ¡EL MOMENTO ES AHORA!
-                                  </span>
-                                </>
-                              ) : (
-                                <>
-                                  <span className="text-sm font-black text-black uppercase">
-                                    ¡EL MOMENTO ES AHORA!
-                                  </span>
-                                </>
-                              )}
+                            <div className="flex items-center justify-center">
+                              <span className="text-sm font-black text-black uppercase">
+                                ¡EL MOMENTO ES AHORA!
+                              </span>
                             </div>
                           </CardContent>
                         </Card>
                       </div>
-                    ) : (
-                      // Diseño normal para otros eventos
+                    </div>
+                  ) : (
+                    <div className={`
+                      w-80 absolute z-10
+                      ${isLeft 
+                        ? 'right-1/2 mr-24 text-right' 
+                        : 'left-1/2 ml-24 text-left'
+                      }
+                    `}>
+                      
                       <Card 
                         className={`
                           ${colors.bg} ${colors.border} border-2 
@@ -695,9 +671,7 @@ export default function AnimatedTimeline({ events }: AnimatedTimelineProps) {
                           <h3 className="text-xl font-bold text-gray-800 mb-3 group-hover:text-gray-900 transition-colors">
                             {event.title}
                           </h3>
-                          <p className="text-gray-700 leading-relaxed">
-                            {event.description}
-                          </p>
+                          
                           {(event.diasAntesYDespuesDeLaVotacion ||
                             event.fechaDesde ||
                             event.fechaHasta ||
@@ -777,8 +751,8 @@ export default function AnimatedTimeline({ events }: AnimatedTimelineProps) {
                           </div>
                         </CardContent>
                       </Card>
-                    )}
-                  </div>
+                    </div>
+                  )}
                 </div>
               </div>
             )
