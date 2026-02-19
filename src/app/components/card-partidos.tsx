@@ -22,7 +22,7 @@ const partidosFinalistasSegundaVuelta = [
   {
     id: "pdc",
     sigla: "PDC",
-    nombre: "Partido Demócrata Cristiano",
+    nombre: "Partido Demócrata Cristianos de Bolivia",
     imagenes: {
       logo: "/binomios/pdc/logo.png"
     },
