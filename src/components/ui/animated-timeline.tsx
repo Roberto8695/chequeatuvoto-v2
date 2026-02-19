@@ -87,19 +87,36 @@ export default function AnimatedTimeline({ events }: AnimatedTimelineProps) {
   const getEventStatus = (index: number) => {
     const eventDateStr = events[index].date
     
-    // Función para convertir fecha en formato "dd de mes" a Date object
+    // Función para convertir fecha en formato "dd de mes" o "dd de mes de YYYY" a Date object
     const parseEventDate = (dateStr: string): Date => {
-      const currentYear = 2025
       const months: { [key: string]: number } = {
         'enero': 0, 'febrero': 1, 'marzo': 2, 'abril': 3,
         'mayo': 4, 'junio': 5, 'julio': 6, 'agosto': 7,
         'septiembre': 8, 'octubre': 9, 'noviembre': 10, 'diciembre': 11
       }
       
-      // Extraer día y mes del string (ej: "31 de agosto", "19 de octubre")
-      const match = dateStr.match(/(\d+) de (\w+)/)
+      // Primero intentar con formato completo "dd de mes de YYYY"
+      let match = dateStr.match(/(\d+) de (\w+) de (\d{4})/)
+      let year = 2026 // Año por defecto para elecciones subnacionales
+      
+      if (match) {
+        // Si encuentra el patrón con año
+        const day = parseInt(match[1])
+        const monthName = match[2].toLowerCase()
+        year = parseInt(match[3])
+        const month = months[monthName]
+        
+        if (month === undefined) {
+          console.warn(`Mes no reconocido: ${monthName}`)
+          return new Date()
+        }
+        
+        return new Date(year, month, day)
+      }
+      
+      // Si no, intentar formato sin año "dd de mes"
+      match = dateStr.match(/(\d+) de (\w+)/)
       if (!match) {
-        // Si no encuentra el patrón, intenta con formato más flexible
         console.warn(`No se pudo parsear la fecha: ${dateStr}`)
         return new Date()
       }
@@ -113,7 +130,14 @@ export default function AnimatedTimeline({ events }: AnimatedTimelineProps) {
         return new Date()
       }
       
-      return new Date(currentYear, month, day)
+      // Para fechas sin año explícito, usar 2025 para nov-dic, 2026 para ene en adelante
+      if (month >= 10) { // noviembre, diciembre
+        year = 2025
+      } else {
+        year = 2026
+      }
+      
+      return new Date(year, month, day)
     }
 
     const eventDate = parseEventDate(eventDateStr)

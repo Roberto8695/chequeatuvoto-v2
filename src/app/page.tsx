@@ -116,7 +116,7 @@ const features = [
       
     ],
     myrisk: [
-      
+
       "Se niega a ser cuestionado por su pasado político o por denuncias de corrupción en su contra.",
 
       "Tiene procesos abiertos por denuncias de corrupción o malversación de fondos.",
@@ -198,6 +198,65 @@ const timelineEvents = [
     title: "Publicación de Medios Autorizados",
     description:
       "Publicación de la lista de medios habilitados para la difusión de propaganda electoral, por el Tribunal Supremo Electoral y tribunales electorales departamentales.",
+  },
+  {
+    date: "20 de febrero de 2026",
+    title: "Difusión de la propaganda electoral en medios de comunicación masivos",
+    description:
+      "",
+    diasAntesYDespuesDeLaVotacion: "30 días antes de la votación",
+    fechaDesde: "viernes, 20 de febrero de 2026",
+    fechaHasta: "miércoles, 18 de marzo de 2026",
+    duracion: "27 Días",
+    referenciaNormativa: "Ley N° 026. Art. 116 b).",
+  },
+  {
+    date: "1 de marzo de 2026",
+    title:
+      "Conformación de la directiva de mesas de sufragio y capacitación a Jurados Electorales",
+    description:
+      "",
+    diasAntesYDespuesDeLaVotacion: "21 días antes de la votación",
+    fechaDesde: "domingo, 1 de marzo de 2026",
+    fechaHasta: "domingo, 22 de marzo de 2026",
+    duracion: "22 Días",
+    referenciaNormativa: "Ley N° 018. Art. 56 Par. III",
+  },
+  {
+    date: "15 de marzo de 2026",
+    title:
+      "Publicación y difusión de mesas de sufragio (recintos y asientos electorales)",
+    description:
+      "",
+    diasAntesYDespuesDeLaVotacion: "7 días antes de la votación",
+    fechaDesde: "domingo, 15 de marzo de 2026",
+    fechaHasta: "domingo, 15 de marzo de 2026",
+    duracion: "1 Días",
+    referenciaNormativa: "Ley N° 018. Art. 38 Num. 13.",
+  },
+  {
+    date: "20 de marzo de 2026",
+    title:
+      "Prohibición a los medios de comunicación sobre difusión de contenidos",
+    description:
+      "",
+    diasAntesYDespuesDeLaVotacion: "2 días antes de la votación",
+    fechaDesde: "viernes, 20 de marzo de 2026",
+    fechaHasta: "domingo, 22 de marzo de 2026",
+    duracion: "3 Días",
+    referenciaNormativa: "Ley N° 026. Art. 122.",
+  },
+  {
+    date: "22 de marzo de 2026",
+    title:
+      "Elección de autoridades políticas departamentales, regionales y municipales 2026",
+    description:
+      "Elección de Autoridades Políticas Departamentales, Regionales y Municipales (Elecciones Subnacionales 2026).",
+    diasAntesYDespuesDeLaVotacion: "0 días antes de la votación",
+    fechaDesde: "domingo, 22 de marzo de 2026",
+    fechaHasta: "domingo, 22 de marzo de 2026",
+    duracion: "1 Días",
+    referenciaNormativa: "CPE. Art. 156 y Art. 166. Ley N° 026. Art. 94 - I.",
   },
 ];
 
