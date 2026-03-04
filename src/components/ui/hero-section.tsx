@@ -1,6 +1,7 @@
 "use client"
 
 import MapBolivia from "@/components/ui/map-bolivia"
+import ElectionCountdown from "@/components/ui/election-countdown"
 
 export default function HeroSection() {
   return (
@@ -46,24 +47,7 @@ export default function HeroSection() {
               </span>
             </div>
 
-            <div className="grid gap-4 sm:grid-cols-2">
-              <div className="rounded-2xl border border-slate-200/70 bg-white/80 p-4 shadow-lg shadow-slate-100">
-                <p className="text-lg font-semibold uppercase tracking-wide text-[#00cfaf]">
-                Participacion
-                </p>
-                <p className="mt-2 text-lg text-slate-600">
-                  Indicadores actualizados y tendencias regionales.
-                </p>
-              </div>
-              <div className="rounded-2xl border border-slate-200/70 bg-white/80 p-4 shadow-lg shadow-slate-100">
-                <p className="text-lg font-semibold uppercase tracking-wide text-[#de2488]">
-                Observacion
-                </p>
-                <p className="mt-2 text-lg text-slate-600">
-                  Transparencia, datos abiertos y seguimiento ciudadano.
-                </p>
-              </div>
-            </div>
+            <ElectionCountdown />
           </div>
 
           <div className="flex items-start justify-center lg:justify-end">

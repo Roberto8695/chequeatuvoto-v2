@@ -126,11 +126,13 @@ const MapBolivia = () => {
 			</svg>
 			<style jsx>{`
 				.map-root {
-					--map-fill: #8fd0ff;
-					--map-hover: #2f7ecf;
+					--map-fill: #c5e5ff;
+					--map-fill-highlight: #7ee8d8;
+					--map-hover: #de2488;
 					--map-stroke: #ffffff;
 					--map-label: #0b2b4a;
-					--map-muted: 0.35;
+					--map-label-highlight: #ffffff;
+					--map-muted: 0.4;
 				}
 
 				.map-svg {
@@ -142,27 +144,43 @@ const MapBolivia = () => {
 				.department {
 					fill: var(--map-fill);
 					stroke: var(--map-stroke);
-					stroke-width: 0.8;
-					transition: fill 160ms ease, opacity 160ms ease;
+					stroke-width: 1.2;
+					transition: fill 200ms ease, opacity 200ms ease, transform 200ms ease;
 					cursor: default;
 				}
 
 				.department--link {
 					cursor: pointer;
+					fill: var(--map-fill-highlight);
+					stroke-width: 1.8;
+					stroke: var(--map-stroke);
+					filter: drop-shadow(0 2px 4px rgba(0, 207, 175, 0.3));
 				}
 
 				.department--link:focus,
 				.department--link:focus-visible {
 					outline: none;
+					filter: drop-shadow(0 4px 8px rgba(0, 207, 175, 0.5));
 				}
 
 				.map-svg:hover .department {
 					opacity: var(--map-muted);
 				}
 
+				.map-svg:hover .department--link {
+					opacity: 0.85;
+				}
+
 				.map-svg .department:hover {
 					opacity: 1;
+				}
+
+				.map-svg .department--link:hover {
+					opacity: 1;
 					fill: var(--map-hover);
+					filter: drop-shadow(0 4px 12px rgba(222, 36, 136, 0.5));
+					transform: scale(1.02);
+					transform-origin: center;
 				}
 
 				.department-label {
@@ -174,10 +192,8 @@ const MapBolivia = () => {
 					stroke-width: 1;
 					stroke-opacity: 0.8;
 					pointer-events: none;
+					transition: fill 200ms ease;
 				}
-                .department-label:hover {
-                    fill: var(--map-hover);
-                }
 			`}</style>
 		</div>
 	);
