@@ -69,7 +69,7 @@ const features = [
 
     ],
     icon: Vote,
-    image: "/Nuevos/img2.webp",
+    image: "/images/1.jpg",
     color: "bg-blue-50",
   },
   {
@@ -147,7 +147,7 @@ const features = [
 
     ],
     icon: FileCheck,
-    image: "/Nuevos/img3.webp",
+    image: "/images/3.avif",
     color: "bg-purple-50",
   },
 ];
