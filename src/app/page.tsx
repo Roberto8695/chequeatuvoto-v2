@@ -1,11 +1,11 @@
-"use client";
+﻿"use client";
 
 import type React from "react";
 
 import { useState, useEffect } from "react";
 import { Vote, History, FileCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { CardCandidatos } from "./components/card-candidatos";
+
 import { CardPartidos } from "./components/card-partidos";
 import ContentFakeNews from "./components/content-fake";
 import AvoidSharingSection from "./components/avoid-sharing";
@@ -14,41 +14,85 @@ import HeroSection from "@/components/ui/hero-section";
 import FeaturesGrid from "@/components/ui/features-grid";
 import AnimatedTimeline from "@/components/ui/animated-timeline";
 import LoadingScreen from "@/components/ui/loading-screen";
+import CandidatosCochabamba from "@/components/ui/candidatos-cochabamba";
+import CandidatosSantaCruz from "@/components/ui/candidatos-santa-cruz";
+import CandidatosLaPaz from "@/components/ui/candidatos-la-paz";
 
 const features = [
   {
-    name: "¿Las promesas de los candidatos son factibles y están bien fundamentadas?",
+    name: "¿El candidato promete cosas que realmente puede cumplir?",
     description:
       "Es importante saber si los candidatos no están haciendo promesas vacías simplemente no factibles.",
     moreInfo:
       "Una ciudadanía informada fortalece la democracia. Es lógico que en una segunda vuelta electoral nos dejemos arrastrar por nuestras emociones, pero es muy importante analizar las propuestas para saber cómo gobernaría el próximo binomio en temas como la economía, la justicia y o la seguridad. Más allá de la propaganda, vale la pena evaluar los planes de gobierno.",
 
     risks: [
+
+      "Sé poco o nada sobre las propuestas de los candidatos.",
+
       "Me informo de las propuestas solo en redes sociales y solo de contenido que me hace sentir cómodo o cómoda.",
-      
+
       "Me quedo solo con lo que vi de los candidatos en las entrevistas y me niego a debatir.",
+
+      "Baso mis decisiones en superficialidades y no en propuestas concretas; me influye más un video gracioso o que alguien me caiga bien que las propuestas.",
+
+      "Apoyo propuestas sin preguntarme cómo se implementarían en la práctica.",
+
+      "Creo en promesas que ofrecen soluciones inmediatas a problemas complejos.",
+
+      "No comparo propuestas entre candidatos antes de tomar una decisión.",
+
     ],
     myrisk: [
-      "Su discurso está basado principalmente en el ataque a otro candidato, partido, ideología o gestión gubernamental.",
-      "Sus propuestas son inviables porque prometen demasiado y no saben cómo las ejecutarán.",
-      "Sus propuestas implican sólo la acción del nivel ejecutivo (presidente y vicepresidente) o necesitarán de otras instancias (Asamblea) para que puedan ejecutarlas.",
+
+      "Promete cielo, mar y tierra sin un sustento real.",
+
+      "No tiene propuestas o estas son mínimas, dedicándose mayormente a atacar a otros.",
+
+      "No explica con claridad cómo se llegará a cumplir lo que propone.",
+
+      "Se basa en datos cuestionables o falsos al momento de presentar sus propuestas.",
+
+      "Muestra desconocimiento sobre sus competencias, mezclando atribuciones del órgano central con las locales.",
+
+      "Cambia sus propuestas constantemente y estas no figuran en su plan de gobierno.",
+
+      "Demuestra que no sabe qué es lo que está escrito en su propio plan de gobierno.",
+
+      "Evita responder preguntas concretas sobre sus propuestas y recurre a generalidades.",
+
+      "Promete resultados inmediatos para problemas estructurales que son complejos.",
+
+      "Presenta un plan de gobierno que es excesivamente genérico.",
+
+      "Apela más a las emociones de la gente que a presentar soluciones concretas.",
+
     ],
     icon: Vote,
-    image: "/Nuevos/img2.webp",
+    image: "/images/1.jpg",
     color: "bg-blue-50",
   },
   {
-    name: "¿Comprendo cómo funciona la segunda vuelta electoral?",
+    name: "¿Comprendo en qué consisten las Elecciones Subnacionales?",
     description:
-      "Es la primera vez que Bolivia celebrará una segunda vuelta electoral.",
+      "Son elecciones en las que elegimos autoridades departamentales y municipales.",
     moreInfo:
-      "La segunda vuelta electoral se celebra en Bolivia si ninguno de los candidatos obtuvo más del 50% de los votos válidos emitidos en la primera vuelta; o un mínimo del 40% de los votos válidos emitidos, con una diferencia de al menos 10% en relación a la segunda candidatura más votada.",
+      "En estas elecciones se elige principalmente a gobernadores, alcaldes y asambleístas departamentales y concejales municipales. Cada uno cumple funciones distintas: Los gobernadores administran y gestionan el departamento; los alcaldes están a cargo de las alcadías  y los asambleístas y concejales fiscalizan, deliberan y aprueban normas en sus respectivos niveles. Por eso es importante entender qué hace cada cargo antes de evaluar las propuestas.",
 
     risks: [
-      "Pienso que se trata de nuevas elecciones, cuyos resultados cambiarán toda la estructura política.",
-      "No es importante volver a votar porque ya participé en las elecciones del 17 de agosto.",
-      "Pienso a menudo que mi voto no hará la diferencia.",
-      "Pienso que tengo que votar por alguien que solo solucione lo urgente.",
+      "Pienso que se trata de nuevas elecciones, cuyos resultados cambiarán toda la estructura política. No es importante volver a votar porque ya participé en las elecciones del 17 de agosto. Pienso a menudo que mi voto no hará la diferencia. Pienso que tengo que votar por alguien que solo solucione lo urgente.",
+
+      "Pienso que mi voto no hará la diferencia.",
+
+      "Me da igual quién gane y elijo mi voto al azar.",
+
+      "Solo voy a votar por evitar sanciones, sin haberme informado previamente.",
+
+      "Pienso de antemano que habrá fraude sin tener evidencia alguna de ello.",
+
+      "No comprendo mínimamente la diferencia entre los cargos que se van a elegir.",
+
+      "No verifico la información antes de compartir denuncias sobre el proceso electoral.",
     ],
     myrisk: [],
     icon: History,
@@ -56,99 +100,164 @@ const features = [
     color: "bg-amber-50",
   },
   {
-    name: "¿Conozco a los dos binomios presidenciales y sus historiales políticos?",
+    name: "¿Conozco las candidaturas?",
     description:
-      "Es imprescindible conocer a los candidatos de los dos frentes y sus historiales políticos.",
+      "En estas elecciones habrá numerosas candidaturas, es imprescindible conocer a quienes postulan y revisar sus antecedentes y trayectoria política.",
     moreInfo:
-      "Es importante conocer el historial político de los dos binomios que están habilitados para la segunda vuelta electoral. Saber si se trata de la primera vez que están en la arena política, si transitaron por otros partidos o si enfrentan denuncias de corrupción en gestiones anteriores ocupando cargos electivos.",
+      "Es importante conocer el historial político de los postulantes habilitados para las Elecciones Subnacioanles. Saber si se trata de la primera vez que están en la arena política, si transitaron por otros partidos o si enfrentan denuncias de corrupción en gestiones anteriores ocupando cargos electivos.",
     risks: [
-      "Solo conozco a los candidatos por lo que he leído o visto en las redes sociales.",
-      "He hecho seguimiento a mi binomio favorito, lo demás no me importa.",
+      "No conozco realmente a los candidatos que se postulan.",
+
+      "Conozco a los candidatos únicamente por lo que he leído o visto en las redes sociales.",
+
+      "Hice seguimiento solo a mi candidato favorito y lo que digan los demás no me importa.",
+
+      "Doy por cierta cualquier información sobre un candidato sin contrastarla con otras fuentes.",
+
+      "Idealizo a un candidato y dejo de evaluar críticamente lo que propone.",
       
     ],
     myrisk: [
-      "Los candidatos se niegan a ser cuestionados por su pasado político o por denuncias de corrupción en su contra.",
-      "Algún candidato tiene procesos abiertos por denuncias de corrupción o malversación de fondos.",
-      "No tiene una identidad política, ha cambiado de partido en función a su conveniencia.",
+
+      "Se niega a ser cuestionado por su pasado político o por denuncias de corrupción en su contra.",
+
+      "Tiene procesos abiertos por denuncias de corrupción o malversación de fondos.",
+
+      "No tiene una identidad política definida y ha cambiado de partido solo por conveniencia.",
+
+      "Evita rendir cuentas sobre lo que hizo en su gestión pasada.",
+
+      "Cambia de partido con frecuencia sin explicar las razones reales de esos cambios.",
+
+      "Nunca asume sus propios errores, prefiriendo culpar a otros.",
+
+      "Cambia su discurso según el público al que se dirige para quedar bien con todos.",
+
+      "Utiliza discursos de odio o estigmatiza a determinados grupos de la sociedad.",
+
+      "Normaliza la violencia verbal o desacredita a la prensa cuando se siente cuestionado.",
+
+      "Rodea su campaña de información falsa o manipulada y no se molesta en corregirla.",
+
+      "Incumple las normas de campaña o las reglas de financiamiento electoral.",
+
+      "Difunde desinformación sobre el proceso electoral sin presentar ninguna evidencia.",
+
+      "Pone en duda los resultados antes de que exista información oficial o pruebas verificables.",
+
     ],
     icon: FileCheck,
-    image: "/Nuevos/img3.webp",
+    image: "/images/3.avif",
     color: "bg-purple-50",
   },
 ];
 
 const timelineEvents = [
   {
-    date: "31 de agosto",
-    title: "Convocatoria a Segunda Vuelta",
+    date: "20 de noviembre de 2025",
+    title: "Convocatoria Electoral Subnacional",
     description:
-      "Convocatoria a Segunda Vuelta por el Tribunal Supremo Electoral.",
+      "Convocatoria a la Elección de Autoridades Políticas Departamentales, Regionales y Municipales (Elecciones Subnacionales 2026) por el Tribunal Supremo Electoral.",
   },
   {
-    date: "31 de agosto",
-    title: "Difusión o publicación de estudios",
+    date: "21 de noviembre de 2025",
+    title: "Registro de Entidades para Encuestas",
     description:
-      "Difusión o publicación de estudios de opinión en materia electoral (encuestas). (segunda vuelta).",
+      "Registro y habilitación de empresas, medios de comunicación, instituciones académicas y cualquier otra entidad que realice y/o difunda estudios de opinión en materia electoral (encuestas, boca de urna o conteos rápidos) ante los tribunales electorales departamentales.",
   },
   {
-    date: "31 de agosto",
-    title: "Difusión de propaganda electoral",
+    date: "4 de diciembre de 2025",
+    title: "Empadronamiento Biométrico Masivo",
     description:
-      "Difusión de propaganda electoral en actos públicos de campaña y en medios de comunicación. (segunda vuelta).",
+      "Inicio del proceso de empadronamiento biométrico masivo para las Elecciones Subnacionales 2026. Los ciudadanos podrán actualizar y registrar sus datos biométricos en los puntos habilitados.",
   },
   {
-    date: "3 de septiembre",
-    title: "Sorteo de ubicación de las franjas",
+    date: "12 de diciembre de 2025",
+    title: "Registro de Alianzas Políticas",
     description:
-      "Sorteo de ubicación de las franjas y aprobación del diseño de la papeleta de sufragio por el Tribunal Supremo Electoral. (segunda vuelta).",
+      "Solicitud de registro de alianzas políticas ante el Tribunal Supremo Electoral o los tribunales electorales departamentales para su participación en las Elecciones Subnacionales 2026.",
   },
   {
-    date: "19 de septiembre",
-    title: "Sorteo público para la selección de Jurados Electorales",
+    date: "17 de diciembre de 2025",
+    title: "Inscripción de Candidaturas",
     description:
-      "Sorteo público para la selección de Jurados Electorales de mesas de sufragio por los Tribunales Electorales Departamentales y por el Tribunal Supremo Electoral para las mesas de sufragio en el exterior. (segunda vuelta).",
+      "Inscripción de candidaturas de las organizaciones políticas y alianzas, y presentación de documentos habilitantes ante los tribunales electorales departamentales.",
   },
   {
-    date: "20 de septiembre",
-    title: "Notificación a los jurados",
+    date: "21 de diciembre de 2025",
+    title: "Publicación de Entidades Habilitadas",
     description:
-      "Notificación a los jurados de mesa de sufragio designados por los Tribunales Electorales Departamentales para voto nacional y notificación de jurados de las mesas de sufragio designados por el Tribunal Supremo Electoral para voto en el exterior. (segunda vuelta).",
+      "Publicación de la lista de empresas especializadas de opinión pública, medios de comunicación, instituciones académicas y cualquier otra entidad habilitada por los tribunales electorales departamentales para realizar estudios de opinión en materia electoral.",
   },
   {
-    date: "21 de septiembre",
-    title: "Publicación en medios de prensa escrita y portal web del OEP",
+    date: "9 de enero de 2026",
+    title: "Publicación de Candidaturas Habilitadas",
     description:
-      "Publicación en medios de prensa escrita y portal web del OEP de la nómina de los jurados de mesas de sufragio, por parte de los Tribunales Electorales Departamentales. Para el voto en el exterior, el Tribunal Supremo Electoral publicará la lista de jurados de mesa en el portal web del OEP. (segunda vuelta).",
+      "Publicación de la lista de candidaturas habilitadas de las organizaciones políticas y/o alianzas, por los tribunales electorales departamentales en el portal web oficial.",
   },
   {
-    date: "22 de septiembre",
-    title: "Presentación de excusas para el ejercicio",
+    date: "10 de febrero de 2026",
+    title: "Publicación de Medios Autorizados",
     description:
-      "Presentación de excusas para el ejercicio de la labor de jurados de mesas de sufragio ante los Tribunales Electorales Departamentales y ante los Representantes Notarios para voto en el exterior. (segunda vuelta).",
+      "Publicación de la lista de medios habilitados para la difusión de propaganda electoral, por el Tribunal Supremo Electoral y tribunales electorales departamentales.",
   },
   {
-    date: "29 de septiembre",
-    title: "Conformación de la directiva de mesas de sufragio",
-    description:
-      "Conformación de la directiva de mesas de sufragio y capacitación a Jurados Electorales. (segunda vuelta).",
+    date: "20 de febrero de 2026",
+    title: "Difusión de la propaganda electoral en medios de comunicación masivos",
+   
+ 
+    diasAntesYDespuesDeLaVotacion: "30 días antes de la votación",
+    fechaDesde: "viernes, 20 de febrero de 2026",
+    fechaHasta: "miércoles, 18 de marzo de 2026",
+    duracion: "27 Días",
+    referenciaNormativa: "Ley N° 026. Art. 116 b).",
   },
   {
-    date: "15 de octubre",
-    title: "Publicación del lugar donde se realizará el cómputo departamental",
-    description:
-      "Publicación del lugar donde se realizará el cómputo departamental (por los Tribunales Electorales Departamentales) y el cómputo del voto en el exterior (por el Tribunal Supremo Electoral) en el portal WEB del OEP. (segunda vuelta).",
+    date: "1 de marzo de 2026",
+    title:
+      "Conformación de la directiva de mesas de sufragio y capacitación a Jurados Electorales",
+   
+   
+    diasAntesYDespuesDeLaVotacion: "21 días antes de la votación",
+    fechaDesde: "domingo, 1 de marzo de 2026",
+    fechaHasta: "domingo, 22 de marzo de 2026",
+    duracion: "22 Días",
+    referenciaNormativa: "Ley N° 018. Art. 56 Par. III",
   },
   {
-    date: "17 de octubre",
-    title: "Prohibición a los medios de comunicación",
-    description:
-      "Prohibición a los medios de comunicación sobre la difusión de contenidos que puedan favorecer, perjudicar o dar trato preferencial a alguna organización política o candidatura; o difundir programas que puedan influir en las preferencias electorales",
+    date: "15 de marzo de 2026",
+    title:
+      "Publicación y difusión de mesas de sufragio (recintos y asientos electorales)",
+  
+   
+    diasAntesYDespuesDeLaVotacion: "7 días antes de la votación",
+    fechaDesde: "domingo, 15 de marzo de 2026",
+    fechaHasta: "domingo, 15 de marzo de 2026",
+    duracion: "1 Días",
+    referenciaNormativa: "Ley N° 018. Art. 38 Num. 13.",
   },
   {
-    date: "19 de octubre",
-    title: "Segunda vuelta",
-    description:
-      "Segunda vuelta presidencial en caso de que ningún candidato logre mayoría absoluta.",
+    date: "20 de marzo de 2026",
+    title:
+      "Prohibición a los medios de comunicación sobre difusión de contenidos",
+   
+    diasAntesYDespuesDeLaVotacion: "2 días antes de la votación",
+    fechaDesde: "viernes, 20 de marzo de 2026",
+    fechaHasta: "domingo, 22 de marzo de 2026",
+    duracion: "3 Días",
+    referenciaNormativa: "Ley N° 026. Art. 122.",
+  },
+  {
+    date: "22 de marzo de 2026",
+    title:
+      "Elección de autoridades políticas departamentales, regionales y municipales 2026",
+   
+  
+    diasAntesYDespuesDeLaVotacion: "0 días antes de la votación",
+    fechaDesde: "domingo, 22 de marzo de 2026",
+    fechaHasta: "domingo, 22 de marzo de 2026",
+    duracion: "1 Días",
+    referenciaNormativa: "CPE. Art. 156 y Art. 166. Ley N° 026. Art. 94 - I.",
   },
 ];
 
@@ -250,24 +359,23 @@ export default function Home() {
               <div className="mt-16">
                 <FeaturesGrid features={features} />
               </div>
+              <div id="timeline" className="mt-16 sm:mt-20">
+                <AnimatedTimeline events={timelineEvents} />
+              </div>
 
               
 
-              <div id="parties" className="mt-16 sm:mt-20">
-                <h2 className="text-3xl font-bold mb-6 text-center font-round">
-                 BINOMIOS QUE VAN A SEGUNDA
-                </h2>
-
-                <h3 className="text-base mb-6 text-center">
-                  Conoce a los candidatos finalistas que competirán en la
-                  segunda vuelta electoral del 19 de octubre
-                </h3>
-                <CardCandidatos />
+          
+              <div id="candidatos-cochabamba" className="mt-16 sm:mt-20">
+                <CandidatosCochabamba />
               </div>
 
-              {/* Sección de Partidos Políticos */}
-              <div id="political-parties" className="mt-32 sm:mt-20">
-                <CardPartidos />
+              <div id="candidatos-santa-cruz" className="mt-16 sm:mt-20">
+                <CandidatosSantaCruz />
+              </div>
+
+              <div id="candidatos-la-paz" className="mt-16 sm:mt-20">
+                <CandidatosLaPaz />
               </div>
 
               {/* Sección de Identificación de Noticias Falsas */}
@@ -306,3 +414,5 @@ export default function Home() {
     </>
   );
 }
+
+

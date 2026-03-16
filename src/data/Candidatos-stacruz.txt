@@ -1,0 +1,24 @@
+CANDIDATOS A LA GOBERNACION DE SANTA CRUZ
+Nro. 	candidato	cargo	unidad_territorial	nombre	departamento	partido
+1	CHI HYUN CHUNG	Gobernador	Departamento	Departamento de Santa Cruz	Santa Cruz	MOVIMIENTO TERCER SISTEMA
+2	GUIDO EDUARDO NAYAR PARADA	Gobernador	Departamento	Departamento de Santa Cruz	Santa Cruz	PRIMERO SANTA CRUZ
+3	JUAN PABLO VELASCO DALENCE	Gobernador	Departamento	Departamento de Santa Cruz	Santa Cruz	LIBERTAD Y REPÚBLICA
+4	JULIO CESAR TORREZ TAPIA	Gobernador	Departamento	Departamento de Santa Cruz	Santa Cruz	NUEVA GENERACIÓN PATRIÓTICA
+5	LUIS FERNANDO CAMACHO VACA	Gobernador	Departamento	Departamento de Santa Cruz	Santa Cruz	ALIANZA CREEMOS PATRIA
+6	MAURICIO QUEZADA MOSTAJO	Gobernador	Departamento	Departamento de Santa Cruz	Santa Cruz	PARTIDO DEMOCRATA CRISTIANO
+7	MIGUEL CADIMA CASTRO	Gobernador	Departamento	Departamento de Santa Cruz	Santa Cruz	ALIANZA TRABAJO, OBRAS, DESARROLLO INTEGRAL, OPORTUNIDADES Y SEGURIDAD
+8	OTTO ANDRES RITTER MENDEZ	Gobernador	Departamento	Departamento de Santa Cruz	Santa Cruz	SANTA CRUZ PARA TODOS
+9	VLADIMIR ARIEL PEÑA VIRHUEZ	Gobernador	Departamento	Departamento de Santa Cruz	Santa Cruz	FUERZA Y ESPERANZA
+		
+
+CANDIDATOS A LA ALCALDIA DE SANTA CRUZ				
+1	ALFREDO SOLARES GARRADO	Alcalde	Municipio	Santa Cruz de La Sierra	Santa Cruz	ALIANZA PATRIA UNIDOS
+2	ANGELICA SOSA ARREAZA	Alcalde	Municipio	Santa Cruz de La Sierra	Santa Cruz	SANTA CRUZ PARA TODOS
+3	CARLOS MANUEL SAAVEDRA SAAVEDRA	Alcalde	Municipio	Santa Cruz de La Sierra	Santa Cruz	V O S
+4	FELIX ENRIQUE OROS RIVERO	Alcalde	Municipio	Santa Cruz de La Sierra	Santa Cruz	MOVIMIENTO TERCER SISTEMA
+5	INGRID ROSARIO SCHAMISSEDDINE SOMOZA	Alcalde	Municipio	Santa Cruz de La Sierra	Santa Cruz	UNIÓN, DEMOCRACIA Y OPORTUNIDAD SOCIAL
+6	JOSE GARY AÑEZ SANCHEZ	Alcalde	Municipio	Santa Cruz de La Sierra	Santa Cruz	PRIMERO SANTA CRUZ
+7	ORLANDO PEÑA BALDERRAMA	Alcalde	Municipio	Santa Cruz de La Sierra	Santa Cruz	ALIANZA UNIDOS POR LOS PUEBLOS
+8	OSCAR VARGAS ORTIZ	Alcalde	Municipio	Santa Cruz de La Sierra	Santa Cruz	SEGURIDAD, ORDEN Y LIBERTAD
+9	SOO HYUN CHUNG	Alcalde	Municipio	Santa Cruz de La Sierra	Santa Cruz	FUERZA Y ESPERANZA
+10	VICENTE REMBERTO CUELLAR TELLEZ	Alcalde	Municipio	Santa Cruz de La Sierra	Santa Cruz	ALIANZA SOLIDARIA POPULAR

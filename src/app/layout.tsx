@@ -3,7 +3,6 @@ import { Lato, Baloo_2 } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
 import { ConditionalLayout } from "./components/ConditionalLayout";
-import FloatingPosesion from "./components/floating-posetion";
 
 const lato = Lato({
   variable: "--font-primary",
@@ -60,9 +59,6 @@ export default function RootLayout({
         />
         
         <ConditionalLayout>{children}</ConditionalLayout>
-        
-        {/* Botón flotante de posesión presidencial - visible en todas las páginas */}
-        <FloatingPosesion />
       </body>
     </html>
   );

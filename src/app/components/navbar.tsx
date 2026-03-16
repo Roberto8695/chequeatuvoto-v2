@@ -1,24 +1,40 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Menu, X } from "lucide-react"
+import { Menu, X, ChevronDown } from "lucide-react"
 
 const navItems = [
   { name: "Inicio", href: "/" },
-  
-  { name: "Candidaturas", href: "/#parties" },
-  { name: "Evaluación Técnica", href: "/analisis-comparativo" },
+  { name: "Calendario Electoral", href: "/#timeline" },
   { name: "Quienes somos", href: "/about" },
   { name: "TSE", href: "https://www.oep.org.bo/" },
 ]
 
+const departamentos = [
+  { name: "La Paz", href: "#" },
+  { name: "Cochabamba", href: "#" },
+  { name: "Santa Cruz", href: "#" },
+]
+
 export function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false)
+  const [isMobileDropdownOpen, setIsMobileDropdownOpen] = useState(false)
+  const dropdownRef = useRef<HTMLDivElement>(null)
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
+    setIsMobileDropdownOpen(false) // Cerrar dropdown móvil al cerrar menú
+  }
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen)
+  }
+
+  const toggleMobileDropdown = () => {
+    setIsMobileDropdownOpen(!isMobileDropdownOpen)
   }
 
   // Efecto para cerrar el menú con la tecla Escape
@@ -26,6 +42,10 @@ export function Navbar() {
     const handleEscapeKey = (event: KeyboardEvent) => {
       if (event.key === 'Escape' && isMenuOpen) {
         setIsMenuOpen(false)
+        setIsMobileDropdownOpen(false)
+      }
+      if (event.key === 'Escape' && isDropdownOpen) {
+        setIsDropdownOpen(false)
       }
     }
 
@@ -44,7 +64,24 @@ export function Navbar() {
       document.removeEventListener('keydown', handleEscapeKey)
       document.body.style.overflow = 'unset'
     }
-  }, [isMenuOpen])
+  }, [isMenuOpen, isDropdownOpen])
+
+  // Efecto para cerrar dropdown al hacer clic fuera
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsDropdownOpen(false)
+      }
+    }
+
+    if (isDropdownOpen) {
+      document.addEventListener('mousedown', handleClickOutside)
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
+  }, [isDropdownOpen])
 
   const handleLinkClick = (href: string) => {
     setIsMenuOpen(false);
@@ -91,7 +128,59 @@ export function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex md:items-center md:space-x-6">
-            {navItems.map((item) => (
+            {/* Primeros items: Inicio, Calendario Electoral */}
+            {navItems.slice(0, 2).map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className="text-base font-medium text-muted-foreground transition-colors hover:text-foreground"
+                onClick={() => handleLinkClick(item.href)}
+                target={item.href.startsWith('http') ? '_blank' : undefined}
+                rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+              >
+                {item.name}
+              </Link>
+            ))}
+            
+            {/* Dropdown de Candidaturas Subnacionales */}
+            <div className="relative" ref={dropdownRef}>
+              <button
+                onClick={toggleDropdown}
+                className="flex items-center gap-1 text-base font-medium text-muted-foreground transition-colors hover:text-foreground"
+              >
+                Candidaturas Subnacionales
+                <ChevronDown 
+                  className={`w-4 h-4 transition-transform duration-200 ${
+                    isDropdownOpen ? 'rotate-180' : ''
+                  }`}
+                />
+              </button>
+              
+              {/* Dropdown Menu */}
+              <div
+                className={`absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-background border border-border/40 transition-all duration-200 ${
+                  isDropdownOpen 
+                    ? 'opacity-100 visible translate-y-0' 
+                    : 'opacity-0 invisible -translate-y-2 pointer-events-none'
+                }`}
+              >
+                <div className="py-1">
+                  {departamentos.map((dept) => (
+                    <a
+                      key={dept.name}
+                      href={dept.href}
+                      className="block px-4 py-2 text-sm text-muted-foreground hover:bg-muted hover:text-foreground transition-colors"
+                      onClick={() => setIsDropdownOpen(false)}
+                    >
+                      {dept.name}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+            
+            {/* Últimos items: Quienes somos, TSE */}
+            {navItems.slice(2).map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
@@ -165,7 +254,8 @@ export function Navbar() {
           className="space-y-1 px-4 pb-6 pt-4 sm:px-6"
           onClick={(e) => e.stopPropagation()}
         >
-          {navItems.map((item, index) => (
+          {/* Primeros items: Inicio, Calendario Electoral */}
+          {navItems.slice(0, 2).map((item, index) => (
             <Link
               key={item.name}
               href={item.href}
@@ -185,18 +275,88 @@ export function Navbar() {
             </Link>
           ))}
           
+          {/* Candidaturas Subnacionales Dropdown - Mobile */}
+          <div
+            className={`transition-all duration-200 ease-in-out transform ${
+              isMenuOpen 
+                ? "translate-x-0 opacity-100" 
+                : "translate-x-4 opacity-0"
+            }`}
+            style={{
+              transitionDelay: isMenuOpen ? `${2 * 50}ms` : "0ms"
+            }}
+          >
+            <button
+              onClick={toggleMobileDropdown}
+              className="flex items-center justify-between w-full rounded-md px-3 py-3 text-base font-medium text-muted-foreground hover:bg-muted hover:text-foreground transition-all duration-200"
+            >
+              <span>Candidaturas Subnacionales</span>
+              <ChevronDown 
+                className={`w-4 h-4 transition-transform duration-200 ${
+                  isMobileDropdownOpen ? 'rotate-180' : ''
+                }`}
+              />
+            </button>
+            
+            {/* Submenu de departamentos */}
+            <div
+              className={`overflow-hidden transition-all duration-200 ${
+                isMobileDropdownOpen ? 'max-h-48 opacity-100' : 'max-h-0 opacity-0'
+              }`}
+            >
+              <div className="pl-6 space-y-1 mt-1">
+                {departamentos.map((dept) => (
+                  <a
+                    key={dept.name}
+                    href={dept.href}
+                    className="block rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground transition-colors"
+                    onClick={() => {
+                      setIsMenuOpen(false)
+                      setIsMobileDropdownOpen(false)
+                    }}
+                  >
+                    {dept.name}
+                  </a>
+                ))}
+              </div>
+            </div>
+          </div>
+          
+          {/* Últimos items: Quienes somos, TSE */}
+          {navItems.slice(2).map((item, index) => (
+            <Link
+              key={item.name}
+              href={item.href}
+              className={`block rounded-md px-3 py-3 text-base font-medium text-muted-foreground hover:bg-muted hover:text-foreground transition-all duration-200 ease-in-out transform ${
+                isMenuOpen 
+                  ? "translate-x-0 opacity-100" 
+                  : "translate-x-4 opacity-0"
+              }`}
+              style={{
+                transitionDelay: isMenuOpen ? `${(3 + index) * 50}ms` : "0ms"
+              }}
+              onClick={() => handleLinkClick(item.href)}
+              target={item.href.startsWith('http') ? '_blank' : undefined}
+              rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+            >
+              {item.name}
+            </Link>
+          ))}
+          
           {/* Cheki-Bot Button - Mobile */}
           <Link
-            href="#"
+            href="https://chekibot.chequeabolivia.bo/"
             className={`flex items-center gap-3 mt-4 px-4 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-full hover:from-purple-700 hover:to-blue-700 transition-all duration-300 shadow-lg transform ${
               isMenuOpen 
                 ? "translate-x-0 opacity-100" 
                 : "translate-x-4 opacity-0"
             }`}
             style={{
-              transitionDelay: isMenuOpen ? `${navItems.length * 50}ms` : "0ms"
+              transitionDelay: isMenuOpen ? `${5 * 50}ms` : "0ms"
             }}
             onClick={() => setIsMenuOpen(false)}
+            target="_blank"
+            rel="noopener noreferrer"
           >
             <Image
               src="/images/cheki.jpg"

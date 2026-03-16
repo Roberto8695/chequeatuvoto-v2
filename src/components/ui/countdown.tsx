@@ -57,8 +57,6 @@ export default function ElectionResults() {
           <div className="text-center">
             {/* Logo PDC */}
             
-
-           
             
             {/* Mensaje de victoria */}
             <div className="bg-gradient-to-r from-[#f83728]/20 via-white/50 to-[#005e4a]/20 backdrop-blur-sm rounded-xl p-6 md:p-4 border-2 border-[#f83728]/40 shadow-2xl mb-6">
@@ -75,10 +73,10 @@ export default function ElectionResults() {
                 <div className={`text-4xl md:text-5xl font-black text-[#f83728] drop-shadow-lg mb-2 transition-all duration-1000 ${
                   mounted ? 'transform scale-100 rotate-0' : 'transform scale-75 rotate-12'
                 } ${showConfetti ? 'animate-none' : ''}`}>
-                  54.96%
+                  54.97%
                 </div>
                 <div className="absolute inset-0 text-4xl md:text-5xl font-black text-[#005e4a] opacity-20 blur-sm">
-                  54.96%
+                  54.97%
                 </div>
                 {/* Efecto de brillo cuando hay confeti */}
                 {showConfetti && (

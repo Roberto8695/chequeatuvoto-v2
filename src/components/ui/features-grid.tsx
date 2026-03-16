@@ -239,7 +239,7 @@ export default function FeaturesGrid({ features }: FeaturesGridProps) {
                   <Flag className="h-5 w-5 sm:h-6 sm:w-6 mr-2 flex-shrink-0 mt-0.5 sm:mt-0" />
                 )}
                 <h2 className="text-base sm:text-xl font-bold leading-tight">
-                  {expandedModal.type === 'info' ? 'Información Detallada' : 'Red Flags - Señales de Alerta'}
+                  {expandedModal.type === 'info' ? 'Información Detallada' : '¿Qué son red flags electorales?'}
                 </h2>
               </div>
               <h3 className="text-sm sm:text-base opacity-90 font-medium leading-tight break-words pl-7 sm:pl-8">
@@ -254,7 +254,11 @@ export default function FeaturesGrid({ features }: FeaturesGridProps) {
                   </p>
                 </div>
               ) : (
-                <div className="grid md:grid-cols-2 gap-4">
+                <div className="space-y-4">
+                  <p className="text-gray-700 leading-relaxed text-sm sm:text-base break-words px-1">
+                    Son señales de alerta que pueden invitarte a cuestionar a las candidaturas o incluso a uno mismo. Sirven para prestar más atención antes de que tomes la decisión sobre quién votar.
+                  </p>
+                  <div className="grid md:grid-cols-2 gap-4">
                   {/* Mis Red Flags */}
                   <div>
                     <h4 className="text-lg sm:text-xl font-bold text-[#de2488] mb-2 sm:mb-3 flex items-center">
@@ -277,7 +281,7 @@ export default function FeaturesGrid({ features }: FeaturesGridProps) {
                   <div>
                     <h4 className="text-lg sm:text-xl font-bold text-[#00cfaf] mb-2 sm:mb-3 flex items-center">
                       <Flag className="h-4 w-4 sm:h-5 sm:w-5 mr-2 flex-shrink-0" />
-                      Red Flags de Candidatos
+                      Red Flags de los Candidatos
                     </h4>
                     <div className="bg-gradient-to-r from-[#00cfaf]/10 to-[#00cfaf]/5 border-l-4 border-[#00cfaf] p-3 sm:p-4 rounded-r-lg">
                       <ul className="space-y-2">
@@ -290,6 +294,7 @@ export default function FeaturesGrid({ features }: FeaturesGridProps) {
                       </ul>
                     </div>
                   </div>
+                </div>
                 </div>
               )}
             </div>            {/* Footer del modal */}
