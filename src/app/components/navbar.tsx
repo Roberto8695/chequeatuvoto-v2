@@ -13,9 +13,9 @@ const navItems = [
 ]
 
 const departamentos = [
-  { name: "La Paz", href: "#" },
-  { name: "Cochabamba", href: "#" },
-  { name: "Santa Cruz", href: "#" },
+  { name: "La Paz", href: "/candidaturas-subnacionales/la-paz" },
+  { name: "Cochabamba", href: "/candidaturas-subnacionales/cochabamba" },
+  { name: "Santa Cruz", href: "/candidaturas-subnacionales/santa-cruz" },
 ]
 
 export function Navbar() {
@@ -166,14 +166,17 @@ export function Navbar() {
               >
                 <div className="py-1">
                   {departamentos.map((dept) => (
-                    <a
+                    <Link
                       key={dept.name}
                       href={dept.href}
                       className="block px-4 py-2 text-sm text-muted-foreground hover:bg-muted hover:text-foreground transition-colors"
-                      onClick={() => setIsDropdownOpen(false)}
+                      onClick={() => {
+                        setIsDropdownOpen(false)
+                        setIsMenuOpen(false)
+                      }}
                     >
                       {dept.name}
-                    </a>
+                    </Link>
                   ))}
                 </div>
               </div>
@@ -306,7 +309,7 @@ export function Navbar() {
             >
               <div className="pl-6 space-y-1 mt-1">
                 {departamentos.map((dept) => (
-                  <a
+                  <Link
                     key={dept.name}
                     href={dept.href}
                     className="block rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground transition-colors"
@@ -316,7 +319,7 @@ export function Navbar() {
                     }}
                   >
                     {dept.name}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>

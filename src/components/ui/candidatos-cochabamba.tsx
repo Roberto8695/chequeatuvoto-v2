@@ -1,18 +1,35 @@
 "use client"
 
+import Image from "next/image"
+
 type Candidato = {
   nombre: string
   partido: string
+  imagen?: string
 }
 
 const candidatosAlcaldia: Candidato[] = [
   {
     nombre: "CARLOS ALFREDO ZAVALETA PANIAGUA",
-    partido: "ALIANZA UNIDOS POR LOS PUEBLOS"
+    partido: "ALIANZA UNIDOS POR LOS PUEBLOS",
+    imagen: "/candidaturas_c/cochabamba/alcaldia/CARLOS ALFREDO ZAVALETA PANIAGUA.webp"
   },
   {
     nombre: "FRANCISCO JAVIER BELLOTT MONTALVO",
-    partido: "SOLUCIONES CON TODOS"
+    partido: "SOLUCIONES CON TODOS",
+    imagen: "/candidaturas_c/cochabamba/alcaldia/FRANCISCO JAVIER BELLOTT MONTALVO.webp"
+  },
+  {
+    nombre: "CRISTIAN TASTACA AQUINO",
+    partido: "PARTIDO DEMOCRATA CRISTIANO"
+  },
+  {
+    nombre: "GIOVANN ARZABE GARCIA",
+    partido: "LIBRE"
+  },
+  {
+    nombre: "JHON GUALBERT MENDOZA GARCIA",
+    partido: "FRI"
   },
   {
     nombre: "JAIME ADUANA QUINTANA",
@@ -20,23 +37,28 @@ const candidatosAlcaldia: Candidato[] = [
   },
   {
     nombre: "JOSE CARLOS SANCHEZ VERAZAIN",
-    partido: "NUEVA GENERACION PATRIOTICA"
+    partido: "NUEVA GENERACION PATRIOTICA",
+    imagen: "/candidaturas_c/cochabamba/alcaldia/JOSE CARLOS SANCHEZ VERAZAIN.webp"
   },
   {
     nombre: "MANFRED ARMANDO ANTONIO REYES VILLA BACIGALUPI",
-    partido: "AUTONOMIA PARA BOLIVIA SUMATE"
+    partido: "AUTONOMIA PARA BOLIVIA SUMATE",
+    imagen: "/candidaturas_c/cochabamba/alcaldia/MANFRED ARMANDO ANTONIO REYES VILLA BACIGALUPI.webp"
   },
   {
     nombre: "RAMON OSCAR DAZA SALAMANCA",
-    partido: "ALIANZA PATRIA UNIDOS"
+    partido: "ALIANZA PATRIA UNIDOS",
+    imagen: "/candidaturas_c/cochabamba/alcaldia/RAMON OSCAR DAZA SALAMANCA.webp"
   },
   {
     nombre: "ROCIO ALEJANDRA MOLINA TRAVESI",
-    partido: "UNIDOS"
+    partido: "UNIDOS",
+    imagen: "/candidaturas_c/cochabamba/alcaldia/ROCIO ALEJANDRA MOLINA TRAVESI.webp"
   },
   {
     nombre: "RONALD ANTONIO UNZUETA QUIROGA",
-    partido: "MOVIMIENTO TERCER SISTEMA"
+    partido: "MOVIMIENTO TERCER SISTEMA",
+    imagen: "/candidaturas_c/cochabamba/alcaldia/RONALD ANTONIO UNZUETA QUIROGA.webp"
   }
 ]
 
@@ -48,6 +70,10 @@ const candidatosGobernacion: Candidato[] = [
   {
     nombre: "ESTHER SORIA GONZALES",
     partido: "UNIDOS"
+  },
+  {
+    nombre: "JHON ARIEL RIOJA GUZMAN",
+    partido: "NGP"
   },
   {
     nombre: "JUAN ROBERTH FLORES ENCINAS",
@@ -97,6 +123,16 @@ export default function CandidatosCochabamba() {
                 key={candidato.nombre}
                 className="rounded-xl border border-[#bfe3ff] bg-[#e9f6ff] p-4 shadow-sm transition-transform duration-300 hover:-translate-y-1"
               >
+                <div className="relative mb-3 h-44 w-full overflow-hidden rounded-lg border border-[#bfe3ff] bg-white">
+                  {candidato.imagen ? (
+                    <Image
+                      src={candidato.imagen}
+                      alt={candidato.nombre}
+                      fill
+                      className="object-contain p-1"
+                    />
+                  ) : null}
+                </div>
                 <h4 className="text-sm font-bold text-black uppercase leading-snug">
                   {candidato.nombre}
                 </h4>
@@ -118,6 +154,14 @@ export default function CandidatosCochabamba() {
                 key={candidato.nombre}
                 className="rounded-xl border border-[#bfe3ff] bg-[#e9f6ff] p-4 shadow-sm transition-transform duration-300 hover:-translate-y-1"
               >
+                <div className="relative mb-3 h-44 w-full overflow-hidden rounded-lg border border-[#bfe3ff] bg-white">
+                  <Image
+                    src={`/candidaturas_c/cochabamba/gorbernacion/${candidato.nombre}.webp`}
+                    alt={candidato.nombre}
+                    fill
+                    className="object-contain p-1"
+                  />
+                </div>
                 <h4 className="text-sm font-bold text-black uppercase leading-snug">
                   {candidato.nombre}
                 </h4>
