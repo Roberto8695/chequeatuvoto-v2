@@ -5,6 +5,7 @@ import Image from "next/image"
 type Candidato = {
   nombre: string
   partido: string
+  propuestas?: string
 }
 
 const candidatosGobernacion: Candidato[] = [
@@ -14,31 +15,38 @@ const candidatosGobernacion: Candidato[] = [
   },
   {
     nombre: "BRANKO GORAN MARINKOVIC JOVICEVIC",
-    partido: "MOVIMIENTO DEMOCRATA SOCIAL"
+    partido: "MOVIMIENTO DEMOCRATA SOCIAL",
+    propuestas: "https://santacruz.oep.org.bo/wp-content/uploads/2026/01/PG-DEMOCRATAS-DEPARTAMENTAL.pdf"
   },
   {
     nombre: "EDUARDO PEREIRA ALCOCER",
-    partido: "ALIANZA UNIDOS POR LOS PUEBLOS DEPARTAMENTAL SANTA CRUZ"
+    partido: "ALIANZA UNIDOS POR LOS PUEBLOS DEPARTAMENTAL SANTA CRUZ",
+    propuestas: "https://santacruz.oep.org.bo/wp-content/uploads/2026/01/PG-ALIANZA-UNIDOS-POR-LOS-PUEBLOS-DEPARTAMENTAL-SANTA-CRUZ.pdf"
   },
   {
     nombre: "GUIDO EDUARDO NAYAR PARADA",
-    partido: "PRIMERO SANTA CRUZ"
+    partido: "PRIMERO SANTA CRUZ",
+    propuestas: "https://santacruz.oep.org.bo/wp-content/uploads/2026/01/PG-DEPARTAMENTO-DE-SANTA-CRUZ-APS.pdf"
   },
   {
     nombre: "JUAN PABLO VELASCO DALENCE",
-    partido: "LIBERTAD Y REPUBLICA"
+    partido: "LIBERTAD Y REPUBLICA",
+    propuestas: "https://santacruz.oep.org.bo/wp-content/uploads/2025/12/PG-DEPARTAMENTO-DE-SANTA-CRUZ-LIBRE.pdf"
   },
   {
     nombre: "JULIO CESAR TORREZ TAPIA",
-    partido: "NUEVA GENERACION PATRIOTICA"
+    partido: "NUEVA GENERACION PATRIOTICA",
+    propuestas: "https://santacruz.oep.org.bo/wp-content/uploads/2025/12/PG-NGP-DEPARTAMENTAL-SANTA-CRUZ-.pdf"
   },
   {
     nombre: "LUIS FERNANDO CAMACHO VACA",
-    partido: "ALIANZA CREEMOS PATRIA"
+    partido: "ALIANZA CREEMOS PATRIA",
+    propuestas: "https://santacruz.oep.org.bo/wp-content/uploads/2026/01/PG-ALIANZA-CREEMOS-PATRIA-DEPARTAMENTO-DE-SANTA-CRUZ.pdf"
   },
   {
     nombre: "MAURICIO QUEZADA MOSTAJO",
-    partido: "PARTIDO DEMOCRATA CRISTIANO"
+    partido: "PARTIDO DEMOCRATA CRISTIANO",
+    propuestas: "https://santacruz.oep.org.bo/wp-content/uploads/2025/12/PG-PDC-DEPARTAMENTAL-SANTA-CRUZ.pdf"
   },
   {
     nombre: "MIGUEL CADIMA CASTRO",
@@ -46,7 +54,8 @@ const candidatosGobernacion: Candidato[] = [
   },
   {
     nombre: "OTTO ANDRES RITTER MENDEZ",
-    partido: "SANTA CRUZ PARA TODOS"
+    partido: "SANTA CRUZ PARA TODOS",
+    propuestas: "https://santacruz.oep.org.bo/wp-content/uploads/2026/01/PG-AC-SC-PARA-TODOS-DEPARTAMENTO-DE-SANTA-CRUZ.pdf"
   },
   {
     nombre: "VLADIMIR ARIEL PENA VIRHUEZ",
@@ -57,19 +66,23 @@ const candidatosGobernacion: Candidato[] = [
 const candidatosAlcaldia: Candidato[] = [
   {
     nombre: "ALFREDO SOLARES GARRADO",
-    partido: "ALIANZA PATRIA UNIDOS"
+    partido: "ALIANZA PATRIA UNIDOS",
+    propuestas: "https://santacruz.oep.org.bo/wp-content/uploads/2026/01/PG-ALIANZA-PATRIA-MUNICIPIO-DE-SANTA-CRUZ-DE-LA-SIERRA-.pdf"
   },
   {
     nombre: "ANGELICA SOSA ARREAZA",
-    partido: "SANTA CRUZ PARA TODOS"
+    partido: "SANTA CRUZ PARA TODOS",
+    propuestas: "https://santacruz.oep.org.bo/wp-content/uploads/2026/01/PG-AC-SC-PARA-TODOS-MUNI-DE-SANTA-CRUZ-DE-LA-SIERRA.pdf"
   },
   {
     nombre: "CARLOS ALBERTO SUBIRANA SUAREZ",
-    partido: "ALIANZA DEPARTAMENTAL TODOS"
+    partido: "ALIANZA DEPARTAMENTAL TODOS",
+    propuestas: "https://santacruz.oep.org.bo/wp-content/uploads/2026/01/PG-ALIANZA-DEPARTAMENTAL-TODOS.pdf"
   },
   {
     nombre: "CARLOS MANUEL SAAVEDRA SAAVEDRA",
-    partido: "V O S"
+    partido: "V O S",
+    propuestas: "https://santacruz.oep.org.bo/wp-content/uploads/2026/01/PG-MUNI-MUNICIPIO-DE-SANTA-CRUZ-DE-LA-SIERRA-VOS.pdf"
   },
   {
     nombre: "FELIX ENRIQUE OROS RIVERO",
@@ -77,11 +90,13 @@ const candidatosAlcaldia: Candidato[] = [
   },
   {
     nombre: "GOMER PADILLA JARO",
-    partido: "ALIANZA SOLIDARIA POPULAR"
+    partido: "ALIANZA SOLIDARIA POPULAR",
+    propuestas: "https://santacruz.oep.org.bo/wp-content/uploads/2026/01/ASIP-SANTA-CRUZ-DE-LA-SIERRA-PLAN-DE-GOBIERNO.pdf"
   },
   {
     nombre: "INGRID ROSARIO SCHAMISSEDDINE SOMOZA",
-    partido: "UNION, DEMOCRACIA Y OPORTUNIDAD SOCIAL"
+    partido: "UNION, DEMOCRACIA Y OPORTUNIDAD SOCIAL",
+    propuestas: "https://santacruz.oep.org.bo/wp-content/uploads/2026/01/PG-AGRUPACION-UNIDOS-MUNI-DE-SANTA-CRUZ-DE-LA-SIERRA-.pdf"
   },
   {
     nombre: "JOSE GARY ANEZ SANCHEZ",
@@ -93,23 +108,28 @@ const candidatosAlcaldia: Candidato[] = [
   },
   {
     nombre: "OSCAR VARGAS ORTIZ",
-    partido: "SEGURIDAD, ORDEN Y LIBERTAD"
+    partido: "SEGURIDAD, ORDEN Y LIBERTAD",
+    propuestas: "https://santacruz.oep.org.bo/wp-content/uploads/2026/01/PG-AGRUPACION-CIUDADANA-SOL-MUNI-DE-SANTA-CRUZ-DE-LA-SIERRA.pdf"
   },
   {
     nombre: "PAOLA LORENA CRONEMBOLD LANGUIDEY",
-    partido: "NGP MUNI DE SANTA CRUZ DE LA SIERRA"
+    partido: "NGP MUNI DE SANTA CRUZ DE LA SIERRA",
+    propuestas: "https://santacruz.oep.org.bo/wp-content/uploads/2025/12/PG-NGP-MUNI-DE-SANTA-CRUZ-DE-LA-SIERRA.pdf"
   },
   {
     nombre: "RAFAEL QUINTEROS MONTAÑO",
-    partido: "PDC"
+    partido: "PDC",
+    propuestas: "https://santacruz.oep.org.bo/wp-content/uploads/2025/12/PG-PDC-MUNI-DE-SANTA-CRUZ-DE-LA-SIERRA.pdf"
   },
   {
     nombre: "RUBEN FEDERICO MORON ENCINAS",
-    partido: "FRENTE DE UNIDAD NACIONAL"
+    partido: "FRENTE DE UNIDAD NACIONAL",
+    propuestas: "https://santacruz.oep.org.bo/wp-content/uploads/2025/12/PG-UN-MUNI-DE-SANTA-CRUZ-DE-LA-SIERRA-.pdf"
   },
   {
     nombre: "SOO HYUN CHUNG",
-    partido: "FUERZA Y ESPERANZA"
+    partido: "FUERZA Y ESPERANZA",
+    propuestas: "https://santacruz.oep.org.bo/wp-content/uploads/2026/01/PG-FUERZA-Y-ESPERANZA-MUNI-DE-SANTA-CRUZ-DE-LA-SIERRA.pdf"
   },
 ]
 
@@ -143,12 +163,24 @@ export default function CandidatosSantaCruz() {
                     className="object-contain p-1"
                   />
                 </div>
-                <h4 className="text-sm font-bold text-black uppercase leading-snug">
+                <h4 className="text-sm font-bold text-center text-black uppercase leading-snug">
                   {candidato.nombre}
                 </h4>
-                <p className="mt-3 text-sm font-medium text-gray-700">
+                <p className="mt-3 text-sm font-medium text-center text-gray-700">
                   {candidato.partido}
                 </p>
+                {candidato.propuestas && (
+                  <div className="mt-4 flex justify-center">
+                    <a
+                      href={candidato.propuestas}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center rounded-full bg-[#00cfaf] px-5 py-2 text-sm font-semibold text-white shadow-md transition-all hover:bg-[#00ab90] hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#00cfaf] focus:ring-offset-2"
+                    >
+                      Ver Propuestas
+                    </a>
+                  </div>
+                )}
               </article>
             ))}
           </div>
@@ -172,12 +204,24 @@ export default function CandidatosSantaCruz() {
                     className="object-contain p-1"
                   />
                 </div>
-                <h4 className="text-sm font-bold text-black uppercase leading-snug">
+                <h4 className="text-sm font-bold text-center text-black uppercase leading-snug">
                   {candidato.nombre}
                 </h4>
-                <p className="mt-3 text-sm font-medium text-gray-700">
+                <p className="mt-3 text-sm font-medium text-center text-gray-700">
                   {candidato.partido}
                 </p>
+                {candidato.propuestas && (
+                  <div className="mt-4 flex justify-center">
+                    <a
+                      href={candidato.propuestas}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center rounded-full bg-[#00cfaf] px-5 py-2 text-sm font-semibold text-white shadow-md transition-all hover:bg-[#00ab90] hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#00cfaf] focus:ring-offset-2"
+                    >
+                      Ver Propuestas
+                    </a>
+                  </div>
+                )}
               </article>
             ))}
           </div>

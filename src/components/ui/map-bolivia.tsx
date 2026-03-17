@@ -1,5 +1,6 @@
 	"use client"
 	
+import { useRouter } from "next/navigation";
 	
 const departments = [
 	{
@@ -61,19 +62,19 @@ const departments = [
 ];
 
 const targetSections: Record<string, string> = {
-	"La Paz": "candidatos-la-paz",
-	"Santa Cruz": "candidatos-santa-cruz",
-	"Cochabamba": "candidatos-cochabamba"
+	"La Paz": "/candidaturas-subnacionales/la-paz",
+	"Santa Cruz": "/candidaturas-subnacionales/santa-cruz",
+	"Cochabamba": "/candidaturas-subnacionales/cochabamba"
 };
 
 const MapBolivia = () => {
+	const router = useRouter();
+
 	const handleSelect = (departmentName: string) => {
-		const targetId = targetSections[departmentName];
-		if (!targetId) return;
-		const element = document.getElementById(targetId);
-		if (element) {
-			element.scrollIntoView({ behavior: "smooth", block: "start" });
-		}
+		const targetUrl = targetSections[departmentName];
+		if (!targetUrl) return;
+		
+		router.push(targetUrl);
 	};
 
 	return (

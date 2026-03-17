@@ -6,98 +6,118 @@ type Candidato = {
   nombre: string
   partido: string
   imagen?: string
+  propuestas?: string
 }
 
 const candidatosAlcaldia: Candidato[] = [
   {
     nombre: "CARLOS ALFREDO ZAVALETA PANIAGUA",
     partido: "ALIANZA UNIDOS POR LOS PUEBLOS",
-    imagen: "/candidaturas_c/cochabamba/alcaldia/CARLOS ALFREDO ZAVALETA PANIAGUA.webp"
+    imagen: "/candidaturas_c/cochabamba/alcaldia/CARLOS ALFREDO ZAVALETA PANIAGUA.webp",
+    propuestas: "https://cochabamba.oep.org.bo/wp-content/uploads/2025/12/PLAN-DE-GOBIERNO-ALIANZA-UNIDOS-POR-LOS-PUEBLOS.pdf"
   },
   {
     nombre: "FRANCISCO JAVIER BELLOTT MONTALVO",
     partido: "SOLUCIONES CON TODOS",
-    imagen: "/candidaturas_c/cochabamba/alcaldia/FRANCISCO JAVIER BELLOTT MONTALVO.webp"
+    imagen: "/candidaturas_c/cochabamba/alcaldia/FRANCISCO JAVIER BELLOTT MONTALVO.webp",
+    propuestas: "https://cochabamba.oep.org.bo/wp-content/uploads/2025/12/PROGRAMA-DE-GOBIERNO-SOLUCIONES-CON-TODOS.pdf"
   },
   {
     nombre: "CRISTIAN TASTACA AQUINO",
-    partido: "PARTIDO DEMOCRATA CRISTIANO"
+    partido: "PARTIDO DEMOCRATA CRISTIANO",
+    imagen: "/candidaturas_c/cochabamba/alcaldia/CRISTIAN TASTACA AQUINO.webp",
+    propuestas: "https://cochabamba.oep.org.bo/wp-content/uploads/2025/12/PROGRAMA-DE-GOBIERNO-PDC.pdf"
   },
   {
     nombre: "GIOVANN ARZABE GARCIA",
-    partido: "LIBRE"
+    partido: "LIBRE",
+    imagen: "/candidaturas_c/cochabamba/alcaldia/GIOVANN ARZABE GARCIA.webp",
+    propuestas: "https://cochabamba.oep.org.bo/wp-content/uploads/2025/12/PROGRAMAS-DE-GOBIERNO-LIBRE.pdf"
   },
   {
     nombre: "JHON GUALBERT MENDOZA GARCIA",
-    partido: "FRI"
+    partido: "FRI",
+    imagen: "/candidaturas_c/cochabamba/alcaldia/JHON GUALBERT MENDOZA GARCIA.webp",
+    propuestas: "https://cochabamba.oep.org.bo/wp-content/uploads/2026/01/PROGRAMA-DE-GOBIERNO-FRI.pdf"
   },
-  {
-    nombre: "JAIME ADUANA QUINTANA",
-    partido: "FRENTE AMPLIO PATRIOTICO"
-  },
+ 
   {
     nombre: "JOSE CARLOS SANCHEZ VERAZAIN",
     partido: "NUEVA GENERACION PATRIOTICA",
-    imagen: "/candidaturas_c/cochabamba/alcaldia/JOSE CARLOS SANCHEZ VERAZAIN.webp"
+    imagen: "/candidaturas_c/cochabamba/alcaldia/JOSE CARLOS SANCHEZ VERAZAIN.webp",
+    propuestas: "https://cochabamba.oep.org.bo/wp-content/uploads/2025/12/PROGRAMA-DE-GOBIERNO-NGP.pdf"
   },
   {
     nombre: "MANFRED ARMANDO ANTONIO REYES VILLA BACIGALUPI",
     partido: "AUTONOMIA PARA BOLIVIA SUMATE",
-    imagen: "/candidaturas_c/cochabamba/alcaldia/MANFRED ARMANDO ANTONIO REYES VILLA BACIGALUPI.webp"
+    imagen: "/candidaturas_c/cochabamba/alcaldia/MANFRED ARMANDO ANTONIO REYES VILLA BACIGALUPI.webp",
+    propuestas: "https://cochabamba.oep.org.bo/wp-content/uploads/2025/12/PROGRAMA-DE-GOBIERNO-SUMATE.pdf"
   },
   {
     nombre: "RAMON OSCAR DAZA SALAMANCA",
     partido: "ALIANZA PATRIA UNIDOS",
-    imagen: "/candidaturas_c/cochabamba/alcaldia/RAMON OSCAR DAZA SALAMANCA.webp"
+    imagen: "/candidaturas_c/cochabamba/alcaldia/RAMON OSCAR DAZA SALAMANCA.webp",
+    propuestas: "http://cochabamba.oep.org.bo/wp-content/uploads/2025/12/PROGRAMAS-DE-GOBIERNO-ALIANZA-PATRIA.pdf"
   },
   {
     nombre: "ROCIO ALEJANDRA MOLINA TRAVESI",
     partido: "UNIDOS",
-    imagen: "/candidaturas_c/cochabamba/alcaldia/ROCIO ALEJANDRA MOLINA TRAVESI.webp"
+    imagen: "/candidaturas_c/cochabamba/alcaldia/ROCIO ALEJANDRA MOLINA TRAVESI.webp",
+    propuestas: "https://cochabamba.oep.org.bo/wp-content/uploads/2025/12/PROGRAMA-DE-GOBIERNO-UNIDOS.pdf"
   },
   {
     nombre: "RONALD ANTONIO UNZUETA QUIROGA",
     partido: "MOVIMIENTO TERCER SISTEMA",
-    imagen: "/candidaturas_c/cochabamba/alcaldia/RONALD ANTONIO UNZUETA QUIROGA.webp"
+    imagen: "/candidaturas_c/cochabamba/alcaldia/RONALD ANTONIO UNZUETA QUIROGA.webp",
+    propuestas: "https://cochabamba.oep.org.bo/wp-content/uploads/2025/12/PROGRAMA-MOVIMIENTO-TERCER-SISTEMA.pdf"
   }
 ]
 
 const candidatosGobernacion: Candidato[] = [
   {
     nombre: "ALEJANDRO MOSTAJO RUEDA",
-    partido: "MOVIMIENTO TERCER SISTEMA"
+    partido: "MOVIMIENTO TERCER SISTEMA",
+    propuestas: "https://cochabamba.oep.org.bo/wp-content/uploads/2025/12/PROGRAMA-MOVIMIENTO-TERCER-SISTEMA.pdf"
   },
   {
     nombre: "ESTHER SORIA GONZALES",
-    partido: "UNIDOS"
+    partido: "UNIDOS",
+    propuestas: "https://cochabamba.oep.org.bo/wp-content/uploads/2025/12/PROGRAMA-DE-GOBIERNO-UNIDOS.pdf"
   },
   {
     nombre: "JHON ARIEL RIOJA GUZMAN",
-    partido: "NGP"
+    partido: "NGP",
+    propuestas: "https://cochabamba.oep.org.bo/wp-content/uploads/2025/12/PROGRAMA-DE-GOBIERNO-NGP.pdf"
   },
   {
     nombre: "JUAN ROBERTH FLORES ENCINAS",
-    partido: "LIBERTAD Y REPUBLICA"
+    partido: "LIBERTAD Y REPUBLICA",
+    propuestas: "https://cochabamba.oep.org.bo/wp-content/uploads/2025/12/PROGRAMAS-DE-GOBIERNO-LIBRE.pdf"
   },
   {
     nombre: "MARIO ENRIQUE SEVERICH BUSTAMANTE",
-    partido: "SOLUCIONES CON TODOS"
+    partido: "SOLUCIONES CON TODOS",
+    propuestas: "https://cochabamba.oep.org.bo/wp-content/uploads/2025/12/PROGRAMA-DE-GOBIERNO-SOLUCIONES-CON-TODOS.pdf"
   },
   {
     nombre: "RUTH ALINA PERALTA CALVIMONTES",
-    partido: "FRENTE REVOLUCIONARIO DE IZQUIERDA"
+    partido: "FRENTE REVOLUCIONARIO DE IZQUIERDA",
+    propuestas: "https://cochabamba.oep.org.bo/wp-content/uploads/2026/01/PROGRAMA-DE-GOBIERNO-FRI.pdf"
   },
   {
     nombre: "SERGIO OLIVER RODRIGUEZ MERCADO",
-    partido: "AUTONOMIA PARA BOLIVIA SUMATE"
+    partido: "AUTONOMIA PARA BOLIVIA SUMATE",
+    propuestas: "https://cochabamba.oep.org.bo/wp-content/uploads/2025/12/PROGRAMA-DE-GOBIERNO-SUMATE.pdf"
   },
   {
     nombre: "WILFREDO ROLANDO MORALES ZEBALLOS",
-    partido: "ALIANZA PATRIA UNIDOS"
+    partido: "ALIANZA PATRIA UNIDOS",
+    propuestas: "https://cochabamba.oep.org.bo/wp-content/uploads/2025/12/PROGRAMAS-DE-GOBIERNO-ALIANZA-PATRIA.pdf"
   },
   {
     nombre: "LEONARDO LOZA",
-    partido: "ALIANZA UNIDOS POR LOS PUEBLOS"
+    partido: "ALIANZA UNIDOS POR LOS PUEBLOS",
+    propuestas: "https://cochabamba.oep.org.bo/wp-content/uploads/2025/12/PLAN-DE-GOBIERNO-ALIANZA-UNIDOS-POR-LOS-PUEBLOS.pdf"
   }
 ]
 
@@ -133,12 +153,24 @@ export default function CandidatosCochabamba() {
                     />
                   ) : null}
                 </div>
-                <h4 className="text-sm font-bold text-black uppercase leading-snug">
+                <h4 className="text-sm text-center font-bold text-black uppercase leading-snug">
                   {candidato.nombre}
                 </h4>
-                <p className="mt-3 text-sm font-medium text-gray-700">
+                <p className="mt-3 text-sm font-medium text-center text-gray-700">
                   {candidato.partido}
                 </p>
+                {candidato.propuestas && (
+                  <div className="mt-4 flex justify-center">
+                    <a
+                      href={candidato.propuestas}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center rounded-full bg-[#00cfaf] px-5 py-2 text-sm font-semibold text-white shadow-md transition-all hover:bg-[#00ab90] hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#00cfaf] focus:ring-offset-2"
+                    >
+                      Ver Propuestas
+                    </a>
+                  </div>
+                )}
               </article>
             ))}
           </div>
@@ -162,12 +194,24 @@ export default function CandidatosCochabamba() {
                     className="object-contain p-1"
                   />
                 </div>
-                <h4 className="text-sm font-bold text-black uppercase leading-snug">
+                <h4 className="text-sm font-bold text-center text-black uppercase leading-snug">
                   {candidato.nombre}
                 </h4>
-                <p className="mt-3 text-sm font-medium text-gray-700">
+                <p className="mt-3 text-sm font-medium text-center text-gray-700">
                   {candidato.partido}
                 </p>
+                {candidato.propuestas && (
+                  <div className="mt-4 flex justify-center">
+                    <a
+                      href={candidato.propuestas}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center rounded-full bg-[#00cfaf] px-5 py-2 text-sm font-semibold text-white shadow-md transition-all hover:bg-[#00ab90] hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#00cfaf] focus:ring-offset-2"
+                    >
+                      Ver Propuestas
+                    </a>
+                  </div>
+                )}
               </article>
             ))}
           </div>

@@ -143,28 +143,32 @@ export function Navbar() {
             ))}
             
             {/* Dropdown de Candidaturas Subnacionales */}
-            <div className="relative" ref={dropdownRef}>
+            <div 
+              className="relative group" 
+              ref={dropdownRef}
+              onMouseEnter={() => setIsDropdownOpen(true)}
+              onMouseLeave={() => setIsDropdownOpen(false)}
+            >
               <button
+                // Removemos el onClick ya que al hacer click se seguirá abriendo/cerrando pero el hover manda para desktop
                 onClick={toggleDropdown}
-                className="flex items-center gap-1 text-base font-medium text-muted-foreground transition-colors hover:text-foreground"
+                className="flex items-center gap-1 text-base font-medium text-muted-foreground transition-colors hover:text-foreground py-2"
               >
                 Candidaturas Subnacionales
                 <ChevronDown 
-                  className={`w-4 h-4 transition-transform duration-200 ${
+                  className={`w-4 h-4 transition-transform duration-200 group-hover:rotate-180 ${
                     isDropdownOpen ? 'rotate-180' : ''
                   }`}
                 />
               </button>
               
-              {/* Dropdown Menu */}
+              {/* Dropdown Menu - invisible hitbox for bridging the gap */}
+              <div className="absolute top-full left-0 w-full h-2 bg-transparent" />
+              
               <div
-                className={`absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-background border border-border/40 transition-all duration-200 ${
-                  isDropdownOpen 
-                    ? 'opacity-100 visible translate-y-0' 
-                    : 'opacity-0 invisible -translate-y-2 pointer-events-none'
-                }`}
+                className={`absolute left-0 top-full pt-1 w-56 transition-all duration-300 transform opacity-0 invisible -translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 z-50`}
               >
-                <div className="py-1">
+                <div className="rounded-md shadow-lg bg-background border border-border/40 py-1">
                   {departamentos.map((dept) => (
                     <Link
                       key={dept.name}
