@@ -1,5 +1,7 @@
 "use client"
 
+import Image from "next/image"
+
 type Candidato = {
   nombre: string
   partido: string
@@ -27,12 +29,20 @@ const candidatosGobernacion: Candidato[] = [
     partido: "FRENTE REVOLUCIONARIO DE IZQUIERDA"
   },
   {
+    nombre: "FLAVIO EUDALDO MERLO MAYDANA",
+    partido: "SUMATE"
+  },
+  {
     nombre: "GERMAN ANTONIO RIVEROS PILCO",
     partido: "INNOVACION HUMANA"
   },
   {
     nombre: "INGVAR ELLEFSEN DOTZAUER",
     partido: "SOMOS LA PAZ"
+  },
+  {
+    nombre: "KURT EMMIL REINTSCH SAN MARTIN",
+    partido: "LIBRE"
   },
   {
     nombre: "LEOPOLDO RICHARD CHUI TORREZ",
@@ -57,6 +67,10 @@ const candidatosGobernacion: Candidato[] = [
   {
     nombre: "SANTOS QUISPE QUISPE",
     partido: "UNION POR EL CAMBIO"
+  },
+  {
+    nombre: "YOSMAR ESPEJO VELA",
+    partido: "SUMA POR EL BIEN COMUN"
   }
 ]
 
@@ -74,13 +88,14 @@ const candidatosAlcaldiaLaPaz: Candidato[] = [
     partido: "INNOVACION HUMANA"
   },
   {
+    nombre: "EYNAR IVAN VISCARRA ANAVI",
+    partido: "SUMA POR EL BIEN COMUN"
+  },
+  {
     nombre: "FERNANDO HENRRY VALENCIA AGUILERA",
     partido: "VAMOS INTEGRANDO EL DESARROLLO AUTONOMICO"
   },
-  {
-    nombre: "FRANCISCO XAVIER ITURRALDE TORRICO",
-    partido: "ALIANZA SOCIAL PATRIOTICA"
-  },
+  
   {
     nombre: "HERNAN IVAN ARIAS DURAN",
     partido: "SUMA POR EL BIEN COMUN"
@@ -102,12 +117,24 @@ const candidatosAlcaldiaLaPaz: Candidato[] = [
     partido: "MOVIMIENTO TERCER SISTEMA"
   },
   {
+    nombre: "FRANCISCO JAVIER TARQUI DE TORREZ",
+    partido: "SUMATE"
+  },
+  {
     nombre: "LUIS EDUARDO SILES PEREZ",
     partido: "UNION POR EL CAMBIO"
   },
   {
+    nombre: "MARIO SILVA COYA",
+    partido: "PARTIDO DEMOCRATA CRISTIANO GAM DE NUESTRA SENORA DE LA PAZ"
+  },
+  {
     nombre: "MIGUEL ANTONIO ROCA SANCHEZ",
     partido: "SOMOS LA PAZ"
+  },
+  {
+    nombre: "NESTOR YUJRA QUISPE",
+    partido: "PATRIA SOL"
   },
   {
     nombre: "OSCAR MANUEL SOGLIANO HELGUERO",
@@ -120,6 +147,10 @@ const candidatosAlcaldiaLaPaz: Candidato[] = [
   {
     nombre: "RICARDO ELOY CUEVAS VERA",
     partido: "MOVIMIENTO POR LA SOBERANIA"
+  },
+  {
+    nombre: "RURY DANIEL BALLADARES MOLINA",
+    partido: "TU ALCALDE DE CORAZON"
   },
   {
     nombre: "WALDO ALBARRACIN SANCHEZ",
@@ -208,6 +239,14 @@ export default function CandidatosLaPaz() {
                 key={candidato.nombre}
                 className="rounded-xl border border-[#ffe4a6] bg-[#fff6d5] p-4 shadow-sm transition-transform duration-300 hover:-translate-y-1"
               >
+                <div className="relative mb-3 h-44 w-full overflow-hidden rounded-lg border border-[#ffe4a6] bg-white">
+                  <Image
+                    src={`/candidaturas_c/la_paz/gorbernacion/${candidato.nombre}.webp`}
+                    alt={candidato.nombre}
+                    fill
+                    className="object-contain p-1"
+                  />
+                </div>
                 <h4 className="text-sm font-bold text-black uppercase leading-snug">
                   {candidato.nombre}
                 </h4>
@@ -229,6 +268,14 @@ export default function CandidatosLaPaz() {
                 key={candidato.nombre}
                 className="rounded-xl border border-[#ffe4a6] bg-[#fff6d5] p-4 shadow-sm transition-transform duration-300 hover:-translate-y-1"
               >
+                <div className="relative mb-3 h-44 w-full overflow-hidden rounded-lg border border-[#ffe4a6] bg-white">
+                  <Image
+                    src={`/candidaturas_c/la_paz/alcaldia/${candidato.nombre}.webp`}
+                    alt={candidato.nombre}
+                    fill
+                    className="object-contain p-1"
+                  />
+                </div>
                 <h4 className="text-sm font-bold text-black uppercase leading-snug">
                   {candidato.nombre}
                 </h4>
@@ -250,6 +297,14 @@ export default function CandidatosLaPaz() {
                 key={candidato.nombre}
                 className="rounded-xl border border-[#ffe4a6] bg-[#fff6d5] p-4 shadow-sm transition-transform duration-300 hover:-translate-y-1"
               >
+                <div className="relative mb-3 h-44 w-full overflow-hidden rounded-lg border border-[#ffe4a6] bg-white">
+                  <Image
+                    src={`/candidaturas_c/la_paz/alcaldia/${candidato.nombre}.webp`}
+                    alt={candidato.nombre}
+                    fill
+                    className="object-contain p-1"
+                  />
+                </div>
                 <h4 className="text-sm font-bold text-black uppercase leading-snug">
                   {candidato.nombre}
                 </h4>

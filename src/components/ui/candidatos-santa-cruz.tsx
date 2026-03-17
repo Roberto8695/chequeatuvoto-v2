@@ -1,5 +1,7 @@
 "use client"
 
+import Image from "next/image"
+
 type Candidato = {
   nombre: string
   partido: string
@@ -9,6 +11,14 @@ const candidatosGobernacion: Candidato[] = [
   {
     nombre: "CHI HYUN CHUNG",
     partido: "MOVIMIENTO TERCER SISTEMA"
+  },
+  {
+    nombre: "BRANKO GORAN MARINKOVIC JOVICEVIC",
+    partido: "MOVIMIENTO DEMOCRATA SOCIAL"
+  },
+  {
+    nombre: "EDUARDO PEREIRA ALCOCER",
+    partido: "ALIANZA UNIDOS POR LOS PUEBLOS DEPARTAMENTAL SANTA CRUZ"
   },
   {
     nombre: "GUIDO EDUARDO NAYAR PARADA",
@@ -54,12 +64,20 @@ const candidatosAlcaldia: Candidato[] = [
     partido: "SANTA CRUZ PARA TODOS"
   },
   {
+    nombre: "CARLOS ALBERTO SUBIRANA SUAREZ",
+    partido: "ALIANZA DEPARTAMENTAL TODOS"
+  },
+  {
     nombre: "CARLOS MANUEL SAAVEDRA SAAVEDRA",
     partido: "V O S"
   },
   {
     nombre: "FELIX ENRIQUE OROS RIVERO",
     partido: "MOVIMIENTO TERCER SISTEMA"
+  },
+  {
+    nombre: "GOMER PADILLA JARO",
+    partido: "ALIANZA SOLIDARIA POPULAR"
   },
   {
     nombre: "INGRID ROSARIO SCHAMISSEDDINE SOMOZA",
@@ -78,13 +96,21 @@ const candidatosAlcaldia: Candidato[] = [
     partido: "SEGURIDAD, ORDEN Y LIBERTAD"
   },
   {
+    nombre: "PAOLA LORENA CRONEMBOLD LANGUIDEY",
+    partido: "NGP MUNI DE SANTA CRUZ DE LA SIERRA"
+  },
+  {
+    nombre: "RAFAEL QUINTEROS MONTAÑO",
+    partido: "PDC"
+  },
+  {
+    nombre: "RUBEN FEDERICO MORON ENCINAS",
+    partido: "FRENTE DE UNIDAD NACIONAL"
+  },
+  {
     nombre: "SOO HYUN CHUNG",
     partido: "FUERZA Y ESPERANZA"
   },
-  {
-    nombre: "VICENTE REMBERTO CUELLAR TELLEZ",
-    partido: "ALIANZA SOLIDARIA POPULAR"
-  }
 ]
 
 export default function CandidatosSantaCruz() {
@@ -109,6 +135,14 @@ export default function CandidatosSantaCruz() {
                 key={candidato.nombre}
                 className="rounded-xl border border-[#bdecd3] bg-[#e7fbf1] p-4 shadow-sm transition-transform duration-300 hover:-translate-y-1"
               >
+                <div className="relative mb-3 h-44 w-full overflow-hidden rounded-lg border border-[#bdecd3] bg-white">
+                  <Image
+                    src={`/candidaturas_c/santa cruz/gorbernacion/${candidato.nombre}.webp`}
+                    alt={candidato.nombre}
+                    fill
+                    className="object-contain p-1"
+                  />
+                </div>
                 <h4 className="text-sm font-bold text-black uppercase leading-snug">
                   {candidato.nombre}
                 </h4>
@@ -130,6 +164,14 @@ export default function CandidatosSantaCruz() {
                 key={candidato.nombre}
                 className="rounded-xl border border-[#bdecd3] bg-[#e7fbf1] p-4 shadow-sm transition-transform duration-300 hover:-translate-y-1"
               >
+                <div className="relative mb-3 h-44 w-full overflow-hidden rounded-lg border border-[#bdecd3] bg-white">
+                  <Image
+                    src={`/candidaturas_c/santa cruz/alcaldia/${candidato.nombre}.webp`}
+                    alt={candidato.nombre}
+                    fill
+                    className="object-contain p-1"
+                  />
+                </div>
                 <h4 className="text-sm font-bold text-black uppercase leading-snug">
                   {candidato.nombre}
                 </h4>

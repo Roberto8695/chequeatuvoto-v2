@@ -14,9 +14,6 @@ import HeroSection from "@/components/ui/hero-section";
 import FeaturesGrid from "@/components/ui/features-grid";
 import AnimatedTimeline from "@/components/ui/animated-timeline";
 import LoadingScreen from "@/components/ui/loading-screen";
-import CandidatosCochabamba from "@/components/ui/candidatos-cochabamba";
-import CandidatosSantaCruz from "@/components/ui/candidatos-santa-cruz";
-import CandidatosLaPaz from "@/components/ui/candidatos-la-paz";
 
 const features = [
   {
@@ -361,21 +358,6 @@ export default function Home() {
               </div>
               <div id="timeline" className="mt-16 sm:mt-20">
                 <AnimatedTimeline events={timelineEvents} />
-              </div>
-
-              
-
-          
-              <div id="candidatos-cochabamba" className="mt-16 sm:mt-20">
-                <CandidatosCochabamba />
-              </div>
-
-              <div id="candidatos-santa-cruz" className="mt-16 sm:mt-20">
-                <CandidatosSantaCruz />
-              </div>
-
-              <div id="candidatos-la-paz" className="mt-16 sm:mt-20">
-                <CandidatosLaPaz />
               </div>
 
               {/* Sección de Identificación de Noticias Falsas */}
