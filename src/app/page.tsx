@@ -151,108 +151,52 @@ const features = [
 
 const timelineEvents = [
   {
-    date: "20 de noviembre de 2025",
-    title: "Convocatoria Electoral Subnacional",
+    date: "30 de marzo de 2026",
+    title: "Convocatoria a Segunda Vuelta",
     description:
-      "Convocatoria a la Elección de Autoridades Políticas Departamentales, Regionales y Municipales (Elecciones Subnacionales 2026) por el Tribunal Supremo Electoral.",
+      "Convocatoria a Segunda Vuelta Electoral por el Tribunal Supremo Electoral.",
   },
   {
-    date: "21 de noviembre de 2025",
-    title: "Registro de Entidades para Encuestas",
+    date: " 31 de marzo de 2026",
+    title: "Sorteo público para la selección",
     description:
-      "Registro y habilitación de empresas, medios de comunicación, instituciones académicas y cualquier otra entidad que realice y/o difunda estudios de opinión en materia electoral (encuestas, boca de urna o conteos rápidos) ante los tribunales electorales departamentales.",
+      "Sorteo público para la selección de Jurados Electorales de mesas de sufragio por los Tribu- nales Electorales Departamentales.",
   },
   {
-    date: "4 de diciembre de 2025",
-    title: "Empadronamiento Biométrico Masivo",
+    date: "31 de marzo de 2026",
+    title: "Sorteo de ubicación de las franjas",
     description:
-      "Inicio del proceso de empadronamiento biométrico masivo para las Elecciones Subnacionales 2026. Los ciudadanos podrán actualizar y registrar sus datos biométricos en los puntos habilitados.",
+      "Sorteo de ubicación de las franjas y aprobación del diseño de la papeleta de sufragio por los Tribunales Electorales Departamentales",
   },
   {
-    date: "12 de diciembre de 2025",
-    title: "Registro de Alianzas Políticas",
+    date: " 31 de marzo de 2026",
+    title: "Difusión o publicación de estudios",
     description:
-      "Solicitud de registro de alianzas políticas ante el Tribunal Supremo Electoral o los tribunales electorales departamentales para su participación en las Elecciones Subnacionales 2026.",
+      "Difusión o publicación de estudios de opinión en materia electoral (encuestas).",
   },
   {
-    date: "17 de diciembre de 2025",
-    title: "Inscripción de Candidaturas",
+    date: "15 de abril de 2026",
+    title: "Publicación del lugar donde se realizará el cómputo departamental",
     description:
-      "Inscripción de candidaturas de las organizaciones políticas y alianzas, y presentación de documentos habilitantes ante los tribunales electorales departamentales.",
+      "Publicación del lugar donde se realizará el cómputo departamental, por los Tribunales Elec- torales Departamentales, en el portal WEB del OEP.",
   },
   {
-    date: "21 de diciembre de 2025",
-    title: "Publicación de Entidades Habilitadas",
+    date: "17 de abril de 2026",
+    title: "Prohibición a los medios de comunicación",
     description:
-      "Publicación de la lista de empresas especializadas de opinión pública, medios de comunicación, instituciones académicas y cualquier otra entidad habilitada por los tribunales electorales departamentales para realizar estudios de opinión en materia electoral.",
+      "Prohibición a los medios de comunicación sobre la difusión de contenidos que puedan fa- vorecer, perjudicar o dar trato preferencial a alguna organización política o candidatura; o difundir programas que puedan influir en las preferencias electorales.",
   },
-  {
-    date: "9 de enero de 2026",
-    title: "Publicación de Candidaturas Habilitadas",
-    description:
-      "Publicación de la lista de candidaturas habilitadas de las organizaciones políticas y/o alianzas, por los tribunales electorales departamentales en el portal web oficial.",
-  },
-  {
-    date: "10 de febrero de 2026",
-    title: "Publicación de Medios Autorizados",
-    description:
-      "Publicación de la lista de medios habilitados para la difusión de propaganda electoral, por el Tribunal Supremo Electoral y tribunales electorales departamentales.",
-  },
-  {
-    date: "20 de febrero de 2026",
-    title: "Difusión de la propaganda electoral en medios de comunicación masivos",
-   
- 
-    diasAntesYDespuesDeLaVotacion: "30 días antes de la votación",
-    fechaDesde: "viernes, 20 de febrero de 2026",
-    fechaHasta: "miércoles, 18 de marzo de 2026",
-    duracion: "27 Días",
-    referenciaNormativa: "Ley N° 026. Art. 116 b).",
-  },
-  {
-    date: "1 de marzo de 2026",
-    title:
-      "Conformación de la directiva de mesas de sufragio y capacitación a Jurados Electorales",
-   
-   
-    diasAntesYDespuesDeLaVotacion: "21 días antes de la votación",
-    fechaDesde: "domingo, 1 de marzo de 2026",
-    fechaHasta: "domingo, 22 de marzo de 2026",
-    duracion: "22 Días",
-    referenciaNormativa: "Ley N° 018. Art. 56 Par. III",
-  },
-  {
-    date: "15 de marzo de 2026",
-    title:
-      "Publicación y difusión de mesas de sufragio (recintos y asientos electorales)",
   
-   
-    diasAntesYDespuesDeLaVotacion: "7 días antes de la votación",
-    fechaDesde: "domingo, 15 de marzo de 2026",
-    fechaHasta: "domingo, 15 de marzo de 2026",
-    duracion: "1 Días",
-    referenciaNormativa: "Ley N° 018. Art. 38 Num. 13.",
-  },
+  
   {
-    date: "20 de marzo de 2026",
-    title:
-      "Prohibición a los medios de comunicación sobre difusión de contenidos",
-   
-    diasAntesYDespuesDeLaVotacion: "2 días antes de la votación",
-    fechaDesde: "viernes, 20 de marzo de 2026",
-    fechaHasta: "domingo, 22 de marzo de 2026",
-    duracion: "3 Días",
-    referenciaNormativa: "Ley N° 026. Art. 122.",
-  },
-  {
-    date: "22 de marzo de 2026",
+    date: "19 de abril de 2026",
     title:
       "Elección de autoridades políticas departamentales, regionales y municipales 2026",
    
   
     diasAntesYDespuesDeLaVotacion: "0 días antes de la votación",
-    fechaDesde: "domingo, 22 de marzo de 2026",
-    fechaHasta: "domingo, 22 de marzo de 2026",
+    fechaDesde: "domingo, 19 de abril de 2026",
+    fechaHasta: "domingo, 19 de abril de 2026",
     duracion: "1 Días",
     referenciaNormativa: "CPE. Art. 156 y Art. 166. Ley N° 026. Art. 94 - I.",
   },

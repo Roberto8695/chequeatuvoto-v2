@@ -164,7 +164,13 @@ export default function AnimatedTimeline({ events }: AnimatedTimelineProps) {
   }
 
   const isElectionDay = (index: number) => {
-    return events[index]?.date?.includes('22 de marzo') ?? false
+    const event = events[index]
+    if (!event) return false
+
+    const title = event.title?.toLowerCase() || ''
+    const voteDayFlag = event.diasAntesYDespuesDeLaVotacion?.toLowerCase() || ''
+
+    return title.includes('elección de autoridades políticas departamentales') || voteDayFlag.includes('0 días antes de la votación')
   }
 
   const getEventIcon = (status: string) => {

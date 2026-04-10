@@ -11,12 +11,17 @@ export default function ElectionCountdown() {
     seconds: 0
   })
   const [mounted, setMounted] = useState(false)
+  const isElectionDay =
+    timeLeft.days === 0 &&
+    timeLeft.hours === 0 &&
+    timeLeft.minutes === 0 &&
+    timeLeft.seconds === 0
 
   useEffect(() => {
     setMounted(true)
     
     const calculateTimeLeft = () => {
-      const targetDate = new Date('2026-03-22T00:00:00-04:00') // 22 de marzo 2026
+      const targetDate = new Date('2026-04-19T00:00:00-04:00') // 19 de abril 2026
       const now = new Date()
       const difference = targetDate.getTime() - now.getTime()
 
@@ -71,18 +76,35 @@ export default function ElectionCountdown() {
             </div>
             <div>
               <h3 className="text-[10px] sm:text-sm font-black text-[#de2488] uppercase tracking-wider">
-                Faltan para las elecciones
+                {isElectionDay ? "Hoy es el día de elecciones" : "Faltan para las elecciones"}
               </h3>
               <p className="text-[9px] sm:text-xs text-slate-600 font-semibold mt-0.5">
-                22 de Marzo, 2026
+                19 de Abril, 2026
               </p>
             </div>
           </div>
-          <div className="bg-gradient-to-br from-[#00cfaf] to-[#00cfaf]/70 p-2 sm:p-2.5 rounded-lg sm:rounded-xl shadow-lg animate-pulse">
+          <div className={`bg-gradient-to-br from-[#00cfaf] to-[#00cfaf]/70 p-2 sm:p-2.5 rounded-lg sm:rounded-xl shadow-lg ${isElectionDay ? "animate-bounce" : "animate-pulse"}`}>
             <Clock className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
           </div>
         </div>
 
+        {isElectionDay ? (
+          <div className="relative overflow-hidden rounded-2xl border-2 border-[#de2488]/30 bg-gradient-to-r from-[#de2488]/20 via-white to-[#00cfaf]/20 p-6 sm:p-8 text-center shadow-2xl animate-pulse">
+            <div className="absolute -top-8 -left-8 h-20 w-20 rounded-full bg-[#de2488]/20 blur-xl" />
+            <div className="absolute -bottom-8 -right-8 h-20 w-20 rounded-full bg-[#00cfaf]/20 blur-xl" />
+            <div className="relative z-10 flex items-center justify-center gap-2 sm:gap-3">
+              <Sparkles className="w-5 h-5 sm:w-6 sm:h-6 text-[#de2488] animate-spin" />
+              <p className="text-lg sm:text-2xl font-black uppercase tracking-wide bg-gradient-to-r from-[#9f185f] via-[#7a4b8a] to-[#007e6a] bg-clip-text text-transparent drop-shadow-[0_1px_1px_rgba(0,0,0,0.25)]">
+                Hoy es el día de elecciones
+              </p>
+              <Sparkles className="w-5 h-5 sm:w-6 sm:h-6 text-[#00cfaf] animate-spin" />
+            </div>
+            <p className="relative z-10 mt-3 text-xs sm:text-sm font-bold text-slate-900">
+              Tu voto informado fortalece la democracia.
+            </p>
+          </div>
+        ) : (
+          <>
         {/* Contador mejorado con efectos */}
         <div className="grid grid-cols-4 gap-2 sm:gap-4">
           {/* Días */}
@@ -164,6 +186,8 @@ export default function ElectionCountdown() {
           <span className="text-[10px] sm:text-xs font-semibold">Día de votación subnacional</span>
           <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#00cfaf]" />
         </div>
+          </>
+        )}
       </div>
     </div>
   )
