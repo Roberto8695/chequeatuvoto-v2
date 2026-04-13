@@ -62,9 +62,11 @@ const departments = [
 ];
 
 const targetSections: Record<string, string> = {
-	"La Paz": "/candidaturas-subnacionales/la-paz",
+	"El Beni": "/candidaturas-subnacionales/beni",
+	"Oruro": "/candidaturas-subnacionales/oruro",
+	"Tarija": "/candidaturas-subnacionales/tarija",
+	"Chuquisaca": "/candidaturas-subnacionales/chuquisaca",
 	"Santa Cruz": "/candidaturas-subnacionales/santa-cruz",
-	"Cochabamba": "/candidaturas-subnacionales/cochabamba"
 };
 
 const MapBolivia = () => {

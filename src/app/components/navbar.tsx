@@ -13,9 +13,11 @@ const navItems = [
 ]
 
 const departamentos = [
-  { name: "La Paz", href: "/candidaturas-subnacionales/la-paz" },
-  { name: "Cochabamba", href: "/candidaturas-subnacionales/cochabamba" },
   { name: "Santa Cruz", href: "/candidaturas-subnacionales/santa-cruz" },
+  { name: "Oruro", href: "/candidaturas-subnacionales/oruro" },
+  { name: "Tarija", href: "/candidaturas-subnacionales/tarija" },
+  { name: "Beni", href: "/candidaturas-subnacionales/beni" },
+  { name: "Chuquisaca", href: "/candidaturas-subnacionales/chuquisaca" },
 ]
 
 export function Navbar() {

@@ -64,7 +64,7 @@ function NotFound() {
       <div className="relative z-10 w-full max-w-4xl mx-auto flex flex-col justify-center items-center text-center h-full">
         {/* Logo de la aplicación - más compacto */}
         <div className="mb-6">
-          <div className="relative w-16 h-16 mx-auto mb-2">
+          <div className="relative w-56 h-56 mx-auto mb-2">
             <Image
               src="/logo3.svg"
               alt="Chequea tu voto"
@@ -143,49 +143,7 @@ function NotFound() {
             </Button>
           </div>
 
-          {/* Enlaces útiles - más compactos */}
-          <div className="pt-4 border-t border-gray-200">
-            <h3 className="text-base font-semibold text-gray-800 mb-3">
-              ¿Buscabas información sobre...?
-            </h3>
-            <div className="flex flex-wrap gap-2 justify-center mb-4">
-              <button
-                onClick={() => setTimeout(() => router.push('/#parties'), 0)}
-                className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full hover:bg-blue-200 transition-colors duration-200 text-xs font-medium"
-              >
-                Candidatos
-              </button>
-              <button
-                onClick={() => setTimeout(() => router.push('/#timeline'), 0)}
-                className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full hover:bg-purple-200 transition-colors duration-200 text-xs font-medium"
-              >
-                Cronograma Electoral
-              </button>
-              <button
-                onClick={() => setTimeout(() => router.push('/#fake-news'), 0)}
-                className="px-3 py-1 bg-pink-100 text-pink-700 rounded-full hover:bg-pink-200 transition-colors duration-200 text-xs font-medium"
-              >
-                Noticias Falsas
-              </button>
-              <button
-                onClick={() => setTimeout(() => router.push('/#political-parties'), 0)}
-                className="px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full hover:bg-indigo-200 transition-colors duration-200 text-xs font-medium"
-              >
-                Partidos Políticos
-              </button>
-            </div>
-
-            {/* Mensaje motivacional - más compacto */}
-            <div className="p-4 bg-gradient-to-r from-green-50 to-blue-50 rounded-xl border border-green-200">
-              <div className="flex items-center justify-center space-x-2 mb-1">
-                <Vote className="w-4 h-4 text-green-600" />
-                <h4 className="font-bold text-green-800 text-sm">Tu voto es importante</h4>
-              </div>
-              <p className="text-green-700 text-xs">
-                Mantente informado sobre el proceso electoral. La democracia se fortalece con ciudadanos bien informados.
-              </p>
-            </div>
-          </div>
+          
         </div>
       </div>
     </div>

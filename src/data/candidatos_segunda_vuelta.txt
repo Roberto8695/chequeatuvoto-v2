@@ -1,0 +1,9 @@
+Candidato		Cargo		Nombre				Departamento		Organización Política
+Adrián Olivia		Gobernador	Departamento de Tarija		Tarija			Alianza Patria
+María René Soruco	Gobernador	Departamento de Tarija		Tarija			Camino Democrático para el Cambio
+Tito Egüez		Gobernador	Departamento de Beni		Beni			Patria Unidos
+Hugo Vargas Roca	Gobernador	Departamento de Beni		Beni			Movimiento Nacionalista Revolucionario
+Édgar Sánchez		Gobernador	Departamento de Oruro		Oruro			Agrupación Jacha
+Óscar Chambi Callapa	Gobernador	Departamento de Oruro		Oruro			Alianza Patria Oruro
+Luis Edson Ayllón	Gobernador	Departamento de Chuquisaca	Chuquisaca		Alianza Gente Nueva
+Gróver Franz García 	Gobernador	Departamento de Chuquisaca	Chuquisaca		Alianza Patria Unidos

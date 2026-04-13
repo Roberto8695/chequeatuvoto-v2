@@ -9,79 +9,92 @@ type Candidato = {
 }
 
 const candidatosGobernacion: Candidato[] = [
-  {
+ /**  {
     nombre: "CHI HYUN CHUNG",
     partido: "MOVIMIENTO TERCER SISTEMA"
   },
   {
     nombre: "BRANKO GORAN MARINKOVIC JOVICEVIC",
-    partido: "MOVIMIENTO DEMOCRATA SOCIAL",
+    partido: "MOVIMIENTO DEMOCRATA SOCIAL"
+,
     propuestas: "https://santacruz.oep.org.bo/wp-content/uploads/2026/01/PG-DEMOCRATAS-DEPARTAMENTAL.pdf"
   },
   {
     nombre: "EDUARDO PEREIRA ALCOCER",
-    partido: "ALIANZA UNIDOS POR LOS PUEBLOS DEPARTAMENTAL SANTA CRUZ",
+    partido: "ALIANZA UNIDOS POR LOS PUEBLOS DEPARTAMENTAL SANTA CRUZ"
+,
     propuestas: "https://santacruz.oep.org.bo/wp-content/uploads/2026/01/PG-ALIANZA-UNIDOS-POR-LOS-PUEBLOS-DEPARTAMENTAL-SANTA-CRUZ.pdf"
   },
   {
     nombre: "GUIDO EDUARDO NAYAR PARADA",
-    partido: "PRIMERO SANTA CRUZ",
+    partido: "PRIMERO SANTA CRUZ"
+,
     propuestas: "https://santacruz.oep.org.bo/wp-content/uploads/2026/01/PG-DEPARTAMENTO-DE-SANTA-CRUZ-APS.pdf"
   },
-  {
-    nombre: "JUAN PABLO VELASCO DALENCE",
-    partido: "LIBERTAD Y REPUBLICA",
+  
     propuestas: "https://santacruz.oep.org.bo/wp-content/uploads/2025/12/PG-DEPARTAMENTO-DE-SANTA-CRUZ-LIBRE.pdf"
   },
   {
     nombre: "JULIO CESAR TORREZ TAPIA",
-    partido: "NUEVA GENERACION PATRIOTICA",
+    partido: "NUEVA GENERACION PATRIOTICA"
+,
     propuestas: "https://santacruz.oep.org.bo/wp-content/uploads/2025/12/PG-NGP-DEPARTAMENTAL-SANTA-CRUZ-.pdf"
   },
   {
     nombre: "LUIS FERNANDO CAMACHO VACA",
-    partido: "ALIANZA CREEMOS PATRIA",
+    partido: "ALIANZA CREEMOS PATRIA"
+,
     propuestas: "https://santacruz.oep.org.bo/wp-content/uploads/2026/01/PG-ALIANZA-CREEMOS-PATRIA-DEPARTAMENTO-DE-SANTA-CRUZ.pdf"
   },
   {
     nombre: "MAURICIO QUEZADA MOSTAJO",
-    partido: "PARTIDO DEMOCRATA CRISTIANO",
+    partido: "PARTIDO DEMOCRATA CRISTIANO"
+,
     propuestas: "https://santacruz.oep.org.bo/wp-content/uploads/2025/12/PG-PDC-DEPARTAMENTAL-SANTA-CRUZ.pdf"
   },
   {
     nombre: "MIGUEL CADIMA CASTRO",
     partido: "ALIANZA TRABAJO, OBRAS, DESARROLLO INTEGRAL, OPORTUNIDADES Y SEGURIDAD"
   },
-  {
-    nombre: "OTTO ANDRES RITTER MENDEZ",
-    partido: "SANTA CRUZ PARA TODOS",
+  
     propuestas: "https://santacruz.oep.org.bo/wp-content/uploads/2026/01/PG-AC-SC-PARA-TODOS-DEPARTAMENTO-DE-SANTA-CRUZ.pdf"
   },
   {
     nombre: "VLADIMIR ARIEL PENA VIRHUEZ",
     partido: "FUERZA Y ESPERANZA"
-  }
+  }*/
+ {
+    nombre: "OTTO ANDRES RITTER MENDEZ",
+    partido: "SANTA CRUZ PARA TODOS"}
+,{
+    nombre: "JUAN PABLO VELASCO DALENCE",
+    partido: "LIBERTAD Y REPUBLICA"
+,}
 ]
-
+/** 
 const candidatosAlcaldia: Candidato[] = [
   {
     nombre: "ALFREDO SOLARES GARRADO",
-    partido: "ALIANZA PATRIA UNIDOS",
+    partido: "ALIANZA PATRIA UNIDOS"
+,
     propuestas: "https://santacruz.oep.org.bo/wp-content/uploads/2026/01/PG-ALIANZA-PATRIA-MUNICIPIO-DE-SANTA-CRUZ-DE-LA-SIERRA-.pdf"
   },
   {
     nombre: "ANGELICA SOSA ARREAZA",
-    partido: "SANTA CRUZ PARA TODOS",
+    partido: "SANTA CRUZ PARA TODOS"
+,
     propuestas: "https://santacruz.oep.org.bo/wp-content/uploads/2026/01/PG-AC-SC-PARA-TODOS-MUNI-DE-SANTA-CRUZ-DE-LA-SIERRA.pdf"
   },
   {
     nombre: "CARLOS ALBERTO SUBIRANA SUAREZ",
-    partido: "ALIANZA DEPARTAMENTAL TODOS",
+    partido: "ALIANZA DEPARTAMENTAL TODOS"
+,
     propuestas: "https://santacruz.oep.org.bo/wp-content/uploads/2026/01/PG-ALIANZA-DEPARTAMENTAL-TODOS.pdf"
   },
   {
     nombre: "CARLOS MANUEL SAAVEDRA SAAVEDRA",
-    partido: "V O S",
+    partido: "V O S"
+,
     propuestas: "https://santacruz.oep.org.bo/wp-content/uploads/2026/01/PG-MUNI-MUNICIPIO-DE-SANTA-CRUZ-DE-LA-SIERRA-VOS.pdf"
   },
   {
@@ -90,12 +103,14 @@ const candidatosAlcaldia: Candidato[] = [
   },
   {
     nombre: "GOMER PADILLA JARO",
-    partido: "ALIANZA SOLIDARIA POPULAR",
+    partido: "ALIANZA SOLIDARIA POPULAR"
+,
     propuestas: "https://santacruz.oep.org.bo/wp-content/uploads/2026/01/ASIP-SANTA-CRUZ-DE-LA-SIERRA-PLAN-DE-GOBIERNO.pdf"
   },
   {
     nombre: "INGRID ROSARIO SCHAMISSEDDINE SOMOZA",
-    partido: "UNION, DEMOCRACIA Y OPORTUNIDAD SOCIAL",
+    partido: "UNION, DEMOCRACIA Y OPORTUNIDAD SOCIAL"
+,
     propuestas: "https://santacruz.oep.org.bo/wp-content/uploads/2026/01/PG-AGRUPACION-UNIDOS-MUNI-DE-SANTA-CRUZ-DE-LA-SIERRA-.pdf"
   },
   {
@@ -108,31 +123,36 @@ const candidatosAlcaldia: Candidato[] = [
   },
   {
     nombre: "OSCAR VARGAS ORTIZ",
-    partido: "SEGURIDAD, ORDEN Y LIBERTAD",
+    partido: "SEGURIDAD, ORDEN Y LIBERTAD"
+,
     propuestas: "https://santacruz.oep.org.bo/wp-content/uploads/2026/01/PG-AGRUPACION-CIUDADANA-SOL-MUNI-DE-SANTA-CRUZ-DE-LA-SIERRA.pdf"
   },
   {
     nombre: "PAOLA LORENA CRONEMBOLD LANGUIDEY",
-    partido: "NGP MUNI DE SANTA CRUZ DE LA SIERRA",
+    partido: "NGP MUNI DE SANTA CRUZ DE LA SIERRA"
+,
     propuestas: "https://santacruz.oep.org.bo/wp-content/uploads/2025/12/PG-NGP-MUNI-DE-SANTA-CRUZ-DE-LA-SIERRA.pdf"
   },
   {
     nombre: "RAFAEL QUINTEROS MONTAÑO",
-    partido: "PDC",
+    partido: "PDC"
+,
     propuestas: "https://santacruz.oep.org.bo/wp-content/uploads/2025/12/PG-PDC-MUNI-DE-SANTA-CRUZ-DE-LA-SIERRA.pdf"
   },
   {
     nombre: "RUBEN FEDERICO MORON ENCINAS",
-    partido: "FRENTE DE UNIDAD NACIONAL",
+    partido: "FRENTE DE UNIDAD NACIONAL"
+,
     propuestas: "https://santacruz.oep.org.bo/wp-content/uploads/2025/12/PG-UN-MUNI-DE-SANTA-CRUZ-DE-LA-SIERRA-.pdf"
   },
   {
     nombre: "SOO HYUN CHUNG",
-    partido: "FUERZA Y ESPERANZA",
+    partido: "FUERZA Y ESPERANZA"
+,
     propuestas: "https://santacruz.oep.org.bo/wp-content/uploads/2026/01/PG-FUERZA-Y-ESPERANZA-MUNI-DE-SANTA-CRUZ-DE-LA-SIERRA.pdf"
   },
 ]
-
+*/
 export default function CandidatosSantaCruz() {
   return (
     <section id="candidatos-santa-cruz" className="w-full max-w-6xl mx-auto px-4 py-12">
@@ -140,7 +160,7 @@ export default function CandidatosSantaCruz() {
         <div className="mx-auto mb-4 h-1 w-32 rounded-full bg-[#7ad9a8]"></div>
         <h2 className="text-3xl font-bold text-black">Candidatos Santa Cruz</h2>
         <p className="mt-2 text-gray-600">
-          Gobernacion y alcaldia con enfoque en nombre y partido politico.
+          Gobernacion de Santa Cruz
         </p>
       </header>
 
@@ -149,7 +169,9 @@ export default function CandidatosSantaCruz() {
           <h3 className="text-2xl font-semibold text-black mb-6 text-center">
             Candidatos a la gobernacion de Santa Cruz
           </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+
+    
+          <div className="grid  grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {candidatosGobernacion.map((candidato) => (
               <article
                 key={candidato.nombre}
@@ -185,7 +207,7 @@ export default function CandidatosSantaCruz() {
             ))}
           </div>
         </div>
-
+ {/*  
         <div>
           <h3 className="text-2xl font-semibold text-black mb-6 text-center">
             Candidatos a la alcaldia de Santa Cruz
@@ -225,7 +247,7 @@ export default function CandidatosSantaCruz() {
               </article>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   )
