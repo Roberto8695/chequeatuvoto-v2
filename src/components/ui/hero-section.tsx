@@ -27,7 +27,7 @@ export default function HeroSection() {
                 Proceso democratico
               </p>
               <h1 className="text-4xl font-black text-slate-900 sm:text-5xl lg:text-6xl">
-                Elecciones subnacionales 2026
+                Elecciones subnacionales segunda vuelta
               </h1>
               <p className="text-base text-slate-600 sm:text-lg">
                 Explora los departamentos, conoce las propuestas y sigue el pulso
